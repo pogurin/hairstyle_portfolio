@@ -9,7 +9,7 @@ class PicturesController < ApplicationController
   end
 
   def create
-  	@picture = Picture.new
+  	@picture = Picture.new(picture_params)
 
     if @picture.save
 		  redirect_to pictures_url
@@ -36,6 +36,11 @@ class PicturesController < ApplicationController
 
   def edit
   	@picture = Picture.find(params[:id])
+  end
+
+  private
+  def picture_params
+    params.require(:picture).permit(:category_id, :hairdresser_id)
   end
 
 end
