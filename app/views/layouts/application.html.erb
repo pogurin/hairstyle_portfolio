@@ -8,7 +8,21 @@
 </head>
 <body>
 
-<%= yield %>
+	<nav>
+		<%= link_to "Home", pictures_url %> |
+		
+			<%= link_to "Logout", :logout, method: :get %>
+		
+			<%= link_to "Register", new_user_path %> | 
+			<%= link_to "Login", :login %>
+		
+	</nav>
+	<div>
+		<p id="notice"><%= flash[:notice] %></p>
+		<p id="alert"><%= flash[:alert] %></p>
+	</div>
+
+	<%= yield %>
 
 </body>
 </html>

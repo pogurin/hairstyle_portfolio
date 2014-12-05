@@ -1,0 +1,15 @@
+<h1>Edit your review</h1>
+
+<%= form_for([@hairdreser, @review]) do |f| %> 
+
+	<div class="field">
+		<%= f.label :comment %><br/>
+		<%= f.text_area :comment %>	
+	</div>
+
+	<div class="actions">
+		<%= f.submit %>
+	</div>
+
+
+	<% end %>

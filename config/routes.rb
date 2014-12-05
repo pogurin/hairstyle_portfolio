@@ -2,11 +2,13 @@ Rails.application.routes.draw do
   root 'pictures#index' 
     resources :pictures , only: [:index, :new, :create , :destroy]
     resources :users     , only: [:index, :new, :create , :destroy]
+    resources :user_sessions , only: [:new, :create , :destroy]
     resources :categories , only: [:index, :new, :create , :destroy]
     resources :hairdressers , only: [:index, :new, :create , :destroy] do 
       resources :reviews , only: [:show, :new, :create , :destroy]
     end
-
+  get 'login' => 'user_sessions#new', as: 'login'
+  get 'logout' => 'user_sessions#destroy', as: 'logout'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
