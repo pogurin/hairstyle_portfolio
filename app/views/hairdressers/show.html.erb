@@ -1,2 +1,31 @@
-<h1>Hairdressers#show</h1>
-<p>Find me in app/views/hairdressers/show.html.erb</p>
+<h1>Welcome <% @hairdresser.first_name %></h1>
+
+<!-- hairdresserprofilepic -->
+
+<% if current_user %>
+
+	<h4>New Review</h4>
+
+	<%= form_for([@hairdresser, @review], remote: true) do |f| %>
+	
+		<!-- review form errors partial -->
+
+
+		<div class="field">
+			<%= f.label :comment %><br/>
+			<%= f.text_area :comment %>
+		</div>
+		<div class="actions">
+			<%= f.submit %>
+		</div>
+		
+	<% end %>	
+
+	<h3>Reviews</h3>
+
+	<div id='review-list'>
+		<%= render partial: 'reviews/reviews' %>
+	</div>
+<% else %>
+	<p>Please <%= link_to "Log in", new_user_session_path %> to add a review.</p>
+<% end %>

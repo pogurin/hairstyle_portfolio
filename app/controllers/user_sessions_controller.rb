@@ -11,9 +11,9 @@ class UserSessionsController < ApplicationController
     end
   end
 
-  # def destroy
-  #   logout
-  #   redirect_to pictures_path, notice: "Logged out!"
-  # end
+  def destroy
+    logout
+    redirect_to pictures_path, notice: "Logged out!"
+  end
 
 end
