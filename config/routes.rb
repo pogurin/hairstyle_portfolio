@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'pictures#homepage' 
     resources :pictures , only: [:index, :new, :create , :destroy]
-    resources :users     , only: [:index, :new, :create , :destroy]
+    resources :users     , only: [:index,:show, :new, :create , :destroy]
     resources :user_sessions , only: [:new, :create , :destroy]
     resources :categories , only: [:index, :new, :create , :destroy]
     resources :hairdressers , only: [:index, :new, :create , :destroy] do 
