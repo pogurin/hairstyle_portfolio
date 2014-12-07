@@ -13,7 +13,7 @@ class HairdressersController < ApplicationController
   end
 
   def create 
-    @hairdresser = Hairdresser.new
+    @hairdresser = Hairdresser.new(hairdresser_params)
 
     if @hairdresser.save
       redirect_to hairdressers_url
@@ -37,4 +37,16 @@ class HairdressersController < ApplicationController
     @hairdresser.destroy
     redirect_to hairdressers_path
   end
-end
+
+  private
+  def hairdresser_params
+    params.require(:hairdresser).permit(:first_name, :last_name, :career, :salon_address, :salon_url, :personal_message, :category_id)
+  end
+
+
+
+
+
+
+
+
