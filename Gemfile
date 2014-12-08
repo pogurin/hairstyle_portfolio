@@ -29,7 +29,7 @@ gem 'spring',        group: :development
 gem "sorcery"
 
 gem "carrierwave"
-gem'mini_magick'
+gem 'mini_magick'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
