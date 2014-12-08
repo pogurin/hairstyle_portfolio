@@ -7,3 +7,17 @@
 
 <%= image_tag @user.picture_url %>
 
+
+<%= form_for @user do |f| %>
+<div class="field">
+	<%= f.label :picture %><br/>
+	<%= f.file_field :picture %>
+	<%= f.hidden_field :picture_cache %>
+</div>
+
+<div class="field">
+	<%= f.submit "Submit"%>
+</div>
+
+<% end %>
+

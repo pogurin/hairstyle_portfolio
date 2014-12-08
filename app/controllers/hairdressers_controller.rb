@@ -21,7 +21,7 @@ class HairdressersController < ApplicationController
 
     if @hairdresser.save
       flash[:notice] = "Signed up" # sinonymous to :notice = "Signed up"
-      session[:user_id] = @user.id #to also log in after we have signed up
+      session[:hairdresser_id] = @hairdresser.id #to also log in after we have signed up
       redirect_to hairdressers_url
     else
       render :new
