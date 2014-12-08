@@ -5,6 +5,10 @@ class ReviewsController < ApplicationController
 		@review = Review.new 
 	end
 
+	def show 
+		@review = Review.find(params[:id]) # reviews build goes in create method
+	end
+
 	def edit
 		@review = Review.find(params[:id])
 	end
@@ -23,13 +27,7 @@ class ReviewsController < ApplicationController
         format.js {} # This will look for app/views/reviews/create.js.erb
     	end
     end
-		# @review = Review.new(review_params)
-
-		# if @review.save
-		# 	redirect_to reviews_url
-		# else
-		# 	render :new
-		# end
+		
 	end
 
 	def update
@@ -46,14 +44,6 @@ class ReviewsController < ApplicationController
 		@review = Review.find(params[:id])
 		@review.destroy
 		redirect_to reviews_path
-	end
-
-	def show 
-		@review = Review.find(params[:id])
-
-		if current_user
-			@review = @review.reviews.build
-		end
 	end
 
 	private

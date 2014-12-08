@@ -20,6 +20,8 @@ class HairdressersController < ApplicationController
     @hairdresser = Hairdresser.new(hairdresser_params)
 
     if @hairdresser.save
+      flash[:notice] = "Signed up" # sinonymous to :notice = "Signed up"
+      session[:user_id] = @user.id #to also log in after we have signed up
       redirect_to hairdressers_url
     else
       render :new
@@ -36,11 +38,11 @@ class HairdressersController < ApplicationController
     end
   end
 
-  def destroy 
-    @hairdresser = Hairdresser.find(params[:id])
-    @hairdresser.destroy
-    redirect_to hairdressers_path
-  end
+  # def destroy only need to destroy session not hairdresser
+  #   @hairdresser = Hairdresser.find(params[:id])
+  #   @hairdresser.destroy
+  #   redirect_to hairdressers_path
+  # end
 
   private
   def hairdresser_params
