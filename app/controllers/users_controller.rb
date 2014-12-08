@@ -11,12 +11,12 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     p @user.valid?
-    p @user.errors
     
     if @user.save
       auto_login(@user)
       redirect_to user_path(current_user)
     else
+      p @user.errors
       render 'new'
     end
   end
