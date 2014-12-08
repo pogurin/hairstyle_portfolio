@@ -6,6 +6,10 @@ class HairdressersController < ApplicationController
 
   def show 
     @hairdresser = Hairdresser.find(params[:id])
+
+    if current_user
+      @review = @hairdresser.reviews.build
+    end
   end
 
   def edit
@@ -16,6 +20,8 @@ class HairdressersController < ApplicationController
     @hairdresser = Hairdresser.new(hairdresser_params)
 
     if @hairdresser.save
+      flash[:notice] = "Signed up" # sinonymous to :notice = "Signed up"
+      session[:user_id] = @user.id #to also log in after we have signed up
       redirect_to hairdressers_url
     else
       render :new
@@ -32,16 +38,18 @@ class HairdressersController < ApplicationController
     end
   end
 
-  def destroy 
-    @hairdresser = Hairdresser.find(params[:id])
-    @hairdresser.destroy
-    redirect_to hairdressers_path
-  end
+  # def destroy only need to destroy session not hairdresser
+  #   @hairdresser = Hairdresser.find(params[:id])
+  #   @hairdresser.destroy
+  #   redirect_to hairdressers_path
+  # end
 
   private
   def hairdresser_params
-    params.require(:hairdresser).permit(:first_name, :last_name, :career, :salon_address, :salon_url, :personal_message, :category_id)
+    params.require(:hairdresser).permit(:first_name, :last_name, :career, :salon_address, :salon_url, :personal_message, :category_id, :email, :password, :password_confirmation)
   end
+
+end
 
 
 

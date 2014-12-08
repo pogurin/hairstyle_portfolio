@@ -1,0 +1,13 @@
+<% if review.id.present? %>
+	<div class="review">
+	  <div class="poster">
+			<% if review.user != nil %>
+				<em> by <%= review.user.first_name %></em>
+				Added on: <%= review.created_at %>
+			<% end %>
+		</div>
+		<p class="comment">
+			<%= review.comment %>
+		</p>
+	</div>
+<% end %>
