@@ -16,7 +16,7 @@ class ReviewsController < ApplicationController
 
     respond_to do |format|
     	if @review.save
-    		format.html {redirect_to hairdressers_path(@hairdresser_id), notice: "Review created successfully"}
+    		format.html {redirect_to hairdressers_path(@hairdresser.id), notice: "Review created successfully"}
         format.js {} # This will look for app/views/reviews/create.js.erb
     	else
     		format.html {render "hairdressers/show", alert: "There was an error."}
@@ -36,7 +36,7 @@ class ReviewsController < ApplicationController
 		@review = Review.find(params[:id])
 
 		if @review.update_attributes(review_params)
-			redirect_to review_path(@review)
+			redirect_to hairdressers_path(@review)
 		else
 			render :edit
 		end

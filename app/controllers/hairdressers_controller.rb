@@ -6,6 +6,10 @@ class HairdressersController < ApplicationController
 
   def show 
     @hairdresser = Hairdresser.find(params[:id])
+
+    if current_user
+      @review = @hairdresser.reviews.build
+    end
   end
 
   def edit
