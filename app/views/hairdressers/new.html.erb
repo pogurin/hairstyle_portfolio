@@ -1,2 +1,55 @@
-<h1>Hairdressers#new</h1>
-<p>Find me in app/views/hairdressers/new.html.erb</p>
+<h1>Hairdresser Sign Up </h1>
+
+<%= form_for @hairdresser do |f| %>
+
+<div class="field">
+	<%= f.label :first_name %><br/>
+	<%= f.text_field :first_name %>
+</div>
+
+<div class="field">
+	<%= f.label :last_name %><br/>
+	<%= f.text_field :last_name %>
+</div>
+
+<div class="field">
+	<%= f.label :email %><br/>
+	<%= f.text_field :email %>
+</div>
+
+<div class="field">
+	<%= f.label :password %><br/>
+	<%= f.password_field :password %>
+</div>
+
+<div class="field">
+	<%= f.label :password_confirmation %><br/>
+	<%= f.password_field :password_confirmation %>
+</div><br/>
+
+<div class="field">
+	<%= f.label :career %><br/>
+	<%= f.text_field :career %>
+</div>
+
+<div class="field">
+	<%= f.label :salon_address %><br/>
+	<%= f.text_field :salon_address %>
+</div>
+
+<div class="field">
+	<%= f.label :salon_url %><br/>
+	<%= f.text_field :salon_url %>
+</div>
+
+<div class="field">
+	<%= f.label :personal_message %><br/>
+	<%= f.text_area :personal_message %>
+</div>
+
+<div class="field">
+	<%= f.submit "Submit"%>
+</div>
+
+<% end %>
+

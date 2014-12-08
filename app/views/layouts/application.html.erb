@@ -18,6 +18,15 @@
 			
 		
 	</nav>
+
+	<p class="userinfo">
+  <% if current_hairdresser %>
+    Signed in as <%= current_hairdresser.email %>. <%= link_to "Log out hairdresser", hairdresser_session_path("current"), :method => :delete %>
+  <% else %>
+    <%= link_to "Log In as hairdresser", new_hairdresser_session_path %>
+  <% end %>
+
+
 	<div>
 		<p id="notice"><%= flash[:notice] %></p>
 		<p id="alert"><%= flash[:alert] %></p>
