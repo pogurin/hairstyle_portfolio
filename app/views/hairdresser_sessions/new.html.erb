@@ -1,6 +1,6 @@
 <h1>Login as Hairdresser</h1>
 
-<%= form_tag hairdresser_sessions_path, :method => :post do %>
+<%= form_tag hairdresser_sessions_path do %> <!-- default method is post do i need a get request here? -->
 
 <div class="field">
 	<%= label_tag :email %><br/>
