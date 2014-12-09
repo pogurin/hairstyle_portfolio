@@ -7,25 +7,25 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-User.create!(
-	first_name: "Gabriel", 
-	last_name: "R", 
-	email: "gabrielr@live.ca", 
-	password: "dog", 
-	password_confirmation: "dog"
-	)
+# User.create!(
+# 	first_name: "Gabriel", 
+# 	last_name: "R", 
+# 	email: "gabrielr@live.ca", 
+# 	password: "dog", 
+# 	password_confirmation: "dog"
+# 	)
 
-Hairdresser.create!(
-	first_name: "Hair", 
-	last_name: "Dresser", 
-	email: "hair@example.com", 
-	password: "123", 
-	password_confirmation: "123",
-	career: "Stylist",
-	salon_address: "1 Queen St, Toronto",
-	salon_url: "www.google.com",
-	personal_message: "I love color"
-	)
+# Hairdresser.create!(
+# 	first_name: "Hair", 
+# 	last_name: "Dresser", 
+# 	email: "hair@example.com", 
+# 	password: "123", 
+# 	password_confirmation: "123",
+# 	career: "Stylist",
+# 	salon_address: "1 Queen St, Toronto",
+# 	salon_url: "www.google.com",
+# 	personal_message: "I love color"
+# 	)
 
 Category.create!(name: "Short Hair")
 Category.create!(name: "Long Hair")
@@ -58,23 +58,7 @@ while $i < 100  do
 	  :imageable_type => 'Hairdresser',
 	  :source => url
 	)
-	   
-	 #   url=""
-	 #   	if Picture.find(params:[$i]).category_id==1
-	 #  	url = 'shorthair.png'
-		# elsif Picture.find(params:[$i]).category_id==2
-	 #  	url = 'longhair.png'
-	 #  	elsif Picture.find(params:[$i]).category_id==3
-	 #  	url = 'dyedhair.png'
-	 #  	elsif Picture.find(params:[$i]).category_id==4
-	 #  	url = 'curlyhair.png'
-	 #  	elsif Picture.find(params:[$i]).category_id==5
-	 #  	url = 'straighthair.png'
-	 # 	 elsif Picture.find(params:[$i]).category_id==6
-	 #  	url = 'blondehair.png'
-	 #  end	
-	  # url="shorthair.png"
-	  #  Picture.find(params:[$i]).source='shorthair.png'
+
    $i +=1
 
 end

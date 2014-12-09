@@ -19,13 +19,13 @@
    position: relative; 
    width: 100%; /* for IE 6 */
 }
-h2 { 
+.image h2 { 
    position: absolute; 
    top: 250px; 
    left: 0; 
    width: 100%; 
 }
-h2 span { 
+.image h2 span { 
    color: white; 
    font: bold 24px/45px Helvetica, Sans-Serif; 
    letter-spacing: -1px;  
