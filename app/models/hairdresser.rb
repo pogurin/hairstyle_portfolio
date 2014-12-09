@@ -10,6 +10,8 @@ class Hairdresser < ActiveRecord::Base
 
 	belongs_to :category
 
+ 	mount_uploader :picture, HairdresserImageUploader
+
 end
 
 

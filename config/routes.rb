@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   resources :categories, only: [:index, :new, :create , :destroy]
 
-  resources :hairdressers, only: [:index, :show] do 
+  resources :hairdressers, only: [:index, :show,:update,] do 
     resources :reviews, only: [:show, :new, :create , :destroy]
   end
 

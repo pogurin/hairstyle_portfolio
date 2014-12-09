@@ -31,12 +31,13 @@ class HairdressersController < ApplicationController
   def update
     @hairdresser = Hairdresser.find(params[:id])
 
-    if @hairdresser.update_attributes
+    if @hairdresser.update_attributes(hairdresser_params)
       redirect_to hairdresser_path(@hairdresser)
     else
       render :edit
     end
   end
+
 
   # def destroy only need to destroy session not hairdresser
   #   @hairdresser = Hairdresser.find(params[:id])
@@ -46,7 +47,7 @@ class HairdressersController < ApplicationController
 
   private
   def hairdresser_params
-    params.require(:hairdresser).permit(:first_name, :last_name, :career, :salon_address, :salon_url, :personal_message, :category_id, :email, :password, :password_confirmation)
+    params.require(:hairdresser).permit(:first_name, :last_name, :career, :picture,:salon_address, :salon_url, :personal_message, :category_id, :email, :password, :password_confirmation)
   end
 
 end
