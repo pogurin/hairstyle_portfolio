@@ -6,8 +6,6 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index, :update, :show, :new, :create , :destroy]
 
-
-
   # resources :user_sessions, only: [:new, :create , :destroy]
 
   resources :categories, only: [:index, :new, :create , :destroy]

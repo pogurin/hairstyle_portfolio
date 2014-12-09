@@ -7,7 +7,6 @@ class User < ActiveRecord::Base
   has_many :reviews
   has_many :hairdressers, through: :reviews
 
-  validates :first_name, :last_name, presence: true
   validates :password, length: {minimum: 3}, on: :create 
   validates :password, confirmation: true, on: :create
   validates :password_confirmation, presence: true, on: :create
