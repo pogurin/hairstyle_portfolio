@@ -21,6 +21,19 @@ class UsersController < ApplicationController
     end
   end
 
+  def update
+    @user = current_user
+
+    if @user.update_attributes!(user_params)
+      puts "it saved ----------------------------"
+      redirect_to user_path(current_user)
+    else
+      puts "it failed ----------------------------"
+      redirect_to user_path(current_user)
+    end
+  end
+
+
 
   def edit
   end
