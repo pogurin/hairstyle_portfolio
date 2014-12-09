@@ -104,6 +104,8 @@ GEM
       sass (~> 3.2.2)
       sprockets (~> 2.8, < 3.0)
       sprockets-rails (~> 2.0)
+    scriptcam-rails (0.0.2)
+      railties (> 3.1.0)
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
@@ -145,6 +147,7 @@ DEPENDENCIES
   rails (= 4.1.7)
   rmagick
   sass-rails (~> 4.0.3)
+  scriptcam-rails
   sdoc (~> 0.4.0)
   spring
   sqlite3

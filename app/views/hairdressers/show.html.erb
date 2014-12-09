@@ -47,3 +47,24 @@
 	<p>Please <%= link_to "Log in", new_user_session_path %> to add a review.</p>
 <% end %>
 
+
+
+		<div style="width:330px;float:left;">
+			<div id="webcam">
+			</div>
+			<div style="margin:5px;">
+				<img src="webcamlogo.png" style="vertical-align:text-top"/>
+				<select id="cameraNames" size="1" onChange="changeCamera()" style="width:245px;font-size:10px;height:25px;">
+				</select>
+			</div>
+		</div>
+		<div style="width:135px;float:left;">
+			<p><button class="btn btn-small" id="btn1" onclick="base64_tofield()">Snapshot to form</button></p>
+			<p><button class="btn btn-small" id="btn2" onclick="base64_toimage()">Snapshot to image</button></p>
+		</div>
+		<div style="width:200px;float:left;">
+			<p><textarea id="formfield" style="width:190px;height:70px;"></textarea></p>
+			<p><img id="image" style="width:200px;height:153px;"/></p>
+		</div>
+	
+
