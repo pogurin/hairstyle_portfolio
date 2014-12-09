@@ -16,4 +16,4 @@
 /tmp
 
 # ignore public pictuture
-/public
+/public/uploads/*
