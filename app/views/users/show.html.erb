@@ -1,3 +1,4 @@
+<% if current_user %> 
 <h1>Welcome <%= current_user.first_name %> !!! This is customer page.</h1>
 
 <p>First name: <%= current_user.first_name %></br>
@@ -19,6 +20,10 @@
 	<%= f.submit "Submit"%>
 </div>
 
+<% end %>
+
+<% else %>
+	<p>Please <%= link_to "Log in", new_user_session_path %> to see your profile page.</p>
 <% end %>
 
 
