@@ -4,13 +4,15 @@ Rails.application.routes.draw do
   root 'pictures#homepage' 
   resources :pictures, only: [:index, :new, :create , :destroy]
 
-  resources :users, only: [:index, :show]
+  resources :users, only: [:index, :update, :show, :new, :create , :destroy]
+
+
 
   # resources :user_sessions, only: [:new, :create , :destroy]
 
   resources :categories, only: [:index, :new, :create , :destroy]
 
-  resources :hairdressers, only: [:index, :show] do 
+  resources :hairdressers, only: [:index, :show,:update,] do 
     resources :reviews, only: [:show, :new, :create , :destroy]
   end
 
