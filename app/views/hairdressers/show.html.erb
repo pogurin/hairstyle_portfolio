@@ -1,5 +1,22 @@
 <h1>Welcome <% @hairdresser.first_name %></h1>
 
+<%= image_tag @hairdresser.picture_url %>
+
+<% if current_hairdresser %>
+<%= form_for @hairdresser do |f| %>
+<div class="field">
+	<%= f.label :picture %><br/>
+	<%= f.file_field :picture %>
+	<%= f.hidden_field :picture_cache %>
+</div>
+
+<div class="field">
+	<%= f.submit "Submit"%>
+</div>
+
+<% end %>
+<% end %>
+
 <!-- hairdresserprofilepic -->
 
 <% if current_user %>
@@ -7,9 +24,12 @@
 	<h4>New Review</h4>
 
 	<%= form_for [@hairdresser, @review], remote: true do |f| %>
-	
-		<!-- review form errors partial -->
-
+		
+		<div id="review_form_errors">
+      <% if @review.errors.any? %>
+        <%= render partial: 'reviews/review_form_errors' %>
+      <% end %>
+    </div>
 
 		<div class="field">
 			<%= f.label :comment %><br/>
@@ -29,3 +49,4 @@
 <% else %>
 	<p>Please <%= link_to "Log in", new_user_session_path %> to add a review.</p>
 <% end %>
+

@@ -1,5 +1,8 @@
 class Hairdresser < ActiveRecord::Base
-	attr_accessor :email, :password, :password_confirmation #needed for password attribute as we are not working with sorcery for hairdresser currently
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
 
 	has_many :reviews 
 	has_many :users, through: :reviews
@@ -7,8 +10,8 @@ class Hairdresser < ActiveRecord::Base
 
 	belongs_to :category
 
-	validates :password, presence: true
-  validates :email, uniqueness: true
+ 	mount_uploader :picture, HairdresserImageUploader
+
 end
 
 

@@ -10,28 +10,28 @@
 
 	<nav>
 		<%= link_to "Home", pictures_url %> |
-		
-			<%= link_to "Logout", :logout, method: :get %>
-		
-			<%= link_to "Register", new_user_path %> | 
-			<%= link_to "Login", :login %>
-			
+		<% if current_user %>
+			Signed in as <%= current_user.email %> |
+			<%= link_to "Logout as Customer", destroy_user_session_path, method: :delete %> |
+		<% else %>
+			<%= link_to "Register as Customer", new_user_registration_path %> | 
+			<%= link_to "Login as Customer", new_user_session_path %>	|
+		<% end %>
+		<% if current_hairdresser %>
+			Signed in as <%= current_hairdresser.email %> |
+			<%= link_to "Logout as Hairdresser", destroy_hairdresser_session_path, method: :delete %> |
+		<% else %>
+			<%= link_to "Register as Hairdresser", new_hairdresser_registration_path %> | 
+			<%= link_to "Login as Hairdresser", new_hairdresser_session_path %>	
+		<% end %>
 		
 	</nav>
-
-	<p class="userinfo">
-  <% if current_hairdresser %>
-    Signed in as <%= current_hairdresser.email %>. <%= link_to "Log out hairdresser", hairdresser_session_path("current"), :method => :delete %>
-  <% else %>
-    <%= link_to "Log In as hairdresser", new_hairdresser_session_path %>
-  <% end %>
-
 
 	<div>
 		<p id="notice"><%= flash[:notice] %></p>
 		<p id="alert"><%= flash[:alert] %></p>
 	</div>
-
+	
 	<%= yield %>
 
 </body>

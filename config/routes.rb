@@ -1,23 +1,21 @@
 Rails.application.routes.draw do
+  devise_for :hairdressers
+  devise_for :users
   root 'pictures#homepage' 
-    resources :pictures, only: [:index, :new, :create , :destroy]
+  resources :pictures, only: [:index, :new, :create , :destroy]
 
-    resources :users, only: [:index, :update, :show, :new, :create , :destroy]
+  resources :users, only: [:index, :update, :show, :new, :create , :destroy]
 
-    resources :user_sessions, only: [:new, :create , :destroy]
+  # resources :user_sessions, only: [:new, :create , :destroy]
 
-    resources :categories, only: [:index, :new, :create , :destroy]
+  resources :categories, only: [:index, :new, :create , :destroy]
 
-    resources :hairdressers, only: [:index, :show, :new, :create , :destroy] do 
-      resources :reviews, only: [:show, :new, :create , :destroy]
-    end
-    resources :hairdresser_sessions, only: [:new, :create , :destroy]
+  resources :hairdressers, only: [:index, :show,:update,] do 
+    resources :reviews, only: [:show, :new, :create , :destroy]
+  end
 
-  get 'login' => 'user_sessions#new', as: 'login'
-  get 'logout' => 'user_sessions#destroy', as: 'logout'
-
-  get 'hairdresserlogin' => 'hairdresser_sessions#new', as: "hairdresserlogin"
-  get 'hairdresserlogout' => 'hairdresser_sessions#destroy', as: 'hairdresserlogout'
+  # get 'login' => 'user_sessions#new', as: 'login'
+  # get 'logout' => 'user_sessions#destroy', as: 'logout'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

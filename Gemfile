@@ -28,10 +28,11 @@ gem 'spring',        group: :development
 gem "quiet_assets"
 gem "pry-rails"
 
-gem "sorcery"
-
+# gem "sorcery"
+gem "devise"
 gem "carrierwave"
 gem "rmagick"
+
 #gem 'mini_magick'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

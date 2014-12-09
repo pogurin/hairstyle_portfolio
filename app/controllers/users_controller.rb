@@ -29,7 +29,6 @@ class UsersController < ApplicationController
       redirect_to user_path(current_user)
     else
       puts "it failed ----------------------------"
-
       redirect_to user_path(current_user)
     end
   end
