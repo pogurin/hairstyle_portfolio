@@ -2,7 +2,7 @@
 
 <%= image_tag @hairdresser.picture_url %>
 
-
+<% if current_hairdresser %>
 <%= form_for @hairdresser do |f| %>
 <div class="field">
 	<%= f.label :picture %><br/>
@@ -14,6 +14,7 @@
 	<%= f.submit "Submit"%>
 </div>
 
+<% end %>
 <% end %>
 
 <!-- hairdresserprofilepic -->
