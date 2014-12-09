@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+ruby '1.9.3'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.7'
 # Use sqlite3 as the database for Active Record
@@ -37,7 +37,13 @@ gem "rmagick"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+
+# Use foundation
+gem 'foundation-rails'
 # Use unicorn as the app server
+
+#Use Faker to generate dummy data
+gem 'faker'
 # gem 'unicorn'
 
 # Use Capistrano for deployment

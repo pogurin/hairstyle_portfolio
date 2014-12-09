@@ -1,0 +1,9 @@
+<li>
+	<%= link_to category_path(category.id) do %>
+	<div class="image">
+		<h2><span><%= category.name %></span></h2>
+	<% picture_array = Picture.where(category_id: category.id) %>
+	<%= image_tag picture_array.first.source %>
+</div>
+</li>
+<% end %>

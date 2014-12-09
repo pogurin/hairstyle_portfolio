@@ -1,38 +1,75 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>HairstylePortfolio</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body class="<%= controller_name %> <%= action_name %>">
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= csrf_meta_tags %>
+  </head>
+
+<body class="<%= controller_name %> <%= action_name %>">
+<nav class="top-bar" data-topbar role="navigation">
+  <ul class="title-area">
+    <li class="name">
+      <h1><%= link_to "Hairstyle Portfolio", categories_url %></a></h1>
+    </li>
+     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+  </ul>
+
+  <section class="top-bar-section">
+    <!-- Right Nav Section -->
+    <ul class="right">
+      <% if current_user %>
+      <li class="active"><%= link_to "#{current_user.first_name}'s Profile", user_path(current_user.id) %></a></li>
+      <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+      <% elsif current_hairdresser %>
+      <li class="active"><%= link_to "#{current_hairdresser.first_name}'s Profile", hairdresser_path(current_hairdresser.id) %></a></li>
+      <li><%= link_to "Logout", destroy_hairdresser_session_path, method: :delete %></li>
+      <% else %>
+      <li class="has-dropdown">
+        <a href="#">Log In</a>
+        <ul class="dropdown">
+          <li><%= link_to "Sign In as Customer", new_user_session_path %></li>
+          <li><%= link_to "Sign In as Hairdresser", new_hairdresser_session_path %></li>
+        </ul>
+       </li>
+      <% end %>
+      <% if current_user or current_hairdresser %>
+
+      <% else %>
+      <li class="has-dropdown">
+        <a href="#">Register</a>
+        <ul class="dropdown">
+          <li><%= link_to "Register as a Customer", new_user_registration_path %></li>
+          <li><%= link_to "Register as a Hairdresser", new_hairdresser_registration_path %></li>
+        </ul>
+      </li>
+      <% end %>
+    </ul>
+
+
+  </section>
+</nav>
 	<nav>
-		<%= link_to "Home", pictures_url %> |
-		<% if current_user %>
-			Signed in as <%= current_user.email %> |
-			<%= link_to "Logout as Customer", destroy_user_session_path, method: :delete %> |
-		<% else %>
-			<%= link_to "Register as Customer", new_user_registration_path %> | 
-			<%= link_to "Login as Customer", new_user_session_path %>	|
-		<% end %>
-		<% if current_hairdresser %>
-			Signed in as <%= current_hairdresser.email %> |
-			<%= link_to "Logout as Hairdresser", destroy_hairdresser_session_path, method: :delete %> |
-		<% else %>
-			<%= link_to "Register as Hairdresser", new_hairdresser_registration_path %> | 
-			<%= link_to "Login as Hairdresser", new_hairdresser_session_path %>	
-		<% end %>
-		
+
 	</nav>
 
 	<div>
 		<p id="notice"><%= flash[:notice] %></p>
 		<p id="alert"><%= flash[:alert] %></p>
 	</div>
+	<div class="row">
+   	 <%= yield %>
+    </div>
+    <%= javascript_include_tag "application" %>
+  </body>
+</html>
 	
-	<%= yield %>
 
 </body>
 </html>

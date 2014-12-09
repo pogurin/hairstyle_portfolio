@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 20141209043307) do
   create_table "pictures", force: true do |t|
     t.integer  "hairdresser_id"
     t.integer  "category_id"
+    t.string   "source"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "imageable_id"

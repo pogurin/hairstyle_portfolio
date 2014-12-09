@@ -4,9 +4,14 @@ class CategoriesController < ApplicationController
   end
   
   def index
+    @categories = Category.all
+    @pictures = Picture.all
   end
 
   def show
+    @category = Category.find(params[:id])
+        @pictures = Picture.all
+
   end
 
   def create
