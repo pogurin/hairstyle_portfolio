@@ -1,5 +1,21 @@
 <h1>Welcome <% @hairdresser.first_name %></h1>
 
+<%= image_tag @hairdresser.picture_url %>
+
+
+<%= form_for @hairdresser do |f| %>
+<div class="field">
+	<%= f.label :picture %><br/>
+	<%= f.file_field :picture %>
+	<%= f.hidden_field :picture_cache %>
+</div>
+
+<div class="field">
+	<%= f.submit "Submit"%>
+</div>
+
+<% end %>
+
 <!-- hairdresserprofilepic -->
 
 <% if current_user %>
@@ -30,16 +46,3 @@
 	<p>Please <%= link_to "Log in", new_user_session_path %> to add a review.</p>
 <% end %>
 
-
-
-<div class="field">
-	<%= f.label :picture %><br/>
-	<%= f.file_field :picture %>
-	<%= f.hidden_field :picture_cache %>
-</div>
-
-<div class="field">
-	<%= f.submit "Submit"%>
-</div>
-
-<% end %>
