@@ -26,3 +26,11 @@ Hairdresser.create!(
 	salon_url: "www.google.com",
 	personal_message: "I love color"
 	)
+
+Category.create!(name: "Short Hair")
+Category.create!(name: "Long Hair")
+Category.create!(name: "Dyed Hair")
+Category.create!(name: "Curly Hair")
+Category.create!(name: "Straight Hair")
+Category.create!(name: "Blonde Hair")
+
