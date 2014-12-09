@@ -38,8 +38,11 @@ gem "rmagick"
 
 
 # Use foundation
-gem "foundation"
+gem 'foundation-rails'
 # Use unicorn as the app server
+
+#Use Faker to generate dummy data
+gem 'faker'
 # gem 'unicorn'
 
 # Use Capistrano for deployment
