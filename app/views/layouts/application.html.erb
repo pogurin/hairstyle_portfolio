@@ -15,7 +15,7 @@
 <nav class="top-bar" data-topbar role="navigation">
   <ul class="title-area">
     <li class="name">
-      <h1><%= link_to "Hairstyle Portfolio", pictures_url %></a></h1>
+      <h1><%= link_to "Hairstyle Portfolio", categories_url %></a></h1>
     </li>
      <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
     <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
@@ -24,12 +24,17 @@
   <section class="top-bar-section">
     <!-- Right Nav Section -->
     <ul class="right">
+      <% if current_user %>
+      <li class="active"><%= link_to "#{current_user.first_name}'s Profile", user_path(current_user.id) %></a></li>
+      <li><%= link_to "Logout", :logout, method: :get %></li>
+      <% else %>
       <li class="active"><%= link_to "Sign In", :login %></a></li>
+      <% end %>
       <li class="has-dropdown">
         <a href="#">Register</a>
         <ul class="dropdown">
-          <li><a href="#">Register as User</a></li>
-          <li><a href="#">Register as Hairdresser</a></li>
+          <li><%= link_to "Register as a User", new_user_path %></li>
+          <li><%= link_to "Register as a Hairdresser", new_hairdresser_path %></li>
         </ul>
       </li>
     </ul>
@@ -45,7 +50,7 @@
  -->		
 			<%= link_to "Logout", :logout, method: :get %>
 		
-			<%= link_to "Register", new_user_path %> | 
+		<!-- 	<%= link_to "Register", new_user_path %> | --> 
 <!-- 			<%= link_to "Login", :login %>
  -->			
 		

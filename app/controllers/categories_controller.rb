@@ -9,6 +9,8 @@ class CategoriesController < ApplicationController
 
   def show
     @category = Category.find(params[:id])
+        @pictures = Picture.all
+
   end
 
   def create
