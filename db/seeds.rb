@@ -36,36 +36,45 @@ Category.create!(name: "Blonde Hair")
 
 $i = 0
 while $i < 100  do
-
+	rand=(1 + rand(6))
+	url=""
+		if rand==1
+	  	url = 'shorthair.png'
+		elsif rand==2
+	  	url = 'longhair.png'
+	  	elsif rand==3
+	  	url = 'dyedhair.png'
+	  	elsif rand==4
+	  	url = 'curlyhair.png'
+	  	elsif rand==5
+	  	url = 'straighthair.png'
+	 	 elsif rand==6
+	  	url = 'blondehair.png'
+	  end	
 	   Picture.create(
 	  :hairdresser_id   => 1,
-	  :category_id    => (1 + rand(5)),
+	  :category_id    => rand,
 	  :imageable_id => 'blah blah',
 	  :imageable_type => 'Hairdresser',
-	  :source => 'shorthair.png'
-	 #  	if :category_id==1
-	 #  	:source => 'shorthair.png',
-		# elsif :category_id==2
-	 #  	:source => 'longhair.png',
-	 #  	elsif :category_id==3
-	 #  	:source => 'dyedhair.png',
-	 #  	elsif :category_id==4
-	 #  	:source => 'curlyhair.png',
-	 #  	elsif :category_id==5
-	 #  	:source => 'straighthair.png',
-	 # 	 elsif :category_id==6
-	 #  	:source => 'blondehair.png'
-	 #  end	
-
-
+	  :source => url
 	)
+	   
+	 #   url=""
+	 #   	if Picture.find(params:[$i]).category_id==1
+	 #  	url = 'shorthair.png'
+		# elsif Picture.find(params:[$i]).category_id==2
+	 #  	url = 'longhair.png'
+	 #  	elsif Picture.find(params:[$i]).category_id==3
+	 #  	url = 'dyedhair.png'
+	 #  	elsif Picture.find(params:[$i]).category_id==4
+	 #  	url = 'curlyhair.png'
+	 #  	elsif Picture.find(params:[$i]).category_id==5
+	 #  	url = 'straighthair.png'
+	 # 	 elsif Picture.find(params:[$i]).category_id==6
+	 #  	url = 'blondehair.png'
+	 #  end	
+	  # url="shorthair.png"
+	  #  Picture.find(params:[$i]).source='shorthair.png'
    $i +=1
+
 end
-
-    # t.integer  "hairdresser_id"
-    # t.integer  "category_id"
-    # t.datetime "created_at"
-    # t.datetime "updated_at"
-    # t.integer  "imageable_id"
-    # t.string   "imageable_type"
-

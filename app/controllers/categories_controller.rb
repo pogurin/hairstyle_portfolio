@@ -5,6 +5,7 @@ class CategoriesController < ApplicationController
   
   def index
     @categories = Category.all
+    @pictures = Picture.all
   end
 
   def show
