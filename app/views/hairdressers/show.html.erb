@@ -9,8 +9,10 @@
 	<%= form_for [@hairdresser, @review], remote: true do |f| %>
 		
 		<div id="review_form_errors">
-			<%= render partial: 'reviews/review_form_errors' %>
-		</div>
+      <% if @review.errors.any? %>
+        <%= render partial: 'reviews/review_form_errors' %>
+      <% end %>
+    </div>
 
 		<div class="field">
 			<%= f.label :comment %><br/>
