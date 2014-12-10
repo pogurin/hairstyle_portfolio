@@ -8,6 +8,15 @@ class PicturesController < ApplicationController
   	@pictures = Picture.all
   end
 
+  def show 
+    @picture = Picture.find(params[:id])
+
+    if current_user
+      @review = @picture.reviews.build
+    end
+  end
+
+
   def create
   	@picture = Picture.new(picture_params)
 
@@ -40,7 +49,7 @@ class PicturesController < ApplicationController
 
   private
   def picture_params
-    params.require(:picture).permit(:category_id, :hairdresser_id)
+    params.require(:picture).permit(:category_id, :hairdresser_id,:picture)
   end
 
 end

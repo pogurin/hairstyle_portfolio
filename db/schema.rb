@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141209043307) do
+ActiveRecord::Schema.define(version: 20141210184331) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 20141209043307) do
     t.datetime "updated_at"
     t.integer  "imageable_id"
     t.string   "imageable_type"
+    t.string   "picture"
   end
 
   create_table "reviews", force: true do |t|
