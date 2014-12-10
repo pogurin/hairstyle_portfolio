@@ -11,3 +11,8 @@ $(document).on('ready page:load', function() { //need 'ready page:load' and not 
   });
   
 });
+
+
+
+
+
