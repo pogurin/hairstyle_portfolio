@@ -1,3 +1,11 @@
+
+
+<div id="video-container">
+  <video id="camera-stream" width="500" autoplay></video>
+</div>
+
+
+
 <h1>Welcome <% @hairdresser.first_name %></h1>
 
 <%= image_tag @hairdresser.picture_url %>
@@ -49,4 +57,7 @@
 <% else %>
 	<p>Please <%= link_to "Log in", new_user_session_path %> to add a review.</p>
 <% end %>
+
+
+
 

@@ -11,3 +11,31 @@ $(document).on('ready page:load', function() { //need 'ready page:load' and not 
   });
   
 });
+
+
+window.onload = function() {
+	navigator.getUserMedia = (navigator.getUserMedia ||
+		navigator.webkitGetUserMedia ||
+		navigator.mozGetUserMedia ||
+		navigator.msGetUserMedia);
+
+	if (navigator.getUserMedia) {
+		navigator.getUserMedia(
+			{
+				video: true
+			},
+			function(localMediaStream) {
+				var vid = document.getElementById('camera-stream');
+				vid.src = window.URL.createObjectURL(localMediaStream);
+			},
+
+			function(err) {
+				console.log('The following error occured when trying to use getUserMedia: ' + err);
+			}
+		);
+
+	} else {
+		alert('Sorry, your browser does not support getUserMedia');
+	}
+
+}

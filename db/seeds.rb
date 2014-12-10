@@ -15,7 +15,7 @@
 # 	password_confirmation: "dog"
 # 	)
 
-# Hairdresser.create!(
+# Hairdresser.create!( 
 # 	first_name: "Hair", 
 # 	last_name: "Dresser", 
 # 	email: "hair@example.com", 
