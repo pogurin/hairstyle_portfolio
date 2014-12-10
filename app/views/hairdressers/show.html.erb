@@ -1,10 +1,5 @@
 
 <h1>Let`s upload your portfolio!!</h1>
-<video id="video"></video>
-<button id="startbutton">Take photo</button>
-<canvas id="canvas"></canvas>
-<img src="http://www.burn-repair.co.jp/blog/wp-content/uploads/2013/10/%E4%BA%BA%E5%BD%B1.png" id="photo" alt="photo">
-
 
 
 
@@ -12,18 +7,17 @@
 <%= image_tag @hairdresser.picture_url %>
 
 <% if current_hairdresser %>
-<%= form_for @hairdresser do |f| %>
-<div class="field">
-	<%= f.label :picture %><br/>
-	<%= f.file_field :picture %>
-	<%= f.hidden_field :picture_cache %>
-</div>
+	<%= form_for @hairdresser do |f| %>
+		<div class="field">
+			<%= f.label :picture %><br/>
+			<%= f.file_field :picture %>
+			<%= f.hidden_field :picture_cache %>
+		</div>
 
-<div class="field">
-	<%= f.submit "Submit"%>
-</div>
-
-<% end %>
+		<div class="field">
+			<%= f.submit "Submit"%>
+		</div>
+	<% end %>
 <% end %>
 
 <!-- hairdresserprofilepic -->
