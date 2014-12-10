@@ -2,10 +2,8 @@
 <div id="categories">
 
 <ul class="small-block-grid-4">
- <% @pictures.each do |picture| %>
-    	<% if picture.category_id == @category.id  %>
-    		
-    		  <li><a href='/pictures/<%= picture.id %>'> <%= image_tag picture.source %></a></li> 
-     	 <% end %>
-  <% end %>
+<% @pictures_category.each do |picture| %>
+	 <li><a href='/pictures/<%= picture.id %>'> <%= image_tag picture.source %></a></li> 
+<% end %>
+
 </ul>
