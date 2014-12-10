@@ -53,10 +53,10 @@ while $i < 100  do
 	  end	
 	   Picture.create(
 	  :hairdresser_id   => 1,
-	  :category_id    => rand,
 	  :imageable_id => 'blah blah',
 	  :imageable_type => 'Hairdresser',
-	  :source => url
+	  :source => url,
+	  categories: Category.where(name: 'Short Hair',name:'Long Hair')
 	)
 
    $i +=1
