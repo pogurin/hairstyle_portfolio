@@ -16,4 +16,6 @@
 //= require turbolinks
 //= require_tree .
 
+// require_tree calls every javascript files.
+
 $(function(){ $(document).foundation(); });
