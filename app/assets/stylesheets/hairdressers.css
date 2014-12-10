@@ -2,20 +2,31 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body {
-	background: #F7F7F7;
-	margin: 0;
-	padding: 0;
+html {
+    background: #111111;
+    height: 100%;
+    background: linear-gradient( #333, #000);
+}
+canvas {
+    display: none;
+}
+video, img, #startbutton {
+    display: block;
+    float: left;
+    border: 10px solid #fff;
+    border-radius: 10px;
+}
+#startbutton {
+    background: green;
+    border: none;
+    color: #fff;
+    margin: 10px 20px 20px 20px;
+    padding: 10px 20px;
+    font-size: 20px;
+}
+#container {
+    overflow: hidden;
+    width: 50px;
+    margin: 10px auto;
 }
 
-#video-container {
-	margin: 2em auto 0;
-	width: 500px;
-	padding: 2em;
-	background: white;
-	-webkit-box-shadow: 0 1px 10px #D9D9D9;
-	-moz-box-shadow: 0 1px 10px #D9D9D9;
-	-ms-box-shadow: 0 1px 10px #D9D9D9;
-	-o-box-shadow:0 1px 10px #D9D9D9;
-	box-shadow: 0 1px 10px #D9D9D9;
-}

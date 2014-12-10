@@ -13,37 +13,53 @@ $(document).on('ready page:load', function() { //need 'ready page:load' and not 
 });
 
 
-window.onload = function() {
-	navigator.getUserMedia = (navigator.getUserMedia ||
-		navigator.webkitGetUserMedia ||
-		navigator.mozGetUserMedia ||
-		navigator.msGetUserMedia);
+(function() {
 
-	if (navigator.getUserMedia) {
-		navigator.getUserMedia(
-			{
-				video: true
-			},
-			function(localMediaStream) {
-				var vid = document.getElementById('camera-stream');
-				vid.src = window.URL.createObjectURL(localMediaStream);
-			},
+  var streaming = false,
+      video        = document.querySelector('#video'),
+      cover        = document.querySelector('#cover'),
+      canvas       = document.querySelector('#canvas'),
+      photo        = document.querySelector('#photo'),
+      startbutton  = document.querySelector('#startbutton'),
+      width = 300,
+      height = 0;
 
-			function(err) {
-				console.log('The following error occured when trying to use getUserMedia: ' + err);
-			}
-		);
+  navigator.getMedia = ( navigator.getUserMedia || 
+                         navigator.webkitGetUserMedia ||
+                         navigator.mozGetUserMedia ||
+                         navigator.msGetUserMedia);
 
-	} else {
-		alert('Sorry, your browser does not support getUserMedia');
-	}
+  navigator.getMedia(
+    { 
+      video: true, 
+      audio: false 
+    },
+    function(stream) {
+      if (navigator.mozGetUserMedia) { 
+        video.mozSrcObject = stream;
+      } else {
+        var vendorURL = window.URL || window.webkitURL;
+        video.src = vendorURL ? vendorURL.createObjectURL(stream) : stream;
+      }
+      video.play();
+    },
+    function(err) {
+      console.log("An error occured! " + err);
+    }
+  );
 
-	startbutton.addEventListener('click', function(ev){
-      takepicture();
-    ev.preventDefault();
-  	}, false);
+  video.addEventListener('canplay', function(ev){
+    if (!streaming) {
+      height = video.videoHeight / (video.videoWidth/width);
+      video.setAttribute('width', width);
+      video.setAttribute('height', height);
+      canvas.setAttribute('width', width);
+      canvas.setAttribute('height', height);
+      streaming = true;
+    }
+  }, false);
 
-  	function takepicture() {
+  function takepicture() {
     canvas.width = width;
     canvas.height = height;
     canvas.getContext('2d').drawImage(video, 0, 0, width, height);
@@ -51,6 +67,11 @@ window.onload = function() {
     photo.setAttribute('src', data);
   }
 
-}();
+  startbutton.addEventListener('click', function(ev){
+      takepicture();
+    ev.preventDefault();
+  }, false);
+
+})();
 
 

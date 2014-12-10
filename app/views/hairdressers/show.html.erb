@@ -1,12 +1,14 @@
 
-<h1>Let`s upload your picture!!</h1>
-<div id="video-container">
-  <video id="camera-stream" width="500" autoplay></video>
-</div>
+<h1>Let`s upload your portfolio!!</h1>
+<video id="video"></video>
 <button id="startbutton">Take photo</button>
+<canvas id="canvas"></canvas>
+<img src="http://www.burn-repair.co.jp/blog/wp-content/uploads/2013/10/%E4%BA%BA%E5%BD%B1.png" id="photo" alt="photo">
+
+
+
 
 <h1>Welcome <% @hairdresser.first_name %></h1>
-
 <%= image_tag @hairdresser.picture_url %>
 
 <% if current_hairdresser %>
