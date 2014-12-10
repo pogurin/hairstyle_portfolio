@@ -47,6 +47,11 @@
 		<%= render partial: 'reviews/reviews' %>
 	</div>
 <% else %>
-	<p>Please <%= link_to "Log in", new_user_session_path %> to add a review.</p>
+	<p>Please <%= link_to "Log in as customer", new_user_session_path %> or <%= link_to "Sign up as customer", new_user_registration_path %> to add a review.</p>
+
+	<%= form_tag new_user_session_path, method: :get, authentication: :false, id: 'user_log_in', remote: true do %>
+		<%= submit_tag 'Log in as Customer' %> to see reviews
+	<% end %>
+
 <% end %>
 
