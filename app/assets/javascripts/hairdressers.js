@@ -38,4 +38,19 @@ window.onload = function() {
 		alert('Sorry, your browser does not support getUserMedia');
 	}
 
-}
+	startbutton.addEventListener('click', function(ev){
+      takepicture();
+    ev.preventDefault();
+  	}, false);
+
+  	function takepicture() {
+    canvas.width = width;
+    canvas.height = height;
+    canvas.getContext('2d').drawImage(video, 0, 0, width, height);
+    var data = canvas.toDataURL('image/png');
+    photo.setAttribute('src', data);
+  }
+
+}();
+
+
