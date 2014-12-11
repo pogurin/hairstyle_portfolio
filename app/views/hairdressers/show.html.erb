@@ -1,94 +1,100 @@
-<h1><%= @hairdresser.first_name %> <%= @hairdresser.last_name %></h1>
-<%= image_tag @hairdresser.picture_url %>
-<div class="large-8 columns">
+<div class ="profile">
+	<div class="row">
+		<h1><%= @hairdresser.first_name %> <%= @hairdresser.last_name %></h1>
+		<div class="large-4 columns">
+			<% if @hairdresser.picture_url == nil %>
+			<%= image_tag 'empty_pic.png' %>
+		<% else %>
+			<%= image_tag @hairdresser.picture_url %>
+		<% end %>
+			<% if current_hairdresser %>
+				<%= form_for @hairdresser do |f| %>
+					<div class="field">
+						<%= f.file_field :picture %>
+						<%= f.hidden_field :picture_cache %>
+					</div>
+
+					<div class="field">
+						<%= f.submit "Submit"%>
+					</div>
+				<% end %>
+			<% end %>
+		</div>
+		<div class="small-8 columns">
+			<p><%= @hairdresser.career %></p>
+			<p><%= @hairdresser.salon_address %></p>
+			<p><%= @hairdresser.salon_url %></p>
+			<p><%= @hairdresser.personal_message %></p>
+		</div>
+	</div>
+
 	<% if current_hairdresser %>
-		<%= form_for @hairdresser do |f| %>
+	<h1>Let`s upload your portfolio!!</h1>
+
+		<%= form_for @hairdresser.pictures.build do |f| %>
 			<div class="field">
 				<%= f.label :picture %><br/>
 				<%= f.file_field :picture %>
 				<%= f.hidden_field :picture_cache %>
 			</div>
-
 			<div class="field">
 				<%= f.submit "Submit"%>
 			</div>
 		<% end %>
-	<% end %>
-</div>
-<div class="large-4 columns">
-<%= @hairdresser.career %>
-<%= @hairdresser.salon_address %>
-<%= @hairdresser.salon_url %>
-<%= @hairdresser.personal_message %>
-</div>
-<% if current_hairdresser %>
-<h1>Let`s upload your portfolio!!</h1>
 
-	<%= form_for @hairdresser.pictures.build do |f| %>
-		<div class="field">
-			<%= f.label :picture %><br/>
-			<%= f.file_field :picture %>
-			<%= f.hidden_field :picture_cache %>
-		</div>
-		<div class="field">
-			<%= f.submit "Submit"%>
-		</div>
+		<h2>After 6pm, are you Available today?</h2>
+
+		<%= form_for @hairdresser do |f| %>
+
+
+			<div class="field">
+				<%= f.label :status %><br/>
+				<%= f.text_area :status %>
+			</div>
+
+			<div class="field">
+				<%= f.submit "Submit"%>
+			</div>
+		<% end %>	
+
 	<% end %>
 
-	<h2>After 6pm, are you Available today?</h2>
-
-	<%= form_for @hairdresser do |f| %>
 
 
-		<div class="field">
-			<%= f.label :status %><br/>
-			<%= f.text_area :status %>
+	<!-- hairdresserprofilepic -->
+
+	<% if current_user %>
+
+		<h4>New Review</h4>
+
+		<%= form_for [@hairdresser, @review], remote: true do |f| %>
+			
+			<div id="review_form_errors">
+	      <% if @review.errors.any? %>
+	        <%= render partial: 'reviews/review_form_errors' %>
+	      <% end %>
+	    </div>
+
+			<div class="field">
+				<%= f.label :comment %><br/>
+				<%= f.text_area :comment %>
+			</div>
+			<div class="actions">
+				<%= f.submit %>
+			</div>
+			
+		<% end %>	
+
+		<h3>Reviews</h3>
+
+		<div id='review-list'>
+			<%= render partial: 'reviews/reviews' %>
 		</div>
+	<% elsif current_hairdresser %>
 
-		<div class="field">
-			<%= f.submit "Submit"%>
-		</div>
-	<% end %>	
-
-<% end %>
-
-
-
-<!-- hairdresserprofilepic -->
-
-<% if current_user %>
-
-	<h4>New Review</h4>
-
-	<%= form_for [@hairdresser, @review], remote: true do |f| %>
-		
-		<div id="review_form_errors">
-      <% if @review.errors.any? %>
-        <%= render partial: 'reviews/review_form_errors' %>
-      <% end %>
-    </div>
-
-		<div class="field">
-			<%= f.label :comment %><br/>
-			<%= f.text_area :comment %>
-		</div>
-		<div class="actions">
-			<%= f.submit %>
-		</div>
-		
-	<% end %>	
-
-	<h3>Reviews</h3>
-
-	<div id='review-list'>
-		<%= render partial: 'reviews/reviews' %>
+	<% else %>
+		<p>Please <%= link_to "Log in", new_user_session_path %> to add a review.</p>
+	<% end %>
 	</div>
-<% elsif current_hairdresser %>
-
-<% else %>
-	<p>Please <%= link_to "Log in", new_user_session_path %> to add a review.</p>
-<% end %>
-
-
-
+</div>
 
