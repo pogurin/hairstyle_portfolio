@@ -84,12 +84,13 @@ div.image:hover {
   font-size: 200%;
 }
 
-.accordion {
-  margin-top: 10px;
-  width:180px;
-  top:1px;
-}
+
 #panel2 {
   width:100%;
   border: 2px solid #ccc;
+}
+.accordion {
+  margin-top: 10px;
+  padding: 0rem;
+  margin-left: -1px;
 }
