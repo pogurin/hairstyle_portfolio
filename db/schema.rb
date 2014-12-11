@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 20141211192259) do
     t.string   "last_sign_in_ip"
     t.string   "picture"
     t.text     "status"
-    t.integer  "display"
+    t.boolean  "available"
   end
 
   add_index "hairdressers", ["email"], name: "index_hairdressers_on_email", unique: true
@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 20141211192259) do
 
   create_table "pictures", force: true do |t|
     t.integer  "hairdresser_id"
+    t.integer  "category_id"
     t.string   "source"
     t.datetime "created_at"
     t.datetime "updated_at"

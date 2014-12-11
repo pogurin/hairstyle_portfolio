@@ -20,12 +20,14 @@
 				<% end %>
 			<% end %>
 		</div>
+
 		<div class="small-4 columns">
 			<h2>Profile</h2>
 			<p><b>Profession:</b> <%= @hairdresser.career %></p>
 			<p><b>Address:</b> <%= @hairdresser.salon_address %></p>
 			<p><b>Website:</b> <%= @hairdresser.salon_url %></p>
 			<p><%= @hairdresser.personal_message %></p>
+
 		</div>
 		<div class="small-4 columns">
 			<h2>Current Status</h2>
@@ -38,18 +40,42 @@
 						<div class="field">
 							<%= f.text_area :status %>
 						</div>
-
+						<h2>Available?</h2>
+						<p>
+							<%= f.label :available, "" %>
+							<%= f.radio_button :available, false %>[Not now]
+							<%= f.radio_button :available, true %>[Yes,please]
+						</p>
 						<div class="field">
 							<%= f.submit "Submit"%>
 						</div>
-					<% end %>	
+					<% end %>		
 			    </div>
 			  </dd>
 			 </dl>
-			
-
 		</div>
 	</div>
+
+<<<<<<< HEAD
+
+
+
+
+
+
+
+
+	<% if current_hairdresser %>
+	<h1>Portfolio</h1>
+
+		<%= form_for @hairdresser.pictures.build do |f| %>
+			<div class="field">
+				<%= f.label :picture %><br/>
+				<%= f.file_field :picture %>
+				<%= f.hidden_field :picture_cache %>
+			</div>
+			<div class="field">
+				<%= f.submit "Submit"%>
 
 	<div class="row">
 		<% if current_hairdresser %>
