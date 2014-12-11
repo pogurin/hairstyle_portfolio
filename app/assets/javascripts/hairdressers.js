@@ -13,39 +13,12 @@ $(document).on('ready page:load', function() { //need 'ready page:load' and not 
 });
 
 
-$( "input" ).on( "click", function() {
-  $( "#log" ).html( $( "input:checked" ).val() + " is checked!" );
-});
 
 
-
-// This is for hiding picture.
-// $( "#clickme" ).click(function() {
-//   $( "#book" ).toggle( "slow", function() {
-   
-//   });
+// $(document).on("change", 'input[type="radio"]', function(){
+//     if($(this).val = "1") { 
+//          $("#contrast").slideUp("fast");
+//     }else{
+//        	 $("#test").slideUp("fast");
+//     };
 // });
-
-var welChild = $('.checkbox-child').checkbox();
- 
-// check event on parent checkbox
-welParent.on('check', function(e){
-  // remove ambiguous;
-  welParent.chbxChecked(e.checked);
-  welChild.each(function(i, element) {
-    $(element).chbxChecked(e.checked);
-  });
-});
- 
-// check event on child checkbox
-welChild.on('check', function(e) {
-  var bAnd = true, bOr = false;
-  welChild.each(function(i, element){
-    var bChecked = $(element).chbxChecked();
-    bAnd = bAnd && bChecked, bOr = bOr || bChecked;
-  });
- 
-  var bChecked = bAnd === true || (bAnd === false && bOr === false ? false : null);
-  welParent.chbxChecked(bChecked);
-});
-
