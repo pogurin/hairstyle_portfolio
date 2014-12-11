@@ -13,6 +13,8 @@ $(document).on('ready page:load', function() { //need 'ready page:load' and not 
 });
 
 
-
+$( "input" ).on( "click", function() {
+  $( "#log" ).html( $( "input:checked" ).val() + " is checked!" );
+});
 
 
