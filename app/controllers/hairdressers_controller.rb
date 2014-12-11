@@ -4,6 +4,10 @@ class HairdressersController < ApplicationController
     @hairdresser = Hairdresser.new
   end
 
+  def index
+    @hairdressers = Hairdresser.all
+  end
+
   def show 
     @hairdresser = Hairdresser.find(params[:id])
 
@@ -47,7 +51,7 @@ class HairdressersController < ApplicationController
 
   private
   def hairdresser_params
-    params.require(:hairdresser).permit(:first_name, :last_name, :career, :picture,:salon_address, :salon_url, :personal_message, :category_id, :email, :password, :password_confirmation,:status)
+    params.require(:hairdresser).permit(:first_name, :last_name, :career, :picture,:salon_address, :salon_url, :personal_message, :category_id, :email, :password, :password_confirmation,:status,:available)
   end
 
 end

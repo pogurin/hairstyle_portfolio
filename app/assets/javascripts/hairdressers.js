@@ -14,11 +14,13 @@ $(document).on('ready page:load', function() { //need 'ready page:load' and not 
 
 
 
-
 // $(document).on("change", 'input[type="radio"]', function(){
 //     if($(this).val = "1") { 
-//          $("#contrast").slideUp("fast");
+//          $("#button1").slideUp("slow");
 //     }else{
-//        	 $("#test").slideUp("fast");
+//        	 $("#button2").slideUp("slow");
 //     };
 // });
+
+// I want to connect ruby function and Javascript.
+// Can we change another page status by using Javascript? 
