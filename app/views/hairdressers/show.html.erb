@@ -17,7 +17,14 @@
 	<h2>After 6pm, are you Available today?</h2>
 
 	<%= form_for @hairdresser do |f| %>
+	<p>
+		<%= f.label :available, "Display picture" %>
+		<%= f.radio_button :available, false %>[Not now]
+		<%= f.radio_button :available, true %>[Yes,please]
+	<p>			
 
+	<!-- <a id="button1"><%= @hairdresser.first_name %></a> 
+	<a id="button2">You are checking 2</a>  -->
 
 		<div class="field">
 			<%= f.label :status %><br/>

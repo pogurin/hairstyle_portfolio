@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 20141211192259) do
     t.string   "last_sign_in_ip"
     t.string   "picture"
     t.text     "status"
-    t.integer  "display"
+    t.boolean  "available"
   end
 
   add_index "hairdressers", ["email"], name: "index_hairdressers_on_email", unique: true
