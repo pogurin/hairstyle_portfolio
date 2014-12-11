@@ -1,9 +1,37 @@
 
+
+<% if current_hairdresser %>
 <h1>Let`s upload your portfolio!!</h1>
 
+	<%= form_for @hairdresser.pictures.build do |f| %>
+		<div class="field">
+			<%= f.label :picture %><br/>
+			<%= f.file_field :picture %>
+			<%= f.hidden_field :picture_cache %>
+		</div>
+		<div class="field">
+			<%= f.submit "Submit"%>
+		</div>
+	<% end %>
+
+	<h2>After 6pm, are you Available today?</h2>
+
+	<%= form_for @hairdresser do |f| %>
 
 
-<h1>Welcome <% @hairdresser.first_name %></h1>
+		<div class="field">
+			<%= f.label :status %><br/>
+			<%= f.text_area :status %>
+		</div>
+
+		<div class="field">
+			<%= f.submit "Submit"%>
+		</div>
+	<% end %>	
+
+<% end %>
+
+<h1>Welcome <%= @hairdresser.first_name %></h1>
 <%= image_tag @hairdresser.picture_url %>
 
 <% if current_hairdresser %>

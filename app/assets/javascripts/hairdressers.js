@@ -15,4 +15,10 @@ $(document).on('ready page:load', function() { //need 'ready page:load' and not 
 
 
 
-
+// $(document).on("change", 'input[type="radio"]', function(){
+//     if($(this).val = "1") { 
+//          $("#contrast").slideUp("fast");
+//     }else{
+//        	 $("#test").slideUp("fast");
+//     };
+// });
