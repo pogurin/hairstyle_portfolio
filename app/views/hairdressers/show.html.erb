@@ -56,6 +56,7 @@
 		</div>
 	</div>
 
+<<<<<<< HEAD
 
 
 
@@ -75,11 +76,40 @@
 			</div>
 			<div class="field">
 				<%= f.submit "Submit"%>
+
+	<div class="row">
+		<% if current_hairdresser %>
+		<h1>Portfolio</h1>
+			<div class="row">
+				<h2>Upload New Photo</h2>
+				<div class="large-3 columns">
+					<h3>File</h3>
+					<%= form_for @hairdresser.pictures.build do |f| %>
+						<div class="field">
+							<%= f.file_field :picture %>
+							<%= f.hidden_field :picture_cache %>
+						</div>
+						<div class="field">
+							<%= f.submit "Submit"%>
+						</div>
+					<% end %>
+				</div>
+				<div class="large-9 columns">
+					 <label><h3>Tags</h3></label>
+				      <input id="checkbox1" type="checkbox"><label for="checkbox1">Short Hair</label>
+				      <input id="checkbox2" type="checkbox"><label for="checkbox2">Long Hair</label>
+				      <input id="checkbox3" type="checkbox"><label for="checkbox3">Dyed Hair</label>
+				      <input id="checkbox4" type="checkbox"><label for="checkbox4">Curly Hair</label>
+				      <input id="checkbox5" type="checkbox"><label for="checkbox5">Straight Hair</label>
+				      <input id="checkbox6" type="checkbox"><label for="checkbox6">Blonde Hair</label>
+				</div>
+			</div>	
+			<div class="row">
+				<h2>Photos</h2>
 			</div>
 		<% end %>
-
-	<% end %>
-
+			
+	</div>
 
 
 	<!-- hairdresserprofilepic -->
