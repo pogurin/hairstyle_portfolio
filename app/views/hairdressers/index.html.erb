@@ -1,2 +1,15 @@
-<h1>Hairdressers#index</h1>
-<p>Find me in app/views/hairdressers/index.html.erb</p>
+<h1>Listing Hairdressers available after 6pm</h1>
+
+	<% @hairdressers.each do |hairdresser| %>
+		<div class="profile_pictures">
+			<table>
+			  <tr>
+			    <th><%= hairdresser.first_name %>, <%= hairdresser.last_name %> <%= hairdresser.career %></th>
+			  </tr>
+			  <tr>
+			    <td><%= image_tag hairdresser.picture_url(:medium) %></td>
+
+			  </tr>
+			</table>
+		</div>	
+	<% end %>

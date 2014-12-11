@@ -4,6 +4,10 @@ class HairdressersController < ApplicationController
     @hairdresser = Hairdresser.new
   end
 
+  def index
+    @hairdressers = Hairdresser.all
+  end
+
   def show 
     @hairdresser = Hairdresser.find(params[:id])
 
