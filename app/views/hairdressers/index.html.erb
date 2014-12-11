@@ -9,12 +9,8 @@
 
 
 <% @hairdressers.each do |hairdresser| %>
-
-
-<% if hairdresser.available %>
-<%= hairdresser.picture %>
-<img src="http://imgbp.hotp.jp/CSP/IMG_SRC/66/39/B006286639/B006286639_154-205.jpg" alt=""><br/>
-
-<a>Status: </a><%= hairdresser.status %>
-<% end %>
+	<% if hairdresser.available %> 
+		<img src="http://imgbp.hotp.jp/CSP/IMG_SRC/66/39/B006286639/B006286639_154-205.jpg" alt=""><br/>
+		<a>Status: </a><%= hairdresser.status %>
+	<% end %>
 <% end %>
