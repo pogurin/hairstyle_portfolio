@@ -13,11 +13,12 @@
 				  <tr>
 				    <th><%= hairdresser.first_name %> <%= hairdresser.last_name %>,<br/><%= hairdresser.career %></th>
 				  </tr>
-				  <tr>
-				  
+				  <tr>				  
 				    <td><div class="box"><%= link_to image_tag(hairdresser.picture_url(:medium)), hairdresser %></div></td>
-				    <td><a>Status: </a><%= hairdresser.status %></td>			
 				  </tr>
+				  <tr>
+				    <td><a>Status: </a><%= hairdresser.status %></td>		
+				  </tr>	
 				</table>
 			</div>
 		<% end %>	
@@ -25,4 +26,4 @@
 
 
 
-	
+
