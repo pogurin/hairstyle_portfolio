@@ -20,14 +20,12 @@
 				<% end %>
 			<% end %>
 		</div>
-
 		<div class="small-4 columns">
 			<h2>Profile</h2>
 			<p><b>Profession:</b> <%= @hairdresser.career %></p>
 			<p><b>Address:</b> <%= @hairdresser.salon_address %></p>
 			<p><b>Website:</b> <%= @hairdresser.salon_url %></p>
 			<p><%= @hairdresser.personal_message %></p>
-
 		</div>
 		<div class="small-4 columns">
 			<h2>Current Status</h2>
@@ -42,40 +40,22 @@
 						</div>
 						<h2>Available?</h2>
 						<p>
-							<%= f.label :available, "" %>
-							<%= f.radio_button :available, false %>[Not now]
-							<%= f.radio_button :available, true %>[Yes,please]
+							<%= f.radio_button :available, true %>Yes<br>
+							<%= f.radio_button :available, false %>No
+							
 						</p>
+
 						<div class="field">
 							<%= f.submit "Submit"%>
 						</div>
-					<% end %>		
+					<% end %>	
 			    </div>
 			  </dd>
 			 </dl>
+			
+
 		</div>
 	</div>
-
-<<<<<<< HEAD
-
-
-
-
-
-
-
-
-	<% if current_hairdresser %>
-	<h1>Portfolio</h1>
-
-		<%= form_for @hairdresser.pictures.build do |f| %>
-			<div class="field">
-				<%= f.label :picture %><br/>
-				<%= f.file_field :picture %>
-				<%= f.hidden_field :picture_cache %>
-			</div>
-			<div class="field">
-				<%= f.submit "Submit"%>
 
 	<div class="row">
 		<% if current_hairdresser %>
@@ -92,7 +72,7 @@
 						<div class="field">
 							<%= f.submit "Submit"%>
 						</div>
-					
+					<% end %>
 				</div>
 				<div class="large-9 columns">
 					 <label><h3>Tags</h3></label>
@@ -103,7 +83,6 @@
 				      <input id="checkbox5" type="checkbox"><label for="checkbox5">Straight Hair</label>
 				      <input id="checkbox6" type="checkbox"><label for="checkbox6">Blonde Hair</label>
 				</div>
-				<% end %>
 			</div>	
 			<div class="row">
 				<h2>Photos</h2>
@@ -149,4 +128,3 @@
 	<% end %>
 	</div>
 </div>
-
