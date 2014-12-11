@@ -20,16 +20,39 @@
 				<% end %>
 			<% end %>
 		</div>
-		<div class="small-8 columns">
-			<p><%= @hairdresser.career %></p>
-			<p><%= @hairdresser.salon_address %></p>
-			<p><%= @hairdresser.salon_url %></p>
+		<div class="small-4 columns">
+			<h2>Profile</h2>
+			<p><b>Profession:</b> <%= @hairdresser.career %></p>
+			<p><b>Address:</b> <%= @hairdresser.salon_address %></p>
+			<p><b>Website:</b> <%= @hairdresser.salon_url %></p>
 			<p><%= @hairdresser.personal_message %></p>
+		</div>
+		<div class="small-4 columns">
+			<h2>Current Status</h2>
+			<%= @hairdresser.status %>
+			<dl class="accordion" data-accordion>
+				<dd class="accordion-navigation">
+			    <a href="#panel2">Edit</a>
+			    <div id="panel2" class="content">
+				    <%= form_for @hairdresser do |f| %>
+						<div class="field">
+							<%= f.text_area :status %>
+						</div>
+
+						<div class="field">
+							<%= f.submit "Submit"%>
+						</div>
+					<% end %>	
+			    </div>
+			  </dd>
+			 </dl>
+			
+
 		</div>
 	</div>
 
 	<% if current_hairdresser %>
-	<h1>Let`s upload your portfolio!!</h1>
+	<h1>Portfolio</h1>
 
 		<%= form_for @hairdresser.pictures.build do |f| %>
 			<div class="field">
@@ -41,21 +64,6 @@
 				<%= f.submit "Submit"%>
 			</div>
 		<% end %>
-
-		<h2>After 6pm, are you Available today?</h2>
-
-		<%= form_for @hairdresser do |f| %>
-
-
-			<div class="field">
-				<%= f.label :status %><br/>
-				<%= f.text_area :status %>
-			</div>
-
-			<div class="field">
-				<%= f.submit "Submit"%>
-			</div>
-		<% end %>	
 
 	<% end %>
 

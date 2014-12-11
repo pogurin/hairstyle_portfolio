@@ -75,4 +75,21 @@ div.image:hover {
 .profile h1{
   text-align: left;
   padding-left: 20px;
+  background-color: #333333;
+  color: white;
+  padding-top: 10px;
+}
+.profile h2{
+  text-align: left;
+  font-size: 200%;
+}
+
+.accordion {
+  margin-top: 10px;
+  width:180px;
+  top:1px;
+}
+#panel2 {
+  width:100%;
+  border: 2px solid #ccc;
 }
