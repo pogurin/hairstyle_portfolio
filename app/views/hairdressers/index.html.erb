@@ -1,2 +1,11 @@
-<h1>Hairdressers#index</h1>
-<p>Find me in app/views/hairdressers/index.html.erb</p>
+<h1>They are available after today`s 6PM!</h1>
+<h2>You can make an appoinment at their profile page.</h2>
+
+<% if current_hairdresser %>
+	<h5>Hi <%= current_hairdresser.first_name %></h5>
+	<p>Please change your status from your<%= link_to " profile page", hairdresser_path(current_hairdresser) %> !!</p>
+<% end %>
+
+<img src="http://imgbp.hotp.jp/CSP/IMG_SRC/66/39/B006286639/B006286639_154-205.jpg" alt=""><br/>
+
+<a>Status: </a><%= current_hairdresser.status %>

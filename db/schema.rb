@@ -11,7 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141210212836) do
+
+ActiveRecord::Schema.define(version: 20141211192259) do
+
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -47,6 +49,8 @@ ActiveRecord::Schema.define(version: 20141210212836) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.string   "picture"
+    t.text     "status"
+    t.integer  "display"
   end
 
   add_index "hairdressers", ["email"], name: "index_hairdressers_on_email", unique: true
@@ -59,6 +63,7 @@ ActiveRecord::Schema.define(version: 20141210212836) do
     t.datetime "updated_at"
     t.integer  "imageable_id"
     t.string   "imageable_type"
+    t.string   "picture"
   end
 
   create_table "reviews", force: true do |t|

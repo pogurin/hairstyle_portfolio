@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   root 'categories#index' 
-    resources :pictures, only: [:index, :new, :create , :destroy]
+    resources :pictures, only: [:index,:show,:udate,:new, :create , :destroy]
 
   devise_for :hairdressers
   devise_for :users
