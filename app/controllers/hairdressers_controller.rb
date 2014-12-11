@@ -10,7 +10,12 @@ class HairdressersController < ApplicationController
 
   def show 
     @hairdresser = Hairdresser.find(params[:id])
-
+    @available = ""
+    if @hairdresser.available==true
+      @available = "Available"
+    else
+      @available = "Not available"
+    end
     if current_user
       @review = @hairdresser.reviews.build
     end

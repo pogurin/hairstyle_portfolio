@@ -28,11 +28,11 @@
 			<p><%= @hairdresser.personal_message %></p>
 		</div>
 		<div class="small-4 columns">
-			<h2>Current Status</h2>
-			<%= @hairdresser.status %>
+			<h2>Current Status: <%= @available %></h2>
+			<p><%= @hairdresser.status %></p>
 			<dl class="accordion" data-accordion>
 				<dd class="accordion-navigation">
-			    <a href="#panel2">Edit</a>
+			    <a href="#panel2">Edit Status</a>
 			    <div id="panel2" class="content">
 				    <%= form_for @hairdresser do |f| %>
 						<div class="field">
@@ -40,14 +40,14 @@
 						</div>
 						<h2>Available?</h2>
 						<p>
-							<%= f.radio_button :available, true %>Yes<br>
+							<%= f.radio_button :available, true %>Yes
 							<%= f.radio_button :available, false %>No
-							
+							<div class="field">
+							<%= f.submit "Submit"%>
+							</div>
 						</p>
 
-						<div class="field">
-							<%= f.submit "Submit"%>
-						</div>
+						
 					<% end %>	
 			    </div>
 			  </dd>
