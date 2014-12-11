@@ -12,22 +12,18 @@
 		</div>
 	<% end %>
 
-	<h2>After 6pm </h2>
-	<form>
-		 <div>
-		    <input type="radio" name="status" value="Available" id="available">
-		    <label for="available">Available</label>
-		 </div>
-		 <div>
-		    <input type="radio" name="status" value="Working" id="working">
-		    <label for="working">Now is working</label>
-		 </div>
-		 <div>
-		    <input type="radio" name="status" value="Unavailable" id="unavailable">
-		    <label for="unavailable">Unavailable</label>
-		 </div>
-	  	<div id="log"></div>
-	</form>
+	<h2>After 6pm, are you Available today?</h2>
+
+	<%= form_for @hairdresser do |f| %>
+		<div class="field">
+			<%= f.label :status %><br/>
+			<%= f.text_area :status %>
+		</div>
+
+		<div class="field">
+			<%= f.submit "Submit"%>
+		</div>
+	<% end %>	
 
 <% end %>
 

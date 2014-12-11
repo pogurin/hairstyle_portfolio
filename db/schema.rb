@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141210184331) do
+ActiveRecord::Schema.define(version: 20141211162530) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20141210184331) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.string   "picture"
+    t.text     "status"
   end
 
   add_index "hairdressers", ["email"], name: "index_hairdressers_on_email", unique: true
