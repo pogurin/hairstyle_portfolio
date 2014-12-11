@@ -3,21 +3,16 @@ Rails.application.routes.draw do
   root 'categories#index'
 
   devise_for :hairdressers
-  # devise_for :users
   # to redirect dvise from using its own hidden sessions controller, in order to implement ajax
   devise_for :users
   
-  resources :pictures, only: [:index, :new, :create , :destroy]
+  resources :pictures, only: [:index, :show, :new, :create , :update, :destroy]
 
   resources :users, only: [:index, :update, :show, :new, :create , :destroy]
 
   # resources :user_sessions, only: [:new, :create , :destroy]
-
-
   #which category resourse should we use???
   resources :categories, only: [:index, :new, :create , :destroy, :show]
-
-  resources :categories, only: [:index, :new, :create , :destroy]
 
   resources :hairdressers, only: [:index, :show,:update,] do 
     resources :reviews, only: [:show, :new, :create , :destroy]

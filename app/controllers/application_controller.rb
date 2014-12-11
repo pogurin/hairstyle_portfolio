@@ -8,6 +8,6 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) << [:first_name,:last_name,:career]
+    devise_parameter_sanitizer.for(:sign_up) << [:first_name,:last_name,:career,:salon_address,:salon_url,:personal_message]
   end  
 end
