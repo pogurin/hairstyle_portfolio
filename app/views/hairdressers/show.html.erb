@@ -13,6 +13,24 @@
 			<%= f.submit "Submit"%>
 		</div>
 	<% end %>
+
+	<h2>After 6pm </h2>
+	<form>
+		 <div>
+		    <input type="radio" name="fruit" value="orange" id="orange">
+		    <label for="orange">Available</label>
+		 </div>
+		 <div>
+		    <input type="radio" name="fruit" value="apple" id="apple">
+		    <label for="apple">Now is working</label>
+		 </div>
+		 <div>
+		    <input type="radio" name="fruit" value="banana" id="banana">
+		    <label for="banana">Unavailable</label>
+		 </div>
+	  	<div id="log"></div>
+	</form>
+
 <% end %>
 
 <h1>Welcome <% @hairdresser.first_name %></h1>
