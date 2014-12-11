@@ -49,6 +49,8 @@
 	<div id='review-list'>
 		<%= render partial: 'reviews/reviews' %>
 	</div>
+<% elsif current_hairdresser %>
+
 <% else %>
 	<p>Please <%= link_to "Log in", new_user_session_path %> to add a review.</p>
 <% end %>
