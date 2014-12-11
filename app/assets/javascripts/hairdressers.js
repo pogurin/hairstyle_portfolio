@@ -1,9 +1,15 @@
 $(document).on('ready page:load', function() { //need 'ready page:load' and not .ready so that tourbolinks works and responds with ajax requests to the server
- 	$('#user_log_in').click(function(event) {
-  	event.preventDeafault();
-		$("#login_user").show();
-		$("#user_log_in").hide()
-	});
+  $("#new_link").click(function(event) {
+    event.preventDeafault();
+    $('#login_user').show()
+  })
+
+
+ // 	$('#user_log_in').click(function(event) {
+ //  	event.preventDeafault();
+	// 	$("#login_user").show();
+	// 	$("#user_log_in").hide()
+	// });
 
 
 
