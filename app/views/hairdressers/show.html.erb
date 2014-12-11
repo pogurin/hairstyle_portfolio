@@ -1,5 +1,26 @@
+<h1><%= @hairdresser.first_name %> <%= @hairdresser.last_name %></h1>
+<%= image_tag @hairdresser.picture_url %>
+<div class="large-8 columns">
+	<% if current_hairdresser %>
+		<%= form_for @hairdresser do |f| %>
+			<div class="field">
+				<%= f.label :picture %><br/>
+				<%= f.file_field :picture %>
+				<%= f.hidden_field :picture_cache %>
+			</div>
 
-
+			<div class="field">
+				<%= f.submit "Submit"%>
+			</div>
+		<% end %>
+	<% end %>
+</div>
+<div class="large-4 columns">
+<%= @hairdresser.career %>
+<%= @hairdresser.salon_address %>
+<%= @hairdresser.salon_url %>
+<%= @hairdresser.personal_message %>
+</div>
 <% if current_hairdresser %>
 <h1>Let`s upload your portfolio!!</h1>
 
@@ -31,22 +52,7 @@
 
 <% end %>
 
-<h1>Welcome <%= @hairdresser.first_name %></h1>
-<%= image_tag @hairdresser.picture_url %>
 
-<% if current_hairdresser %>
-	<%= form_for @hairdresser do |f| %>
-		<div class="field">
-			<%= f.label :picture %><br/>
-			<%= f.file_field :picture %>
-			<%= f.hidden_field :picture_cache %>
-		</div>
-
-		<div class="field">
-			<%= f.submit "Submit"%>
-		</div>
-	<% end %>
-<% end %>
 
 <!-- hairdresserprofilepic -->
 
