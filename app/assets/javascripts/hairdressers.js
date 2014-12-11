@@ -18,3 +18,34 @@ $( "input" ).on( "click", function() {
 });
 
 
+
+// This is for hiding picture.
+// $( "#clickme" ).click(function() {
+//   $( "#book" ).toggle( "slow", function() {
+   
+//   });
+// });
+
+var welChild = $('.checkbox-child').checkbox();
+ 
+// check event on parent checkbox
+welParent.on('check', function(e){
+  // remove ambiguous;
+  welParent.chbxChecked(e.checked);
+  welChild.each(function(i, element) {
+    $(element).chbxChecked(e.checked);
+  });
+});
+ 
+// check event on child checkbox
+welChild.on('check', function(e) {
+  var bAnd = true, bOr = false;
+  welChild.each(function(i, element){
+    var bChecked = $(element).chbxChecked();
+    bAnd = bAnd && bChecked, bOr = bOr || bChecked;
+  });
+ 
+  var bChecked = bAnd === true || (bAnd === false && bOr === false ? false : null);
+  welParent.chbxChecked(bChecked);
+});
+
