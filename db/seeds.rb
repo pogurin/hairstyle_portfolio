@@ -15,7 +15,7 @@
 # 	password_confirmation: "dog"
 # 	)
 
-# Hairdresser.create!(
+# Hairdresser.create!( 
 # 	first_name: "Hair", 
 # 	last_name: "Dresser", 
 # 	email: "hair@example.com", 
@@ -51,13 +51,32 @@ while $i < 100  do
 	 	 elsif rand==6
 	  	url = 'blondehair.png'
 	  end	
-	   Picture.create(
+	  p = Picture.create(
 	  :hairdresser_id   => 1,
-	  :category_id    => rand,
 	  :imageable_id => 'blah blah',
 	  :imageable_type => 'Hairdresser',
 	  :source => url
-	)
+		)
+	  if rand==1
+	  	p.categories << Category.find_by_name("Short Hair")
+		elsif rand==2
+	  	p.categories << Category.find_by_name("Long Hair")
+	  	elsif rand==3
+	  	p.categories << Category.find_by_name("Dyed Hair")
+	  	elsif rand==4
+	  	p.categories << Category.find_by_name("Curly Hair")
+	  	p.categories << Category.find_by_name("Short Hair")
+	  	elsif rand==5
+	  	p.categories << Category.find_by_name("Straight Hair")
+	  	p.categories << Category.find_by_name("Long Hair")
+	 	 elsif rand==6
+	  	p.categories << Category.find_by_name("Blonde Hair")
+	  	p.categories << Category.find_by_name("Long Hair")
+	  end
+	
+	  	
+	  
+	  
 
    $i +=1
 

@@ -2,26 +2,25 @@
 <h1>Welcome <%= current_user.first_name %> !!! This is customer page.</h1>
 
 <p>First name: <%= current_user.first_name %></br>
-<p>Last name: <%= current_user.last_name %><br>
-<p>Email address: <%= current_user.email %></p>
-<p>Profile Picture</p>: <%= current_user.picture %></p>
+	<p>Last name: <%= current_user.last_name %><br>
+		<p>Email address: <%= current_user.email %></p>
+		<p>Profile Picture</p> 
+		<%= image_tag @user.picture_url %>
 
-<%= image_tag @user.picture_url %>
 
+		<%= form_for @user do |f| %>
+		<div class="field">
+			<%= f.label :picture %><br/>
+			<%= f.file_field :picture %>
+			<%= f.hidden_field :picture_cache %>
+		</div>
 
-<%= form_for @user do |f| %>
-<div class="field">
-	<%= f.label :picture %><br/>
-	<%= f.file_field :picture %>
-	<%= f.hidden_field :picture_cache %>
-</div>
+		<div class="field">
+			<%= f.submit "Submit"%>
+		</div>
 
-<div class="field">
-	<%= f.submit "Submit"%>
-</div>
+		<% end %>
 
-<% end %>
-
-<% else %>
-	<p>Please <%= link_to "Log in", new_user_session_path %> to see your profile page.</p>
-<% end %>
+		<% else %>
+		<p>Please <%= link_to "Log in", new_user_session_path %> to see your profile page.</p>
+		<% end %>
