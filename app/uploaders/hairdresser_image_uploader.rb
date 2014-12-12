@@ -40,6 +40,12 @@ class HairdresserImageUploader < CarrierWave::Uploader::Base
     process :resize_to_fit => [200, 200]
   end
 
+  #for deafult picture
+  def default_url
+    # "/images/fallback/" + [version_name, "default.png"].compact.join('_')
+    "#{version_name}-fake_hairdresser.jpg"
+  end
+
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
   def extension_white_list

@@ -17,3 +17,5 @@
 
 # ignore public pictuture
 /public/uploads/*
+
+.DS_Store

@@ -1,4 +1,4 @@
-<h1>They are available after today`s 6PM!</h1>
+<h1>Listing Hairdressers available after 6pm</h1>
 <h2>You can make an appoinment at their profile page.</h2>
 
 <% if current_hairdresser %>
@@ -6,11 +6,24 @@
 <p>Please change your status from your<%= link_to " profile page", hairdresser_path(current_hairdresser) %> !!</p>
 <% end %>
 
-
-
-<% @hairdressers.each do |hairdresser| %>
-	<% if hairdresser.available %> 
-		<img src="http://imgbp.hotp.jp/CSP/IMG_SRC/66/39/B006286639/B006286639_154-205.jpg" alt=""><br/>
-		<a>Status: </a><%= hairdresser.status %>
+	<% @hairdressers.each do |hairdresser| %>
+		<% if hairdresser.available %>
+			<div class="profile_pictures">
+				<table>
+				  <tr>
+				    <th><%= hairdresser.first_name %> <%= hairdresser.last_name %>,<br/><%= hairdresser.career %></th>
+				  </tr>
+				  <tr>				  
+				    <td><div class="box"><%= link_to image_tag(hairdresser.picture_url(:medium)), hairdresser %></div></td>
+				  </tr>
+				  <tr>
+				    <td><a>Status: </a><%= hairdresser.status %></td>		
+				  </tr>	
+				</table>
+			</div>
+		<% end %>	
 	<% end %>
-<% end %>
+
+
+
+

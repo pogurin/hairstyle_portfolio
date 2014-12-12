@@ -12,9 +12,9 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     p @user.valid?
     
+    respond_to do |format|
     if @user.save
-      auto_login(@user)
-      redirect_to user_path(current_user)
+      format.html {auto_login(@user), redirect_to user_path(current_user)}
     else
       p @user.errors
       render 'new'
