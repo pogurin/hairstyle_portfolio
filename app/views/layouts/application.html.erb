@@ -12,49 +12,50 @@
   </head>
 
 <body class="<%= controller_name %> <%= action_name %>">
-<nav class="top-bar" data-topbar role="navigation">
-  <ul class="title-area">
-    <li class="name">
-      <h1><%= link_to "Hairstyle Portfolio", categories_url %></a></h1>
-    </li>
-     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-  </ul>
-
-  <section class="top-bar-section">
-    <!-- Right Nav Section -->
-    <ul class="right">
-      <% if current_user %>
-      <li class="active"><%= link_to "#{current_user.first_name}'s Profile", user_path(current_user.id) %></a></li>
-      <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
-      <% elsif current_hairdresser %>
-      <li class="active"><%= link_to "#{current_hairdresser.first_name}'s Profile", hairdresser_path(current_hairdresser.id) %></a></li>
-      <li><%= link_to "Logout", destroy_hairdresser_session_path, method: :delete %></li>
-      <% else %>
-      <li class="has-dropdown">
-        <a href="#">Log In</a>
-        <ul class="dropdown">
-          <li><%= link_to "Sign In as Customer", new_user_session_path %></li>
-          <li><%= link_to "Sign In as Hairdresser", new_hairdresser_session_path %></li>
-        </ul>
-       </li>
-      <% end %>
-      <% if current_user or current_hairdresser %>
-
-      <% else %>
-      <li class="has-dropdown">
-        <a href="#">Register</a>
-        <ul class="dropdown">
-          <li><%= link_to "Register as a Customer", new_user_registration_path %></li>
-          <li><%= link_to "Register as a Hairdresser", new_hairdresser_registration_path %></li>
-        </ul>
+  <nav class="top-bar" data-topbar role="navigation">
+    <ul class="title-area">
+      <li class="name">
+        <h1><%= link_to "Hairstyle Portfolio", categories_url %></a></h1>
       </li>
-      <% end %>
+       <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+      <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
     </ul>
 
+    <section class="top-bar-section">
+      <!-- Right Nav Section -->
+      <ul class="right">
+        <li><%= link_to "Hairdressers after 6pm", hairdressers_path %></li>
+        <% if current_user %>
+        <li class="active"><%= link_to "#{current_user.first_name}'s Profile", user_path(current_user.id) %></a></li>
+        <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+        <% elsif current_hairdresser %>
+        <li class="active"><%= link_to "#{current_hairdresser.first_name}'s Profile", hairdresser_path(current_hairdresser.id) %></a></li>
+        <li><%= link_to "Logout", destroy_hairdresser_session_path, method: :delete %></li>
+        <% else %>
+        <li class="has-dropdown">
+          <a href="#">Log In</a>
+          <ul class="dropdown">
+            <li><%= link_to "Sign In as Customer", new_user_session_path %></li>
+            <li><%= link_to "Sign In as Hairdresser", new_hairdresser_session_path %></li>
+          </ul>
+         </li>
+        <% end %>
+        <% if current_user or current_hairdresser %>
 
-  </section>
-</nav>
+        <% else %>
+        <li class="has-dropdown">
+          <a href="#">Register</a>
+          <ul class="dropdown">
+            <li><%= link_to "Register as a Customer", new_user_registration_path %></li>
+            <li><%= link_to "Register as a Hairdresser", new_hairdresser_registration_path %></li>
+          </ul>
+        </li>
+        <% end %>
+      </ul>
+
+
+    </section>
+  </nav>
 	<nav>
 
 	</nav>
