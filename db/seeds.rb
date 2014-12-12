@@ -40,7 +40,7 @@ Category.create!(name: "Straight Hair")
 Category.create!(name: "Blonde Hair")
 
 $i = 0
-while $i < 100  do
+while $i < 30  do
 	rand=(1 + rand(6))
 	url=""
 		if rand==1
