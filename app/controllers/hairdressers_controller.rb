@@ -5,7 +5,7 @@ class HairdressersController < ApplicationController
   end
 
   def index
-    @hairdressers = Hairdresser.all
+    @hairdressers = Hairdresser.all.order("created_at DESC")
   end
 
   def show 

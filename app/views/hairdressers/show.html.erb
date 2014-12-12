@@ -1,3 +1,4 @@
+
 <div class ="profile">
 	<div class="row">
 		<h1><%= @hairdresser.first_name %> <%= @hairdresser.last_name %></h1>
@@ -20,6 +21,10 @@
 				<% end %>
 			<% end %>
 		</div>
+
+		
+		You can send a message from here!! <a href="mailto:<%= @hairdresser.email %>"><%= @hairdresser.email %></a>
+
 		<div class="small-4 columns">
 			<h2>Profile</h2>
 			<p><b>Profession:</b> <%= @hairdresser.career %></p>
@@ -123,12 +128,13 @@
 		<h3>Reviews</h3>
 
 		<div id='review-list'>
-			<%= render partial: 'reviews/reviews' %>
+			<%= render @hairdresser.reviews %>
 		</div>
 	<% elsif current_hairdresser %>
 
 	<% else %>
 		<p>Please <%= link_to "Log in", new_user_session_path %> to add a review.</p>
 	<% end %>
-	</div>
+	
 </div>
+

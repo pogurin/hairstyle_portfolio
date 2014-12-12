@@ -15,17 +15,22 @@
 # 	password_confirmation: "dog"
 # 	)
 
-# Hairdresser.create!( 
-# 	first_name: "Hair", 
-# 	last_name: "Dresser", 
-# 	email: "hair@example.com", 
-# 	password: "123", 
-# 	password_confirmation: "123",
-# 	career: "Stylist",
-# 	salon_address: "1 Queen St, Toronto",
-# 	salon_url: "www.google.com",
-# 	personal_message: "I love color"
-# 	)
+50.times do |i|
+
+	name = Faker::Name.name.split 
+	h = Hairdresser.create!({ 
+		first_name: name.first, 
+		last_name: name.last, 
+		email: Faker::Internet.email, 
+		password: "12345678", 
+		password_confirmation: "12345678",
+		career: "Stylist",
+		salon_address: Faker::Address.street_address,
+		salon_url: Faker::Internet.url,
+		personal_message: Faker::Lorem.sentence,
+		picture: "fake_hairdresser.jpg"
+		})
+end
 
 Category.create!(name: "Short Hair")
 Category.create!(name: "Long Hair")
