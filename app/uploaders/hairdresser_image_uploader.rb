@@ -37,7 +37,7 @@ class HairdresserImageUploader < CarrierWave::Uploader::Base
   end
 
   version :medium do 
-    process :resize_to_fit => [200, 200]
+    process :resize_to_fill => [200, 200]
   end
 
   #for deafult picture
