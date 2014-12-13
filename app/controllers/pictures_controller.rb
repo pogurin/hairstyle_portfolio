@@ -19,7 +19,7 @@ class PicturesController < ApplicationController
 
   def create
   	@picture = Picture.new(picture_params)
-    @picture.categories << Category.find(params[:x])
+    @picture.categories << Category.find(params[:category_id])
     if @picture.save
 		  redirect_to pictures_url
     else

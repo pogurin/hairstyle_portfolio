@@ -78,7 +78,7 @@
 							<%= f.submit "Submit"%>
 						</div>
 						  <% Category.all.each do |category| %>
-					    <%= check_box_tag 'category_id[]', category.id, @hairdresser.pictures.include?(category) %>
+					    <%= check_box_tag 'category_id', category.id, @hairdresser.pictures.include?(category) %>
 					    <%= category.name %>
 					  	<% end %>
 					<% end %>
