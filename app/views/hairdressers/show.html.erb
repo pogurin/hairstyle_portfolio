@@ -1,4 +1,7 @@
 
+<%= link_to "LET`S MAKE AN APPOINTMENT", inquiry_path(hairdresser: @hairdresser) %>
+
+
 <div class ="profile">
 	<div class="row">
 		<h1><%= @hairdresser.first_name %> <%= @hairdresser.last_name %></h1>
@@ -21,10 +24,7 @@
 				<% end %>
 			<% end %>
 		</div>
-
-		
-		You can send a message from here!! <a href="mailto:<%= @hairdresser.email %>"><%= @hairdresser.email %></a>
-
+	
 		<div class="small-4 columns">
 			<h2>Profile</h2>
 			<p><b>Profession:</b> <%= @hairdresser.career %></p>
@@ -32,6 +32,7 @@
 			<p><b>Website:</b> <%= @hairdresser.salon_url %></p>
 			<p><%= @hairdresser.personal_message %></p>
 		</div>
+		<% if current_hairdresser %>
 		<div class="small-4 columns">
 			<h2>Current Status: <%= @available %></h2>
 			<p><%= @hairdresser.status %></p>
@@ -60,6 +61,7 @@
 			
 
 		</div>
+		<% end %>
 	</div>
 
 	<div class="row">
@@ -78,7 +80,7 @@
 							<%= f.submit "Submit"%>
 						</div>
 						  <% Category.all.each do |category| %>
-					    <%= check_box_tag 'category_id[]', category.id, @hairdresser.pictures.include?(category) %>
+					    <%= check_box_tag 'category_id', category.id, @hairdresser.pictures.include?(category) %>
 					    <%= category.name %>
 					  	<% end %>
 					<% end %>
