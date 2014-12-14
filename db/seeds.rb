@@ -15,22 +15,16 @@
 # 	password_confirmation: "dog"
 # 	)
 
-50.times do |i|
-
-	name = Faker::Name.name.split 
-	h = Hairdresser.create!({ 
-		first_name: name.first, 
-		last_name: name.last, 
-		email: Faker::Internet.email, 
-		password: "12345678", 
-		password_confirmation: "12345678",
-		career: "Stylist",
-		salon_address: Faker::Address.street_address,
-		salon_url: Faker::Internet.url,
-		personal_message: Faker::Lorem.sentence,
-		picture: "fake_hairdresser.jpg"
-		})
-end
+Hairdresser.create!([
+  {first_name: "Jamie",last_name: "Oliver" , email: "jamie@oliver.com", password: '12345678', salon_address: "301 Front St W, Toronto, ON, CANADA", career: "18 years", personal_message: "I'm cool"},
+  {first_name: "Louise",last_name: "Henry", email: "louise@henry.com", password: '12345678', salon_address: "236 Adelaide Street West, Toronto, ON, Canada", career: "18 years", personal_message: "I'm cool"},
+  {first_name: "Phil",last_name: "Michaels", email: "phil@michaels.com", password: '12345678', salon_address: "224 Adelaide St W, Toronto, ON, Canada", career: "18 years", personal_message: "I'm cool"},
+  {first_name: "Clare",last_name: "Andrews", email: "clare@andrews.com", password: '12345678', salon_address: "14 Duncan St, Toronto, ON, Canada", career: "18 years", personal_message: "I'm cool"},
+  {first_name: "Max",last_name: "O'Connor", email: "max@oconnor.com", password: '12345678', salon_address: "124 Ossignton Ave, Toronto, ON, Canada", career: "18 years", personal_message: "I'm cool"},
+  {first_name: "Julie",last_name: "Peters", email: "julie@peters.com", password: '12345678', salon_address: "225 Ossington Ave, Toronto, ON, Canada", career: "18 years", personal_message: "I'm cool"},
+  {first_name: "John",last_name: "Anderson", email: "john@anderson.com", password: '12345678', salon_address: "218 Adelaide St W, Toronto, ON, Canada", career: "18 years", personal_message: "I'm cool"},
+  {first_name: "Peter",last_name: "Philips", email: "peter@philips.com", password: '12345678', salon_address: "220 King St W, Toronto ON", career: "18 years", personal_message: "I'm cool"}
+])
 
 Category.create!(name: "Short Hair")
 Category.create!(name: "Long Hair")

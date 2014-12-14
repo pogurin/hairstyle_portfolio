@@ -15,8 +15,10 @@ class Hairdresser < ActiveRecord::Base
  	# for use with geocoder. Must match a column in the schema.
  	geocoded_by :salon_address
  	#callback
- 	after_validation :geocode, if :salon_address_changed? #makes a call to google to fetch the coordinates from the address
+ 	after_validation :geocode, :if => :salon_address_changed? #makes a call to google to fetch the coordinates from the address
+
+ 	# def full_salon_address
+ 	# 	address_line1 + city+ postcode
+ 	# end
 end
 
-
-		
