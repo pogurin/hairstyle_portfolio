@@ -35,6 +35,11 @@ class InquiryController < ApplicationController
     render :action => 'thanks'
   end
 
+  def accept 
+    @inquiry = Inquiry.new
+  end
+
+
   private
   def inquiry_params
     params.require(:inquiry).permit(:name, :email, :hairdresser_email, :message,:hairdresser_first_name)

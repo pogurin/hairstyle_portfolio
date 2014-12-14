@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   post 'inquiry/confirm' => 'inquiry#confirm'   # 確認画面
   post 'inquiry/thanks' => 'inquiry#thanks'     # 送信完了画面
 
+  get 'inquiry/accept' => 'inquiry#accept'
+  post 'inquiry/thanks' => 'inquiry#thanks'  
 
   devise_for :hairdressers
   # to redirect dvise from using its own hidden sessions controller, in order to implement ajax
