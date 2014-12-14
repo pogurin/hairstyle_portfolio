@@ -25,7 +25,6 @@ class InquiryController < ApplicationController
  
   def thanks
     # メール送信
-  
     @inquiry = Inquiry.new(inquiry_params)
     @inquiry.name = current_user.first_name
    
@@ -41,6 +40,8 @@ class InquiryController < ApplicationController
 
   def accept_thanks
     @inquiry = Inquiry.new
+    ResponseMailer.response_email(@inquiry, current_user).deliver
+    render :action => 'accept_thanks'
   end
 
   private

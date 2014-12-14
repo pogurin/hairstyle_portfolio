@@ -7,6 +7,6 @@ class InquiryMailer < ActionMailer::Base
     	 to: @inquiry.hairdresser_email,
     	:subject => 'Thank you for your message!')
   end
- 
+
 end
 

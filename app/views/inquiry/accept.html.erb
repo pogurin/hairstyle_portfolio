@@ -1,8 +1,8 @@
 Do you accept this request?
 
 
-
 <%= form_for @inquiry, :url => inquiry_accept_thanks_path do |f| %>
   <h1>Welcome!! <%= @inquiry.name %></h1>
+  <%= f.hidden_field :hairdresser_email, value: @inquiry.hairdresser_email %>
   <%= f.submit 'Accept', class: 'btn btn-primary' %>
 <% end %>
