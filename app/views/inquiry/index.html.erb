@@ -14,17 +14,11 @@
     </div>
   <% end %>
  
-  <table class="table">
-  
+ 
+  <h1>Hi!!<%= @inquiry.name %></h1>
     <tr>
-      <th>Name<span class="text-danger">（must）</span></th>
-      <td><%= f.text_field :name %></td>
-    </tr>
-   
-    <tr>
-      <th>Detail</th>
-      <td><%= f.text_area :message %></td>
-    </tr>
-  </table>
+     Please write down your details!!
+      <%= f.text_area :message %>
+
   <%= f.submit 'Confirm', class: 'btn btn-primary' %>
 <% end %>

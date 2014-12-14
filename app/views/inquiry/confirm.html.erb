@@ -6,16 +6,10 @@
  
 <%= form_for @inquiry, :url => inquiry_thanks_path do |f| %>
   <table class="table">
+    
+     Hi! <%= @inquiry.name %> 
     <tr>
-      <th>Name</th>
-      <td>
-        <%= f.hidden_field :name %>
-        <%= @inquiry.name %>
-      </td>
-    </tr>
-   
-    <tr>
-      <th>Detail</th>
+      <th>This is your Details</th>
       <td>
         <%= f.hidden_field :message %>
         <%= simple_format(@inquiry.message) %>

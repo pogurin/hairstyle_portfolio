@@ -3,12 +3,15 @@ class InquiryController < ApplicationController
     # 入力画面を表示
     @inquiry = Inquiry.new
     @inquiry.hairdresser_email = Hairdresser.find(params[:hairdresser]).email
+    @inquiry.name = current_user.first_name
     render :action => 'index'
+
   end
  
   def confirm
     # 入力値のチェック
     @inquiry = Inquiry.new(params[:inquiry])
+    @inquiry.name = current_user.first_name
     if @inquiry.valid?
       # OK。確認画面を表示
       render :action => 'confirm'
