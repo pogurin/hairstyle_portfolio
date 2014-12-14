@@ -3,6 +3,8 @@ class InquiryController < ApplicationController
     # 入力画面を表示
     @inquiry = Inquiry.new
     @inquiry.hairdresser_email = Hairdresser.find(params[:hairdresser]).email
+
+    @inquiry.hairdresser_first_name = Hairdresser.find(params[:hairdresser]).first_name
     @inquiry.name = current_user.first_name
     render :action => 'index'
 
@@ -23,9 +25,11 @@ class InquiryController < ApplicationController
  
   def thanks
     # メール送信
+  
     @inquiry = Inquiry.new(params[:inquiry])
+    @inquiry.name = current_user.first_name
     InquiryMailer.received_email(@inquiry, current_user).deliver
- 
+    
     # 完了画面を表示
     render :action => 'thanks'
   end
