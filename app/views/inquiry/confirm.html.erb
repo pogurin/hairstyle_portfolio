@@ -12,8 +12,12 @@
       <td>
         <%= f.hidden_field :message %>
         <%= simple_format(@inquiry.message) %>
+         <%= f.hidden_field :hairdresser_email, value: @inquiry.hairdresser_email %>
+         
       </td>
     </tr>
   </table>
   <%= f.submit 'Submit', :class => 'btn btn-primary' %>
 <% end %>
+
+<%= @inquiry.hairdresser_email %>
