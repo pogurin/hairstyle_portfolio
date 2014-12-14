@@ -34,6 +34,7 @@
 			<p><b>Website:</b> <%= @hairdresser.salon_url %></p>
 			<p><%= @hairdresser.personal_message %></p>
 		</div>
+		<% if current_hairdresser %>
 		<div class="small-4 columns">
 			<h2>Current Status: <%= @available %></h2>
 			<p><%= @hairdresser.status %></p>
@@ -62,6 +63,7 @@
 			
 
 		</div>
+		<% end %>
 	</div>
 
 	<div class="row">
