@@ -21,6 +21,7 @@
      Please write down your appointment details!!
       <%= f.text_area :message %>
         <%= f.hidden_field :hairdresser_email, value: @inquiry.hairdresser_email %>
+        <%= f.hidden_field :hairdresser_first_name, value: @inquiry.hairdresser_first_name %>
 
   <%= f.submit 'Confirm', class: 'btn btn-primary' %>
 <% end %>

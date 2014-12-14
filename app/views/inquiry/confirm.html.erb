@@ -13,7 +13,7 @@
         <%= f.hidden_field :message %>
         <%= simple_format(@inquiry.message) %>
          <%= f.hidden_field :hairdresser_email, value: @inquiry.hairdresser_email %>
-         
+         <%= f.hidden_field :hairdresser_first_name, value: @inquiry.hairdresser_first_name %>
       </td>
     </tr>
   </table>
