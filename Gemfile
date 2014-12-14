@@ -50,6 +50,9 @@ gem 'foundation-rails'
 gem 'faker'
 # gem 'unicorn'
 
+# perform graphic queries using objects. ie. gives you the coordinates of address or ip address
+gem 'geocoder'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

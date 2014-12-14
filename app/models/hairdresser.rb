@@ -11,6 +11,11 @@ class Hairdresser < ActiveRecord::Base
 	belongs_to :category
 
  	mount_uploader :picture, HairdresserImageUploader
+
+ 	# for use with geocoder. Must match a column in the schema.
+ 	geocoded_by :salon_address
+ 	#callback
+ 	after_validation :geocode, if :salon_address_changed? #makes a call to google to fetch the coordinates from the address
 end
 
 
