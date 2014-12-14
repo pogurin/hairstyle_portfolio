@@ -1,10 +1,10 @@
 class InquiryMailer < ActionMailer::Base
-  default from: "example@example.com"   # 送信元アドレス
-  default to: "example@example.com"     # 送信先アドレス
+  default from: "seiun340066@gmail.com"   # 送信元アドレス
+  default to: "seiun340066@gmail.com"     # 送信先アドレス
  
   def received_email(inquiry)
     @inquiry = inquiry
-    mail(:subject => 'お問い合わせを承りました')
+    mail(:subject => 'Thank you for your message!')
   end
  
 end
