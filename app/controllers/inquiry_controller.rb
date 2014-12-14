@@ -39,6 +39,9 @@ class InquiryController < ApplicationController
     @inquiry = Inquiry.new
   end
 
+  def accept_thanks
+    @inquiry = Inquiry.new
+  end
 
   private
   def inquiry_params
