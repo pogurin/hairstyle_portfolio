@@ -53,6 +53,8 @@ gem 'faker'
 # perform graphic queries using objects. ie. gives you the coordinates of address or ip address
 gem 'geocoder'
 
+gem 'figaro'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
