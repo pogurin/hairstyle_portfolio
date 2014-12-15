@@ -1,4 +1,4 @@
-
+<% binding.pry %>
 
 <div class="page-header">
   <h1>Appointment</h1>
@@ -21,4 +21,4 @@
 <% end %>
 
 <%= @inquiry.hairdresser_email %>
-<%= link_to 'Accept this request' ,inquiry_accept_url %>
+<%= link_to 'Accept this request' ,inquiry_accept_url(@inquiry) %>

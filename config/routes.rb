@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   post 'inquiry/confirm' => 'inquiry#confirm'   # 確認画面
   post 'inquiry/thanks' => 'inquiry#thanks'     # 送信完了画面
 
-  get 'inquiry/accept' => 'inquiry#accept'
+  get 'inquiry/:id/accept' => 'inquiry#accept',as: 'inquiry_accept'
   post 'inquiry/accept_thanks' => 'inquiry#accept_thanks'  
 
   devise_for :hairdressers

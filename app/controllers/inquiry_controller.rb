@@ -39,9 +39,9 @@ class InquiryController < ApplicationController
   end
 
   def accept_thanks
-    @inquiry = Inquiry.new
+    @inquiry = 
     ResponseMailer.response_email(@inquiry, current_user).deliver
-    render :action => 'accept_thanks'
+    render :action => 'thanks'
   end
 
   private

@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141211192259) do
+ActiveRecord::Schema.define(version: 20141215200550) do
+
+  create_table "appointments", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "hairdresser_id"
+    t.text     "message"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -22,6 +30,17 @@ ActiveRecord::Schema.define(version: 20141211192259) do
   create_table "categories_pictures", id: false, force: true do |t|
     t.integer "picture_id"
     t.integer "category_id"
+  end
+
+  create_table "contacts", force: true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "phone"
+    t.string   "title"
+    t.text     "comment"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "hairdressers", force: true do |t|
