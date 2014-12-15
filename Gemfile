@@ -32,10 +32,16 @@ gem "devise"
 gem "carrierwave"
 gem "rmagick"
 
+#gem mechanize, for scraping websites
+gem "mechanize"
+
 group :development do
 	# gem 'better_errors'
 	gem 'binding_of_caller'
 end
+
+#gem alternative to webrick
+gem 'thin'
 
 #gem 'mini_magick'
 # Use ActiveModel has_secure_password
