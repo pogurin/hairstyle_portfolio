@@ -1,3 +1,6 @@
+# Add the mixin
+require 'capybara_with_phantom_js'
+
 class HairdressersController < ApplicationController
   
   def new
@@ -6,6 +9,16 @@ class HairdressersController < ApplicationController
 
   def index
     @hairdressers = Hairdresser.all.order("created_at DESC")
+     Capybara.reset!
+  visit "https://tmsportal.collegeoftrades.ca/web/ocot-public-services-v3/public-registry"
+  fill_in('d_1332781491534', :with => '13943954')
+  find_button('Find').click
+  response = all 'span'.last
+  response = response.text
+  response = response.split(" ");
+
+  @response = { id: response[response.index('13943954')], first_name: response[response.index('13943954')+1], last_name: response[response.index('13943954')+2] }
+
   end
 
   def show 

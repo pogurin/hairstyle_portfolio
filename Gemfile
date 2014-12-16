@@ -35,6 +35,11 @@ gem "rmagick"
 #gem mechanize, for scraping websites
 gem "mechanize"
 
+#gem capybara and poltergeist, for scraping javascript/html5 websites
+gem "capybara"
+gem "poltergeist"
+gem "phantomjs"
+
 group :development do
 	# gem 'better_errors'
 	gem 'binding_of_caller'
