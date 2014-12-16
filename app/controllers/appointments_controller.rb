@@ -50,6 +50,10 @@ class AppointmentsController < ApplicationController
     @appointment = Appointment.find(params[:id])
   end
 
+
+  # add collum confirmed_at which is a datetime field
+  # update this column with @appointment.confirmed_at = Time.now 
+
   # def update
   #   # hairdresser confirms and accepts appointment
   # end
