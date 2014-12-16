@@ -54,9 +54,14 @@ class AppointmentsController < ApplicationController
   # add collum confirmed_at which is a datetime field
   # update this column with @appointment.confirmed_at = Time.now 
 
-  # def update
-  #   # hairdresser confirms and accepts appointment
-  # end
+  def update
+    @hairdresser = Hairdresser.find(params[:hairdresser_id])
+    raise "You bad man" unless current_hairdresser == @hairdresser
+
+    @appointment = Appointment.find(params[:id])
+    @appointment.confirmed_at = Time.now 
+    ResponseMailer.response_email(@appointment.user, @hairdresser, @appointment).deliver
+  end
 
   # def accept 
   #   @appointment = Appointment.new

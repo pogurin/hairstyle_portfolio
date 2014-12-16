@@ -1,6 +1,6 @@
 Do you accept this request?
 
-<%= form_for @appointment, :url => appointment_accept_thanks_path do |f| %>
+<%= form_for @appointment, :url => appointment_update_path do |f| %>
   <h1>Welcome!! <%= @appointment.name %></h1>
   <%= f.hidden_field :hairdresser_email, value: @appointment.hairdresser_email %>
   <%= f.submit 'Accept', class: 'btn btn-primary' %>

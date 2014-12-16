@@ -16,6 +16,26 @@ class User < ActiveRecord::Base
 
 end
 
+# customer -> review -> hairdresser
+# hairdresser -> reviews -> customers
 
+# class Customer < User
+#   has_many :reviews
+#   has_many :hairdressers, through: :reviews
+# end
 
+# @hairdresser.reviews.create(body: "Good haircut", customer: current_user)
 	
+# class Hairdresser < User
+#   has_many :reviews
+#   has_many :hairdressers, through: :reviews
+# end
+
+# User.create
+#   id: 5
+#   type: "User"
+
+# Hairdresser.create
+#   id: 6
+#   type: "Hairdresser"
+
