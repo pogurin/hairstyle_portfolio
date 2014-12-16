@@ -9,18 +9,11 @@ class HairdressersController < ApplicationController
 
   def index
     @hairdressers = Hairdresser.all.order("created_at DESC")
-    Capybara.reset!
-    visit "https://tmsportal.collegeoftrades.ca/web/ocot-public-services-v3/public-registry"
-    fill_in('d_1332781491534', :with => '13943954')
-    find_button('Find').click
-    response = all 'span'.last
-    response = response.text
-    response = response.split(" ");
-    @response = { id: response[response.index('13943954')], first_name: response[response.index('13943954')+1], last_name: response[response.index('13943954')+2] }
 
   end
 
   def show 
+    scrape_site
     @hairdresser = Hairdresser.find(params[:id])
     @available = ""
     if @hairdresser.available==true
@@ -69,6 +62,17 @@ class HairdressersController < ApplicationController
   private
   def hairdresser_params
     params.require(:hairdresser).permit(:first_name, :last_name, :career, :picture,:salon_address, :salon_url, :personal_message, :category_id, :email, :password, :password_confirmation,:status,:available)
+  end
+
+  def scrape_site
+    Capybara.reset!
+    visit "https://tmsportal.collegeoftrades.ca/web/ocot-public-services-v3/public-registry"
+    fill_in('d_1332781491534', :with => '13943954')
+    find_button('Find').click
+    response = all 'span'.last
+    response = response.text
+    response = response.split(" ");
+    @response = { id: response[response.index('13943954')], first_name: response[response.index('13943954')+1], last_name: response[response.index('13943954')+2] }
   end
 
 end
