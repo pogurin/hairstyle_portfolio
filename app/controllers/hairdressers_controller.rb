@@ -1,3 +1,10 @@
+# 1. user gets page /hairdressers/5
+# 2. rails runs: controller = HairdressersController.new(http_request)
+# 3. rails runs: controller.show
+# 4. rails runs: controller.render("show")
+# 5. rails throws away controller
+
+
 class HairdressersController < ApplicationController
   
   def new
@@ -11,18 +18,17 @@ class HairdressersController < ApplicationController
   def show 
     @hairdresser = Hairdresser.find(params[:id])
 
-    # @appointment = Appointment.find(params[:id])
-    
-    @available = ""
-    if @hairdresser.available==true
+    if @hairdresser.available?
       @available = "Available"
     else
       @available = "Not available"
     end
+
     if current_user
       @review = @hairdresser.reviews.build
     end
   end
+
 
   def edit
     @hairdresser = Hairdresser.find(params[:id])
@@ -59,7 +65,7 @@ class HairdressersController < ApplicationController
 
   private
   def hairdresser_params
-    params.require(:hairdresser).permit(:first_name, :last_name, :career, :picture,:salon_address, :salon_url, :personal_message, :category_id, :email, :password, :password_confirmation,:status,:available)
+    params.require(:hairdresser).permit(:appointment_at,:first_name, :last_name, :career, :picture,:salon_address, :salon_url, :personal_message, :category_id, :email, :password, :password_confirmation, :status, :available)
   end
 
 end
