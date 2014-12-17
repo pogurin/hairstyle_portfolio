@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141216003123) do
+ActiveRecord::Schema.define(version: 20141216204854) do
 
   create_table "appointments", force: true do |t|
     t.integer  "user_id"
@@ -60,6 +60,8 @@ ActiveRecord::Schema.define(version: 20141216003123) do
     t.boolean  "available"
     t.decimal  "latitude",               precision: 9, scale: 6
     t.decimal  "longitude",              precision: 9, scale: 6
+    t.string   "member_ID"
+    t.boolean  "verified"
   end
 
   add_index "hairdressers", ["email"], name: "index_hairdressers_on_email", unique: true

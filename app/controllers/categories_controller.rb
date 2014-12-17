@@ -1,11 +1,12 @@
 class CategoriesController < ApplicationController
- 
+
   def new
   end
   
   def index
     @categories = Category.all
     @pictures = Picture.all
+
   end
 
   def show
