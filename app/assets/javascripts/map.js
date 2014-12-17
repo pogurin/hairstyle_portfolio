@@ -44,7 +44,31 @@ myMap.addMarker = function(latitude, longitude, image, note) {
       infoWindow.open(this.map, this);
   });
 
+map.setOptions({styles: styles});
 }
+
+var styles = [
+  {
+    stylers: [
+      { hue: "#00ffe6" },
+      { saturation: -50 }
+    ]
+  },{
+    featureType: "road.arterial",
+    elementType: "geometry",
+    stylers: [
+      { lightness: 100 },
+      { visibility: "simplified" }
+    ]
+  },{
+    featureType: "road",
+    elementType: "labels",
+    stylers: [
+      { visibility: "off" }
+    ]
+  }
+];
+
 
 
 $(document).on('ready page:load', function() {
