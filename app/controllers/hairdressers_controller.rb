@@ -10,6 +10,9 @@ class HairdressersController < ApplicationController
 
   def show 
     @hairdresser = Hairdresser.find(params[:id])
+
+    # @appointment = Appointment.find(params[:id])
+    
     @available = ""
     if @hairdresser.available==true
       @available = "Available"
