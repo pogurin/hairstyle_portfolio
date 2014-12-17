@@ -18,7 +18,7 @@
  
   <h1>Welcome! <%= current_user.first_name %></h1>
   <p>Please write down your appointment details!!</p>
-  <%= f.datetime_select :appointment_at %>
+
 
   <%= f.text_area :message %>
   <%= f.submit 'Create', class: 'btn btn-primary' %>
