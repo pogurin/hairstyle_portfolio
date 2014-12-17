@@ -34,7 +34,7 @@ myMap.addMarker = function(latitude, longitude, image, note) {
     position: new google.maps.LatLng(latitude, longitude),
     map: map,
     note: note,
-    icon: image,
+		icon: image,
     clickable: true
   });
   bounds.extend(marker.position);
