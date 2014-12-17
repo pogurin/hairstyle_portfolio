@@ -2,10 +2,12 @@ Rails.application.routes.draw do
 
   root 'categories#index'
 
-  get 'inquiry' => 'inquiry#index'              # 入力画面
-  post 'inquiry/confirm' => 'inquiry#confirm'   # 確認画面
-  post 'inquiry/thanks' => 'inquiry#thanks'     # 送信完了画面
+  # get 'appointment' => 'appointment#index'              # 入力画面
+  # post 'appointment/confirm' => 'appointment#confirm'   # 確認画面
+  #patch 'appointment/thanks' => 'appointment#thanks'     # 送信完了画面
 
+  # get 'appointment/:id/accept' => 'appointment#accept',as: 'appointment_accept'
+  # post 'appointment/accept_thanks' => 'appointment#accept_thanks'  
 
   devise_for :hairdressers
   # to redirect dvise from using its own hidden sessions controller, in order to implement ajax
@@ -13,13 +15,19 @@ Rails.application.routes.draw do
   
   resources :pictures, only: [:index, :show, :new, :create , :update, :destroy]
 
-  resources :users, only: [:index, :update, :show, :new, :create , :destroy]
+  resources :users, only: [:index, :update, :show, :new, :create , :destroy] do
+    resources :appointments
+  end
 
   # resources :user_sessions, only: [:new, :create , :destroy]
   #which category resourse should we use???
   resources :categories, only: [:index, :new, :create , :destroy, :show]
 
-  resources :hairdressers, only: [:index, :show,:update,] do 
+  resources :hairdressers, only: [:index, :show, :update] do 
+    resources :appointments do 
+      get 'thanks'
+      get 'accept'
+    end
     resources :reviews, only: [:show, :new, :create , :destroy]
   end
 
