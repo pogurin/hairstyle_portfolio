@@ -10,7 +10,6 @@ class HairdressersController < ApplicationController
     @hairdressers.each do |r|
       @coords << {latitude: r.latitude.to_f, longitude: r.longitude.to_f}
     end
-    puts @coords.inspect
   end
 
   def show 
