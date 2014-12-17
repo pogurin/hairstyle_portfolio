@@ -1,0 +1,7 @@
+Do you accept this request?
+
+<%= form_for [@hairdresser, @appointment] do |f| %>
+  <h1>Welcome!! <%= @hairdresser.first_name %></h1>
+  <%= f.submit 'Accept', class: 'btn btn-primary' %>
+<% end %>
+

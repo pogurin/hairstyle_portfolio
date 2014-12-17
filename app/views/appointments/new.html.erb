@@ -1,0 +1,26 @@
+<%= form_for [@hairdresser, @appointment] do |f| %>
+  <div class="page-header">
+
+    <h1>Appointment of <%= @hairdresser.first_name %></h1>
+  </div>
+ 
+  <% if @appointment.errors.any? %>
+    <div class="alert alert-danger" role="alert">
+      <strong>Input error!</strong>
+      <ul>
+        <% @appointment.errors.each do |attr, msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+ 
+<h1>Welcome! <%= current_user.first_name %></h1>
+    <tr>
+     Please write down your appointment details!!
+      <%= f.text_area :message %>
+  <%= f.submit 'Create', class: 'btn btn-primary' %>
+<% end %>
+
+

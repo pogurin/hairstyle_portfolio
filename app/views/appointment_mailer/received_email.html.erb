@@ -1,0 +1,11 @@
+Hi, <%= @hairdresser.first_name %> !! You got an appoinment.
+ 
+
+ Please go to Accept booking page by clicking <%= link_to 'here', @url %>
+
+-------- This is customer information -------
+Name: <%= @user.first_name %>
+Detail:<%= @appointment.message %>
+
+
+
