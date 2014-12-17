@@ -1,7 +1,11 @@
 window.myMap = {};
 
+var map;
+var bounds = new google.maps.LatLngBounds();
+
 myMap.init = function() {
   var coords = $('#map-canvas').data('coords');
+
 
 	var options = {
 		zoom: 14,
@@ -9,18 +13,17 @@ myMap.init = function() {
 		mapTypeId: google.maps.MapTypeId.ROADMAP
 	}
 
-	this.canvas = new google.maps.Map($('#map-canvas')[0], options);
+	map = new google.maps.Map($('#map-canvas')[0], options);
 
 	if (coords) {
     var _this = this;
     coords.forEach(function(coord) {
-      _this.addMarker(coord.latitude, coord.longitude, coord.image);
+      _this.addMarker(coord.latitude, coord.longitude, coord.image, coord.note);
     });
+    map.fitBounds(bounds);
   }
 
 };
-
-var bounds = new google.maps.LatLngBounds();
 
 var infoWindow = new google.maps.InfoWindow({
 	content: ''
@@ -29,20 +32,18 @@ var infoWindow = new google.maps.InfoWindow({
 myMap.addMarker = function(latitude, longitude, image, note) {
   var marker = new google.maps.Marker({
     position: new google.maps.LatLng(latitude, longitude),
-    map: this.canvas,
+    map: map,
+    note: note,
     icon: image,
     clickable: true
   });
   bounds.extend(marker.position);
 
-  marker.note = note;
   google.maps.event.addListener(marker, 'click', function() {
       infoWindow.content = this.note;
-      infoWindow.open(this.canvas, this);
+      infoWindow.open(this.map, this);
   });
-    return marker;
 
-    canvas.fitBounds(bounds);
 }
 
 

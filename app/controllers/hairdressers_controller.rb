@@ -8,7 +8,12 @@ class HairdressersController < ApplicationController
     @hairdressers = Hairdresser.all.order("created_at DESC")
     @coords = [] 
     @hairdressers.each do |r|
-      @coords << {latitude: r.latitude.to_f, longitude: r.longitude.to_f}
+      @coords << {latitude: r.latitude.to_f, longitude: r.longitude.to_f, note: r.first_name}
+    end
+
+    respond_to do |format|
+      format.html
+      format.js
     end
   end
 
