@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import "foundation/components/panels";
+
 .profile_pictures {
 	float: left;
 	margin: 10px;
@@ -36,4 +38,26 @@ table {
 .container{
 	margin: 0 auto 0 auto;
 }
+
+.panel {
+	margin: 25px;
+	@include panel(
+		$bg:#ECEFF1,
+		$adjust:true
+		);
+}
+
+#header_panel {
+	padding: 10px;
+	/*background-color: black;
+	width: 100%;
+	float: left;*/
+}
+
+
+
+
+
+
+
 
