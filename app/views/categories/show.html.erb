@@ -3,10 +3,15 @@
 
 <ul class="small-block-grid-4">
 <% @pictures_category.each do |picture| %>
+
 	<% if picture.source != nil %>
-		<li><a href='/pictures/<%= picture.id %>'> <%= link_to image_tag(picture.source),  hairdresser_path %></a></li> 
+		<li>
+			<%= link_to image_tag(picture.source),  hairdresser_path(picture.hairdresser) %>
+		</li> 
 	<% else %>
-		 <li><a href='/pictures/<%= picture.id %>'> <%= link_to image_tag(picture.picture), hairdresser_path %></a></li> 
+		 <li>
+		 	<%= link_to image_tag(picture.picture), hairdresser_path(picture.hairdresser) %>
+		 </li> 
 	<% end %>
 <% end %>
 </ul>
