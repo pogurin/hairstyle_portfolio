@@ -1,5 +1,6 @@
 class HairdressersController < ApplicationController
-  
+  require capybara_with_phantom_js.rb
+
   def new
     @hairdresser = Hairdresser.new
   end
