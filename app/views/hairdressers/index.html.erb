@@ -1,6 +1,7 @@
-<h1>Hairdressers available after 6pm today</h1>
-<h3 id="print">You can make an appoinment on their profile page.</h3>
-
+<div class="panel">
+	<h1>Hairdressers available after 6pm today</h1>
+	<h3 id="print">You can make an appoinment on their profile page.</h3>
+</div>
 <% if current_hairdresser %>
 	<h5>Hi <%= current_hairdresser.first_name %></h5>
 	<p>Please change your status from your<%= link_to " profile page", hairdresser_path(current_hairdresser) %> !!</p>
@@ -23,8 +24,17 @@
 		</div>
 	<% end %>	
 <% end %>
-
-<%= content_tag "div", "", id: 'map-canvas', data: { coords: @coords } %>
+</div>
+<div class="row">
+<!-- <div class="map_box">-->
+	<div class="panel">
+		<div class="panel" id="header_panel">
+			<h3 id="map_title">Find your nearest available hairdresser</h3>
+		</div>
+		<%= content_tag "div", "", id: 'map-canvas', data: { coords: @coords } %>
+	<!-- </div> -->
+	</div>
+</div>
 
 
 
