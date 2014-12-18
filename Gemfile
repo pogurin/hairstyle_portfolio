@@ -32,10 +32,21 @@ gem "devise"
 gem "carrierwave"
 gem "rmagick"
 
+#gem mechanize, for scraping websites
+gem "mechanize"
+
+#gem capybara and poltergeist, for scraping javascript/html5 websites
+gem "capybara"
+gem "poltergeist"
+gem "phantomjs"
+
 group :development do
 	gem 'better_errors'
 	gem 'binding_of_caller'
 end
+
+#gem alternative to webrick
+gem 'thin'
 
 #gem 'mini_magick'
 # Use ActiveModel has_secure_password
@@ -49,6 +60,11 @@ gem 'foundation-rails'
 #Use Faker to generate dummy data
 gem 'faker'
 # gem 'unicorn'
+
+# perform graphic queries using objects. ie. gives you the coordinates of address or ip address
+gem 'geocoder'
+
+gem 'figaro'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20141216234840) do
+=======
+ActiveRecord::Schema.define(version: 20141216204854) do
+>>>>>>> 405e5487d3b0c5b2c0ce52a3350649cb15dcc876
 
   create_table "appointments", force: true do |t|
     t.integer  "user_id"
@@ -47,11 +51,11 @@ ActiveRecord::Schema.define(version: 20141216234840) do
     t.datetime "updated_at"
     t.string   "email"
     t.string   "password_digest"
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "encrypted_password",                             default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",                                  default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
@@ -59,6 +63,10 @@ ActiveRecord::Schema.define(version: 20141216234840) do
     t.string   "picture"
     t.text     "status"
     t.boolean  "available"
+    t.decimal  "latitude",               precision: 9, scale: 6
+    t.decimal  "longitude",              precision: 9, scale: 6
+    t.string   "member_ID"
+    t.boolean  "verified"
   end
 
   add_index "hairdressers", ["email"], name: "index_hairdressers_on_email", unique: true

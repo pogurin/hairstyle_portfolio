@@ -1,60 +1,74 @@
 <h2>Sign up as Hairdresser</h2>
+<div class="row">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <div class="small-6 columns">
+    <%= devise_error_messages! %>
+    
+    <div class="field">
+    <%= f.label :first_name %><br/>
+    <%= f.text_field :first_name %>
+    </div>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
-  
-  <div class="field">
-  <%= f.label :first_name %><br/>
-  <%= f.text_field :first_name %>
+    <div class="field">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password %>
+      <% if @validatable %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "off" %>
+    </div>    
   </div>
+  <div class="small-6 columns">
 
-  <div class="field">
-    <%= f.label :last_name %><br/>
-    <%= f.text_field :last_name %>
-  </div>  
+    <div class="field">
+      <%= f.label :last_name %><br/>
+      <%= f.text_field :last_name %>
+    </div>  
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <div class="field">
+      <%= f.label :member_ID ,'Ontario College of Trades Membership Number' %><br />
+      <%= f.text_field :member_ID %>
+    </div>  
+
+    <div class="field">
+      <%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    </div>
   </div>
+</div>
+<div class="row">
+  <div class="small-6 columns">
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @validatable %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+    <div class="field">
+      <%= f.label :salon_address %><br/>
+      <%= f.text_field :salon_address %>
+    </div>    
+    <div class="field">
+      <%= f.label :career %><br/>
+      <%= f.text_field :career %>
+    </div>
   </div>
+  <div class="small-6 columns">
+    <div class="field">
+      <%= f.label :salon_url %><br/>
+      <%= f.text_field :salon_url %>
+    </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
+    <div class="field">
+      <%= f.label :personal_message %><br/>
+      <%= f.text_area :personal_message %>
+    </div>
 
-  <div class="field">
-    <%= f.label :career %><br/>
-    <%= f.text_field :career %>
-  </div>
+    <div class="actions">
+      <%= f.submit "Sign up" %>
+    </div>
+</div>
 
-  <div class="field">
-    <%= f.label :salon_address %><br/>
-    <%= f.text_field :salon_address %>
-  </div>
-
-  <div class="field">
-    <%= f.label :salon_url %><br/>
-    <%= f.text_field :salon_url %>
-  </div>
-
-  <div class="field">
-    <%= f.label :personal_message %><br/>
-    <%= f.text_area :personal_message %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
+  <% end %>
+</div>
 <%= render "hairdressers/shared/links" %>
 
