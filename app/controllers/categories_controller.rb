@@ -10,6 +10,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
+    @hairdresser = Hairdresser.all
     @category = Category.find(params[:id])
     @pictures = Picture.all
     @pictures_category=[]

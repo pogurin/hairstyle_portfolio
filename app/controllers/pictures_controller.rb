@@ -16,7 +16,6 @@ class PicturesController < ApplicationController
     end
   end
 
-
   def create
 	  @picture = Picture.new(picture_params)
     @picture.categories << Category.find(params[:category_id])
