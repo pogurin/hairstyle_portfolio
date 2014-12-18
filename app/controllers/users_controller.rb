@@ -12,19 +12,20 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     p @user.valid?
     
-    respond_to do |format|
-    if @user.save
-      format.html do
-        auto_login(@user)
-        redirect_to user_path(current_user)
-      end
-    else
-      p @user.errors
-      render 'new'
-    end
+    # respond_to do |format|
+    # if @user.save
+    #   format.html do
+    #     auto_login(@user)
+    #     redirect_to user_path(current_user)
+    #   end
+    # else
+    #   p @user.errors
+    #   render 'new'
+    # end
   end
 
   def update
+    # @user = User.find(params[:id])
     @user = current_user
 
     if @user.update_attributes!(user_params)
@@ -50,5 +51,5 @@ class UsersController < ApplicationController
                   :password,
                   :password_confirmation)
   end
-end
+
 end

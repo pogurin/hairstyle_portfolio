@@ -51,8 +51,7 @@ while $i < 30  do
 	  	url = 'blondehair.png'
 	  end	
 	  p = Picture.create(
-	  :hairdresser_id   => 1,
-	  :imageable_id => 'blah blah',
+	  :imageable_id => 1,
 	  :imageable_type => 'Hairdresser',
 	  :source => url
 		)
