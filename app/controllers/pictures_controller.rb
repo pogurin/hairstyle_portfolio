@@ -22,7 +22,7 @@ class PicturesController < ApplicationController
     @picture.categories << Category.find(params[:category_id])
 
     if @picture.save
-      redirect_to @picture.imageable #form for 
+      redirect_to @picture.imageable #form for ?????? 
     else
 		  render :new
     end
