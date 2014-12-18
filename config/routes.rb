@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   
   resources :pictures, only: [:index, :show, :new, :create , :update, :destroy]
 
-  resources :users, only: [:index, :update, :show, :new, :create , :destroy] do
+  resources :users, only: [:index, :update, :upload, :show, :new, :create , :destroy] do
     resources :appointments
   end
 

@@ -16,12 +16,12 @@ class PicturesController < ApplicationController
     end
   end
 
-
   def create
-  	@picture = Picture.new(picture_params)
-    @picture.categories << Category.find(params[:category_id])
+	  @picture = Picture.new(picture_params)
+    @picture.categories << Category.find(params[:category_ids])
+
     if @picture.save
-		  redirect_to pictures_url
+      redirect_to @picture.imageable #form for ?????? 
     else
 		  render :new
     end
@@ -49,7 +49,7 @@ class PicturesController < ApplicationController
 
   private
   def picture_params
-    params.require(:picture).permit(:category_id, :hairdresser_id,:picture)
+    params.require(:picture).permit(:category_ids, :imageable_id, :imageable_type, :picture)
   end
 
 end

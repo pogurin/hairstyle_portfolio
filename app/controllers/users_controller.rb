@@ -14,7 +14,10 @@ class UsersController < ApplicationController
     
     # respond_to do |format|
     # if @user.save
-    #   format.html {auto_login(@user), redirect_to user_path(current_user)}
+    #   format.html do
+    #     auto_login(@user)
+    #     redirect_to user_path(current_user)
+    #   end
     # else
     #   p @user.errors
     #   render 'new'
@@ -22,7 +25,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:id])
+    
 
     if @user.update_attributes!(user_params)
       puts "it saved ----------------------------"

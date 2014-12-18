@@ -16,10 +16,11 @@
   <% end %>
  
  
-<h1>Welcome! <%= current_user.first_name %></h1>
-    <tr>
-     Please write down your appointment details!!
-      <%= f.text_area :message %>
+  <h1>Welcome! <%= current_user.first_name %></h1>
+  <p>Please write down your appointment details!!</p>
+
+
+  <%= f.text_area :message %>
   <%= f.submit 'Create', class: 'btn btn-primary' %>
 <% end %>
 

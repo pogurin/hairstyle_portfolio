@@ -7,10 +7,12 @@ class Hairdresser < ActiveRecord::Base
 	has_many :reviews 
 	has_many :users, through: :reviews
 	has_many :pictures, :as => :imageable
+	has_many :appointments
 
 	belongs_to :category
 
  	mount_uploader :picture, HairdresserImageUploader
+
 
  	# for use with geocoder. Must match a column in the schema.
  	geocoded_by :salon_address
