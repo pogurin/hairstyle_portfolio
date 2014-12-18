@@ -12,17 +12,17 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     p @user.valid?
     
-    respond_to do |format|
-    if @user.save
-      format.html {auto_login(@user), redirect_to user_path(current_user)}
-    else
-      p @user.errors
-      render 'new'
-    end
+    # respond_to do |format|
+    # if @user.save
+    #   format.html {auto_login(@user), redirect_to user_path(current_user)}
+    # else
+    #   p @user.errors
+    #   render 'new'
+    # end
   end
 
   def update
-    @user = current_user
+    @user = User.find(params[:id])
 
     if @user.update_attributes!(user_params)
       puts "it saved ----------------------------"

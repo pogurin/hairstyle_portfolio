@@ -52,8 +52,6 @@ while $i < 30  do
 	  end	
 	  p = Picture.create(
 	  :hairdresser_id   => 1,
-	  :imageable_id => 'blah blah',
-	  :imageable_type => 'Hairdresser',
 	  :source => url
 		)
 	  if rand==1
