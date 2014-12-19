@@ -59,6 +59,9 @@ gem 'foundation-rails'
 
 #Use Faker to generate dummy data
 gem 'faker'
+
+#use best_in_place to edit fields
+gem 'best_in_place', '~> 3.0.1'
 # gem 'unicorn'
 
 # Use Capistrano for deployment

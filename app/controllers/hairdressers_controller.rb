@@ -80,10 +80,11 @@ class HairdressersController < ApplicationController
     response = response.text
     response = response.split(" ");
     puts ("CONSOLE LOG")
-    puts(response)
-    puts(membership_id)
-    
-    if (response.index(membership_id)==false)
+    # puts(response)
+    # puts(membership_id)
+    # puts(response.index(membership_id))
+    # puts ("----")
+    if (response.index(membership_id)!=nil)
     
       index=response.index(membership_id)
       puts (response[index+1])
