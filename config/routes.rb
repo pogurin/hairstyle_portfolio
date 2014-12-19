@@ -25,8 +25,12 @@ Rails.application.routes.draw do
 
   resources :hairdressers, only: [:index, :show, :update] do 
     resources :appointments do 
+      member do
+
       get 'thanks'
       get 'accept'
+      patch 'update_reject'
+      end
     end
     resources :reviews, only: [:show, :new, :create , :destroy]
   end

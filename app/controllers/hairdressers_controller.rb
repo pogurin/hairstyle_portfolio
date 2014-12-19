@@ -7,6 +7,10 @@ class HairdressersController < ApplicationController
 
   def index
     @hairdressers = Hairdresser.all.order("created_at DESC")
+    @coords = [] 
+    @hairdressers.each do |r|
+      @coords << {latitude: r.latitude.to_f, longitude: r.longitude.to_f, note: r.first_name + ' ' + r.last_name + ',' + ' ' + r.salon_address}
+    end
   end
 
   def show 
