@@ -69,8 +69,6 @@ var styles = [
   }
 ];
 
-
-
 $(document).on('ready page:load', function() {
 	if ($('#map-canvas').length) {
 		myMap.init();
