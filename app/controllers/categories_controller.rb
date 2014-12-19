@@ -6,6 +6,7 @@ class CategoriesController < ApplicationController
   def index
     @categories = Category.all
     @pictures = Picture.all
+    @hairdressers = Hairdresser.all.order("created_at DESC")
 
   end
 
