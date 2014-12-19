@@ -82,16 +82,24 @@ class HairdressersController < ApplicationController
     puts ("CONSOLE LOG")
     puts(response)
     puts(membership_id)
-    index=response.index(membership_id)
-    puts (response[index+1])
-    # membership_id = membership_id.integer
-    # @response = { id: response[response.index(membership_id)], first_name: response[response.index(membership_id)+1], last_name: response[response.index(membership_id)+2] }
-    if first_name==(response[index+1]) and last_name==(response[index+2])
-      return true
+    
+    if (response.index(membership_id)==false)
+    
+      index=response.index(membership_id)
+      puts (response[index+1])
+      if first_name==(response[index+1]) and last_name==(response[index+2])
+       return true
+      else
+        return false
+      end
     else
       return false
     end
-  end
+   
+    # membership_id = membership_id.integer
+    # @response = { id: response[response.index(membership_id)], first_name: response[response.index(membership_id)+1], last_name: response[response.index(membership_id)+2] }
+  
+    end
 
 end
 
