@@ -1,5 +1,6 @@
 class HairdressersController < ApplicationController
-  
+      helper_method :scrape_site
+
   def new
     @hairdresser = Hairdresser.new
   end
@@ -10,7 +11,6 @@ class HairdressersController < ApplicationController
 
   def show 
     @hairdresser = Hairdresser.find(params[:id])
-
     if @hairdresser.available?
       @available = "Available"
     else
@@ -47,18 +47,6 @@ class HairdressersController < ApplicationController
     else
       render :edit
     end
-  end
-
-
-  # def destroy only need to destroy session not hairdresser
-  #   @hairdresser = Hairdresser.find(params[:id])
-  #   @hairdresser.destroy
-  #   redirect_to hairdressers_path
-  # end
-
-  private
-  def hairdresser_params
-    params.require(:hairdresser).permit(:first_name, :last_name, :career, :picture,:salon_address, :salon_url, :personal_message, :category_id, :email, :password, :password_confirmation, :status, :available, :member_ID)
   end
 
   def scrape_site(first_name,last_name,membership_id)
@@ -98,6 +86,18 @@ class HairdressersController < ApplicationController
   
     
   end
+
+  # def destroy only need to destroy session not hairdresser
+  #   @hairdresser = Hairdresser.find(params[:id])
+  #   @hairdresser.destroy
+  #   redirect_to hairdressers_path
+  # end
+
+  private
+  def hairdresser_params
+    params.require(:hairdresser).permit(:first_name, :last_name, :career, :picture,:salon_address, :salon_url, :personal_message, :category_id, :email, :password, :password_confirmation, :status, :available, :member_ID)
+  end
+
 
 
 end

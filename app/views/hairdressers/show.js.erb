@@ -1,1 +1,3 @@
 // $('#new_link').hide().after("<%= j(render 'users/sessions/user_registration' %>")
+$('body').append("<%= escape_javascript(render @hairdresser) %>");
+$('.best_in_place').bind("ajax:success", function () {$(this).closest('p').effect('highlight'); });
