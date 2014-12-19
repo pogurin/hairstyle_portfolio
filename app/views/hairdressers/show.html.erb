@@ -27,11 +27,11 @@
 	
 		<div class="small-4 columns">
 			<h2>Profile</h2>
-			<p><b>Member ID: </b><%= best_in_place @hairdresser, :member_ID, :type => :input, :nil => "Click me to add content!" %></p>
-			<p><b>Profession: </b><%= best_in_place @hairdresser, :career, :type => :input, :nil => "Click me to add content!" %></p>
-			<p><b>Address:</b> <%= best_in_place @hairdresser, :salon_address, :type => :input, :nil => "Click me to add content!" %>
+			<p><b>Member ID: </b><%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, :member_ID, :type => :input, :nil => "Click me to add content!" %></p>
+			<p><b>Profession: </b><%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, :career, :type => :input, :nil => "Click me to add content!" %></p>
+			<p><b>Address:</b> <%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, :salon_address, :type => :input, :nil => "Click me to add content!" %>
 			</p>
-			<p><b>Website:</b> <%= best_in_place @hairdresser, :salon_url, :type => :input, :nil => "Click me to add content!" %></p>
+			<p><b>Website:</b> <%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, :salon_url, :type => :input, :nil => "Click me to add content!" %></p>
 			<p><b>Verified:</b> <%= @hairdresser.verified %></p>
 			<p><%= @hairdresser.personal_message %></p>
 
