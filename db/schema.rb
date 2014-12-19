@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141218212536) do
+ActiveRecord::Schema.define(version: 20141216234840) do
 
   create_table "appointments", force: true do |t|
     t.integer  "user_id"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20141218212536) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.datetime "confirmed_at"
+    t.datetime "appointment_at"
   end
 
   create_table "categories", force: true do |t|
@@ -58,10 +59,10 @@ ActiveRecord::Schema.define(version: 20141218212536) do
     t.string   "picture"
     t.text     "status"
     t.boolean  "available"
-    t.decimal  "latitude",               precision: 9, scale: 6
-    t.decimal  "longitude",              precision: 9, scale: 6
     t.string   "member_ID"
     t.boolean  "verified"
+    t.decimal  "latitude",               precision: 9, scale: 6
+    t.decimal  "longitude",              precision: 9, scale: 6
   end
 
   add_index "hairdressers", ["email"], name: "index_hairdressers_on_email", unique: true
@@ -72,9 +73,9 @@ ActiveRecord::Schema.define(version: 20141218212536) do
     t.string   "source"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "picture"
     t.integer  "imageable_id"
     t.string   "imageable_type"
+    t.string   "picture"
   end
 
   create_table "reviews", force: true do |t|

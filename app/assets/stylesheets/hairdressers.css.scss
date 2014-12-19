@@ -1,67 +1,67 @@
-// Place all the styles related to the hairdressers controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// // Place all the styles related to the hairdressers controller here.
+// // They will automatically be included in application.css.
+// // You can use Sass (SCSS) here: http://sass-lang.com/
 
-@import "foundation/components/panels";
+// @import "foundation/components/panels";
 
-.profile_pictures {
-	float: left;
-	margin: 10px;
-}
+// .profile_pictures {
+// 	float: left;
+// 	margin: 10px;
+// }
 
-#print {
-	text-align: center;
-	font-family: 'Josefin Sans', sans-serif;
-}
+// #print {
+// 	text-align: center;
+// 	font-family: 'Josefin Sans', sans-serif;
+// }
 
-table {
-	width: 220px;
-	height: 250px;
+// table {
+// 	width: 220px;
+// 	height: 250px;
 	
-}
+// }
 
-.box{
-	text-align: center;
-}
+// .box{
+// 	text-align: center;
+// }
 
-#map-canvas {
-	height: 500px;
-	width: 700px;
-	margin: 0 auto 0 auto;
-}
+// #map-canvas {
+// 	height: 500px;
+// 	width: 700px;
+// 	margin: 0 auto 0 auto;
+// }
 
-#map_title {
-	text-align: center;
-	font-family: 'Josefin Sans', sans-serif;
-}
+// #map_title {
+// 	text-align: center;
+// 	font-family: 'Josefin Sans', sans-serif;
+// }
 
-.container{
-	margin: 0 auto 0 auto;
-}
+// .container{
+// 	margin: 0 auto 0 auto;
+// }
 
-.panel {
-	margin: 25px;
-	@include panel(
-		$bg:#ECEFF1,
-		$adjust:true
-		);
-}
+// .panel {
+// 	margin: 25px;
+// 	@include panel(
+// 		$bg:#ECEFF1,
+// 		$adjust:true
+// 		);
+// }
 
-#header_panel {
-	padding: 10px;
-	/*background-color: black;
-	width: 100%;
-	float: left;*/
-}
+// #header_panel {
+// 	padding: 10px;
+// 	/*background-color: black;
+// 	width: 100%;
+// 	float: left;*/
+// }
 
-.box {
+// .box {
 	
- 	margin: 5px;
- 	font-weight: bold;
- 	float: left;
- 	display: inline;
+//  	margin: 5px;
+//  	font-weight: bold;
+//  	float: left;
+//  	display: inline;
 
-	}
+// 	}
 
 
 

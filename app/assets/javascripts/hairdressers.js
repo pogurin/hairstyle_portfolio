@@ -23,6 +23,11 @@ $(document).on('ready page:load', function() { //need 'ready page:load' and not 
     $('input[type=submit]').val('Create Review').removeAttr('disabled');
   });
   
+  $(document).ready(function() {
+  /* Activating Best In Place */
+  jQuery(".best_in_place").best_in_place();
+  });
+  
 });
 
 
