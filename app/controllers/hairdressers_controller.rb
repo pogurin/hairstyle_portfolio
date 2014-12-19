@@ -1,6 +1,3 @@
-# Add the mixin
-require 'capybara_with_phantom_js'
-
 class HairdressersController < ApplicationController
   
   def new
@@ -9,24 +6,22 @@ class HairdressersController < ApplicationController
 
   def index
     @hairdressers = Hairdresser.all.order("created_at DESC")
-
   end
 
   def show 
-    
     @hairdresser = Hairdresser.find(params[:id])
-    @hairdresser.verified = scrape_site(@hairdresser.first_name,@hairdresser.last_name,@hairdresser.member_ID.to_s)
 
-    @available = ""
-    if @hairdresser.available==true
+    if @hairdresser.available?
       @available = "Available"
     else
       @available = "Not available"
     end
+
     if current_user
       @review = @hairdresser.reviews.build
     end
   end
+
 
   def edit
     @hairdresser = Hairdresser.find(params[:id])
@@ -34,6 +29,7 @@ class HairdressersController < ApplicationController
 
   def create 
     @hairdresser = Hairdresser.new(hairdresser_params)
+
     if @hairdresser.save
       flash[:notice] = "Signed up" # sinonymous to :notice = "Signed up"
       session[:hairdresser_id] = @hairdresser.id #to also log in after we have signed up
@@ -101,6 +97,8 @@ class HairdressersController < ApplicationController
     # @response = { id: response[response.index(membership_id)], first_name: response[response.index(membership_id)+1], last_name: response[response.index(membership_id)+2] }
   
     end
+  end
+
 
 end
 

@@ -41,7 +41,7 @@ gem "poltergeist"
 gem "phantomjs"
 
 group :development do
-	# gem 'better_errors'
+	gem 'better_errors'
 	gem 'binding_of_caller'
 end
 
@@ -63,6 +63,11 @@ gem 'faker'
 #use best_in_place to edit fields
 gem 'best_in_place', '~> 3.0.1'
 # gem 'unicorn'
+
+# perform graphic queries using objects. ie. gives you the coordinates of address or ip address
+gem 'geocoder'
+
+gem 'figaro'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
