@@ -39,10 +39,13 @@ myMap.addMarker = function(latitude, longitude, image, note) {
   });
   bounds.extend(marker.position);
 
-  google.maps.event.addListener(marker, 'click', function() {
-      infoWindow.content = this.note;
-      infoWindow.open(this.map, this);
-      // infoWindow.close();
+  google.maps.event.addListener(marker, 'mouseover', function() {
+    infoWindow.content = this.note;
+    infoWindow.open(this.map, this);
+  });
+
+  google.maps.event.addListener(map, 'click', function() {
+    infoWindow.close();
   });
 
 map.setOptions({styles: styles});
