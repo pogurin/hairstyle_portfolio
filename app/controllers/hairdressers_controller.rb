@@ -96,7 +96,7 @@ class HairdressersController < ApplicationController
     # membership_id = membership_id.integer
     # @response = { id: response[response.index(membership_id)], first_name: response[response.index(membership_id)+1], last_name: response[response.index(membership_id)+2] }
   
-    end
+    
   end
 
 
