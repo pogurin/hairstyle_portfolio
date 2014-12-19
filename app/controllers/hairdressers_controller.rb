@@ -46,6 +46,16 @@ class HairdressersController < ApplicationController
   def update
     @hairdresser = Hairdresser.find(params[:id])
 
+    respond_to do |format|
+      if @hairdresser.update_attributes(params[:id])
+        format.html { redirect_to(@hairdresser, :notice => 'User was successfully updated.') }
+        format.json { respond_with_bip(@hairdresser) }
+      else
+        format.html { render :action => "edit" }
+        format.json { respond_with_bip(@hairdresser) }
+      end  
+    end  
+
     if @hairdresser.update_attributes(hairdresser_params)
       redirect_to hairdresser_path(@hairdresser)
     else
