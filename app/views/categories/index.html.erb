@@ -71,11 +71,13 @@
   <%= render @categories %>
 
 </ul>
-<div class="panel">
+
+<ul class="small-block-grid-3">
 <h1>Available Hairdressers <small></h1>
 <% @hairdressers.each do |hairdresser| %>
 	<% if hairdresser.available %>
-		<div class="profile_pictures">
+		<ul class="small-block-grid-3">
+			    <li>
 			<table>
 			  <tr>
 			    <th><%= hairdresser.first_name %> <%= hairdresser.last_name %>,<br/><%= hairdresser.career %></th>
@@ -95,13 +97,13 @@
 			    <td><a>Status: </a><%= hairdresser.status %></td>		
 			  </tr>	
 			</table>
-		</div>
+		    	</li>
+		</ul>
 	<% end %>	
 <% end %>
-</div>
-</div>
+</ul>
 
-<h1>After 6pm they are available</h1>
+
 
 
 
