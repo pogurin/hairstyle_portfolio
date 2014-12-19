@@ -42,6 +42,7 @@ myMap.addMarker = function(latitude, longitude, image, note) {
   google.maps.event.addListener(marker, 'click', function() {
       infoWindow.content = this.note;
       infoWindow.open(this.map, this);
+      // infoWindow.close();
   });
 
 map.setOptions({styles: styles});
