@@ -98,3 +98,17 @@ div.image:hover {
   padding: 0rem;
   margin-left: -1px;
 }
+
+
+ .box {
+  
+    margin: 5px;
+    font-weight: bold;
+    float: left;
+    display: inline;
+
+  }
+
+.box{
+  text-align: center;
+ }

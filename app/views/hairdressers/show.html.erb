@@ -112,7 +112,7 @@
 			<% @hairdresser.pictures.each do |picture| %>
 				<div class="hairstyle_picture">
 					<td><div class="box"><%= image_tag(picture.picture_url(:medium))%></div>
-					<%= picture.categories.to_a %>
+					
 					</td>
 				</div>
 			<% end %>
