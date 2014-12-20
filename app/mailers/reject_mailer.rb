@@ -8,4 +8,4 @@ class RejectMailer < ActionMailer::Base
     	 to: @user.email,
     	 subject: 'Sorry,Response was Rejected')
   	end
-end
+end 

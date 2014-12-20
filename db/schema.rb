@@ -59,10 +59,10 @@ ActiveRecord::Schema.define(version: 20141216234840) do
     t.string   "picture"
     t.text     "status"
     t.boolean  "available"
-    t.string   "member_ID"
-    t.boolean  "verified"
     t.decimal  "latitude",               precision: 9, scale: 6
     t.decimal  "longitude",              precision: 9, scale: 6
+    t.string   "member_ID"
+    t.boolean  "verified"
   end
 
   add_index "hairdressers", ["email"], name: "index_hairdressers_on_email", unique: true
