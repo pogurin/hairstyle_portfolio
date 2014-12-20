@@ -41,11 +41,6 @@
 			<p><b>Verified:</b> <%= @hairdresser.verified %></p>
 			
 			<p><%= @hairdresser.personal_message %></p>
-<<<<<<< HEAD
-			
-
-=======
->>>>>>> 170f5b6200c5c4abf973c27ff5f973e53543991c
 		</div>
 
 		<% if current_hairdresser %>
@@ -108,26 +103,15 @@
 		<% end %>
 	</div>
 
-<<<<<<< HEAD
-			<% @hairdresser.pictures.each do |picture| %>
-				<div class="hairstyle_picture">
-					<td><div class="box"><%= image_tag(picture.picture_url(:medium))%></div>
-					
-					</td>
-				</div>
-			<% end %>
 			
-=======
 	<div class="row">
 		<h1>Photos</h1>
->>>>>>> 170f5b6200c5c4abf973c27ff5f973e53543991c
 	</div>
 
 	<% @hairdresser.pictures.each do |picture| %>
 		<div class="hairstyle_picture">
 			<td>
 				<div class="box"><%= image_tag(picture.picture_url(:medium))%></div>
-				<%= picture.categories.to_a %>
 			</td>
 		</div>
 	<% end %>

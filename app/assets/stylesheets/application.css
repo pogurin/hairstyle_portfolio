@@ -19,7 +19,12 @@
 
 
 
+ .profile_pictures {
+  float: left;
+  margin: 10px;
+  display: inline;
 
+ }
 
 .row h2 {
   font-family: 'Josefin Sans', sans-serif;
@@ -63,7 +68,6 @@ body {
   padding-left: 20px;
   padding-right: 20px;
 }
-
 
 
 div.image {
@@ -112,3 +116,49 @@ div.image:hover {
 .box{
   text-align: center;
  }
+
+
+// Geocode
+
+#print {
+ text-align: center;
+ font-family: 'Josefin Sans', sans-serif;
+}
+
+table {
+ width: 220px;
+ height: 250px;
+  
+}
+
+
+#map-canvas {
+ height: 500px;
+ width: 700px;
+ margin: 0 auto 0 auto;
+}
+
+#map_title {
+ text-align: center;
+ font-family: 'Josefin Sans', sans-serif;
+}
+
+.container{
+ margin: 0 auto 0 auto;
+}
+
+.panel {
+ margin: 25px;
+ @include panel(
+   $bg:#ECEFF1,
+   $adjust:true
+   );
+}
+
+#header_panel {
+ padding: 10px;
+ /*background-color: black;
+ width: 100%;
+ float: left;*/
+}
+

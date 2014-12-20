@@ -37,6 +37,7 @@
 			  </tr>
 			  <tr>				  
 			    <td><div class="box">
+
 			    	<img class="xicon" src="https://www.flipgive.com/assets/merchants/how-it-works/page/how-it-works-2-eb53b8af95cb727f2893fda7ce9d879d.jpg"/> 
 			    </div></td>
 			  </tr>
@@ -72,32 +73,32 @@
 
 </ul>
 
-<ul class="small-block-grid-3">
+<ul class="profile_pictures">
 <h1>Available Hairdressers <small></h1>
 <% @hairdressers.each do |hairdresser| %>
 	<% if hairdresser.available %>
-		<ul class="small-block-grid-3">
-			    <li>
+		<ul class="profile_pictures">
+			 
 			<table>
+			<li>
 			  <tr>
 			    <th><%= hairdresser.first_name %> <%= hairdresser.last_name %>,<br/><%= hairdresser.career %></th>
 			  </tr>
 			  <tr>				  
 			    <td>
-			    	<div class="box">
 		    			<% if hairdresser.picture_url == nil %>
 								<%= link_to image_tag('empty_pic.png'), hairdresser %>
-							<% else %>
-								<%= link_to image_tag(hairdresser.picture_url(:medium)), hairdresser %>
-							<% end %>
-		    		</div>
+						<% else %>
+							<%= link_to image_tag(hairdresser.picture_url(:medium)), hairdresser %>
+					<% end %>
 			    </td>
 			  </tr>
 			  <tr>
 			    <td><a>Status: </a><%= hairdresser.status %></td>		
 			  </tr>	
+			  </li>
 			</table>
-		    	</li>
+		    	
 		</ul>
 	<% end %>	
 <% end %>
