@@ -1,107 +1,48 @@
-	
-
 <div id="welcome">
 		<img src="http://pagepink.com/wp-content/uploads/2014/06/Dusol-Beauty-Hair-Salon-Korean-Hair-Stylist1.jpg"><br/>
 		
- <span style="position: absolute; top: 100px; right: 150px; width: 200px;">
+	<span style="position: absolute; top: 100px; right: 150px; width: 200px;">
 		<h1>Viewty Portfolios</h1>
-   </span>
+  </span>
+</div>
+
+<%= render "about_us" %>
+
+<div id="categories">
+	<h1>Categories <small></h1>
+	<ul class="small-block-grid-3">
+	  <%= render @categories %>
+	</ul>
 </div>
 
 
-
-<h1>About our services</h1>
-		<h4>Find specialist from beauty various hairstyles</h4>
-		<ul class="small-block-grid-3">
-
-			<li>
-			<table>
-			  <tr>
-			    <th><a>Variety hairstyle pictures</a><br/></th>
-			  </tr>
-			  <tr>				  
-			    <td><div class="box">
-			    	<img class="xicon" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCaGfcUBe58KLUaxXZy_xF8AK2CtJ6ehL9jHpWsGxFDQc50rbC"/>
-			    </div></td>
-			  </tr>
-			  <tr>
-			    <td><a>About</a><p>Customer can find favorite hairstyle and check and book who made that hairstyle. </p></td>		
-			  </tr>	
-			  </table>
-			</li>
-
-			<li>
-			<table>
-			  <tr>
-			    <th><a>Direct Calling System</a><br/></th>
-			  </tr>
-			  <tr>				  
-			    <td><div class="box">
-
-			    	<img class="xicon" src="https://www.flipgive.com/assets/merchants/how-it-works/page/how-it-works-2-eb53b8af95cb727f2893fda7ce9d879d.jpg"/> 
-			    </div></td>
-			  </tr>
-			  <tr>
-			    <td><a>About</a><p>Customer can call hairdressers near your office or home and take a service after 6pm. </p></td>		
-			  </tr>	
-			  </table>
-			</li>
-			<li>
-			<table>
-			  <tr>
-			    <th><a>Find Hair Salons</a><br/></th>
-			  </tr>
-			  <tr>				  
-			    <td><div class="box">
-			    	
-			    	<img class="xicon" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTmFJbxxcvrr5OPveyGomR-ygJsot1nnSHDQ4-MbiiMlhUrRpX7"/>
-			    </div></td>
-			  </tr>
-			  <tr>
-			    <td><a>About</a><p>You can find Hairsalons which your favorite hairstylist are working.</p></td>		
-			  </tr>	
-			</li>
-			</table>
-		</ul>
-
-<div id="categories">
-<h1>Categories <small></h1>
-
-<ul class="small-block-grid-3">
-
-  <%= render @categories %>
-
-</ul>
-
 <ul class="profile_pictures">
-<h1>Available Hairdressers <small></h1>
-<% @hairdressers.each do |hairdresser| %>
-	<% if hairdresser.available %>
-		<ul class="profile_pictures">
-			 
-			<table>
-			<li>
-			  <tr>
-			    <th><%= hairdresser.first_name %> <%= hairdresser.last_name %>,<br/><%= hairdresser.career %></th>
-			  </tr>
-			  <tr>				  
-			    <td>
-		    			<% if hairdresser.picture_url == nil %>
-								<%= link_to image_tag('empty_pic.png'), hairdresser %>
-						<% else %>
-							<%= link_to image_tag(hairdresser.picture_url(:medium)), hairdresser %>
-					<% end %>
-			    </td>
-			  </tr>
-			  <tr>
-			    <td><a>Status: </a><%= hairdresser.status %></td>		
-			  </tr>	
-			  </li>
-			</table>
-		    	
-		</ul>
-	<% end %>	
-<% end %>
+	<h1>Available Hairdressers <small></h1>
+	<% @hairdressers.each do |hairdresser| %>
+		<% if hairdresser.available %>
+			<ul class="profile_pictures">				 
+				<table>
+					<li>
+				  	<tr>
+				    	<th><%= hairdresser.first_name %> <%= hairdresser.last_name %>,<br/><%= hairdresser.career %></th>
+				  	</tr>
+				  	<tr>				  
+				    	<td>
+			    			<% if hairdresser.picture_url == nil %>
+									<%= link_to image_tag('empty_pic.png'), hairdresser %>
+								<% else %>
+									<%= link_to image_tag(hairdresser.picture_url(:medium)), hairdresser %>
+								<% end %>
+				    	</td>
+				  	</tr>
+				  	<tr>
+				    	<td><a>Status: </a><%= hairdresser.status %></td>		
+				  	</tr>	
+				  </li>
+				</table>			    	
+			</ul>
+		<% end %>	
+	<% end %>
 </ul>
 
 
