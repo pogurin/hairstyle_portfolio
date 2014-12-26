@@ -1,0 +1,31 @@
+<div class="row">
+	<% if current_hairdresser == @hairdresser %>
+		<h1>Portfolio</h1>
+		<div class="row">
+			<h2>Upload New Photo</h2>
+			<div class="large-3 columns">
+				<h3>File</h3>
+				<%= form_for @hairdresser.pictures.build do |f| %>
+					<div class="field">
+						<%= f.file_field :picture %>
+						<%= f.hidden_field :picture_cache %>
+						<%= f.hidden_field :imageable_id, :value => @hairdresser.id %>
+						<%= f.hidden_field :imageable_type, :value => "Hairdresser" %>
+					</div>
+
+					<div class="field">
+						<%= f.submit "Submit"%>
+					</div>
+
+				 	<% Category.all.each do |category| %>
+				    <label>
+				    	<%= check_box_tag 'category_ids[]', category.id, @hairdresser.pictures.include?(category) %>
+				    	<%= category.name %>
+				 		</label>
+				 	<% end %>
+
+				<% end %>
+			</div>
+		</div>	
+	<% end %> <!-- ending if current hairdresser statement-->
+</div> <!-- ending class row -->

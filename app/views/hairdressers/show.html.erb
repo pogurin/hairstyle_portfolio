@@ -6,103 +6,16 @@
 
 <div class="profile">
 	<div class="row">
-		<h1><%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, :first_name, :type => :textarea, :nil => "Click me to add content!" %> <%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, :last_name, :type => :textarea, :nil => "Click me to add content!" %></h1>
-		<div class="large-4 columns">
+		<h1>
+			<%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, :first_name, :type => :textarea, :nil => "Click me to add content!" %> <%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, :last_name, :type => :textarea, :nil => "Click me to add content!" %>
+		</h1>
 
+		<%= render "profile_picture" %>
+		
+		<%= render "hairdresser_information" %>
+	</div> <!-- closing the class row -->
 
-			<% if @hairdresser.picture_url == nil %>
-				<%= image_tag 'empty_pic.png' %>
-			<% else %>
-				<%= image_tag @hairdresser.picture_url %>
-			<% end %>
-
-			<% if current_hairdresser == @hairdresser %>
-				<%= form_for @hairdresser do |f| %>
-					<div class="field">
-						<%= f.file_field :picture %>
-						<%= f.hidden_field :picture_cache %>
-					</div>
-
-					<div class="field">
-						<%= f.submit "Submit"%>
-					</div>
-				<% end %>
-			<% end %>
-		</div>
-	
-		<div class="small-4 columns">
-			<h2>Profile</h2>
-			<p><b>Member ID: </b><%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, :member_ID, :type => :input, :nil => "Click me to add content!" %></p>
-			<p><b>Profession: </b><%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, :career, :type => :input, :nil => "Click me to add content!" %></p>
-			<p><b>Address:</b> <%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, :salon_address, :type => :input, :nil => "Click me to add content!" %>
-			</p>
-			<p><b>Website:</b> <%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, :salon_url, :type => :input, :nil => "Click me to add content!" %></p>
-			<% @hairdresser.verified = scrape_site(@hairdresser.first_name,@hairdresser.last_name,@hairdresser.member_ID.to_s) %>
-			<p><b>Verified:</b> <%= @hairdresser.verified %></p>
-			
-			<p><%= @hairdresser.personal_message %></p>
-		</div>
-
-		<% if current_hairdresser == @hairdresser %>
-			<div class="small-4 columns">
-				<h2>Current Status: <%= @available %></h2>
-				<p><%= @hairdresser.status %></p>
-				<dl class="accordion" data-accordion>
-					<dd class="accordion-navigation">
-			    	<a href="#panel2">Edit Status</a>
-			    	<div id="panel2" class="content">
-				    	<%= form_for @hairdresser do |f| %>
-								<div class="field">
-									<%= f.text_area :status %>
-								</div>
-								<h2>Available?</h2>
-								<p>
-									<%= f.radio_button :available, true %>Yes
-									<%= f.radio_button :available, false %>No
-									<div class="field">
-										<%= f.submit "Submit"%>
-									</div>
-								</p>		
-							<% end %>	
-			    	</div>
-			  	</dd>
-			 	</dl>
-			</div>
-		<% end %>
-	</div>
-
-	<div class="row">
-		<% if current_hairdresser == @hairdresser %>
-			<h1>Portfolio</h1>
-			<div class="row">
-				<h2>Upload New Photo</h2>
-				<div class="large-3 columns">
-					<h3>File</h3>
-					<%= form_for @hairdresser.pictures.build do |f| %>
-						<div class="field">
-							<%= f.file_field :picture %>
-							<%= f.hidden_field :picture_cache %>
-							<%= f.hidden_field :imageable_id, :value => @hairdresser.id %>
-							<%= f.hidden_field :imageable_type, :value => "Hairdresser" %>
-						</div>
-
-						<div class="field">
-							<%= f.submit "Submit"%>
-						</div>
-
-					 	<% Category.all.each do |category| %>
-						    <label>
-						    	<%= check_box_tag 'category_ids[]', category.id, @hairdresser.pictures.include?(category) %>
-						    	<%= category.name %>
-					 		</label>
-					 	<% end %>
-
-					<% end %>
-				</div>
-			</div>	
-		<% end %>
-	</div>
-
+	<%= render "portfolio_uploader" %>
 			
 	<div class="row">
 		<h1>Photos</h1>
@@ -116,13 +29,8 @@
 		</div>
 	<% end %>
 
-
-	<!-- hairdresserprofilepic -->
-
 	<% if current_user %>
-
 		<h4>New Review</h4>
-
 		<%= form_for [@hairdresser, @review], remote: true do |f| %>
 			
 			<div id="review_form_errors">
@@ -150,9 +58,9 @@
 
 	<% else %>
 		<p>Please <%= link_to "Log in", new_user_session_path %> to add a review.</p>
-	<% end %>
+	<% end %> <!-- ending if current user -->
 	
-</div>
+</div> <!-- closing class profile -->
 
 
 
