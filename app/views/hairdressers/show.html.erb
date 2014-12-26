@@ -16,7 +16,7 @@
 				<%= image_tag @hairdresser.picture_url %>
 			<% end %>
 
-			<% if current_hairdresser %>
+			<% if current_hairdresser == @hairdresser %>
 				<%= form_for @hairdresser do |f| %>
 					<div class="field">
 						<%= f.file_field :picture %>
@@ -43,7 +43,7 @@
 			<p><%= @hairdresser.personal_message %></p>
 		</div>
 
-		<% if current_hairdresser %>
+		<% if current_hairdresser == @hairdresser %>
 			<div class="small-4 columns">
 				<h2>Current Status: <%= @available %></h2>
 				<p><%= @hairdresser.status %></p>
@@ -72,7 +72,7 @@
 	</div>
 
 	<div class="row">
-		<% if current_hairdresser %>
+		<% if current_hairdresser == @hairdresser %>
 			<h1>Portfolio</h1>
 			<div class="row">
 				<h2>Upload New Photo</h2>
