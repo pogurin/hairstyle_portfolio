@@ -15,38 +15,10 @@
 	</ul>
 </div>
 
-
 <ul class="profile_pictures">
-	<h1>Available Hairdressers <small></h1>
-	<% @hairdressers.each do |hairdresser| %>
-		<% if hairdresser.available %>
-			<ul class="profile_pictures">				 
-				<table>
-					<li>
-				  	<tr>
-				    	<th><%= hairdresser.first_name %> <%= hairdresser.last_name %>,<br/><%= hairdresser.career %></th>
-				  	</tr>
-				  	<tr>				  
-				    	<td>
-			    			<% if hairdresser.picture_url == nil %>
-									<%= link_to image_tag('empty_pic.png'), hairdresser %>
-								<% else %>
-									<%= link_to image_tag(hairdresser.picture_url(:medium)), hairdresser %>
-								<% end %>
-				    	</td>
-				  	</tr>
-				  	<tr>
-				    	<td><a>Status: </a><%= hairdresser.status %></td>		
-				  	</tr>	
-				  </li>
-				</table>			    	
-			</ul>
-		<% end %>	
-	<% end %>
+	<h1>Available Hairdressers</h1>
+	<%= render "hairdressers/available_hairdressers" %>
 </ul>
-
-
-
 
 
 
