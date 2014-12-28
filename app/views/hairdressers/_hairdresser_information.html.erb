@@ -1,0 +1,42 @@
+<div class="small-4 columns">
+	<h2>Profile</h2>
+	<p><b>Member ID: </b><%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, :member_ID, :type => :input, :nil => "Click me to add content!" %></p>
+	<p><b>Profession: </b><%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, :career, :type => :input, :nil => "Click me to add content!" %></p>
+	<p><b>Address:</b> <%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, :salon_address, :type => :input, :nil => "Click me to add content!" %>
+	</p>
+	<p><b>Website:</b> <%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, :salon_url, :type => :input, :nil => "Click me to add content!" %></p>
+	<% @hairdresser.verified = scrape_site(@hairdresser.first_name,@hairdresser.last_name,@hairdresser.member_ID.to_s) %>
+	<p><b>Verified:</b> <%= @hairdresser.verified %></p>
+	
+	<p><%= @hairdresser.personal_message %></p>
+</div>
+
+<% if current_hairdresser == @hairdresser %>
+	<div class="small-4 columns">
+		<h2>Current Status: <%= @available %></h2>
+		<p><%= @hairdresser.status %></p>
+		<dl class="accordion" data-accordion>
+			<dd class="accordion-navigation">
+	    	<a href="#panel2">Edit Status</a>
+	    	<div id="panel2" class="content">
+		    	<%= form_for @hairdresser do |f| %>
+						<div class="field">
+							<%= f.text_area :status %>
+						</div>
+						<h2>Available?</h2>
+						<p>
+							<%= f.radio_button :available, true %>Yes
+							<%= f.radio_button :available, false %>No
+							<div class="field">
+								<%= f.submit "Submit"%>
+							</div>
+						</p>		
+					<% end %>	
+	    	</div>
+	  	</dd>
+	 	</dl>
+	</div> <!-- closing div columns -->
+<%end%>
+
+
+

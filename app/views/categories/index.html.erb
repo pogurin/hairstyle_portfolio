@@ -1,12 +1,25 @@
-<h1>Categories <small></h1>
-<div id="categories">
-
-<ul class="small-block-grid-3">
-
-  <%= render @categories %>
-
-</ul>
+<div id="welcome">
+		<img src="http://pagepink.com/wp-content/uploads/2014/06/Dusol-Beauty-Hair-Salon-Korean-Hair-Stylist1.jpg"><br/>
+		
+	<span style="position: absolute; top: 100px; right: 150px; width: 200px;">
+		<h1>Viewty Portfolios</h1>
+  </span>
 </div>
+
+<%= render "about_us" %>
+
+<div id="categories">
+	<h1>Categories <small></h1>
+	<ul class="small-block-grid-3">
+	  <%= render @categories %>
+	</ul>
+</div>
+
+<ul class="profile_pictures">
+	<h1>Available Hairdressers</h1>
+	<%= render "hairdressers/available_hairdressers" %>
+</ul>
+
 
 
 

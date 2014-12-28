@@ -7,32 +7,9 @@
 	<p>Please change your status from your<%= link_to " profile page", hairdresser_path(current_hairdresser) %> !!</p>
 <% end %>
 
-<% @hairdressers.each do |hairdresser| %>
-	<% if hairdresser.available %>
-		<div class="profile_pictures">
-			<table>
-			  <tr>
-			    <th><%= hairdresser.first_name %> <%= hairdresser.last_name %>,<br/><%= hairdresser.career %></th>
-			  </tr>
-			  <tr>				  
-			    <td>
-			    	<div class="box">
-		    			<% if hairdresser.picture_url == nil %>
-								<%= link_to image_tag('empty_pic.png'), hairdresser %>
-							<% else %>
-								<%= link_to image_tag(hairdresser.picture_url(:medium)), hairdresser %>
-							<% end %>
-		    		</div>
-			    </td>
-			  </tr>
-			  <tr>
-			    <td><a>Status: </a><%= hairdresser.status %></td>		
-			  </tr>	
-			</table>
-		</div>
-	<% end %>	
-<% end %>
-</div>
+<%= render "available_hairdressers" %>
+
+
 <div class="row">
 <!-- <div class="map_box">-->
 	<div class="panel">

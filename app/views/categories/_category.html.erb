@@ -1,9 +1,9 @@
 <li>
 	<%= link_to category_path(category.id) do %>
-	<div class="image">
-		<h2><span><%= category.name %></span></h2>
-	<%= image_tag Category.find(category.id).pictures.first.source %>
-</div>
+		<div class="image">
+			<h2><span><%= category.name %></span></h2>
+			<%= image_tag Category.find(category.id).pictures.first.source %>
+		</div>
+	<% end %>
 </li>
-<% end %>
 
