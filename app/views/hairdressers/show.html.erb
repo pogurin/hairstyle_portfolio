@@ -34,10 +34,11 @@
 			<p><b>Address:</b> <%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, :salon_address, :type => :input, :nil => "Click me to add content!" %>
 			</p>
 			<p><b>Website:</b> <%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, :salon_url, :type => :input, :nil => "Click me to add content!" %></p>
+			<p><b>Email:</b> <%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, :email, :type => :input, :nil => "Click me to add content!" %></p>
 			<% @hairdresser.verified = scrape_site(@hairdresser.first_name,@hairdresser.last_name,@hairdresser.member_ID.to_s) %>
 			<p><b>Verified:</b> <%= @hairdresser.verified %></p>
 			
-			<p><%= @hairdresser.personal_message %></p>
+			<p><b>Website:</b> <%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, :personal_message, :type => :input, :nil => "Click me to add content!" %></p>
 			
 
 		</div>
@@ -71,7 +72,7 @@
 
 	<div class="row">
 		<% if current_hairdresser %>
-		<h1>Portfolio</h1>
+		<h1>Upload</h1>
 			<div class="row">
 				<h2>Upload New Photo</h2>
 				<div class="large-3 columns">
@@ -111,9 +112,9 @@
 
 			<% @hairdresser.pictures.each do |picture| %>
 				<div class="hairstyle_picture">
-					<td><div class="box"><%= image_tag(picture.picture_url(:medium))%></div>
-					<%= picture.categories.to_a %>
-					</td>
+					<div class="box"><%= image_tag(picture.picture_url(:medium))%>
+<!-- 					<%= picture.categories.to_a %>
+ -->					
 				</div>
 			<% end %>
 			
