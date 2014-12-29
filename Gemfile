@@ -56,7 +56,7 @@ gem 'thin'
 
 
 # Use foundation
-gem 'foundation-rails'
+gem 'foundation-rails', '5.4.5'
 # Use unicorn as the app server
 
 #Use Faker to generate dummy data
