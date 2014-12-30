@@ -1,6 +1,6 @@
 class HairdressersController < ApplicationController
       helper_method :scrape_site
-
+respond_to :html, :json
   def new
     @hairdresser = Hairdresser.new
   end
@@ -45,22 +45,9 @@ class HairdressersController < ApplicationController
 
   def update
     @hairdresser = Hairdresser.find(params[:id])
-
-    # respond_to do |format|
-    #   if @hairdresser.update_attributes(params[:id])
-    #     format.html { redirect_to(@hairdresser, :notice => 'User was successfully updated.') }
-    #     format.json { respond_with_bip(@hairdresser) }
-    #   else
-    #     format.html { render :action => "edit" }
-    #     format.json { respond_with_bip(@hairdresser) }
-    #   end  
-    # end  
-
-    if @hairdresser.update_attributes(hairdresser_params)
-      redirect_to hairdresser_path(@hairdresser)
-    else
-      render :edit
-    end
+    @hairdresser.update_attributes(hairdresser_params)
+    respond_with @hairdresser
+   
   end
 
   def scrape_site(first_name,last_name,membership_id)
@@ -109,7 +96,7 @@ class HairdressersController < ApplicationController
 
   private
   def hairdresser_params
-    params.require(:hairdresser).permit(:first_name, :last_name, :career, :picture,:salon_address, :salon_url, :personal_message, :category_id, :email, :password, :password_confirmation, :status, :available, :member_ID)
+    params.require(:hairdresser).permit(:first_name, :last_name, :career, :picture,:salon_address, :salon_url, :personal_message, :category_id, :email, :password, :password_confirmation, :status, :available, :member_ID, :area, :price, :style)
   end
 
 
