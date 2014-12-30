@@ -8,7 +8,25 @@
 	<% @hairdresser.verified = scrape_site(@hairdresser.first_name,@hairdresser.last_name,@hairdresser.member_ID.to_s) %>
 	<p><b>Verified:</b> <%= @hairdresser.verified %></p>
 	
-	<p><%= @hairdresser.personal_message %></p>
+	<p><b>Personal message:</b> <%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, 
+	:personal_message, :type => :input, :nil => "Click me to add content!" %></p>
+
+
+	<p><b>Area:</b> <%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, 
+	:area, :as => :select, :collection => {"1" => "Doentown", "2" => "Italy", "3" => "Germany", "4" => "France"}, :nil => "Click me to add content!" %></p>
+
+
+	<p><b>Hair Style:</b> <%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, 
+	:style, :as => :select, :collection => {"1" => "cut& style", "2" => "cut", "3" => "style", "4" => "blow dry", "5" => "blow dry"}, :nil => "Click me to add content!" %></p>
+
+	<p><b>Price:</b> <%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, 
+	:style, :as => :select, :collection => {"1" => "10-20($)", "2" => "20-30($)", "3" => "30-40($)", "4" => "40-50($)"}, :nil => "Click me to add content!" %></p>
+
+
+
+
+
+
 </div>
 
 <% if current_hairdresser == @hairdresser %>
