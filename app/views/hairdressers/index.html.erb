@@ -1,11 +1,39 @@
 <div class="panel">
-	<h1>Hairdressers available after 6pm today</h1>
+	<h1>Search</h1>
 	<h3 id="print">You can make an appoinment on their profile page.</h3>
 </div>
 <% if current_hairdresser %>
 	<h5>Hi <%= current_hairdresser.first_name %></h5>
 	<p>Please change your status from your<%= link_to " profile page", hairdresser_path(current_hairdresser) %> !!</p>
 <% end %>
+
+
+
+
+	<form name="searchform" onSubmit="return area;">
+	Area:<br />
+	<input name="sengines" type="radio" value="1"> Downtown<br />
+	<input name="sengines" type="radio" value="2"> NrthYork<br />
+	<input name="sengines" type="radio" value="3"> Scarborough<br />
+	<input name="sengines" type="radio" value="4"> Etobicoke <br />
+	</form>
+
+	<form name="searchform" onSubmit="return style;">
+	Style:<br />
+	<input name="sengines" type="radio" value="1"> Cut<br />
+	<input name="sengines" type="radio" value="2"> Perm<br />
+	<input name="sengines" type="radio" value="3"> Hairstraightning<br />
+	</form>
+
+	<form name="searchform" onSubmit="return price;">
+	Price:<br />
+	<input name="sengines" type="radio" value="1"> 10-20($)<br />
+	<input name="sengines" type="radio" value="2"> 20-30($)<br />
+	<input name="sengines" type="radio" value="3"> 30-40($)<br />
+	<input name="sengines" type="radio" value="4"> 40-50($)<br />
+	</form>
+
+
 
 <%= render "available_hairdressers" %>
 
@@ -20,6 +48,7 @@
 	<!-- </div> -->
 	</div>
 </div>
+
 
 
 
