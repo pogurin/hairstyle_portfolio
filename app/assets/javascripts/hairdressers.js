@@ -27,6 +27,15 @@ $(document).on('ready page:load', function() { //need 'ready page:load' and not 
   /* Activating Best In Place */
   jQuery(".best_in_place").best_in_place();
   });
+
+
+  // $('#search-form').submit(function(event) {
+  //   event.preventDeafault();
+  //   var searchValue = $('#search').val();
+
+  //   $.getScript('/products?search=' + searchValue);
+      
+  // });
   
 });
 

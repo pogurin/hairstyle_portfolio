@@ -6,7 +6,11 @@ class HairdressersController < ApplicationController
   end
 
   def index
-    @hairdressers = Hairdresser.all.order("created_at DESC")
+    if params[:search]
+      @hairdressers = Hairdresser.where("LOWER(first_name) LIKE LOWER(?)", "%#{params[:search]}%")# SQL to allow us to search for part of the word and receive the matching patterns of words back
+    else
+      @hairdressers = Hairdresser.all
+    end
     @coords = [] 
     @hairdressers.each do |r|
       @coords << {latitude: r.latitude.to_f, longitude: r.longitude.to_f, note: r.first_name + ' ' + r.last_name + ',' + ' ' + r.salon_address}
