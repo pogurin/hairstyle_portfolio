@@ -24,6 +24,11 @@ respond_to :html, :json
     if current_user
       @review = @hairdresser.reviews.build
     end
+
+    @dates = Array.new
+    for i in 0..7
+      @dates[i]=Date.today + i
+    end
   end
 
 

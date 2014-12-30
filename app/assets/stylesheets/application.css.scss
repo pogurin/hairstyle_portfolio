@@ -161,4 +161,21 @@ table {
  width: 100%;
  float: left;*/
 }
+.tabs dd > a {
+  text-align: center;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+    border-width: 1px;
+    background: #FFFFFF;
+     outline: 0;
+}
+.tabs dd.active > a {
+  color: white;
+      background: #008cba;
+      border: none;
+
+}
+
 //
