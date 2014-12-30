@@ -1,26 +1,42 @@
 <div class="row">
 	<h1>Schedule</h1>
-			<table class="twelve">
-		 		<tbody>
-					<% @dates.each do |element|  %>
+	<% @dates.each do |element|  %>
+	<div class="row">
+		<div class = "small-4 columns">
+			<%= element.strftime("%A ") %>
+			<%= element.strftime("%m/%d/%Y") %>
+		</div>
+		<div class = "small-4 columns">
+			times
+		</div>
+		<div class=  "small-4 columns">
+			times
+		</div>
+	</div>
+	<% end %>
+
+			<!-- <table class="responsive">
+			 	<% @dates.each do |element|  %>
+					<tr>
 						<td>
 							<%= element.strftime("%A ") %>
-						<%= element.strftime("%m/%d/%Y") %></td>
-						 <td></td> 
+							<%= element.strftime("%m/%d/%Y") %>
+						</td>
 						 <td>
-						 	<div class="small-10 columns">
-         					 <input type="text" placeholder="Hex Value">
-        					</div>
-        					<div class="small-10 columns">
-         					 <input type="text" placeholder="Hex Value">
-        					</div>
-					        
-						 	<a href="#" class="tiny button">Add</a>
-						 </td></tr>
-					<% end %>  	
-		  		</tbody>
+						 	asdfasdf
+						 </td> 
+						 <td>
+							 <ul class="inline-list">
+	         					<li> <input type="text" placeholder="Start Time"></li>
+	         					<li> <input type="text" placeholder="End Time"></li>
+							 	<li><a href="#" class="tiny button">Add</a></li>
+							 </ul>
+						 </td>
+
+					</tr>
+				<% end %>  	
 			</table>	
-		</div>	
+</div>	 -->
 	
 
 

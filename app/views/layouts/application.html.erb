@@ -9,6 +9,8 @@
     <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{Rails.application.secrets.google_maps_api}" %>
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= csrf_meta_tags %>
+    <link type="text/css" media="screen" rel="stylesheet" href="responsive-tables.css" />
+<script type="text/javascript" src="responsive-tables.js"></script>
   </head>
 
   <body class="<%= controller_name %> <%= action_name %>">
