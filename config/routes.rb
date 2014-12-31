@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :searches
+
   root 'categories#index'
 
   # get 'appointment' => 'appointment#index'              # 入力画面

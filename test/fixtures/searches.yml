@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  keywords: MyString
+  category_id: 1
+  minimum_price: 1
+  maximum_price: 1
+  area: MyString
+
+two:
+  keywords: MyString
+  category_id: 1
+  minimum_price: 1
+  maximum_price: 1
+  area: MyString
