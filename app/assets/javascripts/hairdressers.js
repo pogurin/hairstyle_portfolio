@@ -29,13 +29,13 @@ $(document).on('ready page:load', function() { //need 'ready page:load' and not 
   });
 
 
-  // $('#search-form').submit(function(event) {
-  //   event.preventDeafault();
-  //   var searchValue = $('#search').val();
+  $('#search-form').submit(function(event) {
+    event.preventDeafault();
+    var searchValue = $('#search').val();
 
-  //   $.getScript('/products?search=' + searchValue);
+    $.getScript('/hairdressers?search=' + searchValue);
       
-  // });
+  });
   
 });
 
