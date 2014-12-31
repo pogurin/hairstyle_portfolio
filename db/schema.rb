@@ -59,13 +59,13 @@ ActiveRecord::Schema.define(version: 20141230182833) do
     t.string   "picture"
     t.text     "status"
     t.boolean  "available"
-    t.decimal  "latitude",                 precision: 9, scale: 6
-    t.decimal  "longitude",                precision: 9, scale: 6
+    t.boolean  "verified"
+
     t.string   "member_ID"
     t.boolean  "verified"
-    t.integer  "cut_price"
-    t.integer  "perm_price"
-    t.integer  "eyelash_extensions_price"
+    t.decimal  "latitude",               precision: 9, scale: 6
+    t.decimal  "longitude",              precision: 9, scale: 6
+
     t.string   "area"
     t.string   "style"
     t.integer  "price"
