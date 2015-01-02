@@ -4,7 +4,7 @@ class SearchesController < ApplicationController
   respond_to :html
 
   def show
-    respond_with(@search).set_search
+    respond_with(@search)
   end
 
   def new

@@ -71,6 +71,8 @@ gem 'geocoder'
 
 gem 'figaro'
 
+gem 'ransack', '~> 1.5.1'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

@@ -13,15 +13,6 @@ class Hairdresser < ActiveRecord::Base
 
  	mount_uploader :picture, HairdresserImageUploader
 
- 	
-
- 	def self.search(search)
-	  if search
-	    where('first_name LIKE ?', "%#{search}%")
-	  else
-	  	Hairdresser.all
-	  end
-	end
 
 
 

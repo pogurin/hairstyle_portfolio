@@ -6,7 +6,8 @@ class HairdressersController < ApplicationController
   end
 
   def index
-    @hairdressers = Hairdresser.search(params[:search])
+    @q = Hairdresser.search(params[:q])
+    @hairdressers = @q.result(distinct: true)
     
     @coords = [] 
     @hairdressers.each do |r|
