@@ -1,10 +1,10 @@
 class SearchesController < ApplicationController
-  before_action :set_search, only: [:show]
+  # before_action :set_search, only: [:show]
 
   respond_to :html
 
   def show
-    respond_with(@search)
+    respond_with(@search).set_search
   end
 
   def new

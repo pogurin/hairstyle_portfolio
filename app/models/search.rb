@@ -8,7 +8,7 @@ class Search < ActiveRecord::Base
 	end
 
 	def keyword_conditions
-		Hairdresser.where("LOWER(first_name) LIKE LOWER(?)", "%#{keywords}%") unless keywords.blank?
+		Hairdresser.where("LOWER(first_name) LIKE LOWER(?)", "%#{params[:hairdresser]}%") unless keywords.blank?
 	end
 
 	def minimum_price_conditions
