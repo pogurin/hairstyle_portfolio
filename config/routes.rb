@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  resources :searches
-
   root 'categories#index'
 
   # get 'appointment' => 'appointment#index'              # 入力画面
@@ -37,6 +35,8 @@ Rails.application.routes.draw do
     resources :reviews, only: [:show, :new, :create , :destroy]
   end
 
+  resources :searches, only: [:new, :create, :show]
+  
   # get 'login' => 'user_sessions#new', as: 'login'
   # get 'logout' => 'user_sessions#destroy', as: 'logout'
 
