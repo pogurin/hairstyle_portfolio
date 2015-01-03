@@ -19,6 +19,7 @@
     <%= f.label :category_id %><br>
     <%= f.collection_select :category_id, Category.all, :id, :name, :include_blank => true %>
   </div>
+  
   <div class="field">
     <%= f.label :minimum_price %><br>
     <%= f.number_field :minimum_price %>
