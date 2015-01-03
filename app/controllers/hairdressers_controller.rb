@@ -15,6 +15,8 @@ respond_to :html, :json
 
   def show 
     @hairdresser = Hairdresser.find(params[:id])
+    @appointments = Hairdresser.find(params[:id]).appointments
+    @appointment = Appointment.new
     if @hairdresser.available?
       @available = "Available"
     else
@@ -103,6 +105,9 @@ respond_to :html, :json
   def hairdresser_params
     params.require(:hairdresser).permit(:first_name, :last_name, :career, :picture,:salon_address, :salon_url, :personal_message, :category_id, :email, :password, :password_confirmation, :status, :available, :member_ID, :area, :price, :style)
   end
+  def appointment_params
+    params.require(:appointment).permit(:message,:appointment_at)
+  end 
 
 
 

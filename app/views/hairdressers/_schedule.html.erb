@@ -1,81 +1,29 @@
 <div class="row">
 	<h1>Schedule</h1>
 	<% @dates.each do |element|  %>
-	<div class="row">
-		<div class = "small-4 columns">
-			<%= element.strftime("%A ") %>
-			<%= element.strftime("%m/%d/%Y") %>
+		<div class="row">
+			<div class = "small-4 columns">
+				<%= element.strftime("%A ") %>
+				<%= element.strftime("%m/%d/%Y") %>
+			</div>
+			<div class = "small-4 columns">
+				
+			</div>
+			
+			
+			<div class=  "small-4 columns">
+				<%= form_for [@hairdresser, @appointment] do |f| %>
+					<div class="field">
+						<%= f.label :appointment_at %><br/>
+						<%= f.text_field :appointment_at %>
+					</div>
+					<div class="field">
+						<%= f.submit "Submit"%>
+					</div>
+				<% end %>
+			</div>
 		</div>
-		<div class = "small-4 columns">
-			times
-		</div>
-		<div class=  "small-4 columns">
-			times
-		</div>
-	</div>
 	<% end %>
-
-			<!-- <table class="responsive">
-			 	<% @dates.each do |element|  %>
-					<tr>
-						<td>
-							<%= element.strftime("%A ") %>
-							<%= element.strftime("%m/%d/%Y") %>
-						</td>
-						 <td>
-						 	asdfasdf
-						 </td> 
-						 <td>
-							 <ul class="inline-list">
-	         					<li> <input type="text" placeholder="Start Time"></li>
-	         					<li> <input type="text" placeholder="End Time"></li>
-							 	<li><a href="#" class="tiny button">Add</a></li>
-							 </ul>
-						 </td>
-
-					</tr>
-				<% end %>  	
-			</table>	
-</div>	 -->
-	
-
-
-<!-- 			<div class="dateselect">
- --><!-- 
-				<dl class="tabs" data-tab>
-
-				  <dd class="active">
-				  	<a href="#date1">
-				  		<%= @dates[0].strftime("%a") %><br>
-				  		<%= @dates[0].strftime("%m/%d/%Y") %>
-				  	</a></dd>
-				  <dd><a href="#date1">
-				  		<%= @dates[1].strftime("%a") %><br>
-				  		<%= @dates[1].strftime("%m/%d/%Y") %>
-				  	</a></dd>
-				  <dd><a href="#date1">
-				  		<%= @dates[2].strftime("%a") %><br>
-				  		<%= @dates[2].strftime("%m/%d/%Y") %>
-				  	</a></dd>
-				  <dd><a href="#date1">
-				  		<%= @dates[3].strftime("%a") %><br>
-				  		<%= @dates[3].strftime("%m/%d/%Y") %>
-				  	</a></dd>
-				  <dd><a href="#date1">
-				  		<%= @dates[4].strftime("%a") %><br>
-				  		<%= @dates[4].strftime("%m/%d/%Y") %>
-				  	</a></dd>
-				  <dd><a href="#date1">
-				  		<%= @dates[5].strftime("%a") %><br>
-				  		<%= @dates[5].strftime("%m/%d/%Y") %>
-				  	</a></dd>
-				  <dd><a href="#date1">
-				  		<%= @dates[6].strftime("%a") %><br>
-				  		<%= @dates[6].strftime("%m/%d/%Y") %>
-				  	</a></dd>
-			<a href="#" class="button success">+</a>
-				</dl>
-			</div> -->
 
 </div>
 
