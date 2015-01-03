@@ -71,6 +71,9 @@ gem 'geocoder'
 
 gem 'figaro'
 
+# use cocoon for nested forms
+gem "cocoon"
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
