@@ -3,39 +3,12 @@ class Search < ActiveRecord::Base
 		@hairdressers ||= find_hairdressers
 	end
 
+	private
+
 	def find_hairdressers
-		Hairdresser.find(:all, :conditions => conditions)
-	end
-
-	def keyword_conditions
-		["hairdressers.first_name LIKE ?", "%#{keywords}%"] unless keywords.blank?
-	end
-
-	def minimum_price_conditions
-  	["hairdressers.price >= ?", minimum_price] unless minimum_price.blank?
-	end
-
-	def maximum_price_conditions
-  	["hairdressers.price <= ?", maximum_price] unless maximum_price.blank?
-	end
-
-	def category_conditions
-	  ["hairdressers.category_id = ?", category_id] unless category_id.blank?
-	end
-
-	def conditions
-	  [conditions_clauses.join(' AND '), *conditions_options]
-	end
-
-	def conditions_clauses
-	  conditions_parts.map { |condition| condition.first }
-	end
-
-	def conditions_options
-	  conditions_parts.map { |condition| condition[1..-1] }.flatten
-	end
-
-	def conditions_parts
-	  private_methods(false).grep(/_conditions$/).map { |m| send(m) }.compact
+		hairdressers = Hairdresser.order(:first_name)
+		hairdressers = Hairdresser.where("first_name like ?", "%#{keywords}%") if keywords.present?
+		hairdressers = Hairdresser.where(category_id: category_id) if category_id.present?
+		hairdressers
 	end
 end

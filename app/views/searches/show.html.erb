@@ -1,6 +1,5 @@
-<p id="notice"><%= notice %></p>
+<h1>Search results</h1>
 
-<%= render :partial => "hairdressers/hairdresser" %>
+<%= render @search.hairdressers %>
 
-<%= link_to 'Edit', edit_search_path(@search) %> |
 <%= link_to 'Back', searches_path %>

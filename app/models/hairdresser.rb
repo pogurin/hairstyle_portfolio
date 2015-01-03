@@ -1,6 +1,5 @@
 class Hairdresser < ActiveRecord::Base
- 	include Tire::Model::Search
-  include Tire::Model::Callbacks
+ 	
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -29,11 +28,5 @@ class Hairdresser < ActiveRecord::Base
  	# 	address_line1 + city+ postcode
  	# end
 
-
-  def self.search(params)
-	  tire.search(load: true) do
-	    query { string params[:query], default_operator: "AND" } if params[:query].present?
-	  end
-	end
 end
 

@@ -4,18 +4,16 @@ class SearchesController < ApplicationController
   respond_to :html
 
   def show
-    respond_with(@search)
+    set_search
   end
 
   def new
     @search = Search.new
-    respond_with(@search)
   end
 
   def create
-    @search = Search.new(search_params)
-    @search.save
-    respond_with(@search)
+    @search = Search.create!(search_params)
+    redirect_to @search
   end
 
   private
@@ -24,6 +22,6 @@ class SearchesController < ApplicationController
     end
 
     def search_params
-      params.require(:search).permit(:keywords, :category_id, :minimum_price, :maximum_price, :area)
+      params.require(:search).permit(:keywords, :category_id, :minimum_price, :maximum_price, :services)
     end
 end
