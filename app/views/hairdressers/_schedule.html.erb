@@ -7,7 +7,9 @@
 				<%= element.strftime("%m/%d/%Y") %>
 			</div>
 			<div class = "small-4 columns">
-				
+				<% @appointments.each do |event| %>
+					<%= event.appointment_at %>
+				<% end %>
 			</div>
 			
 			
