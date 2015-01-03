@@ -3,8 +3,8 @@ class Search < ActiveRecord::Base
 		@hairdressers ||= find_hairdressers
 	end
 
-	def pictures
-		@pictures ||= find_pictures
+	def services
+		@services ||= find_services
 	end
 
 	private
@@ -16,9 +16,9 @@ class Search < ActiveRecord::Base
 		hairdressers
 	end
 
-	def find_pictures
-		pictures = Picture.where(category_id: category_id)if category_id.present?
-		pictures
+	def find_services
+		services = Service.where("name like ?", "%#{keywords}%") if keywords.present?
+		services
 	end
 
 end

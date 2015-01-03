@@ -22,12 +22,14 @@
   
   <div class="field">
     <%= f.label :minimum_price %><br>
-    <%= f.number_field :minimum_price %>
+    <%= f.range_field :minimum_price %>
   </div>
+  -
   <div class="field">
     <%= f.label :maximum_price %><br>
-    <%= f.number_field :maximum_price %>
+    <%= range_field(:hairdresser, :maximum_price, in: 1..100) %>
   </div>
+
   
   <div class="actions">
     <%= f.submit 'Search' %>
