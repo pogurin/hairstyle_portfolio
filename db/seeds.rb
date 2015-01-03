@@ -14,6 +14,7 @@
 # 	password: "dog", 
 # 	password_confirmation: "dog"
 # 	)
+Hairdresser.destroy_all
 
 Hairdresser.create!([
   {first_name: "Jamie",last_name: "Oliver" , email: "jamie@oliver.com", password: '12345678', salon_address: "301 Front St W, Toronto, ON, CANADA", career: "18 years", personal_message: "I'm cool", available: true},

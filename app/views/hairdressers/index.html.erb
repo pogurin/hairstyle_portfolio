@@ -7,20 +7,11 @@
 	<p>Please change your status from your<%= link_to " profile page", hairdresser_path(current_hairdresser) %> !!</p>
 <% end %>
 
-<%= search_form_for @q do |f| %>
-	<div class="field">
-  	<%= f.label :first_name_cont %>
-  	<%= f.search_field :first_name_cont %>
-	</div>
-
-	<div class="field">
-  	<%= f.label :category_id %><br>
-  	<%= f.collection_select :category_id, Category.all, :id, :name, :include_blank => true %>
-	</div>
-
-	<div class="actions">
-  	<%= f.submit %>
-  </div>
+<%= form_tag hairdressers_path, method: :get do %>
+  <p>
+    <%= text_field_tag :query, params[:query] %>
+    <%= submit_tag "Search", name: nil %>
+  </p>
 <% end %>
 
 

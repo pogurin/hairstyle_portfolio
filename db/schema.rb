@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150102221639) do
+ActiveRecord::Schema.define(version: 20150102230355) do
 
   create_table "appointments", force: true do |t|
     t.integer  "user_id"
@@ -46,7 +46,6 @@ ActiveRecord::Schema.define(version: 20150102221639) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "email"
-    t.string   "password_digest"
     t.string   "encrypted_password",                             default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"

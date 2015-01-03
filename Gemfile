@@ -71,7 +71,14 @@ gem 'geocoder'
 
 gem 'figaro'
 
-gem 'ransack', '~> 1.5.1'
+#searchgem
+# gem 'ransack', '~> 1.5.1'
+
+
+# for Elasticsearch: brew install elasticsearch, if it fails it will probable ask you to
+# brew install Caskroom/cask/java, then brew install elasticsearch then run bunle install to istall
+# tire gem so we can communicate using ruby commands and not java.
+gem 'tire', '~> 0.6.2'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
