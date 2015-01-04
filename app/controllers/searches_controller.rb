@@ -1,11 +1,9 @@
 class SearchesController < ApplicationController
   # before_action :set_search, only: [:show, :edit, :update, :destroy]
-
+  
   # respond_to :html
-
-
-  def show
-    @search = Search.find(params[:id])
+  def index
+    @hairdressers = Hairdresser.all
   end
 
   def new
@@ -13,12 +11,25 @@ class SearchesController < ApplicationController
   end
 
   def create
-    @search = Search.create!(params[:search])
-    redirect_to @search 
+    @search = Search.new(set_search)
+     if @search.save
+        redirect_to @search 
+    else
+        render "new"
+    end
+
+  end
+
+  def show
+    @search = Search.find(params[:id])
+    
   end
 end
 
 
+def set_search 
+  params.require(:search).permit(:search, :area)
+end
 #   private
 #     def set_search
 #       @search = Search.find(params[:id])

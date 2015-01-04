@@ -4,7 +4,7 @@ class Search < ActiveRecord::Base
 	  @hairdressers ||= find_hairdressers
 	 end
 
-	private
+private
 
 	def find_hairdressers
 		hairdressers = hairdresser.order(:name)
