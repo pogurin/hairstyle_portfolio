@@ -2,14 +2,21 @@
   <div class="field">
     <%= f.label :area %><br />
     
-    <%= f.select :area, [["Downtown", "Downtown"], ["NorthYork", "NorthYork"],["Germany", "Germany"],["France", "France"],["All location", ""]]%>
+    <%= f.select :area, [["Downtown", "Downtown"], ["NorthYork", "NorthYork"],["Germany", "Germany"],["France", "France"],["All locations", ""]]%>
      
   </div>
     <div class="field">
     <%= f.label :first_name %><br />
     <%= f.text_field :first_name %>
   </div>
-  
+   <div class="field">
+    <%= f.label :style %><br />
+     <%= f.select :style, [["cut& style", "cut& style"], ["cut", "cut"],["blow dry", "blow dry"],["All", ""]]%>
+  </div>
+   <div class="field">
+    <%= f.label :price %><br />
+    <%= f.select :price, [["10-20($)", "10-20($)"], ["20-30($)","20-30($)"],["30-40($)", "30-40($)"],["40-50($)", "40-50($)"],["All", ""]]%>
+  </div>
 
  <div class="actions"><%= f.submit "search" %></div>
 <% end %>
