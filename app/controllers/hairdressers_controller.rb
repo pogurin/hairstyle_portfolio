@@ -6,6 +6,8 @@ respond_to :html, :json
   end
 
   def index
+    # @hairdressers = Hairdresser.search(params[:search])
+  
     @hairdressers = Hairdresser.all.order("created_at DESC")
     @coords = [] 
     @hairdressers.each do |r|
@@ -25,7 +27,6 @@ respond_to :html, :json
       @review = @hairdresser.reviews.build
     end
   end
-
 
   def edit
     @hairdresser = Hairdresser.find(params[:id])

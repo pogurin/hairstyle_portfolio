@@ -2,12 +2,13 @@ class SearchesController < ApplicationController
   # before_action :set_search, only: [:show, :edit, :update, :destroy]
   
   # respond_to :html
-  def index
-    @hairdressers = Hairdresser.all
+  def index 
+    @hairdressers = Hairdresser.all.order("created_at DESC")
   end
 
   def new
     @search = Search.new
+
   end
 
   def create
@@ -22,13 +23,13 @@ class SearchesController < ApplicationController
 
   def show
     @search = Search.find(params[:id])
-    
+    # @hairdressers = Hairdresser.all.order("created_at DESC") #show every hair D
   end
 end
 
 
 def set_search 
-  params.require(:search).permit(:search, :area)
+  params.require(:search).permit(:search, :area, :hairdresser_id, :first_name, :last_name)
 end
 #   private
 #     def set_search
