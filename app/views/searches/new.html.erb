@@ -1,20 +1,21 @@
 <%= form_for @search do |f| %>
   <div class="field">
     <%= f.label :area %><br />
-    <%= f.text_field :area %>
+    
+    <%= f.select :area, [["Downtown", "Downtown"], ["NorthYork", "NorthYork"]]%>
+     
   </div>
-  
     <div class="field">
     <%= f.label :first_name %><br />
     <%= f.text_field :first_name %>
   </div>
    <div class="field">
     <%= f.label :style %><br />
-    <%= f.text_field :style %>
+    <%= f.collection_select :style, Hairdresser.order(:style), :style, :style, include_blank: false %>
   </div>
    <div class="field">
     <%= f.label :price %><br />
-    <%= f.text_field :price %>
+    <%= f.collection_select :price, Hairdresser.order(:price), :price, :price, include_blank: false %>
   </div>
 
  <div class="actions"><%= f.submit "search" %></div>

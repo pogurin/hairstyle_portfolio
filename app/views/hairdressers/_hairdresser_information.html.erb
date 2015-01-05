@@ -13,7 +13,7 @@
 
 
 	<p><b>Area:</b> <%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, 
-	:area, :as => :select, :collection => {"Doentown" => "Doentown", "NorthYork" => "NorthYork", "Germany" => "Germany", "France" => "France"}, :nil => "Click me to add content!" %></p>
+	:area, :as => :select, :collection => {"Downtown" => "Downtown", "NorthYork" => "NorthYork", "Germany" => "Germany", "France" => "France"}, :nil => "Click me to add content!" %></p>
 
 
 	<p><b>Hair Style:</b> <%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, 
