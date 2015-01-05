@@ -8,8 +8,11 @@ class Hairdresser < ActiveRecord::Base
 	has_many :users, through: :reviews
 	has_many :pictures, :as => :imageable
 	has_many :appointments
+	accepts_nested_attributes_for :appointments, :reject_if => :all_blank, :allow_destroy => true
+
 
 	belongs_to :category
+
 
  	mount_uploader :picture, HairdresserImageUploader
 

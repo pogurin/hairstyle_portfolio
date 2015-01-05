@@ -14,14 +14,10 @@
 			
 			
 			<div class=  "small-4 columns">
-				<%= form_for [@hairdresser, @appointment] do |f| %>
-					<div class="field">
-						<%= f.label :appointment_at %><br/>
-						<%= f.text_field :appointment_at %>
-					</div>
-					<div class="field">
-						<%= f.submit "Submit"%>
-					</div>
+				<%= form_for @hairdresser do |appointment| %>
+						<%= render 'appointment_fields', :f => appointment %> %>
+    					<% link_to_add_association 'add appointment', f, :appointments %>
+    					<%= f.submit "Submit"%>
 				<% end %>
 			</div>
 		</div>
