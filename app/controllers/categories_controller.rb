@@ -12,6 +12,7 @@ class CategoriesController < ApplicationController
 
   def show
     @category = Category.find(params[:id])
+    
     @pictures = Picture.all
     @pictures_category=[]
     @pictures.each do |picture|

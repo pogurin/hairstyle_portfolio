@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem "nifty-generators", :group => :development
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.7'
 # Use sqlite3 as the database for Active Record
@@ -81,3 +83,5 @@ gem "cocoon"
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+
+gem "mocha", group: :test

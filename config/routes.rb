@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   # to redirect dvise from using its own hidden sessions controller, in order to implement ajax
   devise_for :users
   
+  resources :searches
+
   resources :pictures, only: [:index, :show, :new, :create , :update, :destroy]
 
   resources :users, only: [:index, :update, :upload, :show, :new, :create , :destroy] do

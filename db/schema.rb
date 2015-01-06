@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141230182833) do
+ActiveRecord::Schema.define(version: 20150105200529) do
 
   create_table "appointments", force: true do |t|
     t.integer  "user_id"
@@ -59,10 +59,10 @@ ActiveRecord::Schema.define(version: 20141230182833) do
     t.string   "picture"
     t.text     "status"
     t.boolean  "available"
-    t.string   "member_ID"
-    t.boolean  "verified"
     t.decimal  "latitude",               precision: 9, scale: 6
     t.decimal  "longitude",              precision: 9, scale: 6
+    t.string   "member_ID"
+    t.boolean  "verified"
     t.string   "area"
     t.string   "style"
     t.integer  "price"
@@ -87,6 +87,18 @@ ActiveRecord::Schema.define(version: 20141230182833) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+  end
+
+  create_table "searches", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "area"
+    t.integer  "hairdresser_id"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "style"
+    t.integer  "price"
+    t.integer  "category_id"
   end
 
   create_table "users", force: true do |t|
