@@ -1,26 +1,48 @@
 <div class="small-4 columns">
 	<h2>Profile</h2>
-	<p><b>Member ID: </b><%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, :member_ID, :type => :input, :nil => "Click me to add content!" %></p>
-	<p><b>Profession: </b><%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, :career, :type => :input, :nil => "Click me to add content!" %></p>
-	<p><b>Address:</b> <%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, :salon_address, :type => :input, :nil => "Click me to add content!" %>
+	<p>
+		<b>Member ID: </b>
+		<%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, :member_ID, :type => :input, :nil => "Click me to add content!" %>
 	</p>
-	<p><b>Website:</b> <%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, :salon_url, :type => :input, :nil => "Click me to add content!" %></p>
+
+	<p>
+		<b>Profession: </b>
+		<%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, :career, :type => :input, :nil => "Click me to add content!" %>
+	</p>
+
+	<p>
+		<b>Address:</b> 
+		<%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, :salon_address, :type => :input, :nil => "Click me to add content!" %>
+	</p>
+
+	<p>
+		<b>Website:</b> 
+		<%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, :salon_url, :type => :input, :nil => "Click me to add content!" %>
+	</p>
+
 	<% @hairdresser.verified = scrape_site(@hairdresser.first_name,@hairdresser.last_name,@hairdresser.member_ID.to_s) %>
-	<p><b>Verified:</b> <%= @hairdresser.verified %></p>
+	<p>
+		<b>Verified:</b> 
+		<%= @hairdresser.verified %>
+	</p>
 	
-	<p><b>Personal message:</b> <%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, 
+	<p><b>Personal message:</b> 
+		<%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, 
 	:personal_message, :type => :input, :nil => "Click me to add content!" %></p>
 
 
-	<p><b>Area:</b> <%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, 
+	<p><b>Area:</b> 
+		<%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, 
 	:area, :as => :select, :collection => {"Downtown" => "Downtown", "NorthYork" => "NorthYork", "Germany" => "Germany", "France" => "France"}, :nil => "Click me to add content!" %></p>
 
 
-	<p><b>Hair Style:</b> <%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, 
+	<p><b>Hair Style:</b> 
+		<%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, 
 	:style, :as => :select, :collection => {"cut& style" => "cut& style", "cut" => "cut", "style" => "style", "blow dry" => "blow dry"}, :nil => "Click me to add content!" %></p>
 
-	<p><b>Price:</b> <%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, 
-	:style, :as => :select, :collection => {"10-20($)" => "10-20($)", "20-30($)" => "20-30($)", "30-40($)" => "30-40($)", "40-50($)" => "40-50($)"}, :nil => "Click me to add content!" %></p>
+	<p><b>Price:</b> 
+		<%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, 
+	:price, :as => :select, :collection => {"10-20($)" => "10-20($)", "20-30($)" => "20-30($)", "30-40($)" => "30-40($)", "40-50($)" => "40-50($)"}, :nil => "Click me to add content!" %></p>
 
 
 

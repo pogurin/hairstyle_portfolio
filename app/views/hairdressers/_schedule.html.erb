@@ -11,15 +11,7 @@
 					<%= event.appointment_at %>
 				<% end %>
 			</div>
-			
-			
-			<div class=  "small-4 columns">
-				<%= form_for @hairdresser do |appointment| %>
-						<%= render 'appointment_fields', :f => appointment %> %>
-    					<% link_to_add_association 'add appointment', f, :appointments %>
-    					<%= f.submit "Submit"%>
-				<% end %>
-			</div>
+		
 		</div>
 	<% end %>
 
