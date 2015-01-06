@@ -40,13 +40,8 @@
 		<%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, 
 	:style, :as => :select, :collection => {"cut& style" => "cut& style", "cut" => "cut", "style" => "style", "blow dry" => "blow dry"}, :nil => "Click me to add content!" %></p>
 
-	<p><b>Price:</b> 
-		<%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, 
+	<p><b>Price:</b> <%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, 
 	:price, :as => :select, :collection => {"10-20($)" => "10-20($)", "20-30($)" => "20-30($)", "30-40($)" => "30-40($)", "40-50($)" => "40-50($)"}, :nil => "Click me to add content!" %></p>
-
-
-
-
 
 
 </div>
