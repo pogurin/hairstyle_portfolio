@@ -11,19 +11,7 @@
 					<%= event.appointment_at %>
 				<% end %>
 			</div>
-			
-			
-			<div class=  "small-4 columns">
-				<%= form_for [@hairdresser, @appointment] do |f| %>
-					<div class="field">
-						<%= f.label :appointment_at %><br/>
-						<%= f.text_field :appointment_at %>
-					</div>
-					<div class="field">
-						<%= f.submit "Submit"%>
-					</div>
-				<% end %>
-			</div>
+		
 		</div>
 	<% end %>
 

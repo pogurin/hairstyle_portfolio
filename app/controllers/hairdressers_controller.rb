@@ -6,6 +6,8 @@ respond_to :html, :json
   end
 
   def index
+    # @hairdressers = Hairdresser.search(params[:search])
+  
     @hairdressers = Hairdresser.all.order("created_at DESC")
     @coords = [] 
     @hairdressers.each do |r|
@@ -32,7 +34,6 @@ respond_to :html, :json
       @dates[i]=Date.today + i
     end
   end
-
 
   def edit
     @hairdresser = Hairdresser.find(params[:id])
@@ -103,7 +104,12 @@ respond_to :html, :json
 
   private
   def hairdresser_params
-    params.require(:hairdresser).permit(:first_name, :last_name, :career, :picture,:salon_address, :salon_url, :personal_message, :category_id, :email, :password, :password_confirmation, :status, :available, :member_ID, :area, :price, :style)
+
+    params.require(:hairdresser).permit(:first_name, :last_name, :career, 
+      :picture,:salon_address, :salon_url, :personal_message, :category_id, :email, 
+      :password, :password_confirmation, :status, :available, :member_ID, :area, :price, :style, 
+      :perm_price, :cut_price, :treatment_price,appointments_attributes: [:message, :appointment_at])
+
   end
   def appointment_params
     params.require(:appointment).permit(:message,:appointment_at)

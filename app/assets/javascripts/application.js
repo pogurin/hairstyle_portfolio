@@ -13,7 +13,6 @@
 
 //= require jquery
 //= require jquery_ujs
-//= require jquery-ui-timepicker-addon
 //= require foundation
 //= require cocoon
 //= require best_in_place

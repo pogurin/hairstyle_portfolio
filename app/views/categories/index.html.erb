@@ -6,6 +6,8 @@
   </span>
 </div>
 
+<h1><%= link_to "Let`s search hairdressers", new_search_path %></h1>
+
 <%= render "about_us" %>
 
 <div id="categories">
@@ -14,11 +16,6 @@
 	  <%= render @categories %>
 	</ul>
 </div>
-
-<ul class="profile_pictures">
-	<h1>Available Hairdressers</h1>
-	<%= render "hairdressers/available_hairdressers" %>
-</ul>
 
 
 
