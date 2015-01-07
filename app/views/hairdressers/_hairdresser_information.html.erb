@@ -36,12 +36,20 @@
 	:area, :as => :select, :collection => {"Downtown" => "Downtown", "NorthYork" => "NorthYork", "Germany" => "Germany", "France" => "France"}, :nil => "Click me to add content!" %></p>
 
 
+<<<<<<< HEAD
 	<p><b>Hair Style:</b> 
 		<%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, 
 	:style, :as => :select, :collection => {"cut& style" => "cut& style", "cut" => "cut", "style" => "style", "blow dry" => "blow dry"}, :nil => "Click me to add content!" %></p>
+=======
+	<p><b>Perm Price:</b> <%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, 
+	:perm_price, :as => :select, :collection => {"10-20($)" => "10-20($)", "20-30($)" => "20-30($)", "30-40($)" => "30-40($)", "40-50($)" => "40-50($)"}, :nil => "Click me to add content!" %></p>
+>>>>>>> 275164cbd0c8a81f706c17f62f775c5c2b8070d3
 
-	<p><b>Price:</b> <%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, 
-	:price, :as => :select, :collection => {"10-20($)" => "10-20($)", "20-30($)" => "20-30($)", "30-40($)" => "30-40($)", "40-50($)" => "40-50($)"}, :nil => "Click me to add content!" %></p>
+	<p><b>Cut Price:</b> <%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, 
+	:cut_price, :as => :select, :collection => {"10-20($)" => "10-20($)", "20-30($)" => "20-30($)", "30-40($)" => "30-40($)", "40-50($)" => "40-50($)"}, :nil => "Click me to add content!" %></p>
+
+	<p><b>Treatment Price:</b> <%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, 
+	:treatment_price, :as => :select, :collection => {"10-20($)" => "10-20($)", "20-30($)" => "20-30($)", "30-40($)" => "30-40($)", "40-50($)" => "40-50($)"}, :nil => "Click me to add content!" %></p>
 
 
 </div>

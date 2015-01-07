@@ -4,9 +4,8 @@ class Search < ActiveRecord::Base
 	  @hairdressers ||= find_hairdressers
 	 end
 
-	 def pictures
+	  def pictures
 	 	@pictures ||= find_pictures
-
 	 end
 
 private
@@ -26,5 +25,8 @@ private
 		pictures = Picture.joins(:categories).where("categories.name like ? ",:"%#{name}%") if name.present?
 		pictures
 	end
+
+
+	
 
 end

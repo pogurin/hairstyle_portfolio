@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   devise_for :users
   
   resources :searches
-
+  resources :search_pictures
   resources :pictures, only: [:index, :show, :new, :create , :update, :destroy]
 
   resources :users, only: [:index, :update, :upload, :show, :new, :create , :destroy] do
