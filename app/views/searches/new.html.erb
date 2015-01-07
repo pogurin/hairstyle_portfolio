@@ -14,10 +14,7 @@
         <%= f.label :perm_price %><br />
         <%= f.select :perm_price, [["10-20($)", "10-20($)"], ["20-30($)","20-30($)"],["30-40($)", "30-40($)"],["40-50($)", "40-50($)"],["All", ""]]%>  
       </div>   
-       <div class="field">
-        <%= f.label :style %><br />
-         <%= f.select :style, [["cut& style", "cut& style"], ["cut", "cut"],["blow dry", "blow dry"],["All", ""]]%>
-      </div>
+     
       <div class="field">
         <%= f.label :cut_price %><br />
         <%= f.select :cut_price, [["10-20($)", "10-20($)"], ["20-30($)","20-30($)"],["30-40($)", "30-40($)"],["40-50($)", "40-50($)"],["All", ""]]%>
@@ -43,7 +40,7 @@
       </div>
        <div class="field">
         <%= f.label :Category %><br />
-        <%= f.text_field :name %>
+        <%= f.select :treatment_price, [["Long", "Long"], ["Short","Short"],["Medium", "Medium"],["Dyed", "Dyed"],["Blonde", "Blonde"],["All", "All"]]%>
       </div>
                     <%= f.hidden_field :search_type, :value => "Pictures" %>
 
