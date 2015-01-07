@@ -25,11 +25,11 @@
      <h1>Picture Search</h1>
      <%= form_for @search do |f| %>
         <div class="field">
-        <%= f.label :first_name %><br />
+        <%= f.label "Name of Hairdresser" %><br />
         <%= f.text_field :first_name %>
       </div>
        <div class="field">
-        <%= f.label :name %><br />
+        <%= f.label :Category %><br />
         <%= f.text_field :name %>
       </div>
       <div class="actions"><%= f.submit "Search Pictures" %></div>
