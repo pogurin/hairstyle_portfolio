@@ -40,8 +40,9 @@
       </div>
        <div class="field">
         <%= f.label :Category %><br />
-        <%= f.select :treatment_price, [["Long", "Long"], ["Short","Short"],["Medium", "Medium"],["Dyed", "Dyed"],["Blonde", "Blonde"],["All", "All"]]%>
+        <%= f.text_field :name %>
       </div>
+      <p>Ex)Short, Long, Medium </p>
                     <%= f.hidden_field :search_type, :value => "Pictures" %>
 
       <div class="actions"><%= f.submit "search" %></div>
