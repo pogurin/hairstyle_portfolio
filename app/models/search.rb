@@ -6,6 +6,7 @@ class Search < ActiveRecord::Base
 
 	 def pictures
 	 	@pictures ||= find_pictures
+
 	 end
 
 private
@@ -22,7 +23,7 @@ private
 
 	def find_pictures
 		pictures = Picture.order(:imageable_id)
-		# pictures = pictures.where(name: name) if name.present?
+		pictures = Picture.joins(:categories).where("categories.name like ? ",:"%#{name}%") if name.present?
 		pictures
 	end
 
