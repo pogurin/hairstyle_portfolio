@@ -15,7 +15,7 @@
 				<div class='nested-fields'> 
 					<%= simple_form_for @hairdresser do |f| %>
 						<%= f.simple_fields_for :appointments do |appointment| %>
-	  					 <%= render "appointment_fields" %>
+	  					 <% render "appointment_fields", :f => appointment %> 
 						
 					<%= link_to_add_association "Add appointment", f, :appointments %>
 					<% end %>
