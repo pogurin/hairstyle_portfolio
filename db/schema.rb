@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150105200529) do
+ActiveRecord::Schema.define(version: 20150107041501) do
 
   create_table "appointments", force: true do |t|
     t.integer  "user_id"
@@ -66,6 +66,12 @@ ActiveRecord::Schema.define(version: 20150105200529) do
     t.string   "area"
     t.string   "style"
     t.integer  "price"
+    t.integer  "treatment_price"
+    t.integer  "perm_price"
+    t.integer  "cut_price"
+    t.string   "perm"
+    t.string   "cut"
+    t.string   "treatment"
   end
 
   add_index "hairdressers", ["email"], name: "index_hairdressers_on_email", unique: true
@@ -89,6 +95,13 @@ ActiveRecord::Schema.define(version: 20150105200529) do
     t.integer  "user_id"
   end
 
+  create_table "search_pictures", force: true do |t|
+    t.integer  "category_id"
+    t.integer  "picture_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "searches", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -99,6 +112,7 @@ ActiveRecord::Schema.define(version: 20150105200529) do
     t.string   "style"
     t.integer  "price"
     t.integer  "category_id"
+    t.string   "name"
   end
 
   create_table "users", force: true do |t|
