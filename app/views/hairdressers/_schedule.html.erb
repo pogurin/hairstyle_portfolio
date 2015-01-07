@@ -11,7 +11,16 @@
 					<%= event.appointment_at %>
 				<% end %>
 			</div>
-		
+			<div class = "small-4 columns">
+				<div class='nested-fields'> 
+					<%= form_for @appointments, :as => :post, :url => hairdressers_path(@hairdressers) do |f| %>
+						<%= f.label :appointment_at %>
+						<%= f.text_field :appointment_at %>
+						<%= f.submit %>
+					<% end %>
+				</div>
+			</div>
+
 		</div>
 	<% end %>
 

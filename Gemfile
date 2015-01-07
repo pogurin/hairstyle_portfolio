@@ -76,6 +76,9 @@ gem 'figaro'
 # use cocoon for nested forms
 gem "cocoon"
 
+# use simple_form for form generation
+gem 'simple_form'
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
