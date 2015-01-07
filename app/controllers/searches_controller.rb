@@ -31,7 +31,7 @@ end
 
 
 def set_search 
-  params.require(:search).permit(:search, :area, :hairdresser_id, :first_name, :last_name, :price, :style,:category_id, :picture_id,:name)
+  params.require(:search).permit(:search, :area, :hairdresser_id, :first_name, :last_name, :price, :style,:category_id, :picture_id,:name, :perm_price, :cut_price, :treatment_price)
 end
 #   private
 #     def set_search
