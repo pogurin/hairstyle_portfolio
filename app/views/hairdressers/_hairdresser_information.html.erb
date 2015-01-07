@@ -2,7 +2,7 @@
 	<h2>Profile</h2>
 	<p>
 		
-		<% if @hairdresser==nil %> 
+		<% if @hairdresser.id == current_hairdresser.id %> 
 		<b>Member ID: </b>
 		<%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, :member_ID, :type => :input, :nil => "Click me to add content!" %>
 		<% end %>
@@ -10,7 +10,7 @@
 
 	<p>
 		<b>Profession: </b>
-		<% if @hairdresser==nil %> 
+		<% if @hairdresser.id == current_hairdresser.id %>
 		<%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, :career, :type => :input, :nil => "Click me to add content!" %>
 		<% else %>
 		<%= @hairdresser.career %>
@@ -19,7 +19,7 @@
 
 	<p>
 		<b>Address:</b> 
-		<% if @hairdresser==nil %> 
+		<% if @hairdresser.id == current_hairdresser.id %>
 		<%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, :salon_address, :type => :input, :nil => "Click me to add content!" %>
 		<% else %>
 		<%= @hairdresser.salon_address %>
@@ -28,7 +28,7 @@
 
 	<p>
 		<b>Website:</b> 
-		<% if @hairdresser==nil %> 
+		<% if @hairdresser.id == current_hairdresser.id %>
 		<%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, :salon_url, :type => :input, :nil => "Click me to add content!" %>
 		<% else %>
 		<%= @hairdresser.salon_url %>
@@ -42,7 +42,7 @@
 	</p>
 	
 	<p><b>Personal message:</b> 
-		<% if @hairdresser==nil %> 
+		<% if @hairdresser.id == current_hairdresser.id %>
 		<%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, 
 	:personal_message, :type => :input, :nil => "Click me to add content!" %></p>
 	<% else %>
@@ -50,7 +50,7 @@
 <% end %>
 
 	<p><b>Area:</b> 
-		<% if @hairdresser==nil %> 
+		<% if @hairdresser.id == current_hairdresser.id %>
 		<%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, 
 	:area, :as => :select, :collection => {"Downtown" => "Downtown", "NorthYork" => "NorthYork", "Germany" => "Germany", "France" => "France"}, :nil => "Click me to add content!" %></p>
 	<% else %>
@@ -58,28 +58,28 @@
 <% end %>
 
 	<p><b>Hair Style:</b> 
-				<% if @hairdresser==nil %> 
+				<% if @hairdresser.id == current_hairdresser.id %>
 		<%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, 
 	:style, :as => :select, :collection => {"cut& style" => "cut& style", "cut" => "cut", "style" => "style", "blow dry" => "blow dry"}, :nil => "Click me to add content!" %></p>
 	<% else %>
 		<%= @hairdresser.style %>
 	<% end %>
 
-	<% if @hairdresser==nil %> 
+	<% if @hairdresser.id == current_hairdresser.id %>
 	<p><b>Perm Price:</b> <%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, 
 	:perm_price, :as => :select, :collection => {"10-20($)" => "10-20($)", "20-30($)" => "20-30($)", "30-40($)" => "30-40($)", "40-50($)" => "40-50($)"}, :nil => "Click me to add content!" %></p>
 	<% else %>
 		<%= @hairdresser.perm_price %>
 	<% end %>
 	<p><b>Cut Price:</b> 
-				<% if @hairdresser==nil %> 
+				<% if @hairdresser.id == current_hairdresser.id %>
 <%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, 
 	:cut_price, :as => :select, :collection => {"10-20($)" => "10-20($)", "20-30($)" => "20-30($)", "30-40($)" => "30-40($)", "40-50($)" => "40-50($)"}, :nil => "Click me to add content!" %></p>
 	<% else %>
 		<%= @hairdresser.cut_price %>
 	<% end %>
 	<p><b>Treatment Price:</b> 
-				<% if @hairdresser==nil %> 
+				<% if @hairdresser.id == current_hairdresser.id %>
 <%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, 
 	:treatment_price, :as => :select, :collection => {"10-20($)" => "10-20($)", "20-30($)" => "20-30($)", "30-40($)" => "30-40($)", "40-50($)" => "40-50($)"}, :nil => "Click me to add content!" %></p>
 	<% else %>
