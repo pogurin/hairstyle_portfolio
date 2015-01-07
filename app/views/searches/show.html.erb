@@ -1,9 +1,16 @@
-<h1>Search results</h1>
+
 
 
 <ul class="profile_pictures">
-	<h1>Available Hairdressers</h1>
-	<%= render @search.hairdressers %>
+	<% if @search.search_type == "Hairdressers" %>
+		<h1>Search Results - Hairdressers</h1>
+		<%= render @search.hairdressers %>
+	<% end %>
+
+	<% if @search.search_type == "Pictures" %>
+		<h1>Search Results - Pictures</h1>
+		<%= render @search.pictures %>
+	<% end %>
 </ul>
 
 

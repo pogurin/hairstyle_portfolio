@@ -18,7 +18,7 @@
         <%= f.label :price %><br />
         <%= f.select :price, [["10-20($)", "10-20($)"], ["20-30($)","20-30($)"],["30-40($)", "30-40($)"],["40-50($)", "40-50($)"],["All", ""]]%>
       </div>
-              <%= f.hidden_field :type, :value => "Hairdressers" %>
+              <%= f.hidden_field :search_type, :value => "Hairdressers" %>
 
       <div class="actions"><%= f.submit "search" %></div>
 
@@ -35,6 +35,8 @@
         <%= f.label :Category %><br />
         <%= f.text_field :name %>
       </div>
+                    <%= f.hidden_field :search_type, :value => "Pictures" %>
+
       <div class="actions"><%= f.submit "search" %></div>
       <% end %>
   </div>

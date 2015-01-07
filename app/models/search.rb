@@ -21,8 +21,8 @@ private
 	end
 
 	def find_pictures
-		pictures = Picture.order(:category_id)
-		pictures = pictures.where(category_id: category_id) if category_id.present?
+		pictures = Picture.order(:imageable_id)
+		# pictures = pictures.where(name: name) if name.present?
 		pictures
 	end
 
