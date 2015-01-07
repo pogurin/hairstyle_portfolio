@@ -99,6 +99,7 @@ ActiveRecord::Schema.define(version: 20150107040026) do
     t.string   "style"
     t.integer  "price"
     t.integer  "category_id"
+    t.string   "name"
   end
 
   create_table "users", force: true do |t|
