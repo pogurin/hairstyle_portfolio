@@ -14,7 +14,15 @@ private
 		hairdressers = Hairdresser.order(:first_name)
 
    		hairdressers = hairdressers.where("first_name like ?", "%#{first_name}%") if first_name.present?
-   		hairdressers = hairdressers.where("price like ?", "%#{price}%") if price.present?
+   		hairdressers =  hairdressers.where("hairdressers.perm_price <= ?", perm_price) unless perm_price.blank?
+   		hairdressers = hairdressers.where("hairdressers.perm_price >= ?", perm_price_min) unless perm_price_min.blank?
+
+		hairdressers =  hairdressers.where("hairdressers.cut_price <= ?", cut_price) unless cut_price.blank?   
+		hairdressers = hairdressers.where("hairdressers.cut_price >= ?", cut_price_min) unless cut_price_min.blank?
+
+		hairdressers =  hairdressers.where("hairdressers.treatment_price <= ?", treatment_price) unless treatment_price.blank?
+		hairdressers = hairdressers.where("hairdressers.treatment_price >= ?", treatment_price_min) unless treatment_price_min.blank?
+
    		hairdressers = hairdressers.where("style like ?", "%#{style}%") if style.present?
    		hairdressers = hairdressers.where("area like ?", "%#{area}%") if area.present?
    		hairdressers

@@ -57,6 +57,7 @@
 		<%= @hairdresser.area %>
 <% end %>
 
+
 	<p><b>Hair Style:</b> 
 		<% if current_hairdresser && @hairdresser.id == current_hairdresser.id %> 
 		<%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, 
@@ -72,6 +73,7 @@
 		$<%= @hairdresser.perm_price %>
 	<% end %>
 	<p><b>Cut Price:</b> 
+
 	<% if current_hairdresser && @hairdresser.id == current_hairdresser.id %> 
 	$<%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, :cut_price, :as => :input, :place_holder => "Click me to add content!", :html_attrs => {:style => "width:4em" } %></p>
 	<% else %>
@@ -83,7 +85,7 @@
 	<% else %>
 		$<%= @hairdresser.treatment_price %>
 	<% end %>
-
+	
 </div>
 
 <% if current_hairdresser == @hairdresser %>
