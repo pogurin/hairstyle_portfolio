@@ -6,7 +6,7 @@
 <div class="profile">
 	<div class="row">
 		<h1>
-			<% if @hairdresser.id == current_hairdresser.id %> 
+			<% if current_hairdresser && @hairdresser.id == current_hairdresser.id %> 
 			<%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, :first_name, :type => :textarea, :nil => "Click me to add content!" %> <%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, :last_name, :type => :textarea, :nil => "Click me to add content!" %>
 			<% else %>
 				<%= @hairdresser.first_name %> <%= @hairdresser.last_name %>
