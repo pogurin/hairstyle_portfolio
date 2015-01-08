@@ -2,24 +2,21 @@
 	<h1>Schedule</h1>
 	<% @dates.each do |element|  %>
 		<div class="row">
-			<div class = "small-4 columns">
+			<div class = "small-3 columns">
 				<%= element.strftime("%A ") %>
 				<%= element.strftime("%m/%d/%Y") %>
 			</div>
-			<div class = "small-4 columns">
+			<div class = "small-9 columns">
 				<% @appointments.each do |event| %>
 					<%= event.appointment_at %>
 				<% end %>
-			</div>
-			<div class = "small-4 columns">
 				<div class='nested-fields'> 
 					<% if current_hairdresser && @hairdresser.id == current_hairdresser.id %> 
 						<%= simple_form_for @hairdresser do |f| %>
 							<%= f.simple_fields_for :appointments do |appointment| %>
 					    		<%= render 'appointment_fields', :f => appointment %>
 					  		<% end %>
-					    	<%= link_to_add_association 'add appointment', f, :appointments %>
-					   		<%= f.submit 'Save' %>
+					  		 <%= link_to_add_association "+", f, :appointments, :class => "tiny button radius success"%></a>
 						<% end %>
 					<% end %>
 				</div>
