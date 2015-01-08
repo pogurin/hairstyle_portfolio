@@ -1,6 +1,6 @@
 class HairdressersController < ApplicationController
-      helper_method :scrape_site
-respond_to :html, :json
+    helper_method :scrape_site
+    respond_to :html, :json
   def new
     @hairdresser = Hairdresser.new
   end
@@ -58,6 +58,7 @@ respond_to :html, :json
     else
       format.html { render :action => "edit" }
     end
+    
   #   if hairdresser_params != nil
   #   @hairdresser.update_attributes(hairdresser_params)
   # end

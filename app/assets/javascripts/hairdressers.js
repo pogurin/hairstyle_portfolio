@@ -27,6 +27,7 @@ $(document).on('ready page:load', function() { //need 'ready page:load' and not 
   /* Activating Best In Place */
   jQuery(".best_in_place").best_in_place();
   });
+
   
 });
 

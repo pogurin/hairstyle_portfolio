@@ -4,25 +4,25 @@
     <%= form_for @search do |f| %>
       <div class="field">
         <%= f.label :area %><br />
-        <%= f.select :area, [["Downtown", "Downtown"], ["NorthYork", "NorthYork"],["Germany", "Germany"],["France", "France"],["All locations", ""]]%>
+        <%= f.select :area,[["Downtown", "Downtown"], ["NorthYork", "NorthYork"],["Germany", "Germany"],["France", "France"],["All locations", ""]]%>
       </div>
         <div class="field">
         <%= f.label :first_name %><br />
         <%= f.text_field :first_name %>
       </div>
+
+
       <div class="field">
-        <%= f.label :perm_price %><br />
-        <%= f.select :perm_price, [["10-20($)", "10-20($)"], ["20-30($)","20-30($)"],["30-40($)", "30-40($)"],["40-50($)", "40-50($)"],["All", ""]]%>  
+        Perm Price Under <%= f.select :perm_price, [[10, 10], [20,20],[30, 30],[40, 40],[50,50]] %>  
       </div>   
      
       <div class="field">
-        <%= f.label :cut_price %><br />
-        <%= f.select :cut_price, [["10-20($)", "10-20($)"], ["20-30($)","20-30($)"],["30-40($)", "30-40($)"],["40-50($)", "40-50($)"],["All", ""]]%>
+        Cut Price Under <%= f.select :cut_price, [[10, 10], [20,20],[30, 30],[40,40],[50,50]] %>
       </div>
 
+
       <div class="field">
-        <%= f.label :treatment_price %><br />
-        <%= f.select :treatment_price, [["10-20($)", "10-20($)"], ["20-30($)","20-30($)"],["30-40($)", "30-40($)"],["40-50($)", "40-50($)"],["All", ""]]%>
+        Treatment Price Under <%= f.select :treatment_price, [[10, 10], [20,20],[30, 30],[40,40],[50,50]] %>
       </div>
               <%= f.hidden_field :search_type, :value => "Hairdressers" %>
 
