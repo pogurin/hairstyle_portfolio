@@ -58,6 +58,7 @@ respond_to :html, :json
     else
       format.html { render :action => "edit" }
     end
+    
   #   if hairdresser_params != nil
   #   @hairdresser.update_attributes(hairdresser_params)
   # end
