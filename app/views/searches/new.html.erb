@@ -13,16 +13,26 @@
 
 
       <div class="field">
-        Perm Price Under <%= f.select :perm_price, [[10, 10], [20,20],[30, 30],[40, 40],[50,50]] %>  
+        Perm Price Under <%= f.select :perm_price, [[10, 10], [20,20],[30, 30],[40, 40],[50,50],["no select",""]] %>  
+      </div>   
+      <div class="field">
+        Perm Price Over <%= f.select :perm_price_min, [[0, 0],[10, 10], [20,20],[30, 30],[40, 40],[50,50],["no select",""]] %>  
       </div>   
      
+     
       <div class="field">
-        Cut Price Under <%= f.select :cut_price, [[10, 10], [20,20],[30, 30],[40,40],[50,50]] %>
+        Cut Price Under <%= f.select :cut_price, [[10, 10], [20,20],[30, 30],[40,40],[50,50],["no select",""]] %>
+      </div>
+      <div class="field">
+        Cut Price Over <%= f.select :cut_price_min, [[0, 0],[10, 10], [20,20],[30, 30],[40,40],[50,50],["no select",""]] %>
       </div>
 
 
       <div class="field">
-        Treatment Price Under <%= f.select :treatment_price, [[10, 10], [20,20],[30, 30],[40,40],[50,50]] %>
+        Treatment Price Under <%= f.select :treatment_price, [[10, 10], [20,20],[30, 30],[40,40],[50,50],["no select",""]] %>
+      </div>
+       <div class="field">
+        Treatment Price Over <%= f.select :treatment_price_min, [[0,0],[10, 10], [20,20],[30, 30],[40,40],[50,50],["no select",""]] %>
       </div>
               <%= f.hidden_field :search_type, :value => "Hairdressers" %>
 
