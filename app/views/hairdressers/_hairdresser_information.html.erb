@@ -4,14 +4,14 @@
 		
 		<% if current_hairdresser && @hairdresser.id == current_hairdresser.id %> 
 		<b>Member ID: </b>
-		<%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, :member_ID, :as => :input, :place_holder => "Click me to add content!" %>
+		<a><%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, :member_ID, :as => :input, :place_holder => "Click me to add content!" %></a>
 		<% end %>
 	</p>
 
 	<p>
 		<b>Profession: </b>
 		<% if current_hairdresser && @hairdresser.id == current_hairdresser.id %> 
-		<%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, :career, :as => :input, :place_holder => "Click me to add content!" %>
+		<a><%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, :career, :as => :input, :place_holder => "Click me to add content!" %></a>
 		<% else %>
 		<%= @hairdresser.career %>
 		<% end %>
@@ -20,7 +20,7 @@
 	<p>
 		<b>Address:</b> 
 		<% if current_hairdresser && @hairdresser.id == current_hairdresser.id %> 
-		<%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, :salon_address, :as => :input, :place_holder => "Click me to add content!" %>
+		<a><%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, :salon_address, :as => :input, :place_holder => "Click me to add content!" %></a>
 		<% else %>
 		<%= @hairdresser.salon_address %>
 		<% end %>
@@ -29,7 +29,7 @@
 	<p>
 		<b>Website:</b> 
 		<% if current_hairdresser && @hairdresser.id == current_hairdresser.id %> 
-		<%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, :salon_url, :as => :input, :place_holder => "Click me to add content!" %>
+		<a><%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, :salon_url, :as => :input, :place_holder => "Click me to add content!" %></a>
 		<% else %>
 		<%= @hairdresser.salon_url %>
 		<% end %>
@@ -43,47 +43,52 @@
 	
 	<p><b>Personal message:</b> 
 		<% if current_hairdresser && @hairdresser.id == current_hairdresser.id %> 
-		<%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, 
-	:personal_message, :as => :input, :place_holder => "Click me to add content!" %></p>
+		<a><%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, 
+	:personal_message, :as => :input, :place_holder => "Click me to add content!" %></a>
 	<% else %>
 		<%= @hairdresser.personal_message %>
 <% end %>
+</p>
 
 	<p><b>Area:</b> 
 		<% if current_hairdresser && @hairdresser.id == current_hairdresser.id %> 
-		<%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, 
-	:area, :as => :select, :collection => {"Downtown" => "Downtown", "NorthYork" => "NorthYork", "Germany" => "Germany", "France" => "France"}, :place_holder => "Click me to add content!" %></p>
+		<a><%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, 
+	:area, :as => :select, :collection => {"Downtown" => "Downtown", "NorthYork" => "NorthYork", "Germany" => "Germany", "France" => "France"}, :place_holder => "Click me to add content!" %> </a>
 	<% else %>
 		<%= @hairdresser.area %>
 <% end %>
+</p>
 
 	<p><b>Hair Style:</b> 
 		<% if current_hairdresser && @hairdresser.id == current_hairdresser.id %> 
-		<%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, 
-	:style, :as => :select, :collection => {"cut& style" => "cut& style", "cut" => "cut", "style" => "style", "blow dry" => "blow dry"}, :place_holder => "Click me to add content!" %></p>
+		<a><%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, 
+	:style, :as => :select, :collection => {"cut& style" => "cut& style", "cut" => "cut", "style" => "style", "blow dry" => "blow dry"}, :place_holder => "Click me to add content!" %> </a>
 	<% else %>
 		<%= @hairdresser.style %>
 	<% end %>
+	</p>
 
 	<% if current_hairdresser && @hairdresser.id == current_hairdresser.id %> 
 	<p><b>Perm Price:</b> 
-		$<%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, :perm_price, :as => :input, :place_holder => "Click me to add content!", :html_attrs => {:style => "width:4em" } %></p>
+		$<a><%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, :perm_price, :as => :input, :place_holder => "Click me to add content!", :html_attrs => {:style => "width:4em" } %></a>
 	<% else %>
 		$<%= @hairdresser.perm_price %>
 	<% end %>
+</p>
 	<p><b>Cut Price:</b> 
 	<% if current_hairdresser && @hairdresser.id == current_hairdresser.id %> 
-	$<%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, :cut_price, :as => :input, :place_holder => "Click me to add content!", :html_attrs => {:style => "width:4em" } %></p>
+	$<a><%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, :cut_price, :as => :input, :place_holder => "Click me to add content!", :html_attrs => {:style => "width:4em" } %></a>
 	<% else %>
 		$<%= @hairdresser.cut_price %>
 	<% end %>
+</p>
 	<p><b>Treatment Price:</b> 
 	<% if current_hairdresser && @hairdresser.id == current_hairdresser.id %> 
-	$<%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, :treatment_price, :as => :input, :place_holder => "Click me to add content!", :html_attrs => {:style => "width:4em" } %></p>
+	$<a><%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, :treatment_price, :as => :input, :place_holder => "Click me to add content!", :html_attrs => {:style => "width:4em" } %></a>
 	<% else %>
 		$<%= @hairdresser.treatment_price %>
 	<% end %>
-
+</p>
 </div>
 
 <% if current_hairdresser == @hairdresser %>
