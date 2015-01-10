@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   #which category resourse should we use???
   resources :categories, only: [:index, :new, :create , :destroy, :show]
 
-  resources :hairdressers, only: [:index, :show, :update] do 
+  resources :hairdressers, only: [:index, :show, :update, :edit] do 
     resources :appointments do 
       member do
 

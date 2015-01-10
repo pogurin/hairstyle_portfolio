@@ -4,7 +4,7 @@
 		
 		<% if current_hairdresser && @hairdresser.id == current_hairdresser.id %> 
 		<b>Member ID: </b>
-		<a><%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, :member_ID, :as => :input, :place_holder => "Click me to add content!" %></a>
+		<a><%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, :member_ID, :as => :input, :place_holder => "Click me to add content!", :class => "" %></a>
 		<% end %>
 	</p>
 

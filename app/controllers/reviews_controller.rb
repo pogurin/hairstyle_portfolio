@@ -16,7 +16,7 @@ class ReviewsController < ApplicationController
 	def create 
 
 		@review = @hairdresser.reviews.build(review_params)
-  	@review.user = current_user
+  		@review.user = current_user
 
     respond_to do |format|
     	if @review.save

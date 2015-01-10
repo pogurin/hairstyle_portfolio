@@ -3,7 +3,11 @@ class HairdressersController < ApplicationController
     respond_to :html, :json
   def new
     @hairdresser = Hairdresser.new
+    @appointment = Appointment.new
+
   end
+
+
 
   def index
     # @hairdressers = Hairdresser.search(params[:search])
@@ -25,6 +29,8 @@ class HairdressersController < ApplicationController
       @available = "Not available"
     end
 
+    @appointment = @hairdresser.appointments.build
+
     if current_user
       @review = @hairdresser.reviews.build
     end
@@ -41,7 +47,7 @@ class HairdressersController < ApplicationController
 
   def create 
     @hairdresser = Hairdresser.new(hairdresser_params)
-
+    @appointment = @hairdresser.appointments.build(hairdresser_params)
     if @hairdresser.save
       flash[:notice] = "Signed up" # sinonymous to :notice = "Signed up"
       session[:hairdresser_id] = @hairdresser.id #to also log in after we have signed up
@@ -53,11 +59,14 @@ class HairdressersController < ApplicationController
 
   def update
     @hairdresser = Hairdresser.find(params[:id])
-    if @hairdresser.update_attributes(hairdresser_params)
-          respond_with @hairdresser
-    else
-      format.html { render :action => "edit" }
-    end
+    @appointment = @hairdresser.appointments.build(hairdresser_params)
+    @appointment.hairdresser = current_hairdresser
+    respond_with @hairdresser
+    # if @hairdresser.update_attributes(hairdresser_params)
+    #       respond_with @hairdresser
+    # else
+    #   format.html { render :action => "edit" }
+    # end
     
   #   if hairdresser_params != nil
   #   @hairdresser.update_attributes(hairdresser_params)
@@ -119,7 +128,7 @@ class HairdressersController < ApplicationController
 
   end
   def appointment_params
-    params.require(:appointments).permit(:message,:appointment_at)
+    params.require(:appointments).permit(:id, :message,:appointment_at)
   end 
 
 
