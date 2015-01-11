@@ -1,6 +1,7 @@
 <div class="row">
 	<h1>Schedule</h1>
 	<% @dates.each do |element|  %>
+
 		<div class="row">
 
 			<div class = "small-3 columns">
@@ -8,29 +9,32 @@
 				<%= element.strftime("%m/%d/%Y") %>
 			</div>
 
-			<div class = "small-9 columns">
+			<div class = "small-6 columns">
 				<% @appointments.each do |event| %>
 					<% if event.appointment_at %>
-						<%= event.appointment_at.strftime("%I:%M%p") %>
+						<% if event.appointment_at.day == element.day %>
+							<%= event.appointment_at.strftime("%I:%M%p") %>
+						<% end %>
 					<% end %>
 					
 				<% end %>
 			</div>
 
 			<div class = "small-3 columns">
-				<div class='nested-fields'> 
+				
 					<% if current_hairdresser && @hairdresser.id == current_hairdresser.id %> 
 
-
 					 	<%= simple_form_for [@hairdresser, @appointment] do |f| %>
-						   	 <%= f.input_field :appointment_at, as: :time, :style => "width: 40px;" %> 
+						   		<%= f.input_field :appointment_at, as: :time, :style => "width: 40px;", 
+						   	:default => element %>
+
 						   	<%= f.hidden_field :message, :value => "0" %>
 						   	<%= f.hidden_field :user_id, :value => "0" %>
 							<%= f.submit '+', :class => 'button tiny success' %>
 						<% end %>
 
 					<% end %>	
-				</div>
+				
 			</div>
 		</div>
 	<% end %>
