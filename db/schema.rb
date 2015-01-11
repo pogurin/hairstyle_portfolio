@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150107043136) do
+ActiveRecord::Schema.define(version: 20150108215334) do
 
   create_table "appointments", force: true do |t|
     t.integer  "user_id"
@@ -112,7 +112,6 @@ ActiveRecord::Schema.define(version: 20150107043136) do
     t.string   "style"
     t.integer  "price"
     t.integer  "category_id"
-    t.string   "name"
     t.string   "search_type"
     t.integer  "treatment_price"
     t.integer  "perm_price"
@@ -120,6 +119,10 @@ ActiveRecord::Schema.define(version: 20150107043136) do
     t.string   "perm"
     t.string   "cut"
     t.string   "treatment"
+    t.string   "name"
+    t.integer  "cut_price_min"
+    t.integer  "perm_price_min"
+    t.integer  "treatment_price_min"
   end
 
   create_table "users", force: true do |t|
