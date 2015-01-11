@@ -3,6 +3,7 @@ class AppointmentsController < ApplicationController
 
   def new
     @appointment = Appointment.new 
+
   end
 
   def show 
@@ -11,6 +12,7 @@ class AppointmentsController < ApplicationController
 
   def edit
     @appointment = Appointment.find(params[:id])
+
   end
 
   def create 
@@ -27,17 +29,23 @@ class AppointmentsController < ApplicationController
         format.js {}  
       end
     end
+
+
     
   end
 
   def update
     @appointment = Appointment.find(params[:id])
-
+    @user = current_user
     if @appointment.update_attributes(appointment_params)
-      redirect_to hairdressers_path(@appointment)
+      redirect_to hairdresser_path(@hairdresser)
+      AppointmentMailer.received_email(@user, @hairdresser, @appointment).deliver
+      
     else
       render :edit
     end
+
+
   end
 
   def destroy 

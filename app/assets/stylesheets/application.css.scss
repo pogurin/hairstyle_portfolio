@@ -199,6 +199,18 @@ table {
    border-radius: 25px;
 
 }
+
+.schedule_booked  {
+  background-color: #7f7f84;
+  display: inline;
+  color:  #FFBC36;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding-left:5px;
+  padding-right:5px;
+   border-radius: 25px;
+
+}
 .schedule_time:hover {
    background-color: #FCA800;
    color: #000000;
@@ -223,6 +235,11 @@ table {
 
 .profile p{
   margin-bottom: 6px;
+}
+
+.profile h2{
+   font-family: 'Oswald', sans-serif;
+  font-size: 150%;
 }
 
 

@@ -26,7 +26,7 @@ Rails.application.routes.draw do
   resources :categories, only: [:index, :new, :create , :destroy, :show]
 
   resources :hairdressers, only: [:index, :show, :update, :edit] do 
-    resources :appointments, only: [:show, :new, :create, :destroy]
+    resources :appointments
     resources :reviews, only: [:show, :new, :create , :destroy]
   end
 
