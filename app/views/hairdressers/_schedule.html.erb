@@ -1,22 +1,25 @@
 <div class="row">
 	<h1>Schedule</h1>
 	<% @dates.each do |element|  %>
-
+<div class = "schedule_box">
 		<div class="row">
-
-			<div class = "small-3 columns">
-				<%= element.strftime("%A ") %>
-				<%= element.strftime("%m/%d/%Y") %>
+			<div class = "small-2 columns">
+				<p><%= element.strftime("%A ").upcase %></p>
+				<p><%= element.strftime("%m/%d/%Y") %></p>
 			</div>
+			
 
 			<div class = "small-6 columns">
 				<% @appointments.each do |event| %>
 					<% if event.appointment_at %>
-						<% if event.appointment_at.day == element.day %>
-							<%= event.appointment_at.strftime("%I:%M%p") %>
-						<% end %>
+						
+							<% if event.appointment_at.day == element.day %>
+								<div class = "schedule_time">
+									<%= event.appointment_at.strftime("%I:%M%p") %>
+									</div>
+							<% end %>
+						
 					<% end %>
-					
 				<% end %>
 			</div>
 
@@ -35,7 +38,12 @@
 
 					<% end %>	
 				
+				
 			</div>
 		</div>
+	</div>
 	<% end %>
+
+
+
 </div>
