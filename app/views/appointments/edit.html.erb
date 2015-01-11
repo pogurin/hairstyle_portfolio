@@ -1,12 +1,15 @@
-<h1>Welcome!! <%= @hairdresser.first_name %></h1>
+<h1>Edit your review</h1>
 
-<%= form_for [@hairdresser, @appointment] do |f| %>
-	Do you accept this request?
-  <%= f.submit 'Accept', class: 'btn btn-primary' %>
-<% end %>
+<%= form_for([@hairdreser, @review]) do |f| %> 
 
-<%= form_for [@hairdresser, @appointment], :url => hairdresser_appointment_update_reject_path(@hairdresser, @appointment) do |f| %>
-	Do you reject this request?
-  <%= f.submit 'Reject', class: 'btn btn-primary' %>
-<% end %>
+	<div class="field">
+		<%= f.label :comment %><br/>
+		<%= f.text_area :comment %>	
+	</div>
 
+	<div class="actions">
+		<%= f.submit %>
+	</div>
+
+
+	<% end %>

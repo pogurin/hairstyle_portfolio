@@ -26,14 +26,7 @@ Rails.application.routes.draw do
   resources :categories, only: [:index, :new, :create , :destroy, :show]
 
   resources :hairdressers, only: [:index, :show, :update, :edit] do 
-    resources :appointments do 
-      member do
-
-      get 'thanks'
-      get 'accept'
-      patch 'update_reject'
-      end
-    end
+    resources :appointments, only: [:show, :new, :create, :destroy]
     resources :reviews, only: [:show, :new, :create , :destroy]
   end
 

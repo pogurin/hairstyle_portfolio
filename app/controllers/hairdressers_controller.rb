@@ -1,53 +1,64 @@
 class HairdressersController < ApplicationController
+    
     helper_method :scrape_site
     respond_to :html, :json
+
   def new
+
     @hairdresser = Hairdresser.new
     @appointment = Appointment.new
 
   end
 
-
-
   def index
-    # @hairdressers = Hairdresser.search(params[:search])
-  
+
     @hairdressers = Hairdresser.all.order("created_at DESC")
     @coords = [] 
     @hairdressers.each do |r|
       @coords << {latitude: r.latitude.to_f, longitude: r.longitude.to_f, note: r.first_name + ' ' + r.last_name + ',' + ' ' + r.salon_address}
     end
+
   end
 
   def show 
+
     @hairdresser = Hairdresser.find(params[:id])
-    @appointments = Hairdresser.find(params[:id]).appointments
-    # @appointment = Appointment.new
+    @appointments = @hairdresser.appointments
+
+
+
     if @hairdresser.available?
       @available = "Available"
     else
       @available = "Not available"
     end
 
-    @appointment = @hairdresser.appointments.build
-
     if current_user
       @review = @hairdresser.reviews.build
     end
+    if current_hairdresser
+      @appointment = @hairdresser.appointments.build
+    end
+    
 
     @dates = Array.new
+
     for i in 0..7
       @dates[i]=Date.today + i
     end
+
   end
 
   def edit
+
     @hairdresser = Hairdresser.find(params[:id])
+
   end
 
   def create 
+
     @hairdresser = Hairdresser.new(hairdresser_params)
-    @appointment = @hairdresser.appointments.build(hairdresser_params)
+
     if @hairdresser.save
       flash[:notice] = "Signed up" # sinonymous to :notice = "Signed up"
       session[:hairdresser_id] = @hairdresser.id #to also log in after we have signed up
@@ -55,12 +66,11 @@ class HairdressersController < ApplicationController
     else
       render :new
     end
+
   end
 
   def update
     @hairdresser = Hairdresser.find(params[:id])
-    @appointment = @hairdresser.appointments.build(hairdresser_params)
-    @appointment.hairdresser = current_hairdresser
     respond_with @hairdresser
     # if @hairdresser.update_attributes(hairdresser_params)
     #       respond_with @hairdresser
@@ -88,11 +98,6 @@ class HairdressersController < ApplicationController
     response = all 'span'.last
     response = response.text
     response = response.split(" ");
-    puts ("CONSOLE LOG")
-    # puts(response)
-    # puts(membership_id)
-    # puts(response.index(membership_id))
-    # puts ("----")
     if (response.index(membership_id)!=nil)
     
       index=response.index(membership_id)
@@ -105,18 +110,8 @@ class HairdressersController < ApplicationController
     else
       return false
     end
-   
-    # membership_id = membership_id.integer
-    # @response = { id: response[response.index(membership_id)], first_name: response[response.index(membership_id)+1], last_name: response[response.index(membership_id)+2] }
-  
-    
   end
 
-  # def destroy only need to destroy session not hairdresser
-  #   @hairdresser = Hairdresser.find(params[:id])
-  #   @hairdresser.destroy
-  #   redirect_to hairdressers_path
-  # end
 
   private
   def hairdresser_params
@@ -124,13 +119,9 @@ class HairdressersController < ApplicationController
     params.require(:hairdresser).permit(:first_name, :last_name, :career, 
       :picture,:salon_address, :salon_url, :personal_message, :category_id, :email, 
       :password, :password_confirmation, :status, :available, :member_ID, :area, :price, :style, 
-      :perm_price, :cut_price, :treatment_price, appointments_attributes: [:id, :message, :appointment_at])
+      :perm_price, :cut_price, :treatment_price)
 
   end
-  def appointment_params
-    params.require(:appointments).permit(:id, :message,:appointment_at)
-  end 
-
 
 
 end

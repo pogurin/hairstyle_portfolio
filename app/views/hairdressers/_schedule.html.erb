@@ -2,32 +2,30 @@
 	<h1>Schedule</h1>
 	<% @dates.each do |element|  %>
 		<div class="row">
+
 			<div class = "small-3 columns">
 				<%= element.strftime("%A ") %>
 				<%= element.strftime("%m/%d/%Y") %>
 			</div>
+
 			<div class = "small-9 columns">
 				<% @appointments.each do |event| %>
 					<%= event.appointment_at %>
 				<% end %>
+			</div>
+
+			<div class = "small-3 columns">
 				<div class='nested-fields'> 
 					<% if current_hairdresser && @hairdresser.id == current_hairdresser.id %> 
-						<%= form_for [@hairdresser, @appointment], :url => url_for(:controller => 'hairdressers', :action => 'update') do |f| %>
-
-								<div class="field">
-									 <%= f.text_field :appointment_at, as: :time, :style => "width: 40px;" %> 
-								</div>
-
-								<div class="actions">
-									<%= f.submit %>
-								</div>
-
-						<% end %>	
+						<%= form_for [@hairdresser, @appointment] do |f| %>
+						   	<%= f.datetime_select :appointment_at %>
+						   	<%= f.text_field :message %>
+						   	<%= f.text_field :user_id, :value => "0" %>
+							<%= f.submit "Submit" %>
+						<% end %>
 					<% end %>	
 				</div>
 			</div>
 		</div>
 	<% end %>
-
 </div>
-

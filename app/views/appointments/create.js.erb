@@ -1,0 +1,7 @@
+<% if @review_form_errors.present? %>
+	$('#review_form_errors').html("<%= j(render(partial: 'review_form_errors')) %>");
+<% else %>
+	$('#review-list').prepend("<%= j(render @review) %>");
+	$('#review_comment').val(''); //needed to empty the review field after submitting the review.
+	$('#review_form_errors').html('');//needed to empty the error field after submitting the correct review.
+<% end %>	

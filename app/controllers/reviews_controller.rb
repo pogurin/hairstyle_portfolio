@@ -16,9 +16,9 @@ class ReviewsController < ApplicationController
 	def create 
 
 		@review = @hairdresser.reviews.build(review_params)
-  		@review.user = current_user
+  	@review.user = current_user
 
-    respond_to do |format|
+    	respond_to do |format|
     	if @review.save
     		format.html {redirect_to hairdressers_path(@hairdresser.id), notice: "Review created successfully"}
         format.js {} # This will look for app/views/reviews/create.js.erb
