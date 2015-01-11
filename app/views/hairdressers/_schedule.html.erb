@@ -15,7 +15,7 @@
 						
 							<% if event.appointment_at.day == element.day %>
 								<div class = "schedule_time">
-									<%= event.appointment_at.strftime("%I:%M%p") %>
+									<%= link_to "#{event.appointment_at.strftime("%I:%M%p")}", new_hairdresser_appointment_path(@hairdresser) %>
 									</div>
 							<% end %>
 						
@@ -27,6 +27,7 @@
 				
 					<% if current_hairdresser && @hairdresser.id == current_hairdresser.id %> 
 
+						<div class = "schedule_new">
 					 	<%= simple_form_for [@hairdresser, @appointment] do |f| %>
 						   		<%= f.input_field :appointment_at, as: :time, :style => "width: 40px;", 
 						   	:default => element %>
@@ -35,7 +36,7 @@
 						   	<%= f.hidden_field :user_id, :value => "0" %>
 							<%= f.submit '+', :class => 'button tiny success' %>
 						<% end %>
-
+						</div>
 					<% end %>	
 				
 				

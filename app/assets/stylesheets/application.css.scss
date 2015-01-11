@@ -157,9 +157,6 @@ table {
 
 #header_panel {
  padding: 10px;
- /*background-color: black;
- width: 100%;
- float: left;*/
 }
 .tabs dd > a {
   text-align: center;
@@ -167,9 +164,9 @@ table {
   padding-right: 4px;
   padding-top: 1px;
   padding-bottom: 1px;
-    border-width: 1px;
-    background: #FFFFFF;
-     outline: 0;
+  border-width: 1px;
+  background: #FFFFFF;
+  outline: 0;
 }
 .tabs dd.active > a {
   color: white;
@@ -179,17 +176,17 @@ table {
 }
 
 .schedule_box{
-   background-color: #000000;
-   padding-top: 0px;
-   margin-top: 10px;
-margin-bottom: 10px;
+  background-color: #000000;
+  padding-top: 0px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .schedule_box p {
   margin-top: 6px;
   margin-bottom: 5px;
-   font-family: 'Oswald', sans-serif;
-   font-size: 120%;
+  font-family: 'Oswald', sans-serif;
+  font-size: 120%;
 }
 .schedule_time  {
   background-color: #7f7f84;
@@ -206,4 +203,21 @@ margin-bottom: 10px;
    background-color: #FCA800;
    color: #000000;
 }
+
+.schedule_new {
+  margin-top: 16px;
+}
+
+.schedule_time a:hover {
+  background: rgba(54, 25, 25, 0);
+}
+
+.schedule_time a{
+  color: #FFFFFF;
+}
+
+
+
+
+
 
