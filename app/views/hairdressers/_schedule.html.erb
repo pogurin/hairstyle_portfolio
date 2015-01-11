@@ -10,7 +10,10 @@
 
 			<div class = "small-9 columns">
 				<% @appointments.each do |event| %>
-					<%= event.appointment_at %>
+					<% if event.appointment_at %>
+						<%= event.appointment_at.strftime("%I:%M%p") %>
+					<% end %>
+					
 				<% end %>
 			</div>
 
