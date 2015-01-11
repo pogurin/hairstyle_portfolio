@@ -7,13 +7,17 @@
 
 	<% if current_hairdresser == @hairdresser %>
 		<%= form_for @hairdresser do |f| %>
+		<div class = "small-6 columns">
 			<div class="field">
 				<%= f.file_field :picture %>
 				<%= f.hidden_field :picture_cache %>
 			</div>
+		</div>
+		<div class = "small-6 columns">
 			<div class="field">
-				<%= f.submit "Submit"%>
+				<%= f.submit 'Submit', :class => 'button tiny success' %>
 			</div>
+		</div>
 		<% end %>
 	<% end %>
 </div>
