@@ -16,7 +16,18 @@
 
  */
 
+
+
+
+
 @import "foundation/components/panels";
+.tabs dd > a, .tabs .tab-title > a{
+    outline: none;
+}
+
+.columns {
+    outline: none;
+}
 
 
  .profile_pictures {
@@ -243,6 +254,45 @@ table {
 }
 
 
+.tabs {
+    text-align: center;
+    display: inline-block;
+    float: none;
 
+}
+.tabs li {
+    display: inline-block;
+    float: none;
+}
 
+.criteria label {
+  margin-top: 6px;
+  margin-bottom: 5px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 120%;
+          outline: none;
 
+}
+
+.field {
+    margin-top: 6px;
+  margin-bottom: 0px;
+   display: inline-block;
+   float: none;
+}
+
+.field {
+  margin-bottom: 0px;
+}
+
+.new_search{
+   text-align: center;
+    display: inline-block;
+    float: none;
+        outline: none;
+}
+
+.text-center {
+ outline: none;
+
+}

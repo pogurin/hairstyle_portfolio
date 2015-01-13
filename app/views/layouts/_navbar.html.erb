@@ -11,7 +11,7 @@
     <!-- Right Nav Section -->
     <ul class="right">
         <li><%= link_to "Search", "/searches/new" %></li>
-      <li><%= link_to "Hairdressers after 6pm", hairdressers_path %></li>
+     
       <% if current_user %>
         <li class="active"><%= link_to "#{current_user.first_name}'s Profile", user_path(current_user.id) %></li>
         <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
