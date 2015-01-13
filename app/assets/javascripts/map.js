@@ -2,6 +2,7 @@ window.myMap = {};
 
 var map;
 var bounds = new google.maps.LatLngBounds();
+var marker;
 
 myMap.init = function() {
   var coords = $('#map-canvas').data('coords');
@@ -30,7 +31,7 @@ var infoWindow = new google.maps.InfoWindow({
 });
 
 myMap.addMarker = function(latitude, longitude, image, note) {
-  var marker = new google.maps.Marker({
+  marker = new google.maps.Marker({
     position: new google.maps.LatLng(latitude, longitude),
     map: map,
     note: note,
@@ -48,8 +49,13 @@ myMap.addMarker = function(latitude, longitude, image, note) {
     infoWindow.close();
   });
 
+google.maps.event.addListener(map, 'center_changed', function() {    
+  map.panTo(marker.getPosition());
+});
+
 map.setOptions({styles: styles});
 }
+
 
 var styles = [
   {

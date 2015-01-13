@@ -1,0 +1,7 @@
+<li>
+	<%= link_to category_path(category.id) do %>
+		<div class="image">
+			<%= image_tag Category.find(category.id).pictures.first.source %>
+		</div>
+	<% end %>
+</li>
