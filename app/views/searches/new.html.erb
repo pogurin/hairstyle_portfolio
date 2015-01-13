@@ -12,46 +12,49 @@
     </li>
 </ul>    
 </div>
-<div class="tabs-content">
+<div class="tabs-content criteria">
+
   <section role="tabpanel" aria-hidden="false" class="content active" id="panel2-1">
-     <h1>Hairdresser Search</h1>
+    <div class = "small-12 columns text-center">
     <%= form_for @search do |f| %>
-      <div class="field">
-        <%= f.label :area %><br />
-        <%= f.select :area, [["Downtown", "Downtown"], ["NorthYork", "NorthYork"],["Germany", "Germany"],["France", "France"],["All locations", ""]]%>
-      </div>
-        <div class="field">
+            <div class="field">
         <%= f.label :first_name %><br />
         <%= f.text_field :first_name %>
       </div>
       <div class="field">
-        <%= f.label :perm_price %><br />
-        <%= f.select :perm_price, [["10-20($)", "10-20($)"], ["20-30($)","20-30($)"],["30-40($)", "30-40($)"],["40-50($)", "40-50($)"],["All", ""]]%>  
-      </div>   
+        <%= f.label :area %><br />
+        <%= f.select :area, [["All locations", ""],["Downtown", "Downtown"], ["NorthYork", "NorthYork"],["Germany", "Germany"],["France", "France"]]%>
+      </div>
        <div class="field">
         <%= f.label :style %><br />
-         <%= f.select :style, [["cut& style", "cut& style"], ["cut", "cut"],["blow dry", "blow dry"],["All", ""]]%>
-      </div>
+         <%= f.select :style, [["All", ""],["cut& style", "cut& style"], ["cut", "cut"],["blow dry", "blow dry"]]%>
+      </div>      
+      <div class="field">
+        <%= f.label :perm_price %><br />
+        <%= f.select :perm_price, [["All", ""],["10-20($)", "10-20($)"], ["20-30($)","20-30($)"],["30-40($)", "30-40($)"],["40-50($)", "40-50($)"]]%>  
+      </div>   
+
       <div class="field">
         <%= f.label :cut_price %><br />
-        <%= f.select :cut_price, [["10-20($)", "10-20($)"], ["20-30($)","20-30($)"],["30-40($)", "30-40($)"],["40-50($)", "40-50($)"],["All", ""]]%>
+        <%= f.select :cut_price, [["All", ""],["10-20($)", "10-20($)"], ["20-30($)","20-30($)"],["30-40($)", "30-40($)"],["40-50($)", "40-50($)"]]%>
       </div>
 
       <div class="field">
         <%= f.label :treatment_price %><br />
-        <%= f.select :treatment_price, [["10-20($)", "10-20($)"], ["20-30($)","20-30($)"],["30-40($)", "30-40($)"],["40-50($)", "40-50($)"],["All", ""]]%>
+        <%= f.select :treatment_price, [["All", ""],["10-20($)", "10-20($)"], ["20-30($)","20-30($)"],["30-40($)", "30-40($)"],["40-50($)", "40-50($)"]]%>
       </div>
               <%= f.hidden_field :search_type, :value => "Hairdressers" %>
 
       <div class="actions"><%= f.submit "search" %></div>
 
       <% end %>
+    </div>
   </section>
   <section role="tabpanel" aria-hidden="true" class="content" id="panel2-2">
-        <h1>Picture Search</h1>
+    <div class = "small-12 columns text-center">
      <%= form_for @search do |f| %>
         <div class="field">
-        <%= f.label "Name of Hairdresser" %><br />
+        <%= f.label "Hairdresser" %><br />
         <%= f.text_field :first_name %>
       </div>
        <div class="field">
@@ -64,6 +67,7 @@
         <%= f.submit "search" %></div>
       <% end %>
     </div>   
+  </div>
   </section>
 
 </div>

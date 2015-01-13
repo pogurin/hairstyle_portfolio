@@ -254,4 +254,26 @@ table {
     float: none;
 }
 
+.criteria label {
+  margin-top: 6px;
+  margin-bottom: 5px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 120%;
+}
 
+.field {
+    margin-top: 6px;
+  margin-bottom: 0px;
+   display: inline-block;
+   float: none;
+}
+
+.field {
+  margin-bottom: 0px;
+}
+
+.new_search{
+   text-align: center;
+    display: inline-block;
+    float: none;
+}
