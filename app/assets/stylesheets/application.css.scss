@@ -266,6 +266,8 @@ table {
   margin-bottom: 5px;
   font-family: 'Oswald', sans-serif;
   font-size: 120%;
+          outline: none;
+
 }
 
 .field {
@@ -283,4 +285,10 @@ table {
    text-align: center;
     display: inline-block;
     float: none;
+        outline: none;
+}
+
+.text-center {
+ outline: none;
+
 }
