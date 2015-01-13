@@ -17,6 +17,13 @@
  */
 
 @import "foundation/components/panels";
+.tabs dd > a, .tabs .tab-title > a{
+    outline: none;
+}
+
+.columns {
+    outline: none;
+}
 
 
  .profile_pictures {
