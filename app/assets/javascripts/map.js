@@ -49,7 +49,7 @@ myMap.addMarker = function(latitude, longitude, image, note) {
     infoWindow.close();
   });
 
-google.maps.event.addListener(map, 'center_changed', function() {    
+google.maps.event.addListener(map, 'bounds_changed', function() {    
   map.panTo(marker.getPosition());
 });
 
