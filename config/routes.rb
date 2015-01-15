@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'categories#index'
+  root 'searches#new'
 
   # get 'appointment' => 'appointment#index'              # 入力画面
   # post 'appointment/confirm' => 'appointment#confirm'   # 確認画面
