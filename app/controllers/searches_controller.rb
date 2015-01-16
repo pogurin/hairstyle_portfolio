@@ -24,6 +24,8 @@ class SearchesController < ApplicationController
 
   def show
     @search = Search.find(params[:id])
+    
+    
     @hairdressers = Hairdresser.all.order("created_at DESC")
     @coords = [] 
     @hairdressers.each do |r|
