@@ -2,6 +2,7 @@ class CategoriesController < ApplicationController
 
   def new
     @search = Search.new
+    @categories = Category.all
   end
   
   def index

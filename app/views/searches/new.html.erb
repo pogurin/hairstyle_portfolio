@@ -89,7 +89,9 @@
   </div>
   </section>
       <%= render "categories/about_us" %>
-      
+      <% @categories.each do |category| %>
+       <%= render partial: "categories/category", locals: {category: category} %>
+      <% end %>
 
 </div>
 </div>
