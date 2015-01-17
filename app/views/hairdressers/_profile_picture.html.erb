@@ -11,11 +11,12 @@
 			<div class="field">
 				<%= f.file_field :picture %>
 				<%= f.hidden_field :picture_cache %>
+				<%= f.submit "Submit"%>
 			</div>
 		</div>
 		<div class = "small-6 columns">
 			<div class="field">
-				<%= f.submit 'Submit', :class => 'button tiny success' %>
+				
 			</div>
 		</div>
 		<% end %>
