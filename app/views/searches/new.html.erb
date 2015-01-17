@@ -10,7 +10,19 @@
 
 
 
-<div class="row">
+<div class="raw">
 <%= render "searches/new_search" %>
+
+
+      <%= render "categories/about_us" %>
+      <h1>Search from Categories</h1>
+    <ul class="small-block-grid-3">
+      <% @categories.each do |category| %>
+       <%= render partial: "categories/category", locals: {category: category} %>
+      <% end %>
+    </ul>
 </div>
+
+
+
 
