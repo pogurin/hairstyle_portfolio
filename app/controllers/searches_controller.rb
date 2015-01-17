@@ -3,6 +3,7 @@ class SearchesController < ApplicationController
   
   # respond_to :html
   def index 
+    @search = Search.new
     @hairdressers = Hairdresser.all.order("created_at DESC")
     @pictures = Picture.all
     @categories = Category.all
@@ -25,7 +26,6 @@ class SearchesController < ApplicationController
 
   def show
     @search = Search.find(params[:id])
-    
     
     @hairdressers = Hairdresser.all.order("created_at DESC")
     @coords = [] 
