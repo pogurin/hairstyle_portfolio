@@ -3,8 +3,8 @@
 <div id="welcome">
     <img src="http://pagepink.com/wp-content/uploads/2014/06/Dusol-Beauty-Hair-Salon-Korean-Hair-Stylist1.jpg"><br/>
     
-  <span style="position: absolute; top: 100px; right: 150px; width: 200px;">
-    <h1>Air salon</h1>
+  <span style="position: relative; top: 100px; right: 150px; width: 100px;">
+    
   </span>
 </div>
 
@@ -89,10 +89,12 @@
   </div>
   </section>
       <%= render "categories/about_us" %>
+      <h1>Search from Categories</h1>
+    <ul class="small-block-grid-3">
       <% @categories.each do |category| %>
        <%= render partial: "categories/category", locals: {category: category} %>
       <% end %>
-
+    </ul>
 </div>
 </div>
 
