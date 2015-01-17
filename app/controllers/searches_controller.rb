@@ -25,6 +25,10 @@ class SearchesController < ApplicationController
   def show
     @search = Search.find(params[:id])
   end
+  def update
+    @search = Search.new
+    render :action => 'new'
+  end
 end
 
 
