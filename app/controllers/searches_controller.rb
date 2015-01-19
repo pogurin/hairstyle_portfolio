@@ -7,11 +7,16 @@ class SearchesController < ApplicationController
     @hairdressers = Hairdresser.all.order("created_at DESC")
     @pictures = Picture.all
     @categories = Category.all
+        
   end
 
   def new
     @search = Search.new
     @categories = Category.all
+    render :action => 'new'
+    @hairdressers = Hairdresser.all.order("created_at DESC")
+    @pictures = Picture.all
+
   end
 
   def create
@@ -34,10 +39,10 @@ class SearchesController < ApplicationController
     end
   end
   
-  def update
-    @search = Search.new
-    render :action => 'new'
-  end
+  # def update
+  #   @search = Search.new
+  #   render :action => 'new'
+  # end
 end
 
 private

@@ -26,3 +26,18 @@ $(document).ready(function() {
   /* Activating Best In Place */
   jQuery(".best_in_place").best_in_place();
 });
+
+
+// Ajax for searchiong
+$(function(){
+	$("#hairdressers th a").live("click", function() {
+		$.getScript(this.href);
+		return false;
+	});
+	$("#products_search").submit(function() {
+		$.get(this.action, $(this).serialize(), null, "script");
+		return false;
+	});
+});	
+
+
