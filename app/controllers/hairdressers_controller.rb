@@ -73,6 +73,7 @@ class HairdressersController < ApplicationController
 
   def update
     @hairdresser = Hairdresser.find(params[:id])
+    @hairdresser.update_attributes(hairdresser_params)
     respond_with @hairdresser
     # if @hairdresser.update_attributes(hairdresser_params)
     #       respond_with @hairdresser

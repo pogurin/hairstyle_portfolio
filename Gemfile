@@ -82,6 +82,9 @@ gem 'simple_form'
 #use animate.css for css animations
 gem "animate-rails"
 
+#use masonry for tiles
+gem 'masonry-rails'
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

@@ -1,2 +1,20 @@
 
 
+
+<ul class="profile_pictures">
+	<% if @search.search_type == "Hairdressers" %>
+		<h1>Search Results - Hairdressers</h1>
+		<ul class="small-block-grid-3">
+		<%= render @search.hairdressers %>
+	</ul>
+	<% end %>
+
+	<% if @search.search_type == "Pictures" %>
+		<h1>Search Results - Pictures</h1>
+		<%= render "picture_results" %>
+	<% end %>
+</ul>
+
+
+
+

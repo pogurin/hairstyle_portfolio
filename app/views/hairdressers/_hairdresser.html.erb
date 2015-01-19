@@ -1,6 +1,16 @@
 
 		<div class="profile_pictures">
-			<table> 
+			
+				<%= hairdresser.first_name %> <%= hairdresser.last_name %></br>
+					<div class="box">
+		    			<% if hairdresser.picture_url == nil %>
+								<%= link_to image_tag('empty_pic.png'), hairdresser %>
+							<% else %>
+								<%= link_to image_tag(hairdresser.picture_url(:medium)), hairdresser %>
+							<% end %>
+		    		</div>
+			
+		<!-- 	<table> 
 			  <tr>
 			    <th><%= hairdresser.first_name %> <%= hairdresser.last_name %>,<br/><%= hairdresser.career %></th>
 			  </tr>
@@ -18,5 +28,5 @@
 			  <tr>
 			    <td><a>Status: </a><%= hairdresser.status %></td>		
 			  </tr>	
-			</table>
+			</table> -->
 		</div>
