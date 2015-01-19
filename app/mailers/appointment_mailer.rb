@@ -8,7 +8,8 @@ class AppointmentMailer < ActionMailer::Base
     @url = edit_hairdresser_appointment_url(@hairdresser, @appointment)
     mail(from: @user.email,
     	 to: @hairdresser.email,
-    	:subject => 'Thank you for your message!')
+      :cc => "seiun340066@gmail.com", 
+    	:subject => 'Hi! You got an appointment')
   end
 
 end
