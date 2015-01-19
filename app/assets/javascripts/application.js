@@ -14,6 +14,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
+//= require jquery.lettering.min.js
+//= require jquery.textillate.js
 //= require cocoon
 //= require best_in_place
 //= require_tree .

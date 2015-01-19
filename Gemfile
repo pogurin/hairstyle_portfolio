@@ -79,6 +79,9 @@ gem "cocoon"
 # use simple_form for form generation
 gem 'simple_form'
 
+#use animate.css for css animations
+gem "animate-rails"
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
