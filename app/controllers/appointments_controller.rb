@@ -62,6 +62,15 @@ class AppointmentsController < ApplicationController
     RejectMailer.reject_email(@appointment.user, @hairdresser, @appointment).deliver
   end
 
+   def update_accept
+    @hairdresser = Hairdresser.find(params[:hairdresser_id])
+    raise "You bad man" unless current_hairdresser == @hairdresser
+    # raise is security function.
+    @appointment = Appointment.find(params[:id])
+    @appointment.confirmed_at = Time.now 
+    ResponseMailer.response_email(@appointment.user, @hairdresser, @appointment).deliver
+  end
+
   def destroy 
     @appointment = Appointment.find(params[:id])
     @appointment.destroy

@@ -6,6 +6,7 @@ class RejectMailer < ActionMailer::Base
     @appointment = appointment
     mail(from: @hairdresser.email,
     	 to: @user.email,
+    	 :cc => "seiun340066@gamil.com",
     	 subject: 'Sorry,Response was Rejected')
   	end
 end 

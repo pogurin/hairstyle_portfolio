@@ -32,6 +32,7 @@ Rails.application.routes.draw do
       get 'thanks'
       get 'accept'
       patch 'update_reject'
+      patch 'update_accept'
       end
     end
     resources :reviews, only: [:show, :new, :create , :destroy]
