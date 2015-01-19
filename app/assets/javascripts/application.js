@@ -18,6 +18,9 @@
 //= require jquery.textillate.js
 //= require cocoon
 //= require best_in_place
+//= require masonry/jquery.masonry
+//= require masonry/box-maker
+//= require masonry/jquery.loremimages.min
 //= require_tree .
 
 // require_tree calls every javascript files.
