@@ -30,6 +30,7 @@ $(function(){ $(document).foundation(); });
 $(document).ready(function() {
   /* Activating Best In Place */
   jQuery(".best_in_place").best_in_place();
+<<<<<<< HEAD
 
   /* Activate animation */
  //  $('.more').on('click', function(e) {
@@ -46,3 +47,21 @@ $(document).ready(function() {
 	// });
 });
 
+=======
+});
+
+
+// Ajax for searchiong
+$(function(){
+	$("#hairdressers th a").live("click", function() {
+		$.getScript(this.href);
+		return false;
+	});
+	$("#hairdressers_search").submit(function() {
+		$.get(this.action, $(this).serialize(), null, "script");
+		return false;
+	});
+});	
+
+
+>>>>>>> b2eff9af8c1783883d8eb70ea60da383dc5b4c02

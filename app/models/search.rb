@@ -1,5 +1,10 @@
 class Search < ActiveRecord::Base
+		has_many :hairdressers
+	#has_many :pictures,:as => :imageable 
+	has_and_belongs_to_many :pictures
 
+
+	
 	 def hairdressers
 	  @hairdressers ||= find_hairdressers
 	 end

@@ -1,3 +1,9 @@
+
+
+
+
+
+
 <div class="landing">
 <div class="row searchbar">
   <br>
@@ -42,17 +48,11 @@
         <%= f.select :perm_price, [["All", ""],["10-20($)", "10-20($)"], ["20-30($)","20-30($)"],["30-40($)", "30-40($)"],["40-50($)", "40-50($)"]]%>  
       </div>   
 
-      <div class="field">
-        <%= f.label :cut_price %><br />
-        <%= f.select :cut_price, [["All", ""],["10-20($)", "10-20($)"], ["20-30($)","20-30($)"],["30-40($)", "30-40($)"],["40-50($)", "40-50($)"]]%>
-      </div>
 
-      <div class="field">
-        <%= f.label :treatment_price %><br />
-        <%= f.select :treatment_price, [["All", ""],["10-20($)", "10-20($)"], ["20-30($)","20-30($)"],["30-40($)", "30-40($)"],["40-50($)", "40-50($)"]]%>
-      </div>
-              <%= f.hidden_field :search_type, :value => "Hairdressers" %>
+<div class="raw">
+<%= render "searches/new_search" %>
 
+<<<<<<< HEAD
       <div class="actions "><%= f.button "search"%></div>
 </a>
       <% end %>
@@ -70,17 +70,47 @@
         <%= f.text_field :name %>
       </div>
                     <%= f.hidden_field :search_type, :value => "Pictures" %>
+=======
 
-      <div class="actions">
-        <%= f.button "search" %></div>
+  <script type="text/javascript">
+  function display_search_results() {
+    // readyState === 4 means that the asynchronous request completed successfully
+    if (this.readyState === 4) {
+      console.log(this);
+      document.getElementById('hairdressers').innerHTML = this.responseText;
+    }
+  }
+>>>>>>> b2eff9af8c1783883d8eb70ea60da383dc5b4c02
+
+  var form = document.getElementById('search-form');
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+    var searchValue = document.getElementById('search').value;
+
+    var xhr = new XMLHttpRequest();
+    xhr.onload = display_search_results;
+    xhr.open('GET', '/hairdressers?search=' + searchValue, true);
+    xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+    xhr.send();
+  });
+</script>
+
+
+
+      <h1>カテゴリーから、写真をチェック！</h1>
+    <ul class="small-block-grid-3">
+      <% @categories.each do |category| %>
+       <%= render partial: "categories/category", locals: {category: category} %>
       <% end %>
-    </div>   
-  </div>
-  </section>
-
+    </ul>
 </div>
+<<<<<<< HEAD
 </div>
 <div id="searchContainer"></div>
+=======
+
+
+>>>>>>> b2eff9af8c1783883d8eb70ea60da383dc5b4c02
   <div class="row fullWidth text-center mainbody">
     <div class="large-12 columns">
        <div class="large-3 small-3 columns">
@@ -101,3 +131,5 @@
     </div> 
   </div>
 </div>
+
+<% end %>

@@ -7,12 +7,14 @@ class HairdressersController < ApplicationController
 
     @hairdresser = Hairdresser.new
     @appointment = Appointment.new
-
+    @search = Search.new
   end
 
   def index
 
     @hairdressers = Hairdresser.all.order("created_at DESC")
+    @pictures = Picture.all
+    @categories = Category.all
     @coords = [] 
     @hairdressers.each do |r|
       if r.latitude != nil
@@ -26,7 +28,7 @@ class HairdressersController < ApplicationController
 
     @hairdresser = Hairdresser.find(params[:id])
     @appointments = @hairdresser.appointments
-
+    @search = Search.find(params[:id])
 
 
     if @hairdresser.available?
@@ -46,7 +48,7 @@ class HairdressersController < ApplicationController
     @dates = Array.new
 
     for i in 0..7
-      @dates[i]=Date.today + i
+      @dates[i]=Date.today + i 
     end
 
   end

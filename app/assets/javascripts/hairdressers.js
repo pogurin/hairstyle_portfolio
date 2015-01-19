@@ -27,9 +27,24 @@ $(document).on('ready page:load', function() { //need 'ready page:load' and not 
   /* Activating Best In Place */
   jQuery(".best_in_place").best_in_place();
   });
-  
 });
 
+////////////////////////////////////////////////////////
+
+$(document).on('ready page:load', function() {
+  $('#search-form').submit(function(event) {
+    event.preventDefault();
+    var searchValue = $('#search').val();
+
+    $.ajax({
+      url: '/products?search=' + searchValue,
+      type: 'GET',
+      dataType: 'html'
+    }).done(function(data){
+      $('#hairdressers').html(data);
+    });
+  });
+});
 
 
 // $(document).on("change", 'input[type="radio"]', function(){

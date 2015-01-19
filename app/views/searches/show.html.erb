@@ -1,5 +1,5 @@
 
-
+<div class="row">
 
 <ul class="profile_pictures">
 	<% if @search.search_type == "Hairdressers" %>
@@ -15,6 +15,15 @@
 	<% end %>
 </ul>
 
+</div>
+<div class="row">
+<div class="panel">
+	<div class="panel" id="header_panel">
+		<h3 id="map_title">Find your nearest available hairdresser</h3>
+	</div>
+	<%= content_tag "div", "", id: 'map-canvas', data: { coords: @coords } %>
+<!-- </div> -->
+</div>
+</div>
 
-
-
+</div>
