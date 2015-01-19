@@ -1,0 +1,18 @@
+<div class="row">
+<%= render "searches/new_search" %>
+
+<ul class="profile_pictures">
+	<% if @search.search_type == "Hairdressers" %>
+		<h1>Search Results - Hairdressers</h1>
+		<%= render @search.hairdressers %>
+	<% end %>
+
+	<% if @search.search_type == "Pictures" %>
+		<h1>Search Results - Pictures</h1>
+		<%= render "picture_results" %>
+	<% end %>
+</ul>
+
+
+
+</div>

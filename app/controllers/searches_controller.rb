@@ -11,6 +11,18 @@ class SearchesController < ApplicationController
   end
 
   def new
+
+      @hairdressers = if params[:search]
+        hairdresser.where("LOWER()name LIKE LOWER(?)", "%{params[:search]%")
+      else
+        Hairdresser.all
+      end
+
+      if request.xhr?
+        render @products
+      end
+
+
     @search = Search.new
     @categories = Category.all
     render :action => 'new'

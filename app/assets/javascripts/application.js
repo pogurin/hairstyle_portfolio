@@ -14,6 +14,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
+//= require jquery.lettering.min.js
+//= require jquery.textillate.js
 //= require cocoon
 //= require best_in_place
 //= require_tree .
@@ -34,7 +36,7 @@ $(function(){
 		$.getScript(this.href);
 		return false;
 	});
-	$("#products_search").submit(function() {
+	$("#hairdressers_search").submit(function() {
 		$.get(this.action, $(this).serialize(), null, "script");
 		return false;
 	});

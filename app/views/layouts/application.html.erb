@@ -18,13 +18,14 @@
   <body class="<%= controller_name %> <%= action_name %>">
     <%= render "layouts/navbar" %>
 
-  	<div>
-  		<p id="notice"><%= flash[:notice] %></p>
+  	<!-- 	<p id="notice"><%= flash[:notice] %></p>
   		<p id="alert"><%= flash[:alert] %></p>
-  	</div>
-  	<div class="row">
+ -->
+  
      	 <%= yield %>
-    </div>
+
+
+
     <%= javascript_include_tag "application" %>
   </body>
 </html>
