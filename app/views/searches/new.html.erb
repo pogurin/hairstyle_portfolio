@@ -23,7 +23,7 @@
 
   <section role="tabpanel" aria-hidden="false" class="content active" id="panel2-1">
     <div class = "small-12 columns text-center">
-    <%= form_for @search do |f| %>
+    <%= form_for @search, :remote => true do |f| %>
             <div class="field">
         <%= f.label :first_name %><br />
         <%= f.text_field :first_name %>
@@ -59,7 +59,7 @@
   </section>
   <section role="tabpanel" aria-hidden="true" class="content" id="panel2-2">
     <div class = "small-12 columns text-center">
-     <%= form_for @search do |f| %>
+     <%= form_for @search, :remote => true do |f| %>
         <div class="field">
         <%= f.label "Hairdresser" %><br />
         <%= f.text_field :first_name %>
@@ -79,7 +79,7 @@
 
 </div>
 </div>
-
+<div id="searchContainer"></div>
   <div class="row fullWidth text-center mainbody">
     <div class="large-12 columns">
        <div class="large-3 small-3 columns">
