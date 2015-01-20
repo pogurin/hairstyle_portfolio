@@ -3,6 +3,7 @@ window.myMap = {};
 var map;
 var bounds = new google.maps.LatLngBounds();
 var marker;
+var center = new google.maps.LatLng('43.6476863', '-79.3885854');
 
 myMap.init = function() {
   var coords = $('#map-canvas').data('coords');
@@ -10,7 +11,7 @@ myMap.init = function() {
 
 	var options = {
 		zoom: 14,
-		center: new google.maps.LatLng('43.6476863', '-79.3885854'),
+		center: center,
 		mapTypeId: google.maps.MapTypeId.ROADMAP
 	}
 
@@ -47,13 +48,13 @@ myMap.addMarker = function(latitude, longitude, image, note) {
 
   google.maps.event.addListener(map, 'click', function() {
     infoWindow.close();
-  });
+  })
 
-google.maps.event.addListener(map, 'bounds_changed', function() {    
-  map.panTo(marker.getPosition());
-});
+  // google.maps.event.addListener(map, 'center_changed', function() {
+  //   map.panTo(marker.getPosition());
+  // })
 
-map.setOptions({styles: styles});
+  map.setOptions({styles: styles});
 }
 
 
