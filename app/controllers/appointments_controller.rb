@@ -49,8 +49,6 @@ class AppointmentsController < ApplicationController
     else
       render :edit
     end
-
-
   end
 
    def update_reject
@@ -79,7 +77,7 @@ class AppointmentsController < ApplicationController
 
   private
   def appointment_params
-    params.require(:appointment).permit(:appointment_at, :hairdresser_id, :message, :user_id, :appointment_date)
+    params.require(:appointment).permit(:appointment_at, :hairdresser_id, :message, :user_id, :appointment_date,:user_location)
   end
 
   def load_hairdresser
