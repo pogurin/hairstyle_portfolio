@@ -36,16 +36,39 @@ class AppointmentsController < ApplicationController
 
   def update
     @appointment = Appointment.find(params[:id])
-    @user = current_user
+    if current_user
+     @user = current_user
+    end
+    if current_hairdresser
+      @hairdresser = current_hairdresser
+    end
+
     if @appointment.update_attributes(appointment_params)
       redirect_to hairdresser_path(@hairdresser)
       AppointmentMailer.received_email(@user, @hairdresser, @appointment).deliver
-      
     else
       render :edit
     end
 
 
+  end
+
+   def update_reject
+    @hairdresser = Hairdresser.find(params[:hairdresser_id])
+    raise "You bad man" unless current_hairdresser == @hairdresser
+    # raise is security function.
+    @appointment = Appointment.find(params[:id])
+    @appointment.confirmed_at = Time.now 
+    RejectMailer.reject_email(@appointment.user, @hairdresser, @appointment).deliver
+  end
+
+   def update_accept
+    @hairdresser = Hairdresser.find(params[:hairdresser_id])
+    raise "You bad man" unless current_hairdresser == @hairdresser
+    # raise is security function.
+    @appointment = Appointment.find(params[:id])
+    @appointment.confirmed_at = Time.now 
+    ResponseMailer.response_email(@appointment.user, @hairdresser, @appointment).deliver
   end
 
   def destroy 

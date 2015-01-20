@@ -1,0 +1,11 @@
+ <h1>Welcome!! <%= @hairdresser.first_name %></h1>
+
+  <%= form_for [@hairdresser, @appointment], :url => update_accept_hairdresser_appointment_path do |f| %>
+    Do you accept this request?
+    <%= f.submit 'Accept', class: 'btn btn-primary' %>
+  <% end %>
+
+  <%= form_for [@hairdresser, @appointment], :url => update_reject_hairdresser_appointment_path(@hairdresser, @appointment) do |f| %>
+    Do you reject this request?
+    <%= f.submit 'Reject', class: 'btn btn-primary' %>
+  <% end %>

@@ -14,8 +14,13 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
+//= require jquery.lettering.min.js
+//= require jquery.textillate.js
 //= require cocoon
 //= require best_in_place
+//= require masonry/jquery.masonry
+//= require masonry/box-maker
+//= require masonry/jquery.loremimages.min
 //= require_tree .
 
 // require_tree calls every javascript files.
@@ -25,4 +30,19 @@ $(function(){ $(document).foundation(); });
 $(document).ready(function() {
   /* Activating Best In Place */
   jQuery(".best_in_place").best_in_place();
+
+  /* Activate animation */
+ //  $('.more').on('click', function(e) {
+	// 	e.preventDefault();
+	// 	var href = $(this).attr('href');
+	// 	if ($('#searchContainer').is(':visible')) {
+	// 		$('#searchContainer').css({ displa	y:'block' }).animate({ height:'0' }).empty();
+	// 	}
+	// 	$('#searchContainer').css({ display:'block' }).animate({ height:'200px' },function() {
+	// 		$('#searchContainer').load('http://example.com/slide-fade-content.html ' + href, function() {
+	// 			$('#searchContainer').hide().fadeIn('slow'));
+	// 		});
+	// 	});
+	// });
 });
+

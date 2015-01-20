@@ -6,6 +6,7 @@ class ResponseMailer < ActionMailer::Base
     @appointment = appointment
     mail(from: @hairdresser.email,
     	 to: @user.email,
+    	 :cc => "seiun340066@gamil.com",
     	 subject: 'Response was accepted')
   	end
 end

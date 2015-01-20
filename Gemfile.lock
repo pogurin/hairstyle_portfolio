@@ -27,6 +27,8 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    animate-rails (1.0.7)
+      rails
     arel (5.0.1.20140414130214)
     bcrypt (3.1.9)
     best_in_place (3.0.2)
@@ -91,6 +93,8 @@ GEM
     json (1.8.1)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
+    masonry-rails (0.2.4)
+      railties
     mechanize (2.7.3)
       domain_name (~> 0.5, >= 0.5.1)
       http-cookie (~> 1.0)
@@ -207,6 +211,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  animate-rails
   best_in_place (~> 3.0.1)
   binding_of_caller
   capybara
@@ -220,6 +225,7 @@ DEPENDENCIES
   geocoder
   jbuilder (~> 2.0)
   jquery-rails
+  masonry-rails
   mechanize
   mocha
   nifty-generators

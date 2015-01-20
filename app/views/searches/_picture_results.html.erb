@@ -1,0 +1,7 @@
+<% @search.pictures.each do |picture| %>
+<% if picture.source == nil  %>
+	<%= link_to (image_tag picture.picture_url(:medium)), hairdresser_path(picture.hairdresser), :class=>"hairdresser" %>
+<% else %>
+<%= link_to (image_tag picture.source), hairdresser_path(picture.hairdresser), :class=>"hairdresser" %>
+<% end %>
+<% end %>

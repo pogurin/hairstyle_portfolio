@@ -1,9 +1,10 @@
-<%= link_to "LET`S MAKE AN APPOINTMENT", new_hairdresser_appointment_path(@hairdresser) %>
+
  <script type="text/javascript"
     src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 
 
 <div class="profile">
+	<div class="row mainbody">
 	<div class="row">
 		<script>
 			// $('.highlight_on_success').bind("ajax:success", function(){$(this).closest('textile').effect('highlight'));});
@@ -34,10 +35,10 @@
 
 	<% @hairdresser.pictures.each do |picture| %>
 		<div class="hairstyle_picture">
-			<td>
+			
 				<div class="box"><%= image_tag(picture.picture_url(:medium))%></div>
-			</td>
-		</div>1
+			
+		</div>
 	<% end %>
 
 	<% if current_user %>
@@ -72,3 +73,4 @@
 	<% end %> <!-- ending if current user -->
 	
 </div> <!-- closing class profile -->
+</div>
