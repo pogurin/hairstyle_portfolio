@@ -101,6 +101,7 @@ body {
 
 .mainbody {
     background-color:rgba(255,255,255,0.9);
+    min-height:100%;
 }
 
 .searchbar {
@@ -238,6 +239,18 @@ table {
   font-size: 120%;
 }
 .schedule_time  {
+  background-color: #7f7f84;
+  display: inline;
+  color:  #FFFFFF;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding-left:5px;
+  padding-right:5px;
+   border-radius: 25px;
+
+}
+
+.schedule_normal  {
   background-color: #7f7f84;
   display: inline;
   color:  #FFFFFF;
