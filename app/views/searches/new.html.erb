@@ -61,18 +61,17 @@
   <section role="tabpanel" aria-hidden="false" class="content active" id="panel2-2">
     <div class = "small-12 columns text-center">
      <%= form_for @search, :remote => true do |f| %>
-        <div class="field">
+      <!--   <div class="field">
         <%= f.label "Hairdresser" %><br />
         <%= f.text_field :first_name %>
-      </div>
+      </div> -->
        <div class="field">
-        <%= f.label :Category %><br />
-        <%= f.text_field :name %>
+        <%= f.text_field :name, :placeholder => "e.g curly, long, short" %> <%= f.button "search" %>
       </div>
                     <%= f.hidden_field :search_type, :value => "Pictures" %>
 
       <div class="actions" >
-        <%= f.button "search" %></div>
+       </div>
       <% end %>
     </div>   
   </div>
