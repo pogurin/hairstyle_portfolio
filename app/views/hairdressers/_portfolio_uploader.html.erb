@@ -24,8 +24,10 @@
 			  <div class="large-12 columns">
 				 	<% Category.all.each do |category| %>
 				    <label>
+				    	 <div class="large-2 columns">
 				    	<%= check_box_tag 'category_ids[]', category.id, @hairdresser.pictures.include?(category) %>
 				    	<%= category.name %>
+				    </div>
 				 		</label>
 				 	<% end %>
 
