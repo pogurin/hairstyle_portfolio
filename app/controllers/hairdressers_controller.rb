@@ -49,6 +49,11 @@ class HairdressersController < ApplicationController
       @dates[i]=Date.today + i
     end
 
+    @coords = [] 
+    @coords << {latitude: @hairdresser.latitude.to_f, longitude: @hairdresser.longitude.to_f, note: @hairdresser.first_name + ' ' + @hairdresser.last_name + ',' + ' ' + @hairdresser.salon_address}
+    
+    
+
   end
 
   def edit

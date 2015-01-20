@@ -181,9 +181,10 @@ table {
 
 
 #map-canvas {
- height: 500px;
- width: 700px;
- margin: 0 auto 0 auto;
+ float: right;
+ height: 300px;
+ width: 300px;
+ border: 5px;
 }
 
 #map_title {

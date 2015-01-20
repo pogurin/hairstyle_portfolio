@@ -9,15 +9,15 @@ myMap.init = function() {
   var coords = $('#map-canvas').data('coords');
 
 
-	var options = {
-		zoom: 14,
-		center: center,
-		mapTypeId: google.maps.MapTypeId.ROADMAP
-	}
+  var options = {
+    maxZoom: 14,
+    center: center,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  }
 
-	map = new google.maps.Map($('#map-canvas')[0], options);
+  map = new google.maps.Map($('#map-canvas')[0], options);
 
-	if (coords) {
+  if (coords) {
     var _this = this;
     coords.forEach(function(coord) {
       _this.addMarker(coord.latitude, coord.longitude, coord.image, coord.note);
@@ -28,7 +28,7 @@ myMap.init = function() {
 };
 
 var infoWindow = new google.maps.InfoWindow({
-	content: ''
+  content: ''
 });
 
 myMap.addMarker = function(latitude, longitude, image, note) {
@@ -36,7 +36,7 @@ myMap.addMarker = function(latitude, longitude, image, note) {
     position: new google.maps.LatLng(latitude, longitude),
     map: map,
     note: note,
-		icon: image,
+    icon: image,
     clickable: true
   });
   bounds.extend(marker.position);
@@ -50,9 +50,6 @@ myMap.addMarker = function(latitude, longitude, image, note) {
     infoWindow.close();
   })
 
-  // google.maps.event.addListener(map, 'center_changed', function() {
-  //   map.panTo(marker.getPosition());
-  // })
 
   map.setOptions({styles: styles});
 }
@@ -81,7 +78,7 @@ var styles = [
 ];
 
 $(document).on('ready page:load', function() {
-	if ($('#map-canvas').length) {
-		myMap.init();
-	}
+  if ($('#map-canvas').length) {
+    myMap.init();
+  }
 });

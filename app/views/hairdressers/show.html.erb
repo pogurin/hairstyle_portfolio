@@ -24,6 +24,10 @@
 		<%= render "profile_picture" %>
 		
 		<%= render "hairdresser_information" %>
+	
+		<div class="map_border">
+		<%= content_tag "div", "", id: 'map-canvas', data: { coords: @coords } %>
+		</div>
 	</div> <!-- closing the class row -->
 	<%= render "schedule" %>
 
@@ -40,6 +44,7 @@
 			
 		</div>
 	<% end %>
+
 
 	<% if current_user %>
 		<h4>New Review</h4>
