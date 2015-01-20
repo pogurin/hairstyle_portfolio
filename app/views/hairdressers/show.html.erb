@@ -10,6 +10,7 @@
 			// $('.highlight_on_success').bind("ajax:success", function(){$(this).closest('textile').effect('highlight'));});
 			
 		</script>
+
 		<h1>
 
 			<% if current_hairdresser && @hairdresser.id == current_hairdresser.id %> 
@@ -20,10 +21,18 @@
 			<% end %>
 			
 		</h1>
-
+		<div class="large-3 small-4 columns">
 		<%= render "profile_picture" %>
+		</div>
 		
 		<%= render "hairdresser_information" %>
+	
+
+	</div>
+	<div class="row">
+		<!-- <div class="map_border">
+		<%= content_tag "div", "", id: 'map-canvas', data: { coords: @coords } %>
+		</div> -->
 	</div> <!-- closing the class row -->
 	<%= render "schedule" %>
 
@@ -35,11 +44,12 @@
 
 	<% @hairdresser.pictures.each do |picture| %>
 		<div class="hairstyle_picture">
-			
-				<div class="box"><%= image_tag(picture.picture_url(:medium))%></div>
+			 
+				<div class="box"><%= image_tag(picture.picture_url(:medium)) %></div>
 			
 		</div>
 	<% end %>
+
 
 	<% if current_user %>
 		<h4>New Review</h4>

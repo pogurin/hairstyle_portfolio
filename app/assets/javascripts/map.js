@@ -2,20 +2,22 @@ window.myMap = {};
 
 var map;
 var bounds = new google.maps.LatLngBounds();
+var marker;
+var center = new google.maps.LatLng('43.6476863', '-79.3885854');
 
 myMap.init = function() {
   var coords = $('#map-canvas').data('coords');
 
 
-	var options = {
-		zoom: 14,
-		center: new google.maps.LatLng('43.6476863', '-79.3885854'),
-		mapTypeId: google.maps.MapTypeId.ROADMAP
-	}
+  var options = {
+    maxZoom: 14,
+    center: center,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  }
 
-	map = new google.maps.Map($('#map-canvas')[0], options);
+  map = new google.maps.Map($('#map-canvas')[0], options);
 
-	if (coords) {
+  if (coords) {
     var _this = this;
     coords.forEach(function(coord) {
       _this.addMarker(coord.latitude, coord.longitude, coord.image, coord.note);
@@ -26,15 +28,15 @@ myMap.init = function() {
 };
 
 var infoWindow = new google.maps.InfoWindow({
-	content: ''
+  content: ''
 });
 
 myMap.addMarker = function(latitude, longitude, image, note) {
-  var marker = new google.maps.Marker({
+  marker = new google.maps.Marker({
     position: new google.maps.LatLng(latitude, longitude),
     map: map,
     note: note,
-		icon: image,
+    icon: image,
     clickable: true
   });
   bounds.extend(marker.position);
@@ -46,10 +48,12 @@ myMap.addMarker = function(latitude, longitude, image, note) {
 
   google.maps.event.addListener(map, 'click', function() {
     infoWindow.close();
-  });
+  })
 
-map.setOptions({styles: styles});
+
+  map.setOptions({styles: styles});
 }
+
 
 var styles = [
   {
@@ -74,7 +78,7 @@ var styles = [
 ];
 
 $(document).on('ready page:load', function() {
-	if ($('#map-canvas').length) {
-		myMap.init();
-	}
+  if ($('#map-canvas').length) {
+    myMap.init();
+  }
 });

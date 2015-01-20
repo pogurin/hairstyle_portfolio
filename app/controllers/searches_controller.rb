@@ -24,9 +24,24 @@ class SearchesController < ApplicationController
 
   def show
     @search = Search.find(params[:id])
+    @hairdressers = Hairdresser.all.order("created_at DESC")
+    @coords = [] 
+    @search.hairdressers.each do |r|
+      @coords << {latitude: r.latitude.to_f, longitude: r.longitude.to_f, note: r.first_name + ' ' + r.last_name + ',' + ' ' + r.salon_address}
+    end
+    respond_to do |format|
+      if @search.save
+        format.html {redirect_to new_search_path}
+        format.js {}
+      else
+        format.html 
+        format.js {} # This will look for app/views/reviews/create.js.erb
+      end
+    end
   end
 end
 
+private
 
 def set_search 
   params.require(:search).permit(:search, :area, :hairdresser_id, :first_name, :last_name, :price, :style, :name, :search_type,:perm_price, :cut_price, :treatment_price)
