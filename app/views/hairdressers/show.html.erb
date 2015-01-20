@@ -45,13 +45,17 @@
 	<% @hairdresser.pictures.each do |picture| %>
 		<div class="hairstyle_picture">
 			 
-				<div class="box"><%= image_tag(picture.picture_url(:medium)) %></div>
+				<div class="imgbox"><%= image_tag(picture.picture_url(:medium)) %></div>
 			
 		</div>
 	<% end %>
 
 
 	<% if current_user %>
+	<div class="large-12 columns">
+<div class="row">
+		<h1>Reviews</h1>
+	</div>
 		<h4>New Review</h4>
 		<%= form_for [@hairdresser, @review], remote: true do |f| %>
 			
@@ -79,7 +83,7 @@
 		</div>
 
 	<% else %>
-		<p>Please <%= link_to "Log in", new_user_session_path %> to add a review.</p>
+		<!-- <p>Please <%= link_to "Log in", new_user_session_path %> to add a review.</p> -->
 	<% end %> <!-- ending if current user -->
 	
 </div> <!-- closing class profile -->
