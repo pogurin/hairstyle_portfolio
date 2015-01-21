@@ -22,6 +22,7 @@
 								<div class = "schedule_time">
 										<%= link_to "#{event.appointment_at.strftime("%I:%M%p")}", edit_hairdresser_appointment_path(@hairdresser, event) %>
 								</div>
+								
 								<% end %>
 							<% end %>
 					<% end %>
@@ -40,6 +41,7 @@
 						   	<%= f.hidden_field :message, :value => "0" %>
 						   	<%= f.hidden_field :user_id, :value => "-1" %>
 							<%= f.submit '+', :class => 'button tiny success' %>
+
 						<% end %>
 						</div>
 					<% end %>	

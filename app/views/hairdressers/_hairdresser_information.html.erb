@@ -68,7 +68,7 @@
 	</p>
 
 	<% if current_hairdresser && @hairdresser.id == current_hairdresser.id %> 
-	<p><b>Perm Price:</b> 
+	<p><b>Perm Price:</b>
 		$<a><%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, :perm_price, :as => :input, :place_holder => "Click me to add content!", :html_attrs => {:style => "width:4em" } %></a>
 	<% else %>
 		$<%= @hairdresser.perm_price %>
