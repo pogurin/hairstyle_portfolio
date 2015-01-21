@@ -19,10 +19,17 @@
 										<strike><%= "#{event.appointment_at.strftime("%I:%M%p")}" %></strike>
 									</div>
 								<% else %>
+								<% if current_user %>
 								<div class = "schedule_time">
 										<%= link_to "#{event.appointment_at.strftime("%I:%M%p")}", edit_hairdresser_appointment_path(@hairdresser, event) %>
 								</div>
-								
+
+								<% else %>
+								<div class = "schedule_normal">
+								<%= "#{event.appointment_at.strftime("%I:%M%p")}" %>
+								</div>
+								<% end %>
+
 								<% end %>
 							<% end %>
 					<% end %>

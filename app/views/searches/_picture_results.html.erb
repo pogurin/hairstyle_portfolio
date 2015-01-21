@@ -2,6 +2,6 @@
 <% if picture.source == nil  %>
 	<%= link_to (image_tag picture.picture_url(:medium)), hairdresser_path(picture.hairdresser), :class=>"hairdresser" %>
 <% else %>
-<%= link_to (image_tag picture.source), hairdresser_path(picture.hairdresser), :class=>"hairdresser" %>
+<div class="tempbox"><%= link_to (image_tag picture.source), hairdresser_path(picture.hairdresser), :class=>"hairdresser" %></div>
 <% end %>
 <% end %>

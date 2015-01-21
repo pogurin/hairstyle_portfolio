@@ -53,20 +53,18 @@
       <% end %>
     </div>
   </section>
-  <section role="tabpanel" aria-hidden="false" class="content active" id="panel2-2">
+ <section role="tabpanel" aria-hidden="false" class="content active" id="panel2-2">
     <div class = "small-12 columns text-center">
      <%= form_for @search, :remote => true do |f| %>
-      <!--   <div class="field">
-        <%= f.label "Hairdresser" %><br />
-        <%= f.text_field :first_name %>
-      </div> -->
+    
        <div class="field">
-        <%= f.text_field :name, :placeholder => "e.g curly, long, short" %> <%= f.button "search" %>
+      
+        <%= f.text_field :name, :placeholder => "e.g long, curly, short" %>
       </div>
                     <%= f.hidden_field :search_type, :value => "Pictures" %>
 
-      <div class="actions" >
-       </div>
+      <div class="actions">
+        <%= f.button "search" %></div>
       <% end %>
     </div>   
   </div>
@@ -75,11 +73,12 @@
 </div>
 </div>
 <div id="searchContainer"></div>
+<!-- <div id="searchContainer"></div>
   <div class="row fullWidth text-center mainbody">
     <div class="large-12 columns">
        <div class="large-3 small-3 columns">
-     <div class="circle"><div><h1>Find Styles</h1>
-      <h3>Discover your next haircut by browing our gallery of models. See who cut their hair, and schedule an appointment with their stylist.</h3></div></div>
+     <div class="circle"><h1>Find Styles</h1>
+      <h3>Discover your next haircut by browing our gallery of models. See who cut their hair, and schedule an appointment with their stylist.</h3></div>
    </div>
    <div class="large-3 small-3 columns">
      <div class="circle"><div><h1>Search Hairdressers</h1>
@@ -95,3 +94,4 @@
     </div> 
   </div>
 </div>
+ -->
