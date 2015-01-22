@@ -40,14 +40,6 @@
 		<%= @hairdresser.verified %>
 	</p>
 	
-	<p><b>Personal message:</b> 
-		<% if current_hairdresser && @hairdresser.id == current_hairdresser.id %> 
-		<a><%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, 
-	:personal_message, :as => :input, :place_holder => "Click me to add content!" %></a>
-	<% else %>
-		<%= @hairdresser.personal_message %>
-<% end %>
-</p>
 
 	<p><b>Area:</b> 
 		<% if current_hairdresser && @hairdresser.id == current_hairdresser.id %> 
@@ -58,14 +50,14 @@
 <% end %>
 </p>
 
-	<p><b>Hair Style:</b> 
+<!-- 	<p><b>Hair Style:</b> 
 		<% if current_hairdresser && @hairdresser.id == current_hairdresser.id %> 
 		<a><%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, 
 	:style, :as => :select, :collection => {"Cut for female" => "Cut for female", "Treatment" => "Treatment", "Color" => "Color", "Blow dry" => "Blow dry"}, :place_holder => "Click me to add content!" %> </a>
 	<% else %>
 		<%= @hairdresser.style %>
 	<% end %>
-	</p>
+	</p> -->
 
 	<p><b>Perm Price:</b>
 	<% if current_hairdresser && @hairdresser.id == current_hairdresser.id %> 
@@ -89,4 +81,12 @@
 	<% end %>
 </p>
 
+	<p><b>Personal message:</b> 
+		<% if current_hairdresser && @hairdresser.id == current_hairdresser.id %> 
+		<a><%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, 
+	:personal_message, :as => :input, :place_holder => "Click me to add content!" %></a>
+	<% else %>
+		<%= @hairdresser.personal_message %>
+<% end %>
+</p>
 
