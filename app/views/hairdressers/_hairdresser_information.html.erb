@@ -52,7 +52,7 @@
 	<p><b>Area:</b> 
 		<% if current_hairdresser && @hairdresser.id == current_hairdresser.id %> 
 		<a><%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, 
-	:area, :as => :select, :collection => {"Downtown" => "Downtown", "NorthYork" => "NorthYork", "Germany" => "Germany", "France" => "France"}, :place_holder => "Click me to add content!" %> </a>
+	:area, :as => :select, :collection => {"Downtown" => "Downtown", "NorthYork" => "NorthYork", "Mississauga" => "Mississauga", "Hamilton" => "Hamilton"}, :place_holder => "Click me to add content!" %> </a>
 	<% else %>
 		<%= @hairdresser.area %>
 <% end %>
@@ -61,14 +61,14 @@
 	<p><b>Hair Style:</b> 
 		<% if current_hairdresser && @hairdresser.id == current_hairdresser.id %> 
 		<a><%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, 
-	:style, :as => :select, :collection => {"cut& style" => "cut& style", "cut" => "cut", "style" => "style", "blow dry" => "blow dry"}, :place_holder => "Click me to add content!" %> </a>
+	:style, :as => :select, :collection => {"Cut for female" => "Cut for female", "Treatment" => "Treatment", "Color" => "Color", "Blow dry" => "Blow dry"}, :place_holder => "Click me to add content!" %> </a>
 	<% else %>
 		<%= @hairdresser.style %>
 	<% end %>
 	</p>
 
-	<% if current_hairdresser && @hairdresser.id == current_hairdresser.id %> 
 	<p><b>Perm Price:</b>
+	<% if current_hairdresser && @hairdresser.id == current_hairdresser.id %> 
 		$<a><%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, :perm_price, :as => :input, :place_holder => "Click me to add content!", :html_attrs => {:style => "width:4em" } %></a>
 	<% else %>
 		$<%= @hairdresser.perm_price %>

@@ -20,4 +20,6 @@
 
 .DS_Store
 
-/config/secrets.yml
+/config/secrets.ymlpublic/uploads
+tmp
+logs

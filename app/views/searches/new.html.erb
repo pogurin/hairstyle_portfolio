@@ -26,25 +26,25 @@
       </div>
       <div class="field">
         <%= f.label :area %><br />
-        <%= f.select :area, [["All locations", ""],["Downtown", "Downtown"], ["NorthYork", "NorthYork"],["Germany", "Germany"],["France", "France"]]%>
+        <%= f.select :area, [["All locations", ""],["Downtown", "Downtown"], ["Mississauga", "Mississauga"],["Hamilton", "Hamilton"]]%>
       </div>
        <div class="field">
         <%= f.label :style %><br />
-        <%= f.select :style, [["All", ""],["cut& style", "cut& style"], ["cut", "cut"],["blow dry", "blow dry"]]%>
+        <%= f.select :style, [["All", ""],["Cut for female", "Cut for female"], ["Treatment", "Treatment"],["Color", "Color"],["Blow dry", "Blow dry"]]%>
       </div>
       <div class="field">
         <%= f.label :perm_price %><br />
-        <%= f.select :perm_price, [["All", ""],["10-20($)", "10-20($)"], ["20-30($)","20-30($)"],["30-40($)", "30-40($)"],["40-50($)", "40-50($)"]]%>
+        <%= f.select :perm_price, [["All", ""],["30", "30"], ["40","40"],["50", "50"],["70", "70"],["90", "90"],["100","100"]]%>
       </div>   
 
       <div class="field">
         <%= f.label :cut_price %><br />
-        <%= f.select :cut_price, [["All", ""],["10-20($)", "10-20($)"], ["20-30($)","20-30($)"],["30-40($)", "30-40($)"],["40-50($)", "40-50($)"]]%>
+        <%= f.select :cut_price, [["All", ""],["30", "30"], ["40","40"],["50", "50"],["70", "70"],["90", "90"],["100","100"]]%>
       </div>
 
       <div class="field">
         <%= f.label :treatment_price %><br />
-        <%= f.select :treatment_price, [["All", ""],["10-20($)", "10-20($)"], ["20-30($)","20-30($)"],["30-40($)", "30-40($)"],["40-50($)", "40-50($)"]]%>
+        <%= f.select :treatment_price, [["All", ""],["30", "30"], ["40","40"],["50", "50"],["70", "70"],["90", "90"],["100","100"]]%>
       </div>
               <%= f.hidden_field :search_type, :value => "Hairdressers" %>
 
