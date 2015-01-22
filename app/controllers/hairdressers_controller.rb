@@ -49,12 +49,12 @@ class HairdressersController < ApplicationController
       @dates[i]=Date.today + i
     end
 
-    # @coords = [] 
-    # if @hairdresser.latitude!=nil
+    @coords = [] 
+    if @hairdresser.latitude!=nil
 
-    # @coords << {latitude: @hairdresser.latitude.to_f, longitude: @hairdresser.longitude.to_f, note: @hairdresser.first_name + ' ' + @hairdresser.last_name + ',' + ' ' + @hairdresser.salon_address}
+    @coords << {latitude: @hairdresser.latitude.to_f, longitude: @hairdresser.longitude.to_f, note: @hairdresser.first_name + ' ' + @hairdresser.last_name + ',' + ' ' + @hairdresser.salon_address}
     
-    # end
+    end
     
 
   end

@@ -26,6 +26,11 @@ class SearchesController < ApplicationController
     @search = Search.find(params[:id])
     @hairdressers = Hairdresser.all.order("created_at DESC")
     @coords = [] 
+    @hairdressers.each do |r|
+      if r.latitude != nil
+      @coords << {latitude: r.latitude.to_f, longitude: r.longitude.to_f, note: r.first_name + ' ' + r.last_name + ',' + ' ' + r.salon_address}
+     end
+    end
    
     respond_to do |format|
       if @search.save

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150107043136) do
+ActiveRecord::Schema.define(version: 20150122184930) do
 
   create_table "appointments", force: true do |t|
     t.integer  "user_id"
@@ -21,6 +21,9 @@ ActiveRecord::Schema.define(version: 20150107043136) do
     t.datetime "updated_at"
     t.datetime "confirmed_at"
     t.datetime "appointment_at"
+    t.string   "user_location"
+    t.integer  "user_phone"
+    t.string   "user_facebook_url"
   end
 
   create_table "categories", force: true do |t|
@@ -123,6 +126,13 @@ ActiveRecord::Schema.define(version: 20150107043136) do
     t.integer  "cut_price_min"
     t.integer  "perm_price_min"
     t.integer  "treatment_price_min"
+  end
+
+  create_table "services", force: true do |t|
+    t.string   "name"
+    t.integer  "price"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|

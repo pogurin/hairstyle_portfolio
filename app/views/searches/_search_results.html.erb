@@ -1,15 +1,21 @@
+
 <div class="row mainbody">
-<ul class="profile_pictures">
-	<% if @search.search_type == "Hairdressers" %>
-		<%= render @search.hairdressers %>
-	<% end %>
+	<ul class="profile_pictures">
+		<% if @search.search_type == "Hairdressers" %>
+			<%= render @search.hairdressers %>
+		<% end %>
 
-	<% if @search.search_type == "Pictures" %>
-		<%= render "picture_results" %>
-	<% end %>
+		<% if @search.search_type == "Pictures" %>
+			<%= render "picture_results" %>
+		<% end %>
+	</ul>
+</div>
 
-
-</ul>
-	
-
+<div class="row">
+	<div class="panel">
+		<div class="panel" id="header_panel">
+			<h3 id="map_title">Find your nearest available hairdresser</h3>
+		</div>
+		<%= content_tag "div", "", id: 'map-canvas', data: { coords: @coords } %>
+	</div>
 </div>
