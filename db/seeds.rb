@@ -33,50 +33,50 @@ Category.create!(name: "Curly Hair")
 Category.create!(name: "Straight Hair")
 Category.create!(name: "Blonde Hair")
 
-$i = 0
-while $i < 30  do
-	rand=(1 + rand(6))
-	url=""
-		if rand==1
-	  	url = 'shorthair.png'
-		elsif rand==2
-	  	url = 'longhair.png'
-	  	elsif rand==3
-	  	url = 'dyedhair.png'
-	  	elsif rand==4
-	  	url = 'curlyhair.png'
-	  	elsif rand==5
-	  	url = 'straighthair.png'
-	 	 elsif rand==6
-	  	url = 'blondehair.png'
-	  end	
-	  p = Picture.create(
-	  :hairdresser_id   => 1,
-	  :imageable_id => 'blah blah',
-	  :imageable_type => 'Hairdresser',
-	  :source => url
-		)
-	  if rand==1
-	  	p.categories << Category.find_by_name("Short Hair")
-		elsif rand==2
-	  	p.categories << Category.find_by_name("Long Hair")
-	  	elsif rand==3
-	  	p.categories << Category.find_by_name("Dyed Hair")
-	  	elsif rand==4
-	  	p.categories << Category.find_by_name("Curly Hair")
-	  	p.categories << Category.find_by_name("Short Hair")
-	  	elsif rand==5
-	  	p.categories << Category.find_by_name("Straight Hair")
-	  	p.categories << Category.find_by_name("Long Hair")
-	 	 elsif rand==6
-	  	p.categories << Category.find_by_name("Blonde Hair")
-	  	p.categories << Category.find_by_name("Long Hair")
-	  end
+# $i = 0
+# while $i < 30  do
+# 	rand=(1 + rand(6))
+# 	url=""
+# 		if rand==1
+# 	  	url = 'shorthair.png'
+# 		elsif rand==2
+# 	  	url = 'longhair.png'
+# 	  	elsif rand==3
+# 	  	url = 'dyedhair.png'
+# 	  	elsif rand==4
+# 	  	url = 'curlyhair.png'
+# 	  	elsif rand==5
+# 	  	url = 'straighthair.png'
+# 	 	 elsif rand==6
+# 	  	url = 'blondehair.png'
+# 	  end	
+# 	  p = Picture.create(
+# 	  :hairdresser_id   => 1,
+# 	  :imageable_id => 'blah blah',
+# 	  :imageable_type => 'Hairdresser',
+# 	  :source => url
+# 		)
+# 	  if rand==1
+# 	  	p.categories << Category.find_by_name("Short Hair")
+# 		elsif rand==2
+# 	  	p.categories << Category.find_by_name("Long Hair")
+# 	  	elsif rand==3
+# 	  	p.categories << Category.find_by_name("Dyed Hair")
+# 	  	elsif rand==4
+# 	  	p.categories << Category.find_by_name("Curly Hair")
+# 	  	p.categories << Category.find_by_name("Short Hair")
+# 	  	elsif rand==5
+# 	  	p.categories << Category.find_by_name("Straight Hair")
+# 	  	p.categories << Category.find_by_name("Long Hair")
+# 	 	 elsif rand==6
+# 	  	p.categories << Category.find_by_name("Blonde Hair")
+# 	  	p.categories << Category.find_by_name("Long Hair")
+# 	  end
 	
 	  	
 	  
 	  
 
-   $i +=1
+#    $i +=1
 
-end
+# end
