@@ -123,6 +123,15 @@ class HairdressersController < ApplicationController
     end
   end
 
+  def search 
+    hairdressers = ["first_name like ?", "%#{first_name}%"] if first_name.present?
+      hairdressers += ["price like ?", "%#{price}%"] if price.present?
+      hairdressers += ["style like ?", "%#{style}%"] if style.present?
+      hairdressers = ["area like ?", "%#{area}%"] if area.present?
+      hairdressers
+  end
+
+
 
   private
   def hairdresser_params
