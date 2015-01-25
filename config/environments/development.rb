@@ -14,7 +14,7 @@ Rails.application.configure do
     :user_name => ENV['app33275578@heroku.com'],
     :password => ENV['qxrasadi']
   }
-  ActionMailer::Base.delivery_method = :smtp
+  # ActionMailer::Base.delivery_method = :smtp
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
