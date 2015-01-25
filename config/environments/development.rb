@@ -9,11 +9,12 @@ Rails.application.configure do
     :enable_starttls_auto => true,
     :address => 'smtp.sendgrid.net',
     :port => '587',
-    :domain => 'air-salon.herokuapp.com',
-    :authentication => 'plain',
+    :domain => 'heroku.com',
+    :authentication => :plain,
     :user_name => ENV['app33275578@heroku.com'],
     :password => ENV['qxrasadi']
   }
+  ActionMailer::Base.delivery_method = :smtp
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
