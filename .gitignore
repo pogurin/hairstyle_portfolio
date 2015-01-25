@@ -23,3 +23,6 @@
 /config/secrets.ymlpublic/uploads
 tmp
 logs
+
+# Ignore application configuration
+/config/application.yml

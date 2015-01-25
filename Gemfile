@@ -93,8 +93,9 @@ gem "animate-rails"
 #use masonry for tiles
 gem 'masonry-rails'
 
-gem 'fog'
-
+gem 'fog-core', '~> 1.27.3'
+gem 'fog', '~> 1.27.0'
+gem "figaro"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

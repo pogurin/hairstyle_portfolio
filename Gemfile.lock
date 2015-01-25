@@ -317,7 +317,8 @@ DEPENDENCIES
   devise
   faker
   figaro
-  fog
+  fog (~> 1.27.0)
+  fog-core (~> 1.27.3)
   foundation-rails (= 5.4.5)
   geocoder
   jbuilder (~> 2.0)
