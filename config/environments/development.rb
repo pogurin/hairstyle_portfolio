@@ -3,7 +3,7 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :sendmail
   config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.default_options = {from: 'seiun340066@gmail.com'}
+  # config.action_mailer.default_options = {from: 'seiun340066@gmail.com'}
 
   config.action_mailer.smtp_settings = {
     :enable_starttls_auto => true,
@@ -12,7 +12,7 @@ Rails.application.configure do
     :domain => 'air-salon.herokuapp.com',
     :authentication => 'plain',
     :user_name => ENV['app33275578@heroku.com'],
-    :password => 'qxrasadi'
+    :password => ENV['qxrasadi']
   }
   # Settings specified here will take precedence over those in config/application.rb.
 
