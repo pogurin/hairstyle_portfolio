@@ -9,7 +9,7 @@ class AppointmentMailer < ActionMailer::Base
     mail(from: @user.email,
     	 to: @hairdresser.email,
         # :cc => "seiun340066@gamil.com",
-    	:subject => 'Thank you for your message!')
+    	:subject => 'Hi! You got an appointment!')
   end
 
 end
