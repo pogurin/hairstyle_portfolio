@@ -93,6 +93,7 @@ gem "animate-rails"
 #use masonry for tiles
 gem 'masonry-rails'
 
+gem 'fog'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -102,3 +103,4 @@ gem 'masonry-rails'
 
 
 gem "mocha", group: :test
+
