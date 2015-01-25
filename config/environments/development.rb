@@ -7,12 +7,12 @@ Rails.application.configure do
 
   config.action_mailer.smtp_settings = {
     :enable_starttls_auto => true,
-    :address => 'smtp.gmail.com',
+    :address => 'smtp.sendgrid.net',
     :port => '587',
-    :domain => 'smtp.gmail.com',
+    :domain => 'air-salon.herokuapp.com',
     :authentication => 'plain',
-    :user_name => 'seiun340066@gmail.com',
-    :password => 'seiun340066'
+    :user_name => ENV['app33275578@heroku.com'],
+    :password => 'qxrasadi'
   }
   # Settings specified here will take precedence over those in config/application.rb.
 
