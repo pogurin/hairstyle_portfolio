@@ -54,10 +54,9 @@ while $i < 30  do
 	  p = Picture.create(
 	  :hairdresser_id   => 1,
 	  :imageable_id => 'blah blah',
-	  :imageable_type => 'Hairdresser',
-	  
-	 
-		)
+	  :imageable_type => 'Hairdresser'
+	  )
+
 	  if rand==1
 	  	p.categories << Category.find_by_name("Short Hair")
 		elsif rand==2
@@ -74,10 +73,6 @@ while $i < 30  do
 	  	p.categories << Category.find_by_name("Color Hair")
 	  	p.categories << Category.find_by_name("Long Hair")
 	  end
-	
-	  	
-	  
-	  
 
    $i +=1
 
