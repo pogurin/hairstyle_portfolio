@@ -23,10 +23,11 @@
 		<% else %>
 		<%= @hairdresser.salon_address %>
 		<% end %>
+
 	</p>
 
 	<p>
-		<b>Website:</b> 
+		<b>Salon Website:</b> 
 		<% if current_hairdresser && @hairdresser.id == current_hairdresser.id %> 
 		<a><%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, :salon_url, :as => :input, :place_holder => "Click me to add content!" %></a>
 		<% else %>
@@ -49,8 +50,8 @@
 		<%= @hairdresser.area %>
 <% end %>
 </p>
-
-
+<p>-----------------------------------</p>
+<p>以下は、出張サービスの値段です。お店での値段は、直接Webサイトからご覧ください。</p>
 	<p><b>Perm Price:</b>
 	<% if current_hairdresser && @hairdresser.id == current_hairdresser.id %> 
 		$<a><%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, :price, :as => :input, :place_holder => "Click me to add content!", :html_attrs => {:style => "width:4em" } %></a>
@@ -81,4 +82,5 @@
 		<%= @hairdresser.personal_message %>
 <% end %>
 </p>
+
 

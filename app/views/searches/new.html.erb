@@ -15,14 +15,19 @@
 </ul>    
 </div>
 
-<div class="tabs-content criteria">
+<style>
+p { color: white;
 
+}
+</style>
+
+<div class="tabs-content criteria">
   <section role="tabpanel" aria-hidden="true" class="content" id="panel2-1">
     <div class = "small-12 columns text-center">
     <%= form_for @search, :remote => true do |f| %>
             <div class="field">
         <%= f.label :first_name %><br />
-        <%= f.text_field :first_name %>
+        <%= f.text_field :first_name , :placeholder => "Hairdresser name"%>
       </div>
       <div class="field">
         <%= f.label :area %><br />
@@ -46,6 +51,8 @@
         <%= f.label :treatment_price %><br />
         <%= f.select :treatment_price, [["All", ""],["30", "30"], ["40","40"],["50", "50"],["70", "70"],["90", "90"],["100","100"]]%>
       </div> -->
+      <p>1 検索ボックスを押してみて下さい。全ての美容師さんが出てきます。</p>
+      <p>2 お住まいの地域をAreaから選択して見て下さい。また、Google Mapでお近くの美容院を探せます。</p>
               <%= f.hidden_field :search_type, :value => "Hairdressers" %>
 
       <div class="actions "><%= f.button "search"%></div>
@@ -61,6 +68,9 @@
       
         <%= f.text_field :name, :placeholder => "e.g long, curly, short" %>
       </div>
+<p>1 髪型から検索！下の、Search boxを押してみて下さい。</p><p>2 過去に美容師さんが切ったスタイルが全部出てきます。</p>
+<p>3 気になるスタイルをクリック！カットした美容師さんの経歴や、予約可能な日程が見れます。</p>
+<p>＊美容師さんを直接探したい場合、上のタブからSearch Hairdresser を押して下さい。</p>
                     <%= f.hidden_field :search_type, :value => "Pictures" %>
 
       <div class="actions">
@@ -76,22 +86,31 @@
 <div id="searchContainer"></div>
   <div class="row fullWidth text-center mainbody">
     <div class="large-12 columns">
-       <div class="large-3 small-3 columns">
-     <div class="circle"><h1>Find Styles</h1>
-      <h3>Discover your next haircut by browing our gallery of models. See who cut their hair, and schedule an appointment with their stylist.</h3></div>
+       <div class="large-3 small-4 columns">
+     <div class="circle"><!-- <h1>Find Styles</h1>
+      <h3>Discover your next haircut by browing our gallery of models. See who cut their hair, and schedule an appointment with their stylist.</h3> -->
+      <h1>髪型から探そう！</h1>
+      <h3>美容師さんが過去に担当した髪型一覧から、好みの髪型を探してみませんか？美容院探しの不安が少なくなるかも。</h3></div>
+
    </div>
-   <div class="large-3 small-3 columns">
-     <div class="circle"><div><h1>Search Hairdressers</h1>
-      <h3>Find local hairdressers. Sort by price, service and availability. Rate and review their cuts.</h3></div></div>
+   <div class="large-3 small-4 columns">
+     <div class="circle"><div><!-- <h1>Search Hairdressers</h1>
+      <h3>Find local hairdressers. Sort by price, service and availability. Rate and review their cuts.</h3> --><h1>日本人美容師さんどこ？</h1>
+      <h3>地域で検索可能！GoogleMapでどこの美容院に所属してるかすぐ分かります！</h3></div></div>
     </div>
-    <div class="large-3 small-3 columns">
-     <div class="circle"><div><h1>Schedule Appointments</h1>
-      <h3>Find freelance stylists who work outside a salon, get your hair styled at the last minute, any time of the day.</h3></div></div>
+    <div class="large-3 small-4 columns">
+     <div class="circle"><div><!-- <h1>Schedule Appointments</h1>
+      <h3>Find freelance stylists who work outside a salon, get your hair styled at the last minute, any time of the day.</h3> --><h1>出張かっと</h1>
+      <h3>美容師さんの主張可能な日時が分かります。時間をクリックして予約しよう！(美容師さんに予約メールが届きます)</h3></div></div>
     </div>
-   <div class="large-3 small-3 columns">
-     <div class="circle"><div><h1>In-Home Cuts</h1>
-      <h3>Verifid stylists will cut your hair at home.</h3></div></div>
+   <div class="large-3 small-4 columns">
+     <div class="circle"><div><!-- <h1>In-Home Cuts or Salon Cuts</h1>
+      <h3>Verifid stylists will cut your hair at home.You can find Salons who are working at Toronto from google map.</h3> --><h1>出張 or サロンかっと</h1>
+      <h3>出張は無理でも、サロンで働いてる美容師さんが見つかります。全員、日本人美容師さんです。</h3></div></div>
     </div> 
+     
   </div>
 </div>
+
+<p>管理人アドレス: seiun340066@gmail.com</p>
 

@@ -16,6 +16,8 @@ class User < ActiveRecord::Base
 
 end
 
+
+
 # customer -> review -> hairdresser
 # hairdresser -> reviews -> customers
 

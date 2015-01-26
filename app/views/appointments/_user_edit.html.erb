@@ -16,10 +16,16 @@
  
   <h1> <%= @appointment.appointment_at.strftime("%m/%d/%Y") %> at <%= @appointment.appointment_at.strftime("%I:%M%p") %></h1>
 
-  <h3><%= current_user.first_name %>, please write down your appointment details.</h3>
-  <%= f.text_area :message %>
- 
+<div class="small-4 columns">
+  <div class="row mainbody">
+    <h5><%= current_user.first_name %>さん,これは、出張の予約です。美容師さんに来てほしい住所とサービス内容をご記入下さい。</h5><p>できたら、美容師さんから連絡しやすいように、電話番号もお願いします。</p>
+    <%= f.text_area :message, :placeholder => "よろしく"%>
+    <p>e.g. 女性です。カットでお願いしたいです。301 Front Street West,までお願いします^^</p>
+    <p>予約の後は、美容師さんから確認メールが<%= current_user.first_name %>さんのアドレス届きます。</p>
+   
 
-<%= f.hidden_field :user_id, :value => current_user.id %>
-  <%= f.submit 'Create', class: 'btn btn-primary' %>
-<% end %>
+  <%= f.hidden_field :user_id, :value => current_user.id %>
+    <%= f.submit 'Create', class: 'btn btn-primary' %>
+  <% end %>
+  </div>
+</div>

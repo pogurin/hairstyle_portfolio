@@ -10,5 +10,8 @@ Name: <%= @user.first_name %>
 Detail:<%= @appointment.message %>
 
 
-
+予約された日時です。
+<%= @appointment.appointment_at.strftime("%m/%d/%Y") %> at <%= @appointment.appointment_at.strftime("%I:%M%p") %>
+プロフィールの予約画面は、既に斜線で消されているので。
+重複した予約は来ません。	 
 
