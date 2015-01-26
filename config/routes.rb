@@ -26,6 +26,10 @@ Rails.application.routes.draw do
   resources :categories, only: [:index, :new, :create , :destroy, :show]
 
   resources :hairdressers, only: [:index, :show, :update, :edit] do 
+    collection do
+      get 'search'
+    end
+
     resources :appointments do 
       member do
 

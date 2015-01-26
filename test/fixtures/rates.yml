@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  hairdresser_id: 1
+  rate: 1
+  service_category_id: 1
+
+two:
+  hairdresser_id: 1
+  rate: 1
+  service_category_id: 1

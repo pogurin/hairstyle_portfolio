@@ -4,10 +4,12 @@ gem "nifty-generators", :group => :development
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.7'
+ruby '2.1.2'
 # Use sqlite3 as the database for Active Record
 group :development do
 	gem 'sqlite3'
 end
+
 group :production do 
 	gem 'pg'
 	gem 'rails_12factor'
@@ -91,7 +93,9 @@ gem "animate-rails"
 #use masonry for tiles
 gem 'masonry-rails'
 
-
+gem 'fog-core', '~> 1.27.3'
+gem 'fog', '~> 1.27.0'
+gem "figaro"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -100,3 +104,4 @@ gem 'masonry-rails'
 
 
 gem "mocha", group: :test
+

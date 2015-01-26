@@ -80,5 +80,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # NOTE !!!!! this needs to be changed to use whatever host you use on production
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.default_url_options = { :host => 'air-salon.herokuapp.com' }
+
+
 end

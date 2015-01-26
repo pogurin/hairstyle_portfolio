@@ -8,6 +8,11 @@ class Hairdresser < ActiveRecord::Base
 	has_many :users, through: :reviews
 	has_many :pictures, :as => :imageable
 	has_many :appointments
+
+
+	has_many :service_categories
+	has_many :rates, through: :service_categories
+
 	accepts_nested_attributes_for :appointments, :reject_if => :all_blank, :allow_destroy => true
 
 

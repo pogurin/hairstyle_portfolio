@@ -18,8 +18,7 @@
 
   <h3><%= current_user.first_name %>, please write down your appointment details.</h3>
   <%= f.text_area :message %>
-  <p>User location</p>
-  <%= f.text_area :user_location %>
+ 
 
 <%= f.hidden_field :user_id, :value => current_user.id %>
   <%= f.submit 'Create', class: 'btn btn-primary' %>

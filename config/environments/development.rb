@@ -5,15 +5,16 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.default_options = {from: 'seiun340066@gmail.com'}
 
-  # config.action_mailer.smtp_settings = {
-  #   :enable_starttls_auto => true,
-  #   :address => 'smtp.gmail.com',
-  #   :port => '587',
-  #   :domain => 'smtp.gmail.com',
-  #   :authentication => 'plain',
-  #   :user_name => 'seiun340066@gmail.com',
-  #   :password => 'seiun340066'
-  # }
+  config.action_mailer.smtp_settings = {
+    :enable_starttls_auto => true,
+    :address => 'smtp.sendgrid.net',
+    :port => '587',
+    :domain => 'heroku.com',
+    :authentication => :plain,
+    :user_name => 'app33275578@heroku.com',
+    :password => 'qxrasadi'
+  }
+  # ActionMailer::Base.delivery_method = :smtp
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
@@ -47,7 +48,7 @@ Rails.application.configure do
   # Raises helpful error messages.
   config.assets.raise_runtime_errors = true
 
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.default_url_options = { :host => 'air-salon.herokuapp.com' }
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true

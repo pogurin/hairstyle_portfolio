@@ -50,36 +50,28 @@
 <% end %>
 </p>
 
-<!-- 	<p><b>Hair Style:</b> 
-		<% if current_hairdresser && @hairdresser.id == current_hairdresser.id %> 
-		<a><%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, 
-	:style, :as => :select, :collection => {"Cut for female" => "Cut for female", "Treatment" => "Treatment", "Color" => "Color", "Blow dry" => "Blow dry"}, :place_holder => "Click me to add content!" %> </a>
-	<% else %>
-		<%= @hairdresser.style %>
-	<% end %>
-	</p> -->
 
 	<p><b>Perm Price:</b>
 	<% if current_hairdresser && @hairdresser.id == current_hairdresser.id %> 
-		$<a><%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, :perm_price, :as => :input, :place_holder => "Click me to add content!", :html_attrs => {:style => "width:4em" } %></a>
+		$<a><%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, :price, :as => :input, :place_holder => "Click me to add content!", :html_attrs => {:style => "width:4em" } %></a>
 	<% else %>
 		$<%= @hairdresser.perm_price %>
 	<% end %>
 </p>
 	<p><b>Cut Price:</b> 
 	<% if current_hairdresser && @hairdresser.id == current_hairdresser.id %> 
-	$<a><%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, :cut_price, :as => :input, :place_holder => "Click me to add content!", :html_attrs => {:style => "width:4em" } %></a>
+	$<a><%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, :price, :as => :input, :place_holder => "Click me to add content!", :html_attrs => {:style => "width:4em" } %></a>
 	<% else %>
 		$<%= @hairdresser.cut_price %>
 	<% end %>
 </p>
 	<p><b>Treatment Price:</b> 
 	<% if current_hairdresser && @hairdresser.id == current_hairdresser.id %> 
-	$<a><%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, :treatment_price, :as => :input, :place_holder => "Click me to add content!", :html_attrs => {:style => "width:4em" } %></a>
+	$<a><%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, :price, :as => :input, :place_holder => "Click me to add content!", :html_attrs => {:style => "width:4em" } %></a>
 	<% else %>
 		$<%= @hairdresser.treatment_price %>
 	<% end %>
-</p>w
+</p>
 
 	<p><b>Personal message:</b> 
 		<% if current_hairdresser && @hairdresser.id == current_hairdresser.id %> 
