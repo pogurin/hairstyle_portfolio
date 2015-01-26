@@ -28,10 +28,11 @@
 
 Category.create!(name: "Short Hair")
 Category.create!(name: "Long Hair")
-Category.create!(name: "Dyed Hair")
 Category.create!(name: "Curly Hair")
 Category.create!(name: "Straight Hair")
-Category.create!(name: "Blonde Hair")
+Category.create!(name:"Japanese Straight Perm")
+Category.create!(name: "Color Hair")
+
 
 # $i = 0
 # while $i < 30  do

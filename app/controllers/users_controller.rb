@@ -24,7 +24,7 @@ class UsersController < ApplicationController
     end
   end
 
-  def update
+   def update
     @user = current_user
 
     if @user.update_attributes!(user_params)
@@ -37,7 +37,10 @@ class UsersController < ApplicationController
   end
 
   def edit
-  end
+   
+  end 
+
+
 
   private
   def user_params

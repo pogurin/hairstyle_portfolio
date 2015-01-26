@@ -22,7 +22,7 @@
     <%= form_for @search, :remote => true do |f| %>
             <div class="field">
         <%= f.label :first_name %><br />
-        <%= f.text_field :first_name %>
+        <%= f.text_field :first_name , :placeholder => "Hairdresser name"%>
       </div>
       <div class="field">
         <%= f.label :area %><br />
