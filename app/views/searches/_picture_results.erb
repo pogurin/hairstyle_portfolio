@@ -1,14 +1,15 @@
 <div class="panel" id="header_panel">
 			<h3 id="map_title">カット写真。登録してる美容師さんは、こんなスキルを持ってます！</h3>
 </div>
-<%= @search.pictures %>
-<!-- 
+
 <% @search.pictures.each do |picture| %>
+<%= picture %>
+<!-- 
 <% if picture.source == nil  %>
 	<%= link_to (image_tag picture.picture_url(:medium)), hairdresser_path(picture.hairdresser), :class=>"hairdresser" %>
 <% else %>
 <div class="tempbox"><%= link_to (image_tag picture.source), hairdresser_path(picture.hairdresser), :class=>"hairdresser" %></div>
 <% end %>
+ -->
 <% end %>
 
- -->
