@@ -42,8 +42,8 @@ src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 <%= render "portfolio_uploader" %>
 
 <div class="row">
-	<h2><%= @hairdresser.first_name %>さんは、こんな髪型できます！</h2>
-	<p>＊<%= @hairdresser.first_name %>さんが過去に担当したスタイル一覧です。</p>
+	<h2><%= @hairdresser.first_name %>さんは、こんな髪型ができます！</h2>
+	<p><%= @hairdresser.first_name %>さんが過去に担当したスタイル一覧です。</p>
 </div>
 
 <% @hairdresser.pictures.each do |picture| %>
