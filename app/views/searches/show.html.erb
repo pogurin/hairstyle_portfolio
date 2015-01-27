@@ -12,7 +12,7 @@
 
 	<% if @search.search_type == "Pictures" %>
 		<h1>Search Results - Pictures</h1>
-		<%= render "picture_results" %>
+		<%= render @search.pictures %>
 	<% end %>
 </ul>
 
