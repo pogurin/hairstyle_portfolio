@@ -27,6 +27,8 @@
 @import "foundation/components/panels";
 .tabs dd > a, .tabs .tab-title > a{
     outline: none;
+    margin: 5px;
+    text-align: center;
 }
 
 
