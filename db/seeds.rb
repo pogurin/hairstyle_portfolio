@@ -30,26 +30,25 @@ Category.create!(name: "Short Hair")
 Category.create!(name: "Long Hair")
 Category.create!(name: "Curly Hair")
 Category.create!(name: "Straight Hair")
-Category.create!(name:"Japanese Straight Perm")
-Category.create!(name: "Color Hair")
-
+Category.create!(name: "Dyed Hair")
+Category.create!(name: "Blonde Hair")
 
 $i = 0
 while $i < 30  do
 	rand=(1 + rand(6))
 	# url=""
 	# 	if rand==1
-	#   	# url = 'shorthair.png'
+	#   	url = 'shorthair.png'
 	# 	elsif rand==2
-	#   	# url = 'longhair.png'
+	#   	url = 'longhair.png'
 	#   	elsif rand==3
-	#   	# url = 'dyedhair.png'
+	#   	url = 'dyedhair.png'
 	#   	elsif rand==4
-	#   	# url = 'curlyhair.png'
+	#   	url = 'curlyhair.png'
 	#   	elsif rand==5
-	#   	# url = 'straighthair.png'
+	#   	url = 'straighthair.png'
 	#  	 elsif rand==6
-	#   	# url = 'blondehair.png'
+	#   	url = 'blondehair.png'
 	#   end	
 	  p = Picture.create(
 	  :hairdresser_id   => 1,
@@ -62,7 +61,7 @@ while $i < 30  do
 		elsif rand==2
 	  	p.categories << Category.find_by_name("Long Hair")
 	  	elsif rand==3
-	  	p.categories << Category.find_by_name("Color Hair")
+	  	p.categories << Category.find_by_name("Dyed Hair")
 	  	elsif rand==4
 	  	p.categories << Category.find_by_name("Curly Hair")
 	  	p.categories << Category.find_by_name("Short Hair")
@@ -70,7 +69,7 @@ while $i < 30  do
 	  	p.categories << Category.find_by_name("Straight Hair")
 	  	p.categories << Category.find_by_name("Long Hair")
 	 	 elsif rand==6
-	  	p.categories << Category.find_by_name("Color Hair")
+	  	p.categories << Category.find_by_name("Blonde Hair")
 	  	p.categories << Category.find_by_name("Long Hair")
 	  end
 
