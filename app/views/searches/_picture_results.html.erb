@@ -1,6 +1,13 @@
-<div class="panel" id="header_panel">
+<% @search.pictures.each do |picture| %>
+	<%= picture %>
+<% end %>
+
+
+<!-- <div class="panel" id="header_panel">
 			<h3 id="map_title">カット写真。登録してる美容師さんは、こんなスキルを持ってます！</h3>
 </div>
+
+
 
 <% @search.pictures.each do |picture| %>
 <% if picture.source == nil  %>
@@ -10,3 +17,4 @@
 <% end %>
 <% end %>
 
+ -->
