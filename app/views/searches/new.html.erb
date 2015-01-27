@@ -1,5 +1,7 @@
 <div class="landing">
 <div class="row searchbar">
+<h1>日本人美容師さん所属の美容院検索サイト！</h1>
+<h4>サロン料金よりお手頃価格で、出張カット可能な美容師さんもいます、プロフィールからスケジュールを確認出来ます。</h4>
   <br>
   <div class = "small-12 columns text-center">
 <ul class="tabs" data-tab role="tablist">
@@ -19,7 +21,12 @@
 p { color: white;
 
 }
-
+h1 {
+  color: white;
+}
+h4 {
+  color: white;
+}
 hr {
   border-width: 10px;
 }
@@ -62,14 +69,14 @@ hr {
         <%= f.label :treatment_price %><br />
         <%= f.select :treatment_price, [["All", ""],["30", "30"], ["40","40"],["50", "50"],["70", "70"],["90", "90"],["100","100"]]%>
       </div> -->
-      <p>1 検索ボックスを押してみて下さい。全ての美容師さんが出てきます。</p>
-      <p>2 お住まいの地域をAreaから選択して見て下さい。また、Google Mapでお近くの美容院を探せます。</p>
-              <%= f.hidden_field :search_type, :value => "Hairdressers" %>
 
       <div class="actions "><%= f.button "search"%></div>
+              <%= f.hidden_field :search_type, :value => "Hairdressers" %>
 </a>
       <% end %>
     </div>
+      <p>1 検索ボックスを押してみて下さい。全ての美容師さんが出てきます。</p>
+      <p>2 お住まいの地域をAreaから選択して見て下さい。また、Google Mapでお近くの美容院を探せます。</p>
   </section>
  <section role="tabpanel" aria-hidden="false" class="content active" id="panel2-2">
     <div class = "small-12 columns text-center">
@@ -79,15 +86,15 @@ hr {
       
         <%= f.text_field :name, :placeholder => "e.g long, curly, short" %>
       </div>
-<p>1 Search boxを押してみて下さい。</p><p>2 過去に美容師さんが切ったスタイルが全部出てきます。</p>
-<p>3 写真クリックで、美容師さんの経歴や、予約可能な日程が見れます。</p>
-<p>＊美容師さんを直接探したい場合、上のタブからSearch Hairdresser を押して下さい。</p>
                     <%= f.hidden_field :search_type, :value => "Pictures" %>
 
       <div class="actions">
         <%= f.button "search" %></div>
       <% end %>
     </div>   
+<p>1 Search boxを押してみて下さい。</p><p>2 過去に美容師さんが切ったスタイルが全部出てきます。</p>
+<p>3 写真クリックで、美容師さんの経歴や、予約可能な日程が見れます。</p>
+<p>＊美容師さんを直接探したい場合、上のタブからSearch Hairdresser を押して下さい。</p>
   </div>
   </section>
 
@@ -99,11 +106,23 @@ hr {
     <br>
 
 
+  <div class="row">
+        <hr>
+        <div class="large-8 columns">
+          <h3>日本人美容師さんってどこにいるの？</h3>
+          <h5>海外在住日本人の大きな悩み。「どこで日本人の美容師さんにカットして貰えるんだろう...。」そんな悩みを解決します！トロントで働いてる日本人美容師さんが一覧できます。近くの美容師さんを探してみましょう！</h5>
+          <i class="fi-social-twitter"></i>
+        </div>
+        <div class="large-4 columns">
+          <img src="https://www.flipgive.com/assets/merchants/how-it-works/page/how-it-works-2-eb53b8af95cb727f2893fda7ce9d879d.jpg">
+        </div>
+      </div>
       <div class="row">
         <hr>
         <div class="large-8 columns">
-          <h4>髪型から探そう！</h4>
-          <h5>美容師さんが過去に担当した髪型一覧から、好みの髪型を探してみませんか？美容院探しの不安が少なくなるかも。</h5>
+          <h3>お気に入りの髪型をクリック！</h3>
+          <h5>切って貰ってから「ああ,
+          失敗した〜泣」って経験ありませんか？切ってしまってからは遅いですよね。予約する前に、美容師さんが過去にカットした写真を見て、そんな不安を無くしましょう！</h5>
           <i class="fi-social-twitter"></i>
         </div>
         <div class="large-4 columns">
@@ -113,45 +132,25 @@ hr {
   <div class="row">
         <hr>
         <div class="large-8 columns">
-          <h4>日本人美容師さんってどこ？</h4>
-          <h5>登録しているのは、日本人美容師さんです。お近くのエリアの美容院を探してみましょう！</h5>
-          <i class="fi-social-twitter"></i>
-        </div>
-        <div class="large-4 columns">
-          <img src="https://www.flipgive.com/assets/merchants/how-it-works/page/how-it-works-2-eb53b8af95cb727f2893fda7ce9d879d.jpg">
-        </div>
-      </div>
-  <div class="row">
-        <hr>
-        <div class="large-8 columns">
-          <h4>出張 or サロンかっと</h4>
-          <h5>美容師さんの主張可能な日時が分かります。時間をクリックして予約しよう！(美容師さんに予約メールが届きます)出張は無理でも、サロンで働いてる美容師さんが見つかります。</h5>
+          <h3>出張かっとでお手頃に！</h3>
+          <h5><strong>「サロンでカットしてもらうと高いしな〜汗」</strong>って、諦めていませんか？家でカットして貰う出張サービスだと、かなりお手頃価格になるんです！美容師さんによっては、<strong>サロン価格の半額</strong>なんて方もいます。</br>プロフィールから出張カットの値段を見てみましょう！</br>(＊値段が書いていない美容師さんは出張を受け付けておりません。)</h5>
           <i class="fi-social-twitter"></i>
         </div>
         <div class="large-4 columns">
           <img src="http://up.gc-img.net/post_img_web/2014/07/hkbH9icp55jVOme_24245.jpeg">
         </div>
       </div>
-
-     
-
-    <!-- Call to Action Panel -->
-  
- 
-     
-      <!-- Footer -->
-      
-     
-      <div class="row">
+     <div class="row">
         <div class="large-12 columns">
           <hr>
-          <h4>Contact Me</h4>
+          <h3>Contact Me</h3>
+          <h5>運営しているのは、トロントでコンピュータサイエンスを勉強している中央大学法学部3年の戸栗です。</h5>
           <div class="large-4 columns">
             Email: seiun340066@gmail.com</a>
           </div>
-         
+        
         </div>
-      </div>
+
 
       <footer class="row">
           <div class="large-12 columns">
