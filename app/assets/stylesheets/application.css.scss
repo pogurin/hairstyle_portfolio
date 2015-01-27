@@ -55,6 +55,7 @@ background-image: url("mochaGrunge.png");
   margin: 10px;
   display: inline;
 
+
  }
 
 .row h2 {
@@ -91,7 +92,7 @@ background-image: url("mochaGrunge.png");
 }
 
 body {
-    background-image: url("mochaGrunge.png");
+    background-color: #F5F5F5;
     background-repeat: repeat;
 }
 .row {
@@ -129,13 +130,16 @@ div.image:hover {
 .profile h1{
   text-align: left;
   padding-left: 20px;
-  background-color: blue;
+  background-color: #4169E1;
   color: white;
   padding-top: 10px;
 }
 .profile h2{
-  text-align: left;
+  text-align: center;
   font-size: 200%;
+  background-color: #4169E1;
+  color: white;
+  padding-top: 10px;
 }
 
 
