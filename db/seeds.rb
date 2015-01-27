@@ -56,7 +56,7 @@ while $i < 30  do
 	  :imageable_type => 'Hairdresser'
 	  )
 
-	  if rand==1
+	  if rand==1 
 	  	p.categories << Category.find_by_name("Short Hair")
 		elsif rand==2
 	  	p.categories << Category.find_by_name("Long Hair")

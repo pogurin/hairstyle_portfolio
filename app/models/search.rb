@@ -26,7 +26,5 @@ private
 		pictures
 	end
 
-
-	
-
 end
+
