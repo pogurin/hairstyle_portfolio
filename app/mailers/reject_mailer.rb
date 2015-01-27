@@ -7,6 +7,6 @@ class RejectMailer < ActionMailer::Base
     mail(from: @hairdresser.email,
     	 to: @user.email,
     	 :cc => "seiun340066@gamil.com",
-    	 subject: 'Sorry,Response was Rejected')
+    	 subject: 'ごめんなさい。今回はキャンセルさせて下さい。')
   	end
 end 
