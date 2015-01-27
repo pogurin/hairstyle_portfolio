@@ -1,16 +1,20 @@
+
+
 <div class="landing">
 <div class="row searchbar">
+<h4>日本人美容師さん検索サイト！</h4>
+<h4>＊個人的に出張カットを受け付けているか、チェック可能です。</h4>
   <br>
   <div class = "small-12 columns text-center">
 <ul class="tabs" data-tab role="tablist">
   
   <li class="tab-title active" role="presentational" >
     <a href="#panel2-2" role="tab" tabindex="0"aria-selected="true" controls="panel2-2">
-      Search Styles</a>
+      髪型から検索</a>
     </li>
   <li class="tab-title" role="presentational" >
     <a href="#panel2-1" role="tab" tabindex="0" aria-selected="false" controls="panel2-1">
-      Search Hairdressers</a>
+      美容師さん検索</a>
     </li>
 </ul>    
 </div>
@@ -19,7 +23,23 @@
 p { color: white;
 
 }
+h1 {
+  color: white;
+}
+h4 {
+  color: white;
+}
+hr {
+  border-width: 10px;
+}
+
+.contents {
+  background-color: white
+}
 </style>
+
+
+
 
 <div class="tabs-content criteria">
   <section role="tabpanel" aria-hidden="true" class="content" id="panel2-1">
@@ -51,14 +71,14 @@ p { color: white;
         <%= f.label :treatment_price %><br />
         <%= f.select :treatment_price, [["All", ""],["30", "30"], ["40","40"],["50", "50"],["70", "70"],["90", "90"],["100","100"]]%>
       </div> -->
-      <p>1 検索ボックスを押してみて下さい。全ての美容師さんが出てきます。</p>
-      <p>2 お住まいの地域をAreaから選択して見て下さい。また、Google Mapでお近くの美容院を探せます。</p>
-              <%= f.hidden_field :search_type, :value => "Hairdressers" %>
 
       <div class="actions "><%= f.button "search"%></div>
+              <%= f.hidden_field :search_type, :value => "Hairdressers" %>
 </a>
       <% end %>
     </div>
+      <p>1 検索ボックスを押してみて下さい。全ての美容師さんが出てきます。</p>
+      <p>2 お住まいの地域をAreaから選択して見て下さい。また、Google Mapでお近くの美容院を探せます。</p>
   </section>
  <section role="tabpanel" aria-hidden="false" class="content active" id="panel2-2">
     <div class = "small-12 columns text-center">
@@ -68,49 +88,106 @@ p { color: white;
       
         <%= f.text_field :name, :placeholder => "e.g long, curly, short" %>
       </div>
-<p>1 髪型から検索！下の、Search boxを押してみて下さい。</p><p>2 過去に美容師さんが切ったスタイルが全部出てきます。</p>
-<p>3 気になるスタイルをクリック！カットした美容師さんの経歴や、予約可能な日程が見れます。</p>
-<p>＊美容師さんを直接探したい場合、上のタブからSearch Hairdresser を押して下さい。</p>
                     <%= f.hidden_field :search_type, :value => "Pictures" %>
 
       <div class="actions">
         <%= f.button "search" %></div>
       <% end %>
     </div>   
+<p>< How to use ></p>
+<p>1 Search boxを押してみて下さい。</p><p>2 過去に美容師さんが切ったスタイルが全部出てきます。</p>
+<p>3 写真クリックで、美容師さんの経歴や、予約可能な日程が見れます。</p>
+<p>＊美容師さんを直接探したい場合、上のタブから「美容師さん検索」を押して下さい。</p>
   </div>
   </section>
 
 </div>
 </div>
+<div class="contents">
 <div id="searchContainer"></div>
 <div id="searchContainer"></div>
-  <div class="row fullWidth text-center mainbody">
-    <div class="large-12 columns">
-       <div class="large-3 small-4 columns">
-     <div class="circle"><!-- <h1>Find Styles</h1>
-      <h3>Discover your next haircut by browing our gallery of models. See who cut their hair, and schedule an appointment with their stylist.</h3> -->
-      <h1>髪型から探そう！</h1>
-      <h3>美容師さんが過去に担当した髪型一覧から、好みの髪型を探してみませんか？美容院探しの不安が少なくなるかも。</h3></div>
+    <br>
 
-   </div>
-   <div class="large-3 small-4 columns">
-     <div class="circle"><div><!-- <h1>Search Hairdressers</h1>
-      <h3>Find local hairdressers. Sort by price, service and availability. Rate and review their cuts.</h3> --><h1>日本人美容師さんどこ？</h1>
-      <h3>地域で検索可能！GoogleMapでどこの美容院に所属してるかすぐ分かります！</h3></div></div>
-    </div>
-    <div class="large-3 small-4 columns">
-     <div class="circle"><div><!-- <h1>Schedule Appointments</h1>
-      <h3>Find freelance stylists who work outside a salon, get your hair styled at the last minute, any time of the day.</h3> --><h1>出張かっと</h1>
-      <h3>美容師さんの主張可能な日時が分かります。時間をクリックして予約しよう！(美容師さんに予約メールが届きます)</h3></div></div>
-    </div>
-   <div class="large-3 small-4 columns">
-     <div class="circle"><div><!-- <h1>In-Home Cuts or Salon Cuts</h1>
-      <h3>Verifid stylists will cut your hair at home.You can find Salons who are working at Toronto from google map.</h3> --><h1>出張 or サロンかっと</h1>
-      <h3>出張は無理でも、サロンで働いてる美容師さんが見つかります。全員、日本人美容師さんです。</h3></div></div>
-    </div> 
-     
-  </div>
-</div>
 
-<p>管理人アドレス: seiun340066@gmail.com</p>
+  <div class="row">
+  <h3>About service</h3>
+        <hr>
+        <div class="large-8 columns">
+          <h3>日本人美容師さんってどこにいるの？</h3>
+          <h5>海外在住日本人の大きな悩み。「どこで日本人の美容師さんにカットして貰えるんだろう...。」そんな悩みを解決します！トロントで働いてる日本人美容師さんが一覧できます。近くの美容師さんを探してみましょう！</h5>
+          <i class="fi-social-twitter"></i>
+        </div>
+        <div class="large-4 columns">
+          <img src="https://www.flipgive.com/assets/merchants/how-it-works/page/how-it-works-2-eb53b8af95cb727f2893fda7ce9d879d.jpg">
+        </div>
+      </div>
+      <div class="row">
+        <hr>
+        <div class="large-8 columns">
+          <h3>お気に入りの髪型をクリック！</h3>
+          <h5>切って貰ってから「ああ,
+          失敗した〜泣」って経験ありませんか？切ってしまってからは遅いですよね。予約する前に、美容師さんが過去にカットした写真を見て、スキルをチェック！そんな不安を無くしましょう！</h5>
+          <i class="fi-social-twitter"></i>
+        </div>
+        <div class="large-4 columns">
+          <img src="http://tv4d.jp/works/clip1/hair_girl.jpg">
+        </div>
+      </div>
+  <div class="row">
+        <hr>
+        <div class="large-8 columns">
+          <h3>出張かっとでお手頃価格！</h3>
+          <h5>「サロンでカットしてもらうと高いしな〜汗」って、諦めていませんか？家でカットして貰う出張サービスだと、かなりお手頃価格になるんです！美容師さんによっては、<strong>サロン価格の半額</strong>なんて方もいます。</br><strong>プロフィールから</strong>出張カットの値段を見てみましょう！</br>＊値段が書いていない美容師さんは出張を受け付けておりません。
+          </br>＊カナダでの美容師免許を持っている方に限ります。
+          </h5>
+          <i class="fi-social-twitter"></i>
+        </div>
+        <div class="large-4 columns">
+          <img src="http://up.gc-img.net/post_img_web/2014/07/hkbH9icp55jVOme_24245.jpeg">
+        </div>
+      </div>
+
+            <div class="row">
+        <hr>
+        <div class="large-8 columns">
+          <h3>About</h3>
+          <h5>このサービスは、トロント留学中の大学生がトロントで友達になった美容師さんや友人の悩みを元に作成しました。作成にあたって沢山の意見を下さった皆さん、本当にありがとうございます。</h5>
+          <i class="fi-social-twitter"></i>
+        </div>
+        <div class="large-4 columns">
+          <img src="http://img02.ti-da.net/usr/xtsuredurenikkix/%E5%9C%9F%E4%B8%8B%E5%BA%A7.jpg">
+        </div>
+      </div>
+      <hr/>
+
+     <div class="row">
+        <div class="large-8 columns">
+         <h3>Contact Me</h3>
+      <!--     <h5>運営しているのは、トロントでコンピュータサイエンスを勉強している中央大学法学部3年の戸栗です。</h5>
+          <i class="fi-social-twitter"></i>
+        </div>
+        <div class="large-4 columns">
+          <img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xpf1/v/t1.0-1/p200x200/1491702_587386944728045_2789067162530677196_n.jpg?oh=a40c3dfcf051aadc5e00114e31eba30c&oe=5569B5A0&__gda__=1432426959_b2826fb36deb486d291eb209cc673daf">
+        </div>
+      </div>
+           -->
+       
+
+
+          <div class="large-4 columns">
+            Email: seiun340066@gmail.com</a>
+          </div>
+      <footer class="row">
+          <div class="large-12 columns">
+          
+            <div class="row">
+              <div class="large-6 columns">
+                <p>© Airsalon</p>
+              </div>
+            
+            </div>
+          </div>
+      </footer>
+</div>         
+
 

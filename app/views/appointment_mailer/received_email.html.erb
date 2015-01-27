@@ -1,17 +1,21 @@
-Hi, <%= @hairdresser.first_name %> !! You got an appoinment.
+<p><%= @hairdresser.first_name %>さん!! 予約を受け付けました。</p>
  
 
- Please go to Accept booking page by clicking <%= link_to 'here', @url %>
+<p><%= @hairdresser.first_name %>さんへの、希望の予約日時です。
+<%= @appointment.appointment_at.strftime("%m/%d/%Y") %> at <%= @appointment.appointment_at.strftime("%I:%M%p") %></p>
 
+<p>
+<%= link_to 'こちら', @url %>から、この予約を受理もしくはキャンセルできます。受理した際にはその旨が、お客さんのメールボックスに届きます。
+＊ご自身のアカウントにログインすると確認出来ます。
+</p>
 
-
--------- This is customer information -------
+<p>
+-------- お客さんの詳細です -------
 Name: <%= @user.first_name %>
 Detail:<%= @appointment.message %>
+</p>
 
-
-予約された日時です。
-<%= @appointment.appointment_at.strftime("%m/%d/%Y") %> at <%= @appointment.appointment_at.strftime("%I:%M%p") %>
-プロフィールの予約画面は、既に斜線で消されているので。
+<p>
+＊プロフィールの予約画面は、既に斜線で消されているので。
 重複した予約は来ません。	 
-
+</p>

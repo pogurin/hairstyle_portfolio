@@ -27,7 +27,11 @@
 @import "foundation/components/panels";
 .tabs dd > a, .tabs .tab-title > a{
     outline: none;
+    margin: 5px;
+    text-align: center;
 }
+
+
 
 
 .landing {
@@ -35,7 +39,6 @@
   background-attachment: fixed;
   background-position: right 0px bottom -400px;
 }
-
 
 
 .searchContainer {
@@ -53,6 +56,7 @@ background-image: url("mochaGrunge.png");
   float: left;
   margin: 10px;
   display: inline;
+
 
  }
 
@@ -90,7 +94,7 @@ background-image: url("mochaGrunge.png");
 }
 
 body {
-    background-image: url("mochaGrunge.png");
+    background-color: #F5F5F5;
     background-repeat: repeat;
 }
 .row {
@@ -128,13 +132,16 @@ div.image:hover {
 .profile h1{
   text-align: left;
   padding-left: 20px;
-  background-color: #333333;
+  background-color: #4169E1;
   color: white;
   padding-top: 10px;
 }
 .profile h2{
-  text-align: left;
+  text-align: center;
   font-size: 200%;
+  background-color: #4169E1;
+  color: white;
+  padding-top: 10px;
 }
 
 
@@ -194,9 +201,9 @@ table {
 
 
 #map-canvas {
- float: right;
- height: 300px;
- width: 300px;
+ text-align:center ;
+ height: 200px;
+ width: 100%;
  border: 5px;
 }
 
@@ -242,13 +249,14 @@ table {
   padding-top: 0px;
   margin-top: 10px;
   margin-bottom: 10px;
+  width:80%;
 }
 
 .schedule_box p {
   margin-top: 6px;
   margin-bottom: 5px;
   font-family: 'Oswald', sans-serif;
-  font-size: 120%;
+  font-size: 80%;
 }
 .schedule_time  {
   background-color: #7f7f84;

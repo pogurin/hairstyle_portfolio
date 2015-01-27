@@ -1,6 +1,6 @@
 <%= form_for [@hairdresser, @appointment] do |f| %>
   <div class="page-header">
-    <h1>Appointment for <%= @hairdresser.first_name %></h1>
+    <h3>Appointment for <%= @hairdresser.first_name %></h3>
   </div>
  
   <% if @appointment.errors.any? %>
@@ -13,19 +13,35 @@
       </ul>
     </div>
   <% end %>
- 
-  <h1> <%= @appointment.appointment_at.strftime("%m/%d/%Y") %> at <%= @appointment.appointment_at.strftime("%I:%M%p") %></h1>
 
-<div class="small-4 columns">
-  <div class="row mainbody">
-    <h5><%= current_user.first_name %>さん,これは、出張の予約です。美容師さんに来てほしい住所とサービス内容をご記入下さい。</h5><p>できたら、美容師さんから連絡しやすいように、電話番号もお願いします。</p>
+ <div class="row">
+  <h4>予約日時: <%= @appointment.appointment_at.strftime("%m/%d/%Y") %> at <%= @appointment.appointment_at.strftime("%I:%M%p") %></h4>
+  </div>
+
+  <style>
+  .page-header h3 {
+     text-align: center;
+  font-size: 200%;
+  background-color: #4169E1;
+  color: white;
+  padding-top: 10px;
+  }
+
+  .row h4{
+ color: #4169E1;
+}
+  </style>
+
+<div class="small-12 columns">
+  
+    <h5><%= current_user.first_name %>さん,これは、出張の予約です。美容師さんに来てほしい住所とサービス内容をご記入下さい。</h5><p>＊できたら、美容師さんから連絡しやすいように、電話番号もお願いします。</p>
     <%= f.text_area :message, :placeholder => "よろしく"%>
     <p>e.g. 女性です。カットでお願いしたいです。301 Front Street West,までお願いします^^</p>
-    <p>予約の後は、美容師さんから確認メールが<%= current_user.first_name %>さんのアドレス届きます。</p>
+    <p>予約の後は、予約された美容師さんから確認メールが<%= current_user.first_name %>さんのメールボックスに届きます。</p>
    
 
   <%= f.hidden_field :user_id, :value => current_user.id %>
-    <%= f.submit 'Create', class: 'btn btn-primary' %>
+    <%= f.submit '送信する', class: 'btn btn-primary' %>
   <% end %>
-  </div>
+
 </div>

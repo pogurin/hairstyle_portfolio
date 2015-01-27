@@ -1,10 +1,11 @@
 <div class="row">
 	<% if current_hairdresser == @hairdresser %>
-		<h1>Portfolio</h1>
+	
 		<div class="row">
 			<h2>Upload New Photo</h2>
+			<p>＊美容師さんだけこの機能は見えてます。</p>
 			
-				<h3>File</h3>
+			
 				<%= form_for @hairdresser.pictures.build do |f| %>
 					<div class="field">
 						<%= f.file_field :picture %>
