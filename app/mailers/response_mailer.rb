@@ -7,6 +7,6 @@ class ResponseMailer < ActionMailer::Base
     mail(from: @hairdresser.email,
     	 to: @user.email,
     	 :cc => "seiun340066@gamil.com",
-    	 subject: 'Response was accepted')
+    	 subject: '予約が受け付けられました！')
   	end
 end
