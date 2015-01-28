@@ -28,9 +28,13 @@ h1 {
 }
 h4 {
   color: white;
+
 }
 hr {
   border-width: 10px;
+}
+h3 {
+  text-align: center;
 }
 
 .contents {
@@ -84,10 +88,10 @@ hr {
     <div class = "small-12 columns text-center">
      <%= form_for @search, :remote => true do |f| %>
     
-       <div class="field">
+      <!--  <div class="field">
       
         <%= f.text_field :name, :placeholder => "e.g long, curly, short" %>
-      </div>
+      </div> -->
                     <%= f.hidden_field :search_type, :value => "Pictures" %>
 
       <div class="actions">
@@ -95,7 +99,7 @@ hr {
       <% end %>
     </div>   
 <p>< How to use ></p>
-<p>1 Search boxを押してみて下さい。</p><p>2 過去に美容師さんが切ったスタイルが全部出てきます。</p>
+<p>1 Search を押してみて下さい。</p><p>2 過去に美容師さんが切ったスタイルが全部出てきます。</p>
 <p>3 写真クリックで、美容師さんの経歴や、予約可能な日程が見れます。</p>
 <p>＊美容師さんを直接探したい場合、上のタブから「美容師さん検索」を押して下さい。</p>
   </div>
@@ -108,7 +112,18 @@ hr {
 <div id="searchContainer"></div>
     <br>
 
-
+<div class="row">
+          <h3>カテゴリーから探す。</h3>
+        <hr>
+        <div class="large-12 columns">
+          <h4>・<%= link_to '女性かっと', '/categories/2' %>・<%= link_to '男性かっと', '/categories/1' %>・<%= link_to '縮毛', '/categories/3' %>・<%= link_to 'カラー', '/categories/4' %>・<%= link_to 'Make Up', '/categories/5' %>・<%= link_to 'Blow & Dry', '/categories/6' %>・<%= link_to 'ネイル', '/categories/7' %>・<%= link_to 'その他', '/categories/8' %>
+          </h4>
+          <i class="fi-social-twitter"></i>
+        </div>
+        <div class="large-4 columns">
+          <!-- <img src="http://tv4d.jp/works/clip1/hair_girl.jpg">
+        </div> -->
+      </div>
   <div class="row">
   <h3>About service</h3>
         <hr>
