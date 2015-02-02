@@ -47,7 +47,7 @@ height: 10em;
 <p><a href="mailto:<%= @hairdresser.email %>">"こちら"</a>から<%= @hairdresser.first_name %>さんにメッセージを送れます。出張日時を相談可能です。</p></div>
 
 <div class="row">
-	<h2>美容院の場所です。</h2>
+	<h2>働いている美容院の場所です。</h2>
 	<div class="map_border">
 
 		<%= content_tag "div", "", id: 'map-canvas', data: { coords: @coords } %>
