@@ -43,8 +43,7 @@ height: 10em;
 }
 
 </style>
-<div class="mail">
-<p><a href="mailto:<%= @hairdresser.email %>?subject=出張の予約をお願いします。&bcc=seiun340066@gmail.com">"こちら"</a>から<%= @hairdresser.first_name %>さんにメッセージを送れます。出張日時を相談可能です。</p></div>
+
 
 <div class="row">
 	<h2>働いている美容院の場所です。</h2>
@@ -55,9 +54,10 @@ height: 10em;
 </div> 
 
 
-<%= render "portfolio_uploader" %>
 <%= render "schedule" %>
 
+
+<%= render "portfolio_uploader" %>
 <div class="row">
 	<h2><%= @hairdresser.first_name %>さんは、こんな髪型ができます！</h2>
 	<p><%= @hairdresser.first_name %>さんが過去に担当したスタイル一覧です。</p>

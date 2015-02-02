@@ -16,3 +16,4 @@ Rails.application.initialize!
     :password => 'seiun340066'
   }
 
+# これが新しいアカウント
