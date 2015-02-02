@@ -12,7 +12,7 @@ Rails.application.initialize!
     :port => '587',
     :domain => 'heroku.com',
     :authentication => :plain,
-    :user_name => ENV['SENDGRID_USERNAME'],
-    :password => ENV['SENDGRID_PASSWORD']
+    :user_name => 'pogurin',
+    :password => 'seiun340066'
   }
 
