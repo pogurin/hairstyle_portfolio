@@ -49,12 +49,9 @@ h3 {
   <section role="tabpanel" aria-hidden="true" class="content" id="panel2-1">
     <div class = "small-12 columns text-center">
     <%= form_for @search, :remote => true do |f| %>
-            <div class="field">
-        <%= f.label :first_name %><br />
-        <%= f.text_field :first_name , :placeholder => "Hairdresser name"%>
-      </div>
+           
       <div class="field">
-        <%= f.label :area %><br />
+        <p> 場所から探す<br /></p>
         <%= f.select :area, [["All locations", ""],["Downtown", "Downtown"], ["Northyork", "Northyork"],["Mississauga", "Mississauga"],["Hamilton", "Hamilton"]]%>
       </div>
       <!--  <div class="field">
