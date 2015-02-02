@@ -34,8 +34,14 @@ src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 
 .mail a {
 	color:red;
-		
 }
+
+
+textarea {
+width: 300px;
+height: 10em;
+}
+
 </style>
 <div class="mail">
 <p><a href="mailto:<%= @hairdresser.email %>">"こちら"</a>から<%= @hairdresser.first_name %>さんにメッセージを送れます。出張日時を相談可能です。</p></div>
