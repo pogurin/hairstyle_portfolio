@@ -15,7 +15,7 @@ src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 
 	<% if current_hairdresser && @hairdresser.id == current_hairdresser.id %> 
 	<%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, :first_name, :as => :textarea, :place_holder => "Click me to add content!" %> 
-	<%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, :last_name, :type => :textarea, :place_holder => "Click me to add content!" %>`s profile page.
+	<%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, :last_name, :type => :textarea, :place_holder => "" %>`s profile page.
 	<% else %>
 	<%= @hairdresser.first_name %> <%= @hairdresser.last_name %>
 	<% end %>
@@ -30,6 +30,16 @@ src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 
 </div>
 
+<style>
+
+.mail a {
+	color:red;
+		
+}
+</style>
+<div class="mail">
+<p><a href="mailto:<%= @hairdresser.email %>">"こちら"</a>から<%= @hairdresser.first_name %>さんにメッセージを送れます。出張日時を相談可能です。</p></div>
+
 <div class="row">
 	<h2>美容院の場所です。</h2>
 	<div class="map_border">
@@ -38,8 +48,9 @@ src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 	</div>
 </div> 
 
-<%= render "schedule" %>
+
 <%= render "portfolio_uploader" %>
+<%= render "schedule" %>
 
 <div class="row">
 	<h2><%= @hairdresser.first_name %>さんは、こんな髪型ができます！</h2>
@@ -53,6 +64,7 @@ src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 
 </div>
 <% end %>
+
 
 
 <% if current_user %>

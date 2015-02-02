@@ -34,3 +34,4 @@
 # Category.create!(name: "Blow Dry")
 # Category.create!(name: "ネイル")
 # Category.create!(name: "その他")
+Category.create!(name: "パーマ")

@@ -8,7 +8,7 @@
 	</p>
 
 	<p>
-		<b>Profession: </b>
+		<b>Career: </b>
 		<% if current_hairdresser && @hairdresser.id == current_hairdresser.id %> 
 		<a><%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, :career, :as => :input, :place_holder => "Click me to add content!" %></a>
 		<% else %>
@@ -17,7 +17,7 @@
 	</p>
 
 	<p>
-		<b>Address:</b> 
+		<b>Salon Address:</b> 
 		<% if current_hairdresser && @hairdresser.id == current_hairdresser.id %> 
 		<a><%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, :salon_address, :as => :input, :place_holder => "Click me to add content!" %></a>
 		<% else %>
