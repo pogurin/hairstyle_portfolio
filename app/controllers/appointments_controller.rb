@@ -77,7 +77,7 @@ class AppointmentsController < ApplicationController
 
   private
   def appointment_params
-    params.require(:appointment).permit(:appointment_at, :hairdresser_id, :message, :user_id, :appointment_date,:user_location)
+    params.require(:appointment).permit(:appointment_at, :hairdresser_id, :message, :user_id, :appointment_date,:user_location, :file)
   end
 
   def load_hairdresser
