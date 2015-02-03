@@ -13,6 +13,9 @@
     <link type="text/css" media="screen" rel="stylesheet" href="responsive-tables.css" />
 <script type="text/javascript" src="responsive-tables.js"></script>
     <%= stylesheet_link_tag "application" %>
+
+    <%= analytics_init if Rails.env.production? %> <!-- Google analytics -->
+
   </head>
 
   <body class="<%= controller_name %> <%= action_name %>">

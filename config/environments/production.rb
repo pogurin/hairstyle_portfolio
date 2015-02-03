@@ -82,5 +82,6 @@ Rails.application.configure do
   # NOTE !!!!! this needs to be changed to use whatever host you use on production
   config.action_mailer.default_url_options = { :host => 'air-salon.herokuapp.com' }
 
+  GA.tracker = "UA-59290122-1"
 
 end
