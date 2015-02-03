@@ -3,9 +3,29 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .about {
-  background-image: url("salon.jpg");
-  width: 200px;
+  background-image: url("trouble.jpg");
+  width: 250px;
   height: 200px;
   background-size: cover;
-  
+}
+
+.home {
+  background-image: url("salon.jpg");
+  width: 250px;
+  height: 200px;
+  background-size: cover;
+}
+
+.find {
+  background-image: url("find.jpg");
+  width: 250px;
+  height: 200px;
+  background-size: cover;
+}
+
+.thanks {
+  background-image: url("thanks.jpg");
+  width: 250px;
+  height: 200px;
+  background-size: cover;
 }
