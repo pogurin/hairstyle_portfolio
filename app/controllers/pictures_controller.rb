@@ -29,13 +29,19 @@ class PicturesController < ApplicationController
   end
 
   def update
-  	@picture = picture.find(params[:id])
+  	@picture = Picture.find(params[:id])
+    if picture_params[:remove_image]
+      @picture.destroy
+     hairdresser_path(current_hairdresser)
+    end
 
-  	if @picture.update_attributes
-  		redirect_to picture_path(@picture)
-  	else
-  		render :edit
-  	end
+    redirect_to hairdresser_path(current_hairdresser)
+
+  	# if @picture.update_attributes
+  	# 	redirect_to picture_path(@picture)
+  	# else
+  	# 	render :edit
+  	# end
   end
 
   def destroy 
@@ -50,7 +56,7 @@ class PicturesController < ApplicationController
 
   private
   def picture_params
-    params.require(:picture).permit(:category_ids, :imageable_id, :imageable_type, :picture)
+    params.require(:picture).permit(:category_ids, :imageable_id, :imageable_type, :picture, :remove_image)
   end
 
 end
