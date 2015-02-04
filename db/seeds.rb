@@ -35,4 +35,4 @@
 # Category.create!(name: "ネイル")
 # Category.create!(name: "パーマ")
 # Category.create!(name: "その他")
-Category.create!(name: "根元カラー")
+# Category.create!(name: "根元カラー")
