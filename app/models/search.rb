@@ -8,7 +8,7 @@ class Search < ActiveRecord::Base
 	 	@pictures ||= find_pictures
 	 end
 
-private
+
 
 	def find_hairdressers
 		hairdressers = Hairdresser.order(:first_name)
