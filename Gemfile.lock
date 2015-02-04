@@ -160,6 +160,7 @@ GEM
       railties (>= 3.1.0)
       sass (>= 3.2.0)
     geocoder (1.2.6)
+    google-analytics-rails (0.0.6)
     hike (1.2.3)
     http-cookie (1.0.2)
       domain_name (~> 0.5)
@@ -314,6 +315,7 @@ DEPENDENCIES
   fog-core (~> 1.27.3)
   foundation-rails (= 5.4.5)
   geocoder
+  google-analytics-rails
   jbuilder (~> 2.0)
   jquery-rails
   masonry-rails

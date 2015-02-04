@@ -38,7 +38,11 @@
     <%= f.text_area :message, :placeholder => "よろしく"%>
     <p>e.g. 女性です。カットでお願いしたいです。301 Front Street West,までお願いします^^</p>
     <p>予約の後は、予約された美容師さんから確認メールが<%= current_user.first_name %>さんのメールボックスに届きます。</p>
-   
+      <tr>
+          <th>希望の髪型があれば添付して下さい(optional)
+              <td> <%= f.file_field :file %></td>
+          </th>
+      </tr>   
 
   <%= f.hidden_field :user_id, :value => current_user.id %>
     <%= f.submit '送信する', class: 'btn btn-primary' %>

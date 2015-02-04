@@ -1,14 +1,8 @@
 
-	<p>
-		
-		<% if current_hairdresser && @hairdresser.id == current_hairdresser.id %> 
-		<b>Member ID: </b>
-		<a><%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, :member_ID, :as => :input, :place_holder => "Click me to add content!", :class => "" %></a>
-		<% end %>
-	</p>
+
 
 	<p>
-		<b>Profession: </b>
+		<b>Career:</b>
 		<% if current_hairdresser && @hairdresser.id == current_hairdresser.id %> 
 		<a><%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, :career, :as => :input, :place_holder => "Click me to add content!" %></a>
 		<% else %>
@@ -17,7 +11,7 @@
 	</p>
 
 	<p>
-		<b>Address:</b> 
+		<b>Salon Address:</b> 
 		<% if current_hairdresser && @hairdresser.id == current_hairdresser.id %> 
 		<a><%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, :salon_address, :as => :input, :place_holder => "Click me to add content!" %></a>
 		<% else %>
@@ -35,17 +29,12 @@
 		<% end %>
 	</p>
 
-	<% @hairdresser.verified = scrape_site(@hairdresser.first_name,@hairdresser.last_name,@hairdresser.member_ID.to_s) %>
-	<p>
-		<b>Verified:</b> 
-		<%= @hairdresser.verified %>
-	</p>
 	
 
-	<p><b>Area:</b> 
+	<p><b>Area around this station:</b> 
 		<% if current_hairdresser && @hairdresser.id == current_hairdresser.id %> 
 		<a><%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, 
-	:area, :as => :select, :collection => {"Downtown" => "Downtown", "NorthYork" => "NorthYork", "Mississauga" => "Mississauga", "Hamilton" => "Hamilton"}, :place_holder => "Click me to add content!" %> </a>
+	:area, :as => :select, :collection => {"Core Downtown" => "Core Downtown", "Finch to Eglington" => "Finch to Eglington", "Spadaina to Christie" => "Spadaina to Christie", "Others" => "Others"}, :place_holder => "Click me to add content!" %> </a>
 	<% else %>
 		<%= @hairdresser.area %>
 <% end %>

@@ -95,12 +95,13 @@ gem 'masonry-rails'
 gem 'fog-core', '~> 1.27.3'
 gem 'fog', '~> 1.27.0'
 gem "figaro"
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
+gem 'google-analytics-rails'
 
 gem "mocha", group: :test
 

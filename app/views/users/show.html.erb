@@ -1,14 +1,14 @@
 <% if current_user %> 
 <div class="row mainbody">
-	<h1>Welcome <%= current_user.first_name %> !!! This is customer page.</h1>
+	<h1>Welcome <%= current_user.first_name %> !!! This is your profile page.</h1>
 
 	<p>First name: <%= current_user.first_name %></br>
 		<p>Last name: <%= current_user.last_name %><br>
 		<p>Email address: <%= current_user.email %></p>
-		<p>Profile Picture</p> 
+		<!-- <p>Profile Picture</p> 
 		<%= image_tag @user.picture_url %>
-
-		<%= form_for @user do |f| %>
+ -->
+	<!-- 	<%= form_for @user do |f| %>
 				<div class="field">
 					<%= f.label :picture %><br/>
 					<%= f.file_field :picture %>
@@ -18,7 +18,7 @@
 				<div class="field">
 					<%= f.submit "Submit"%>
 				</div>
-		<% end %>
+		<% end %> -->
 	<% else %>
 		<p>Please <%= link_to "Log in", new_user_session_path %> to see your profile page.</p>
 <% end %>

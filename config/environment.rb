@@ -12,6 +12,8 @@ Rails.application.initialize!
     :port => '587',
     :domain => 'heroku.com',
     :authentication => :plain,
-    :user_name => 'app33275578@heroku.com',
-    :password => 'qxrasadi'
+    :user_name => 'pogurin',
+    :password => 'seiun340066'
   }
+
+# これが新しいアカウント

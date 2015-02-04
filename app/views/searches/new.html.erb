@@ -20,17 +20,23 @@
 </div>
 
 <style>
-p { color: white;
-
+p { color: black;
+    font-weight: bold ;  
+    
 }
 h1 {
   color: white;
+  font-weight: bold  
 }
 h4 {
   color: white;
+  font-weight: bold  
 }
 hr {
   border-width: 10px;
+}
+h3 {
+  text-align: center;
 }
 
 .contents {
@@ -45,13 +51,10 @@ hr {
   <section role="tabpanel" aria-hidden="true" class="content" id="panel2-1">
     <div class = "small-12 columns text-center">
     <%= form_for @search, :remote => true do |f| %>
-            <div class="field">
-        <%= f.label :first_name %><br />
-        <%= f.text_field :first_name , :placeholder => "Hairdresser name"%>
-      </div>
+           
       <div class="field">
-        <%= f.label :area %><br />
-        <%= f.select :area, [["All locations", ""],["Downtown", "Downtown"], ["Northyork", "Northyork"],["Mississauga", "Mississauga"],["Hamilton", "Hamilton"]]%>
+        <p> 場所から探す<br /></p>
+        <%= f.select :area, [["All locations", ""],["Core Downtown", "Core Downtown"], ["Finch to Eglington", "Finch to Eglington"],["Spadaina to Christie", "Spadaina to Christie"],["Others", "Others"]]%>
       </div>
       <!--  <div class="field">
         <%= f.label :style %><br />
@@ -84,18 +87,18 @@ hr {
     <div class = "small-12 columns text-center">
      <%= form_for @search, :remote => true do |f| %>
     
-       <div class="field">
+      <!--  <div class="field">
       
         <%= f.text_field :name, :placeholder => "e.g long, curly, short" %>
-      </div>
+      </div> -->
                     <%= f.hidden_field :search_type, :value => "Pictures" %>
 
       <div class="actions">
         <%= f.button "search" %></div>
-      <% end %>
+      <% end %> 
     </div>   
-<p>< How to use ></p>
-<p>1 Search boxを押してみて下さい。</p><p>2 過去に美容師さんが切ったスタイルが全部出てきます。</p>
+<p>~ 使い方 ~ </p>
+<p>1 Search を押してみて下さい。</p><p>2 過去に美容師さんが切ったスタイルが全部出てきます。</p>
 <p>3 写真クリックで、美容師さんの経歴や、予約可能な日程が見れます。</p>
 <p>＊美容師さんを直接探したい場合、上のタブから「美容師さん検索」を押して下さい。</p>
   </div>
@@ -108,7 +111,18 @@ hr {
 <div id="searchContainer"></div>
     <br>
 
+<div class="row">
+          <h3>カテゴリーから探す。</h3>
+        <hr>
+          <h4>・<%= link_to '女性かっと', '/categories/2' %>・<%= link_to '男性かっと', '/categories/1' %>・<%= link_to '縮毛', '/categories/3' %>・<%= link_to 'カラー', '/categories/4' %>・<%= link_to '根元カラー', '/categories/10' %>・<%= link_to 'Make Up', '/categories/5' %>・<%= link_to 'Blow & Dry', '/categories/6' %>・<%= link_to 'ネイル', '/categories/7' %>・<%= link_to 'パーマ', '/categories/9' %>・<%= link_to 'その他', '/categories/8' %>
+        <div class="large-12 columns">
+          </h4>
+          <i class="fi-social-twitter"></i>
+        </div>
+        <div class="large-4 columns">
 
+         
+      </div>
   <div class="row">
   <h3>About service</h3>
         <hr>
@@ -118,7 +132,10 @@ hr {
           <i class="fi-social-twitter"></i>
         </div>
         <div class="large-4 columns">
-          <img src="https://www.flipgive.com/assets/merchants/how-it-works/page/how-it-works-2-eb53b8af95cb727f2893fda7ce9d879d.jpg">
+        <div class="about">
+          
+          </div>
+        
         </div>
       </div>
       <div class="row">
@@ -129,53 +146,63 @@ hr {
           失敗した〜泣」って経験ありませんか？切ってしまってからは遅いですよね。予約する前に、美容師さんが過去にカットした写真を見て、スキルをチェック！そんな不安を無くしましょう！</h5>
           <i class="fi-social-twitter"></i>
         </div>
-        <div class="large-4 columns">
-          <img src="http://tv4d.jp/works/clip1/hair_girl.jpg">
+       <div class="large-4 columns">
+        <div class="find">
+          
+          </div>
+        
         </div>
       </div>
   <div class="row">
         <hr>
         <div class="large-8 columns">
-          <h3>出張かっとでお手頃価格！</h3>
+          <h3>出張かっとでお手頃価格に！</h3>
           <h5>「サロンでカットしてもらうと高いしな〜汗」って、諦めていませんか？家でカットして貰う出張サービスだと、かなりお手頃価格になるんです！美容師さんによっては、<strong>サロン価格の半額</strong>なんて方もいます。</br><strong>プロフィールから</strong>出張カットの値段を見てみましょう！</br>＊値段が書いていない美容師さんは出張を受け付けておりません。
           </br>＊カナダでの美容師免許を持っている方に限ります。
           </h5>
           <i class="fi-social-twitter"></i>
         </div>
-        <div class="large-4 columns">
-          <img src="http://up.gc-img.net/post_img_web/2014/07/hkbH9icp55jVOme_24245.jpeg">
+      <div class="large-4 columns">
+        <div class="home">
+          
+          </div>
+        
         </div>
+
       </div>
+
 
             <div class="row">
         <hr>
         <div class="large-8 columns">
           <h3>About</h3>
           <h5>このサービスは、トロント留学中の大学生がトロントで友達になった美容師さんや友人の悩みを元に作成しました。作成にあたって沢山の意見を下さった皆さん、本当にありがとうございます。</h5>
+          <p>このサイトが出来るまでを綴った開発BLOGは,
+          "togurinblog.com"から!</p>
+         
+
           <i class="fi-social-twitter"></i>
         </div>
         <div class="large-4 columns">
-          <img src="http://img02.ti-da.net/usr/xtsuredurenikkix/%E5%9C%9F%E4%B8%8B%E5%BA%A7.jpg">
+        <div class="thanks">
+          
+          </div>
+        
         </div>
+        
       </div>
       <hr/>
 
      <div class="row">
         <div class="large-8 columns">
          <h3>Contact Me</h3>
-      <!--     <h5>運営しているのは、トロントでコンピュータサイエンスを勉強している中央大学法学部3年の戸栗です。</h5>
-          <i class="fi-social-twitter"></i>
-        </div>
-        <div class="large-4 columns">
-          <img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xpf1/v/t1.0-1/p200x200/1491702_587386944728045_2789067162530677196_n.jpg?oh=a40c3dfcf051aadc5e00114e31eba30c&oe=5569B5A0&__gda__=1432426959_b2826fb36deb486d291eb209cc673daf">
-        </div>
-      </div>
-           -->
-       
 
 
-          <div class="large-4 columns">
-            Email: seiun340066@gmail.com</a>
+
+          <div class="large-12 columns">
+
+            <p>Email: seiun340066@gmail.com</p>
+
           </div>
       <footer class="row">
           <div class="large-12 columns">

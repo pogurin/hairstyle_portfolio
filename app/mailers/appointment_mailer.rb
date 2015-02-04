@@ -5,6 +5,9 @@ class AppointmentMailer < ActionMailer::Base
     @user = user
     @hairdresser = hairdresser
     @appointment = appointment
+    if @appointment.file.present?
+      attachments["#{@appointment.file.original_filename}"] = @appointment.file.read
+    end
     @url = edit_hairdresser_appointment_url(@hairdresser, @appointment)
     mail(from: @user.email,
     	 to: @hairdresser.email,
