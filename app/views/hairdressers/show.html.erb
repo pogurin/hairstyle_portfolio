@@ -66,19 +66,22 @@ height: 10em;
 <% @hairdresser.pictures.each do |picture| %>
 <div class="hairstyle_picture">
 
+
 	<div class="imgbox"><%= image_tag(picture.picture_url(:medium)) %>
-<%= form_for picture, :html => {:multipart => true} do |f| %>
-		<% if picture.picture_url() %>
-			<%= f.hidden_field :remove_image %>
-			 <%= f.submit "Delete" %>
+		<% if current_hairdresser == @hairdresser %>
+		<%= form_for picture, :html => {:multipart => true} do |f| %>
+				<% if picture.picture_url() %>
+					<%= f.hidden_field :remove_image %>
+					 <%= f.submit "Delete" %>
+				<% end %>
+			<% end %>
+			</div>
 		<% end %>
-	<% end %>
-	</div>
 
 	
-
 </div>
 <% end %>
+	
 
 
 

@@ -6,17 +6,6 @@ class Picture < ActiveRecord::Base
 	
 	mount_uploader :picture, PictureUploader
 
-# before_destroy :remember_image
-#   after_destroy :remove_img
 
-# 	protected
-#   def remember_image
-#     @image_name = self[:image]
-#   end
-
-#   def remove_img
-#     File.delete("#{Rails.root}/public/uploads/picture/picture/#{@image_name}")
-#     File.delete("#{Rails.root}/public/uploads/picture/picture/thumb_#{@image_name}")
-#   end
 end
 
