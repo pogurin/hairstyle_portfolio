@@ -32,7 +32,6 @@ class PicturesController < ApplicationController
   	@picture = Picture.find(params[:id])
     if picture_params[:remove_image]
       @picture.destroy
-     hairdresser_path(current_hairdresser)
     end
 
     redirect_to hairdresser_path(current_hairdresser)

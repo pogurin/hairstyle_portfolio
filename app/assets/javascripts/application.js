@@ -31,6 +31,7 @@ $(document).ready(function() {
   /* Activating Best In Place */
   jQuery(".best_in_place").best_in_place();
 
+
   /* Activate animation */
  //  $('.more').on('click', function(e) {
 	// 	e.preventDefault();

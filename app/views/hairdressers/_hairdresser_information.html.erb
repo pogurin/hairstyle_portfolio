@@ -1,10 +1,25 @@
+<p>
+	<b>Available:</b>
+		<% if current_hairdresser && @hairdresser.id == current_hairdresser.id %> 
+		<a><%= best_in_place_if @hairdresser.id == current_hairdresser.id, 
+		@hairdresser, 
+		:available, :as => :select, :collection => {"true" => "Yes", "false" => "No"}, 
+		:place_holder => "Click me to add content!",
+		:html_attrs => {:style => "width:10em" } %> </a>
+		<% else %>
+		<%= @hairdresser.available %>
+		<% end %>
+</p>
 
 
 
 	<p>
 		<b>Career:</b>
 		<% if current_hairdresser && @hairdresser.id == current_hairdresser.id %> 
-		<a><%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, :career, :as => :input, :place_holder => "Click me to add content!" %></a>
+		<a><%= best_in_place_if @hairdresser.id == current_hairdresser.id, 
+		@hairdresser, :career, :as => :input, 
+		:place_holder => "Click me to add content!",  
+		:html_attrs => {:style => "width:10em" }%></a>
 		<% else %>
 		<%= @hairdresser.career %>
 		<% end %>
@@ -70,6 +85,5 @@
 	<% else %>
 		<%= @hairdresser.personal_message %>
 <% end %>
-</p>
 
 
