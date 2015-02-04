@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20150123210729) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "appointments", force: true do |t|
     t.integer  "user_id"
     t.integer  "hairdresser_id"
@@ -74,8 +77,8 @@ ActiveRecord::Schema.define(version: 20150123210729) do
     t.string   "treatment"
   end
 
-  add_index "hairdressers", ["email"], name: "index_hairdressers_on_email", unique: true
-  add_index "hairdressers", ["reset_password_token"], name: "index_hairdressers_on_reset_password_token", unique: true
+  add_index "hairdressers", ["email"], name: "index_hairdressers_on_email", unique: true, using: :btree
+  add_index "hairdressers", ["reset_password_token"], name: "index_hairdressers_on_reset_password_token", unique: true, using: :btree
 
   create_table "pictures", force: true do |t|
     t.integer  "hairdresser_id"
@@ -161,7 +164,7 @@ ActiveRecord::Schema.define(version: 20150123210729) do
     t.string   "last_sign_in_ip"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token"
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", using: :btree
 
 end

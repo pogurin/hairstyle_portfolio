@@ -6,14 +6,13 @@ gem "nifty-generators", :group => :development
 gem 'rails', '4.1.7'
 ruby '2.1.2'
 # Use sqlite3 as the database for Active Record
-group :development do
-	gem 'sqlite3'
-end
+
+gem 'pg'
 
 group :production do 
-	gem 'pg'
 	gem 'rails_12factor'
 end
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
