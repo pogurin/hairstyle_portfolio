@@ -7,6 +7,7 @@ class ReviewsController < ApplicationController
 
 	def show 
 		@review = Review.find(params[:id]) # reviews build goes in create method
+		@reviews_most_liked = Review.order("created_at ASC")
 	end
 
 	def edit
@@ -32,6 +33,8 @@ class ReviewsController < ApplicationController
 
 	def update
 		@review = Review.find(params[:id])
+
+		
 
 		if @review.update_attributes(review_params)
 			redirect_to hairdressers_path(@review)

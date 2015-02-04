@@ -71,7 +71,7 @@ height: 10em;
 		<% if current_hairdresser == @hairdresser %>
 		<%= form_for picture, :html => {:multipart => true} do |f| %>
 				<% if picture.picture_url() %>
-					<%= f.hidden_field :remove_image %>
+					<%= f.hidden_field :remove_image %> <!-- ここのremove_image をコントローラーで受け渡している。 -->
 					 <%= f.submit "Delete" %>
 				<% end %>
 			<% end %>
@@ -114,6 +114,7 @@ height: 10em;
 
 	<div id='review-list'>
 		<%= render @hairdresser.reviews %>
+		
 	</div>
 
 	<% else %>

@@ -1,14 +1,19 @@
 <% if review.id.present? %>
 	<div class="review">
 		<% if review.user != nil %>
-			<em> by <%= review.user.first_name %></em>
+			<em> <%= review.user.first_name %>さんの投稿</em>
 			<!-- Added on: <%= review.created_at %> -->
 		<% end %>
 	</div>
 	
 	<div>
 		<p class="comment">
-			<%= review.comment %>
+			<%= review.comment %>	
 		</p>
 	</div>
+
+	
+	 	
+	 
+	
 <% end %>
