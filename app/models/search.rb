@@ -13,7 +13,6 @@ private
 	def find_hairdressers
 		hairdressers = Hairdresser.order(:first_name)
 		hairdressers = hairdressers.where("available like ?", true) 
-
    		hairdressers = hairdressers.where("first_name like ?", "%#{first_name}%") if first_name.present?
    		hairdressers = hairdressers.where("price like ?", "%#{price}%") if price.present?
    		hairdressers = hairdressers.where("style like ?", "%#{style}%") if style.present?
