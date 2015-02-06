@@ -17,14 +17,14 @@ class Search < ActiveRecord::Base
    		hairdressers = hairdressers.where("price like ?", "%#{price}%") if price.present?
    		hairdressers = hairdressers.where("style like ?", "%#{style}%") if style.present?
    		hairdressers = hairdressers.where("area like ?", "%#{area}%") if area.present?
+   		hairdressers = 
    		hairdressers
 	end
 
 	def find_pictures
-		pictures = Picture.order(:imageable_id)
+		pictures = Picture.order("created_at DESC")
 		pictures = Picture.joins(:hairdresser).where("hairdressers.available = ?", true) 
 		pictures = Picture.joins(:categories).where("categories.name like ? ",:"%#{name}%") if name.present?
-		
 		pictures
 	end
 
