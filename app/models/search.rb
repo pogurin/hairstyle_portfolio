@@ -22,7 +22,7 @@ class Search < ActiveRecord::Base
 	end
 
 	def find_pictures
-		pictures = Picture.order("created_at DESC")
+		pictures = Picture.order("created_at ASC")
 		pictures = Picture.joins(:hairdresser).where("hairdressers.available = ?", true) 
 		pictures = Picture.joins(:categories).where("categories.name like ? ",:"%#{name}%") if name.present?
 		pictures
