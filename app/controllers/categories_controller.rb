@@ -13,7 +13,7 @@ class CategoriesController < ApplicationController
   def show
     @category = Category.find(params[:id])
     
-    @pictures = Picture.all
+    @pictures = Picture.all.order("created_at DESC")
     @pictures_category=[]
     @pictures.each do |picture|
       if picture.categories.find_by_name(@category.name)

@@ -11,7 +11,7 @@ class Search < ActiveRecord::Base
 
 
 	def find_hairdressers
-		hairdressers = Hairdresser.order(:first_name)
+		hairdressers = Hairdresser.order("created_at DESC")
 		hairdressers = hairdressers.where(available: true) 
    		hairdressers = hairdressers.where("first_name like ?", "%#{first_name}%") if first_name.present?
    		hairdressers = hairdressers.where("price like ?", "%#{price}%") if price.present?
@@ -22,9 +22,9 @@ class Search < ActiveRecord::Base
 	end
 
 	def find_pictures
-		pictures = Picture.order("created_at DESC")
-		pictures = Picture.joins(:hairdresser).where("hairdressers.available = ?", true) 
-		pictures = Picture.joins(:categories).where("categories.name like ? ",:"%#{name}%") if name.present?
+		# pictures = Picture
+		pictures = Picture.joins(:hairdresser).where("hairdressers.available = ?", true).order("created_at DESC")
+		# pictures = Picture.joins(:categories).where("categories.name like ? ",:"%#{name}%") if name.present?
 		pictures
 	end
 
