@@ -27,6 +27,8 @@ class HairdressersController < ApplicationController
     @hairdresser = Hairdresser.find(params[:id])
     @appointments = @hairdresser.appointments
 
+    @pictures = Hairdresser.find(params[:id]).pictures.order("created_at DESC")
+    # @pictures = Hairdresser.find(params[:id]).pictures.all.order("created_at DESC")
 
 
     if @hairdresser.available?
