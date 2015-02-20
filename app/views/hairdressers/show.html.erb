@@ -26,7 +26,8 @@ src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 </div>
 
 <%= render "hairdresser_information" %>
-
+<div class="mail">
+	<p><a href="mailto:<%= @hairdresser.email %>?subject=ご相談。&bcc=seiun340066@gmail.com">"こちら"</a>から<%= @hairdresser.first_name %>さんに直接メッセージを送れます。値段や予約等、直接相談可能です。</p></div>
 
 </div>
 
@@ -54,7 +55,7 @@ height: 10em;
 </div> 
 
 
-<%= render "schedule" %>
+
 
 
 <%= render "portfolio_uploader" %>

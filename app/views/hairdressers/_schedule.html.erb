@@ -12,7 +12,7 @@
 	<p>時間をクリックして見て下さい。予約画面に移ります。</p>
 	<p>詳細を記入し、送信を押すと予約通知が美容師さんに届きます。</p>
 	<div class="mail">
-	<p><a href="mailto:<%= @hairdresser.email %>?subject=出張の予約をお願いします。&bcc=seiun340066@gmail.com">"こちら"</a>からも<%= @hairdresser.first_name %>さんに直接メッセージを送れます。以下日程以外の出張日時を相談可能です。</p></div>
+	<p><a href="mailto:<%= @hairdresser.email %>?subject=ご相談。&bcc=seiun340066@gmail.com">"こちら"</a>から<%= @hairdresser.first_name %>さんに直接メッセージを送れます。値段や予約等、直接相談可能です。</p></div>
 	<% @dates.each do |element|  %>
 <div class = "schedule_box">
 		<div class="row mainbody">
