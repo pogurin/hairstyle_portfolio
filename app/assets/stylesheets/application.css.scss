@@ -24,6 +24,15 @@
 
  */
 
+
+.ncsalon {
+  background-image: url("ncsalon2.jpg");
+  width: 250px;
+  height: 200px;
+  background-size: cover;
+}
+
+
 @import "foundation/components/panels";
 .tabs dd > a, .tabs .tab-title > a{
     outline: none;
