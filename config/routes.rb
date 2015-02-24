@@ -2,6 +2,10 @@ Rails.application.routes.draw do
 
   root 'searches#new'
 
+  get 'recruit' => 'recruit#index' 
+  get 'recruit/nc_salon' => 'recruit#nc_salon'
+  get 'recruit/nc_salon/en' => 'recruit#nc_salon_en'
+
   # get 'appointment' => 'appointment#index'              # 入力画面
   # post 'appointment/confirm' => 'appointment#confirm'   # 確認画面
   #patch 'appointment/thanks' => 'appointment#thanks'     # 送信完了画面
