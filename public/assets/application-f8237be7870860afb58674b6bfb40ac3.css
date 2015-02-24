@@ -9241,7 +9241,12 @@ div.field, div.actions {
   background-size: cover;
 }
 
-
+.ncsalon {
+  background-image: url("ncsalonlogo.jpg");
+  width: 250px;
+  height: 200px;
+  background-size: cover;
+}
 
 
 
