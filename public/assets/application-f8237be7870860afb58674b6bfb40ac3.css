@@ -9248,7 +9248,19 @@ div.field, div.actions {
   background-size: cover;
 }
 
+.nc_about {
+  background-image: url("nc_about3.png");
+  width: 250px;
+  height: 200px;
+  background-size: cover;
+}
 
+.nc_message {
+  background-image: url("nc_message.jpg");
+  width: 250px;
+  height: 200px;
+  background-size: cover;
+}
 
 /* line 12, /Users/togurin/Desktop/BIT/hairstyle_portfolio/app/assets/stylesheets/searches.css.scss */
 .home {

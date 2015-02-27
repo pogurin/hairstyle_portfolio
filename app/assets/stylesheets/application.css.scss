@@ -32,6 +32,20 @@
   background-size: cover;
 }
 
+.nc_about {
+  background-image: url("nc_about3.png");
+  width: 250px;
+  height: 200px;
+  background-size: cover;
+}
+
+.nc_message {
+  background-image: url("nc_message.jpg");
+  width: 250px;
+  height: 200px;
+  background-size: cover;
+}
+
 
 @import "foundation/components/panels";
 .tabs dd > a, .tabs .tab-title > a{
@@ -69,6 +83,8 @@ background-image: url("mochaGrunge.png");
 
 
  }
+
+
 
 .row h2 {
   font-family: 'Josefin Sans', sans-serif;

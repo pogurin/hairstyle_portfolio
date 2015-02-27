@@ -8,7 +8,8 @@ h1{
 <h1><%= @category.name %></h1>
 <div id="categories">
 
-	<ul class="small-block-grid-8">
+	<ul class="small-block-grid-4">
+	<ul class="large-block-grid-8">
 
 		<% @pictures_category.each do |picture| %>
 			<% if picture.hairdresser.available == true %>
@@ -20,5 +21,6 @@ h1{
 			<% end %>
 
 		<% end %>
+	</ul>
 	</ul>
 </div>
