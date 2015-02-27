@@ -22,8 +22,7 @@
   <section class="top-bar-section">
     <!-- Right Nav Section -->
     <ul class="right">
-        <li><%= link_to "Search", "/searches/new" %></li>
-         <!-- <li><%= link_to "Recruit info", "/recruit" %></li> -->
+       
       <% if current_user %>
         <li class="active"><%= link_to "#{current_user.first_name}'s Profile", user_path(current_user.id) %></li>
         <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
@@ -34,8 +33,8 @@
         <li class="has-dropdown">
           <a href="#">Log In</a>
           <ul class="dropdown">
-            <li><%= link_to "Sign In as Customer", new_user_session_path %></li>
             <li><%= link_to "Sign In as Hairdresser", new_hairdresser_session_path %></li>
+            <li><%= link_to "Sign In as Customer", new_user_session_path %></li>
           </ul>
         </li>
       <% end %>
