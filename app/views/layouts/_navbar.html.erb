@@ -9,17 +9,19 @@
     <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
   </ul>
 
-    
 
-  <ul class="title-area">
-    <li class="name"> 
-      <h1><%= link_to "Find Job", "/recruit" %></h1>
-     </li>
-       
-       <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-    
+  <section class="top-bar-section">
+  <ul class="left">
+     <li class="has-dropdown">
+          <a href="#">Jobs</a>
+          <ul class="dropdown">
+            <li><%= link_to "Recruit", "/recruit" %></li>
+            <li><%= link_to "Candidates", "/job" %></li>
+          </ul>
+        </li>
+ 
   </ul>
-
+  </section>
 
   <section class="top-bar-section">
     <!-- Right Nav Section -->
