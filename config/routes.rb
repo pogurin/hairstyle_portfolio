@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   get 'recruit/nc_salon' => 'recruit#nc_salon'
   get 'recruit/nc_salon/en' => 'recruit#nc_salon_en'
 
+  get 'job' => 'job#index' 
+  
+
   # get 'appointment' => 'appointment#index'              # 入力画面
   # post 'appointment/confirm' => 'appointment#confirm'   # 確認画面
   #patch 'appointment/thanks' => 'appointment#thanks'     # 送信完了画面

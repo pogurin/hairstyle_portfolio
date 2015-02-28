@@ -47,6 +47,14 @@
 }
 
 
+.akari_pro {
+  background-image: url("akari_pro.jpg");
+  width: 250px;
+  height: 200px;
+  background-size: cover;
+  border-radius: 20%
+}
+
 @import "foundation/components/panels";
 .tabs dd > a, .tabs .tab-title > a{
     outline: none;

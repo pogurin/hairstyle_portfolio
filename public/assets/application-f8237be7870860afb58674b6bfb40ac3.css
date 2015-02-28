@@ -9262,6 +9262,14 @@ div.field, div.actions {
   background-size: cover;
 }
 
+.akari_pro {
+  background-image: url("akari_pro.jpg");
+  width: 250px;
+  height: 200px;
+  background-size: cover;
+  border-radius: 50%
+}
+
 /* line 12, /Users/togurin/Desktop/BIT/hairstyle_portfolio/app/assets/stylesheets/searches.css.scss */
 .home {
   background-image: url("salon.jpg");
