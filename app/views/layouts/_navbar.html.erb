@@ -45,13 +45,13 @@
       <% if current_user or current_hairdresser %>
 
       <% else %>
-        <li class="has-dropdown">
+        <!-- <li class="has-dropdown">
           <a href="#">Register</a>
           <ul class="dropdown">
             <li><%= link_to "Register as a Customer", new_user_registration_path %></li>
             <li><%= link_to "Register as a Hairdresser", new_hairdresser_registration_path %></li>
           </ul>
-        </li>
+        </li> -->
       <% end %>
     </ul>
   </section>
