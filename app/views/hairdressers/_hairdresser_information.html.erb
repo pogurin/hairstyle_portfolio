@@ -46,10 +46,10 @@
 
 	
 
-	<p><b>Area around this station:</b> 
+	<p><b>Job:</b> 
 		<% if current_hairdresser && @hairdresser.id == current_hairdresser.id %> 
 		<a><%= best_in_place_if @hairdresser.id == current_hairdresser.id, @hairdresser, 
-	:area, :as => :select, :collection => {"Core Downtown" => "Core Downtown", "Finch to Eglington" => "Finch to Eglington", "Spadaina to Christie" => "Spadaina to Christie", "Others" => "Others"}, :place_holder => "Click me to add content!" %> </a>
+	:area, :as => :select, :collection => {"Hairdresser" => "Hairdresser", "Nailist" => "Nailist", "Eyelash" => "Eyelash", "Massage" => "Massage"}, :place_holder => "Click me to add content!" %> </a>
 	<% else %>
 		<%= @hairdresser.area %>
 <% end %>

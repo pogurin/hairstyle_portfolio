@@ -3,7 +3,7 @@
 	
 		<div class="row">
 			<h2>Upload New Photo</h2>
-			<p>＊美容師さんだけこの機能は見えてます。</p>
+			<p>＊<%= @hairdresser.first_name %>さんだけこの機能は見えてます。</p>
 			
 			
 				<%= form_for @hairdresser.pictures.build do |f| %>

@@ -6,7 +6,7 @@
 
 <div class="row">
 		<div class="panel" id="header_panel">
-			<h3 id="map_title">美容師さんが働いているサロンの場所です。</h3>
+			<h3 id="map_title">働かれているサロンの場所です。</h3>
 		<%= content_tag "div", "", id: 'map-canvas', data: { coords: @coords } %>
 		</div>
 </div>
@@ -16,7 +16,7 @@
 	<ul class="profile_pictures">
 		<% if @search.search_type == "Hairdressers" %>
 		<div class="panel" id="header_panel">
-			<h3 id="map_title">トロントで働いてる日本人美容師さん一覧。</h3>
+			<h3 id="map_title">トロントで働かれているプロフェッショナル一覧。</h3>
 			<p>写真をクリックして、プロフィールページを見てみよう！</p>
 </div>
 			<%= render @search.hairdressers %>

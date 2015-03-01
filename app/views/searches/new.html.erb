@@ -2,7 +2,7 @@
 
 <div class="landing">
 <div class="row searchbar">
-<h4>日本人美容師さん検索サイト！</h4>
+<h4>日本人美容関係者さん検索サイト！</h4>
 <h4>無料相談受付中！</h4>
   <br>
   <div class = "small-12 columns text-center">
@@ -10,11 +10,11 @@
   
   <li class="tab-title active" role="presentational" >
     <a href="#panel2-2" role="tab" tabindex="0"aria-selected="true" controls="panel2-2">
-      髪型から検索</a>
+      写真から検索</a>
     </li>
   <li class="tab-title" role="presentational" >
     <a href="#panel2-1" role="tab" tabindex="0" aria-selected="false" controls="panel2-1">
-      美容師さん検索</a>
+      プロフェッショナル検索</a>
     </li>
 </ul>    
 </div>
@@ -53,8 +53,8 @@ h3 {
     <%= form_for @search, :remote => true do |f| %>
            
       <div class="field">
-        <p> 場所から探す<br /></p>
-        <%= f.select :area, [["All locations", ""],["Core Downtown", "Core Downtown"], ["Finch to Eglington", "Finch to Eglington"],["Spadaina to Christie", "Spadaina to Christie"],["Others", "Others"]]%>
+        <p> 職種から探す<br /></p>
+        <%= f.select :area, [["All", ""],["Hairdresser", "Hairdresser"], ["Nailist", "Nailist"],["Eyelash", "Eyelash"],["Massage", "Massage"]]%>
       </div>
       <!--  <div class="field">
         <%= f.label :style %><br />
@@ -80,8 +80,8 @@ h3 {
 </a>
       <% end %>
     </div>
-      <p>1 検索ボックスを押してみて下さい。全ての美容師さんが出てきます。</p>
-      <p>2 お住まいの地域をAreaから選択して見て下さい。また、Google Mapでお近くの美容院を探せます。</p>
+      <p>検索ボックスを押してみて下さい。全てのプロフェッショナル出てきます。</p>
+     
   </section>
  <section role="tabpanel" aria-hidden="false" class="content active" id="panel2-2">
     <div class = "small-12 columns text-center">
@@ -98,9 +98,9 @@ h3 {
       <% end %> 
     </div>   
 <p>~ 使い方 ~ </p>
-<p>1 Search を押してみて下さい。</p><p>2 過去に美容師さんが切ったスタイルが全部出てきます。</p>
-<p>3 写真クリックで、美容師さんの経歴や、予約可能な日程が見れます。</p>
-<p>＊美容師さんを直接探したい場合、上のタブから「美容師さん検索」を押して下さい。</p>
+<p>1 Search を押してみて下さい。</p><p>2 過去作品が全部出てきます。</p>
+<p>3 写真クリックで、経歴やその方の過去作品が見れます。</p>
+<p>＊プロフェッショナルを直接探したい場合、上のタブから選択して下さい。</p>
   </div>
   </section>
 

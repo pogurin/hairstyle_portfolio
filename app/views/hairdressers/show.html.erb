@@ -47,7 +47,7 @@ height: 10em;
 
 
 <div class="row">
-	<h2>働いている美容院の場所です。</h2>
+	<h2>働ているサロンの場所です。</h2>
 	<div class="map_border">
 
 		<%= content_tag "div", "", id: 'map-canvas', data: { coords: @coords } %>
@@ -60,7 +60,7 @@ height: 10em;
 
 <%= render "portfolio_uploader" %>
 <div class="row">
-	<h2><%= @hairdresser.first_name %>さんは、こんな髪型ができます！</h2>
+	<h2><%= @hairdresser.first_name %>さんの、過去作品一覧です。</h2>
 	<p><%= @hairdresser.first_name %>さんが過去に担当したスタイル一覧です。</p>
 </div>
 
