@@ -38,3 +38,9 @@
 # Category.create!(name: "根元カラー")
 # Category.create!(name: "ヘアセット")
 # Category.create!(name: "マツエク")
+Category.create!(name: "Massage")
+
+
+
+
+
