@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get 'job' => 'job#index' 
   
 
-  get'about' => 'about/index' 
+  get'service' => 'service#index' 
 
   # get 'appointment' => 'appointment#index'              # 入力画面
   # post 'appointment/confirm' => 'appointment#confirm'   # 確認画面
