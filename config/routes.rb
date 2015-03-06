@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   get 'job' => 'job#index' 
   
 
+  get'about' => 'about/index' 
+
   # get 'appointment' => 'appointment#index'              # 入力画面
   # post 'appointment/confirm' => 'appointment#confirm'   # 確認画面
   #patch 'appointment/thanks' => 'appointment#thanks'     # 送信完了画面
