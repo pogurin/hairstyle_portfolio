@@ -13,7 +13,7 @@ Rails.application.initialize!
     :domain => 'heroku.com',
     :authentication => :plain,
     :user_name => 'pogurin',
-    :password => 'seiun340066'
+    :password => 
   }
 
 # これが新しいアカウント
