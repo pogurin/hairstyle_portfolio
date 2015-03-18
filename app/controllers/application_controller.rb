@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
  
   include HttpAcceptLanguage::AutoLocale
-  
+
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
@@ -15,12 +15,8 @@ class ApplicationController < ActionController::Base
   end  
 
   def scrape_site(first_name,last_name,membership_id)
-    if (membership_id=='')
-      return false
-    end
-     if (membership_id==[])
-      return false
-    end
+    return false if membership_id.blank?
+    
     Capybara.reset!
     visit "https://tmsportal.collegeoftrades.ca/web/ocot-public-services-v3/public-registry"
     fill_in('d_1332781491534', :with => membership_id)
