@@ -6,14 +6,14 @@ Rails.application.initialize!
 
 	
   	
-  ActionMailer::Base.smtp_settings = {
-    :enable_starttls_auto => true,
-    :address => 'smtp.sendgrid.net',
-    :port => '587',
-    :domain => 'heroku.com',
-    :authentication => :plain,
-    :user_name => 'pogurin',
-    :password => 
-  }
+  # ActionMailer::Base.smtp_settings = {
+  #   :enable_starttls_auto => true,
+  #   :address => 'smtp.sendgrid.net',
+  #   :port => '587',
+  #   :domain => 'heroku.com',
+  #   :authentication => :plain,
+  #   :user_name => 'pogurin',
+  #   :password => 
+  # }
 
 # これが新しいアカウント
