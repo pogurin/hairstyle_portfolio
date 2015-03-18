@@ -40,11 +40,9 @@ gem "devise"
 gem "carrierwave"
 gem "rmagick"
 
-group :test do
-  gem "capybara"
-  gem "poltergeist"
-  gem "phantomjs"
-end
+gem "capybara"
+gem "poltergeist"
+gem "phantomjs"
 
 #gem mechanize, for scraping websites
 gem "mechanize"
@@ -77,8 +75,6 @@ gem 'best_in_place', '~> 3.0.1'
 
 # perform graphic queries using objects. ie. gives you the coordinates of address or ip address
 gem 'geocoder'
-
-gem 'figaro'
 
 # use cocoon for nested forms
 gem "cocoon"
