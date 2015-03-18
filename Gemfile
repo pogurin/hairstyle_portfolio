@@ -6,7 +6,7 @@ gem "nifty-generators", :group => :development
 gem 'rails', '4.1.7'
 ruby '2.1.2'
 # Use sqlite3 as the database for Active Record
-
+gem 'http_accept_language'
 gem 'pg'
 
 group :production do 
@@ -40,15 +40,16 @@ gem "devise"
 gem "carrierwave"
 gem "rmagick"
 
-
+group :test do
+  gem "capybara"
+  gem "poltergeist"
+  gem "phantomjs"
+end
 
 #gem mechanize, for scraping websites
 gem "mechanize"
 
 #gem capybara and poltergeist, for scraping javascript/html5 websites
-gem "capybara"
-gem "poltergeist"
-gem "phantomjs"
 
 group :development do
 	# gem 'better_errors'

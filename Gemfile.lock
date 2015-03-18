@@ -164,6 +164,7 @@ GEM
     hike (1.2.3)
     http-cookie (1.0.2)
       domain_name (~> 0.5)
+    http_accept_language (2.0.5)
     i18n (0.7.0)
     inflecto (0.0.2)
     ipaddress (0.8.0)
@@ -315,6 +316,7 @@ DEPENDENCIES
   foundation-rails (= 5.4.5)
   geocoder
   google-analytics-rails
+  http_accept_language
   jbuilder (~> 2.0)
   jquery-rails
   masonry-rails
