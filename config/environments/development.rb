@@ -11,8 +11,8 @@ Rails.application.configure do
     :port => '587',
     :domain => 'heroku.com',
     :authentication => :plain,
-    :user_name => 'app33275578@heroku.com',
-    :password => 'qxrasadi'
+    :user_name => '',
+    :password => ''
   }
   # ActionMailer::Base.delivery_method = :smtp
   # Settings specified here will take precedence over those in config/application.rb.
