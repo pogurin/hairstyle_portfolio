@@ -57,14 +57,14 @@ h3 {
     </div>
       <p>検索ボックスを押してみて下さい。全てのプロフェッショナル出てきます。</p>
   </section>
- <section role="tabpanel" aria-hidden="false" class="content active" id="panel2-2">
-          <div class = "small-12 columns text-center">
-               <%= form_for @search, :remote => true do |f| %>
-           
-                              <%= f.hidden_field :search_type, :value => "Pictures" %>
 
-                <div class="actions">
-                  <%= f.button t(:search) %></div>
+ <section role="tabpanel" aria-hidden="false" class="content active" id="panel2-2">
+              <div class = "small-12 columns text-center">
+                <%= form_for @search, :remote => true do |f| %>
+                  <%= f.hidden_field :search_type, :value => "Pictures" %>
+                      <div class="actions">
+                        <%= f.button t(:search) %>
+                      </div>
                 <% end %> 
               </div>   
                   <p>~ 使い方 ~ </p>
@@ -73,8 +73,8 @@ h3 {
                   <p>＊プロフェッショナルを直接探したい場合、上のタブから選択して下さい。</p>
             </div>
   </section>
-
 </div>
+
 </div>
 <div class="contents">
 <div id="searchContainer"></div>
