@@ -49,7 +49,7 @@ h3 {
           <%= form_for @search, :remote => true do |f| %>
                 <div class="field">
                     <p> 職種から探す<br /></p>
-                    <%= f.select :area, [["All", ""],["Hairdresser", "Hairdresser"], ["Nailist", "Nailist"],["Eyelash", "Eyelash"],["Massage", "Massage"]]%>
+                    <%= f.select :area, [["All", ""],["Hairdresser", "Hairdresser"], ["Nailist", "Nailist"],["Eyelash", "Eyelash"],["Massage", "Massage"],["Seeking work", "Seeking work"]]%>
                 </div>
                 <div class="actions "><%= f.button "search"%></div>
                         <%= f.hidden_field :search_type, :value => "Hairdressers" %></a>
