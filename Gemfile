@@ -4,7 +4,7 @@ gem "nifty-generators", :group => :development
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.7'
-ruby '2.1.2'
+# ruby '2.1.2'
 # Use sqlite3 as the database for Active Record
 gem 'http_accept_language'
 gem 'pg'
@@ -88,8 +88,8 @@ gem "animate-rails"
 #use masonry for tiles
 gem 'masonry-rails'
 
-gem 'fog-core', '~> 1.27.3'
-gem 'fog', '~> 1.27.0'
+gem 'fog-aws', '<= 0.1.1', require: false
+gem 'fog', require: "fog/aws/storage"
 gem "figaro"
 
 # Use Capistrano for deployment
